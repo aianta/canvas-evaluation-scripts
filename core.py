@@ -1,4 +1,6 @@
 import json
+import re
+from datetime import datetime
 
 '''
 The task class contains the information about a task and its instances. 
@@ -15,6 +17,12 @@ class Task:
         self.parameterized_text = data["parameterized_text"]
         self.parameters = data["parameters"]
         self.instances = [TaskInstance(self, x) for x in data["instances"]]
+
+        if self.type == 'Information Seeking':
+            self.answer_type = data["answer_type"]
+        
+        if self.type == 'Side-effect':
+            self.answer_type = None
 
         # Register task instances in TASK_INSTANCES class variable.
         for instance in self.instances:
@@ -34,7 +42,7 @@ class TaskInstance:
             If the parent task is a side-effect task, the answer key will be in the form of a JSON Array
             containing objects with 'method', 'path' and 'request_kv' fields.
             '''
-            self.answerkey = [SideEffectAnswer(x) for x in data["answer_key"]]
+            self.answer_key = [SideEffectAnswer(x) for x in data["answer_key"]]
         elif parent_task.type == "Information Seeking":
             '''
             If the parent task is an information seeking task the answer key will be a JSON object containing a single key, whose value is either a literal or
@@ -55,12 +63,47 @@ class SideEffectAnswer:
 
 class InformationSeekingAnswer:
 
+    date_format = "%Y-%m-%d %H:%M"
+
     def __init__(self,data):
         self.type = list(data.keys())[0]
-        self.answer = data[self.type]
+        
+        if self.type == 'Numeric' or self.type == 'Text':
+            self.answer = data[self.type]
+        
+        if self.type == 'Date Time':
+            self.answer = datetime.strptime(data[self.type], InformationSeekingAnswer.date_format)
     
     def has_multiple_answers():
         return isinstance(self.answer, list)
+
+    def parse_date_time_answer(self, output):
+        answer_search = re.search("(?<=Answer: )[0-9]{4}-[0-9]{1,2}-[0-9]{1,2} [0-9]{1,2}:[0-9]{2}", output, re.DOTALL)
+        
+        if answer_search is not None:
+            string_date = answer_search.group(1)
+            return datetime.strptime(string_date, InformationSeekingAnswer.date_format)
+
+        return None
+
+    def parse_numeric_answer(self, output):
+        answer_search = re.search("(?<=Answer: )[0-9]+.[0-9]+)")
+        if answer_search is not None:
+            return float(answer_search.group(1))
+        
+        answer_search = re.search("(?<=Answer: )[0-9]+")
+        if answer_search is not None:
+            return int(answer_search.group(1))
+
+        return None
+
+    def parse_text_answer(self, output):
+        answer_search = re.search("(?<=Answer: ').*(?=')", output, re.DOTALL)
+        
+        if answer_search is not None:
+            return answer_search.group(1)
+        
+        return None
 
 class WebVoyagerOutput:
 
@@ -118,7 +161,70 @@ class Evaluator:
 
     def register_output(self, instance_id, output):
         self.outputs[instance_id] = output
+
+    def validate(self):
+
+        if len(self.network_events) != len(self.outputs):
+            print(f"Mismatching numbers of network logs ({len(self.network_events)}) to outputs ({len(self.outputs)})")
+
+    def evaluate(self):
+        
+        self.validate()
+
+        number_correct = 0
+        number_incorrect = 0
+        detailed_report = []
+
+        for instance_id in self.outputs:
+            result = self.evaluate_instance(instance_id, self.network_events[instance_id], self.outputs[instance_id])
+
+            if result["correct"]:
+                number_correct += 1
+            else:
+                number_incorrect += 1
+
+            detailed_report.append(result)
+
+        pass
     
+
+    def evaluate_instance(self, instance_id, network_events, output):
+        print(f"Evaluating task instance {instance_id}")
+
+
+        instance_reference = Task.ALL_TASK_INSTANCES[instance_id]
+        parent_task = instance_reference.parent_task
+
+        if parent_task.type == 'Side-effect':
+
+        elif parent_task.type == 'Information Seeking':
+
+            if parent_task.answer_type == 'Text':
+                observed_answer = instance_reference.parse_text_answer(self.outputs[instance_id])
+
+            elif parent_task.answer_type == 'Numeric':
+                observed_answer = instance_reference.parse_numeric_answer(self.outputs[instance_id])
+            
+            elif parent_task.answer_type == 'Date Time':
+                observed_answer = instance_reference.parse_date_time_answer(self.outputs[instance_id])
+
+            else:
+                print(f"Unknown answer type: {parent_task.answer_type}")
+
+            reference_answer = instance_reference.answer_key.answer
+                
+            eval_result = {
+                "id": instance_id,
+                "observed_answer": observed_answer,
+                "reference_answer": reference_answer,
+                "correct": observed_answer == reference_answer
+            }
+            
+            return eval_result
+
+        else:
+            print(f"Unknown task type: {parent_task.type}") 
+
 
 
 
