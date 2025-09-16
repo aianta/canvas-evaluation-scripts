@@ -22,7 +22,7 @@ for index,task in enumerate(tasks):
     for i_index, instance in enumerate(task["instances"]):
         print(f"Instance {i_index}")
 
-        prefix = "Use the username: sammy@ualberta.ca and password: op3TPfE3J5MK to login to Canvas.\n"
+        prefix = f"Use the username: {instance["instance_username"]} and password: {instance["instance_password"]} to login to Canvas.\n"
 
         suffix = None
 
