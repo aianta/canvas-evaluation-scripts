@@ -87,11 +87,11 @@ class InformationSeekingAnswer:
         return None
 
     def parse_numeric_answer(self, output):
-        answer_search = re.search("(?<=Answer: )[0-9]+.[0-9]+)")
+        answer_search = re.search("(?<=Answer: )[0-9]+.[0-9]+)", output)
         if answer_search is not None:
             return float(answer_search.group(1))
         
-        answer_search = re.search("(?<=Answer: )[0-9]+")
+        answer_search = re.search("(?<=Answer: )[0-9]+", output)
         if answer_search is not None:
             return int(answer_search.group(1))
 
@@ -118,6 +118,140 @@ class WebVoyagerOutput:
 
         self.output = self.messages[-1]["content"]
         self.file.close()
+
+class NetworkEvent:
+
+    def __init__(self, method, path, request_body):
+        self.method = method
+        self.path = path
+
+        '''
+        TODO: Ensure that, by the time we get to here, form data stuff has been processed into a dict.
+        '''
+        if not isinstance(request_body, dict):
+            raise RuntimeError(f"request_body must be a dict. Got {type(request_body)}")
+
+        self.request = request_body
+
+
+    '''
+    Returns true if:
+     - the network event matches the provided path & method
+     - the network event's request contains the the key-value pairs described in request_kv
+    
+    Additionally returns a list of errors, IE: if it returns false, the reasons for returning false will be provided in the error list.
+    '''
+    def matches(self, method, path, request_kv):
+
+        errors = []
+
+        if self.method != method:
+            errors.append(f"The expected method was {method} but the observed method was: {self.method}")
+        
+
+        if "[[ANY]]" in path: # Handle [[ANY]] wild card in path reference
+            path_regex = path.replace("[[ANY]]", ".+").replace("/","\/")
+            print(f"reference path contains '[[ANY]]', rewrote path to the following regex: {path_regex}")
+
+            path_search = re.search(path_regex, self.path)
+            if path_search is None:
+                errors.append(f"The observed path: {self.path} did not match the expected path regex: {path_regex}")
+        
+        elif self.path != path:
+            errors.append(f"The expected path was {path} but the observed path was: {self.path}")
+
+        # Don't bother checking request values if method and path have already mismatched.
+        if len(errors) > 0:
+            return len(errors) == 0, errors
+
+        # If method and path look ok, dive into the request kvs
+        for key, value in request_kv.items():
+            # key and value here are the reference keys and values
+            if key.startswith("_"): # Skip meta keys
+                continue
+
+            if not request_contains(key, value, self.request):
+                errors.append(f"Could not find kv pair in request satisfying: '{key}':'{value}'")
+
+
+        return len(errors) == 0, errors # Return true if there were no matching errors
+        
+
+    '''
+    Recursively explores the request looking for specific key value pair.
+    Returns True if the provided key and corresponding value was found inside the request.
+    '''
+    def request_contains(self, key, value, request):
+
+        for request_key, request_value in request.items():
+
+            # If the value is itself a dict, dive into it and look for the specified kv there.
+            if isinstance(request_value, dict):
+                return self.request_contains(key, value, request_value)
+
+            # Handle dynamic value cases.
+            if key == request_key and value == "[[ANY]]":
+                return True
+
+            elif key == request_key and value.startswith("[[_array_not_contains="):
+                # Expect the request_value to be a list/array
+                if not isinstance(request_value, list):
+                    raise RuntimeError(f"Expected '{key}' value to be an array because reference value was: {value}. Instead, '{key}' value was of type: {type(request_value)}")
+
+                target_element = self.extract_dynamic_value_parameter(value)
+
+                if len(request_value) == 0:
+                    # If the length of the request_value array is 0 then it doesn't contain the specified element.
+                    return True
+                else:
+                    '''
+                    Assume that arrays contain only one kind of data type.
+
+                    And assume the only other possible data type is int.
+                    '''
+                    if isinstance(request_value[0], int): 
+                        # If the first element of the request value array is an integer, cast our target element to an int as well. 
+                        target_element = int(target_element)
+                    
+                    # Verify that the specified element does not appear in the request_value array. 
+                    return target_element not in request_value
+                    
+
+            elif key == request_key and value.startswith("[[_starts_with="):
+                if not isinstance(request_value, str):
+                    raise RuntimeError(f"Expected '{key}' value to be a string because reference value was: {value}. Instead, '{key}' value was of type: {type(request_value)}")
+                
+                expected_start = self.extract_dynamic_value_parameter(value)
+
+                return request_value.startswith(expected_start)
+
+            elif key == request_key and value.startswith("[[_includes="):
+                if not isinstance(request_value, str):
+                    raise RuntimeError(f"Expected '{key}' value to be a string because reference value was: {value}. Instead, '{key}' value was of type: {type(request_value)}")
+
+                included_str = self.extract_dynamic_value_parameter(value)
+
+                return included_str in request_value
+            
+            # If the key and value match return True
+            elif key == request_key and value == request_value:
+                return True
+        
+        # If nothing has matched return false.
+        return False
+    
+    '''
+    Extracts the value of a dynamic parameter from a sample.
+
+    IE: if sample = "[[_array_not_contains='13']]" this function would return '13'.
+    '''
+    def extract_dynamic_value_parameter(self, sample):
+        value_search = re.search(f"(?<=\[\[_(starts_with||includes||array_not_contains)=').*?(?='\]\])", sample, re.DOTALL)
+        if value_search is not None:
+            return value_search.group(1)
+
+        raise RuntimeError(f"Could not extract dynamic parameter value from:\n{sample}\n")
+
 
 
 class WebVoyagerNetworkLog:
