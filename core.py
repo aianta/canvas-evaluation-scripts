@@ -1,6 +1,8 @@
 import json
 import re
 from datetime import datetime
+from urllib.parse import urlparse
+from urllib.parse import parse_qs
 
 '''
 The task class contains the information about a task and its instances. 
@@ -121,12 +123,52 @@ class WebVoyagerOutput:
 
 class NetworkEvent:
 
+    @staticmethod
+    def to_network_event(raw_event):
+
+        # Expecting method@params>request>method within a raw event json object
+        method = raw_event["params"]["request"]["method"]
+        
+        # Expecting url@params>request>url within the a raw event json object
+        parse_result = urlparse(raw_event["params"]["request"]["url"])
+        path = parse_result.path 
+        # Our ground truth api_calls combine paths and queries into a single 'api_path' field.
+        if parse_result.query: # So if there is a query component append it to the path
+            path = path + '?' + parse_result.query
+
+        # Expecting postData@params>request>postData within a raw event json object
+        postData = raw_event["params"]["request"]["postData"]
+
+        '''
+        the request_body in a NetworkEvent should always be a dict. So we need to process whatever we have into that.
+        There are two cases of interest:
+        - postData contains a stringified JSON object
+        - postData contains form data
+        '''
+        request_data = None
+
+        # We can check the kind of request data in the headers
+        # Expecting content-type@params>request>headers>content-type in a raw even json object
+        content_type = raw_event["params"]["request"]["headers"]["content-type"]
+
+        if content_type == 'application/json':
+            request_data = json.loads(postData)
+        elif content_type == 'application/x-www-form-urlencoded':
+            request_data = parse_qs(postData)
+        else:
+            raise RuntimeError(f"Unsupported request content-type: {content_type} for postData:\n{postData}")
+
+
+        result = NetworkEvent(method, path, request_data)
+
+        return result
+
     def __init__(self, method, path, request_body):
         self.method = method
         self.path = path
 
         '''
-        TODO: Ensure that, by the time we get to here, form data stuff has been processed into a dict.
+        By the time we get to here, form data stuff should have been processed into a dict.
         '''
         if not isinstance(request_body, dict):
             raise RuntimeError(f"request_body must be a dict. Got {type(request_body)}")
@@ -272,6 +314,9 @@ class WebVoyagerNetworkLog:
         self.network_events = json.load(file)
         self.file.close()
 
+        # Now process the network_events into NetworkEvent objects
+        self.network_events = [NetworkEvent.to_network_event(x) for x in self.network_events]
+
         print(f"Loaded {len(self.network_events)} network events from {self.file.name} for task {self.task_instance}")
 
 
@@ -319,7 +364,12 @@ class Evaluator:
 
             detailed_report.append(result)
 
-        pass
+        return {
+            "correct": number_correct,
+            "incorrect": number_incorrect,
+            "%_correct": round(((number_correct / (number_correct + number_incorrect))*100),2) if (number_correct + number_incorrect) > 0 else "N/A",
+            "details": detailed_report
+        }
     
 
     def evaluate_instance(self, instance_id, network_events, output):
@@ -330,17 +380,49 @@ class Evaluator:
         parent_task = instance_reference.parent_task
 
         if parent_task.type == 'Side-effect':
+            # Side-effect tasks are evaluated by verifying that one or more reference api calls are observable in the network logs of a task. 
+            # Begin by initalizing a dict whose keys are the answers we're looking for and whose values are a boolean flag which is flipped when a match is found.
+            # If all values in this dict are True, the side-effect task was completed successfully.
+            expected_api_invokations = {}
+            for answer in instance_reference.answer_key:
+                expected_api_invokations[answer] = False
+            
+            mismatch_report = {} # Define a dict for holding additional info about mismatches, useful for analysis/debugging
+            
+            for index, event in enumerate(network_events):
+                
+                # Go through each provided network event and see if it matches any of the ground truth side-effect answers.
+                for api_call in expected_api_invokations:
+                    _match, errors = event.matches(api_call.method, api_call.path, api_call.request_kv)
+                    if _match:
+                        expected_api_invokations[api_call] = True
+                    else:
+                        if mismatch_report[index] is None:
+                            mismatch_report[index] = []
+                        mismatch_report[index].append(errors)
+
+            eval_result = {
+                "id": instance_id,
+                "correct": all(list(expected_api_invokations.values()))
+            }
+
+            # If the task is determined not to have been completed successfully, include a mismatch_report for debugging/analysis
+            if not eval_result["correct"]:
+                eval_result["mismatch_report"] = mismatch_report
+
+            return eval_result
 
         elif parent_task.type == 'Information Seeking':
+            # Information seeking tasks are evaluated by comparing a ground truth answer to the output observed from the agent.
 
             if parent_task.answer_type == 'Text':
-                observed_answer = instance_reference.parse_text_answer(self.outputs[instance_id])
+                observed_answer = instance_reference.parse_text_answer(output)
 
             elif parent_task.answer_type == 'Numeric':
-                observed_answer = instance_reference.parse_numeric_answer(self.outputs[instance_id])
+                observed_answer = instance_reference.parse_numeric_answer(output)
             
             elif parent_task.answer_type == 'Date Time':
-                observed_answer = instance_reference.parse_date_time_answer(self.outputs[instance_id])
+                observed_answer = instance_reference.parse_date_time_answer(output)
 
             else:
                 print(f"Unknown answer type: {parent_task.answer_type}")
@@ -357,7 +439,8 @@ class Evaluator:
             return eval_result
 
         else:
-            print(f"Unknown task type: {parent_task.type}") 
+            raise RuntimeError(f"Unknown task type: {parent_task.type}")
+
 
 
 

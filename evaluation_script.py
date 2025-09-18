@@ -38,12 +38,12 @@ parser.add_argument('-t', '--tasks',
 # Support for evaluating webvoyager task executions means we need to be able to parse resulting network logs and interaction messages.
 parser.add_argument("--wv-network-logs", 
                     dest="wv_network_logs",
-                    help="Path to the file containing web voyager network events collected while executing a task.",
+                    help="Path to the directory containing web voyager network logs collected while executing task(s).",
                     type=lambda x: is_valid_dir(parser, x))
 
 parser.add_argument("--wv-interact-messages",
                     dest="wv_interact_messages",
-                    help="Path to the file containing web voyager interaction messages collected while executing a task.",
+                    help="Path to the directory containing web voyager result artifacts including folders that themselves contain interaction_messages.json files collected while executing tasks.",
                     type=lambda x: is_valid_dir(parser, x))
 
 args = parser.parse_args()
@@ -92,3 +92,8 @@ if args.wv_interact_messages:
                         evaluator.register_output(output_obj.task_instance, output_obj.output)
 
 evaluator.status()
+
+results = evaluator.evaluate()
+
+print("===============RESULTS===============")
+print(json.dumps(results, indent=4))
