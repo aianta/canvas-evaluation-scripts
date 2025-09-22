@@ -85,7 +85,12 @@ class InformationSeekingAnswer:
         answer_search = re.search("(?<=Answer: )[0-9]{4}-[0-9]{1,2}-[0-9]{1,2} [0-9]{1,2}:[0-9]{2}", output, re.DOTALL)
         
         if answer_search is not None:
-            string_date = answer_search.group(1)
+            string_date = answer_search.group(0)
+            return datetime.strptime(string_date, InformationSeekingAnswer.date_format)
+
+        answer_search = re.search("(?<=ANSWER; )[0-9]{4}-[0-9]{1,2}-[0-9]{1,2} [0-9]{1,2}:[0-9]{2}", output, re.DOTALL)
+        if answer_search is not None:
+            string_date = answer_search.group(0)
             return datetime.strptime(string_date, InformationSeekingAnswer.date_format)
 
         return None
@@ -93,11 +98,15 @@ class InformationSeekingAnswer:
     def parse_numeric_answer(self, output):
         answer_search = re.search("(?<=Answer: )[0-9]+.[0-9]+", output)
         if answer_search is not None:
-            return float(answer_search.group(1))
+            return float(answer_search.group(0))
         
         answer_search = re.search("(?<=Answer: )[0-9]+", output)
         if answer_search is not None:
-            return int(answer_search.group(1))
+            return int(answer_search.group(0))
+
+        answer_search = re.search("(?<=ANSWER;) [0-9]+", output)
+        if answer_search is not None:
+            return int(answer_search.group(0))
 
         return None
 
@@ -105,8 +114,12 @@ class InformationSeekingAnswer:
         answer_search = re.search("(?<=Answer: ').*(?=')", output, re.DOTALL)
         
         if answer_search is not None:
-            return answer_search.group(1)
+            return answer_search.group(0)
         
+        answer_search = re.search("(?<=ANSWER; ').*(?=')", output, re.DOTALL)
+        if answer_search is not None:
+            return answer_search.group(0)
+
         return None
 
 class WebVoyagerOutput:
@@ -204,6 +217,12 @@ class NetworkEvent:
 
         self.request = request_body
 
+    def get_path_without_query(self):
+        try:
+            return self.path[0: self.path.index('?')]
+        except ValueError:
+            return self.path
+
 
     '''
     Returns true if:
@@ -228,13 +247,20 @@ class NetworkEvent:
             if path_search is None:
                 errors.append(f"The observed path: {self.path} did not match the expected path regex: {path_regex}")
         
+
         elif self.path != path:
-            errors.append(f"The expected path was {path} but the observed path was: {self.path}")
+            # If the reference path does not contain a query component (?key=value), then try matching the observed path without a query component to the reference path and see if that works.
+            if not '?' in path and self.get_path_without_query() == path:
+                pass
+            else:
+                errors.append(f"The expected path was {path} but the observed path was: {self.path}")
+            
 
         # Don't bother checking request values if method and path have already mismatched.
         if len(errors) > 0:
             return len(errors) == 0, errors
 
+        missing_kv = False
         # If method and path look ok, dive into the request kvs
         for key, value in request_kv.items():
             # key and value here are the reference keys and values
@@ -243,7 +269,11 @@ class NetworkEvent:
 
             if not self.request_contains(key, value, self.request):
                 errors.append(f"Could not find kv pair in request satisfying: '{key}':'{value}'")
+                missing_kv = True
 
+        # If missing kv flag has been tripped add a copy of the request to the errors log.
+        if missing_kv:
+            errors.append(json.dumps(self.request, default=str))
 
         return len(errors) == 0, errors # Return true if there were no matching errors
         
@@ -271,6 +301,29 @@ class NetworkEvent:
 
             elif key == request_key and value == "[[ANY]]":
                 return True
+
+            elif key == request_key and value.startswith("[[_array_contains="):
+                if not isinstance(request_value, list):
+                    raise RuntimeError(f"Expected '{key}' value to be an array because reference was: {value}. Instead, '{key}' value was of type: {type(request_value)}")
+                
+                target_element = self.extract_dynamic_value_parameter(value)
+
+                if len(request_value) == 0:
+                    # If the length of the request_value array is 0 then it doesn't contain the specified element.
+                    return False
+                else:
+                    '''
+                    Assume that arrays contain only one kind of data type.
+
+                    And assume the only other possible data type is int.
+                    '''
+                    if isinstance(request_value[0], int):
+                        # If the first element of the request value array is an integer, cast our target element to an int as well. 
+                        target_element = int(target_element)
+                    
+                    # Verify that the specified element appears in the request_value array. 
+                    return target_element in request_value
+
 
             elif key == request_key and value.startswith("[[_array_not_contains="):
                 # Expect the request_value to be a list/array
@@ -326,7 +379,8 @@ class NetworkEvent:
         matchers = [
             r"(?<=\[\[_starts_with=').*?(?='\]\])",
             r"(?<=\[\[_includes=').*?(?='\]\])",
-            r"(?<=\[\[_array_not_contains=').*?(?='\]\])"
+            r"(?<=\[\[_array_not_contains=').*?(?='\]\])",
+            r"(?<=\[\[_array_contains=').*?(?='\]\])"
         ]
 
         for pattern in matchers:
@@ -476,6 +530,8 @@ class Evaluator:
             else:
                 print(f"Unknown answer type: {parent_task.answer_type}")
 
+
+
             reference_answer = instance_reference.answer_key.answer
 
             if reference_answer is None:
@@ -487,6 +543,9 @@ class Evaluator:
                 "reference_answer": reference_answer,
                 "correct": observed_answer == reference_answer if not isinstance(reference_answer, list) else observed_answer in reference_answer # Correct if reference answer matches, or if reference answer has multiple values, the observed answer is one of the allowed values.
             }
+
+            if observed_answer is None or eval_result['correct'] == False:
+                eval_result['raw_answer'] = output
             
             return eval_result
 
