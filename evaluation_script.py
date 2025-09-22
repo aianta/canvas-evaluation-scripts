@@ -8,7 +8,7 @@ from core import *
 '''
 Example usage with WebVoyager results:
 
-python evaluation_script.py -t tasks.json --wv-network-logs /home/aianta/shock_and_awe/WebVoyager --wv-interact-messages /home/aianta/shock_and_awe/WebVoyager/results/20250903_16_55_12
+python evaluation_script.py -t tasks.json -o results.json --wv-network-logs /home/aianta/shock_and_awe/WebVoyager --wv-interact-messages /home/aianta/shock_and_awe/WebVoyager/results/20250919_12_17_59
 '''
 
 
@@ -27,6 +27,12 @@ def is_valid_dir(parser, arg):
 
 # Initalize Arg parser
 parser = argparse.ArgumentParser(description="Evaluation Scripts for Canvas Web Task Benchmark.")
+
+parser.add_argument('-o', '--out',
+                    dest="output_path",
+                    help="the path to the evaluation report this script will produce.",
+                    required=True
+)
 
 # Need the user to specifiy the tasks.json file
 parser.add_argument('-t', '--tasks', 
@@ -96,4 +102,7 @@ evaluator.status()
 results = evaluator.evaluate()
 
 print("===============RESULTS===============")
-print(json.dumps(results, indent=4))
+print(json.dumps(results, indent=4, default=str))
+
+with open(args.output_path, 'w') as out_file:
+    json.dump(results, out_file, indent=4, default=str)

@@ -1,5 +1,6 @@
 import json
 import re
+import regex
 from datetime import datetime
 from urllib.parse import urlparse
 from urllib.parse import parse_qs
@@ -69,8 +70,9 @@ class InformationSeekingAnswer:
 
     def __init__(self,data):
         self.type = list(data.keys())[0]
-        
-        if self.type == 'Numeric' or self.type == 'Text':
+        self.answer = None
+
+        if self.type == 'Numeric' or self.type == 'Text' or self.type == 'Number':
             self.answer = data[self.type]
         
         if self.type == 'Date Time':
@@ -89,7 +91,7 @@ class InformationSeekingAnswer:
         return None
 
     def parse_numeric_answer(self, output):
-        answer_search = re.search("(?<=Answer: )[0-9]+.[0-9]+)", output)
+        answer_search = re.search("(?<=Answer: )[0-9]+.[0-9]+", output)
         if answer_search is not None:
             return float(answer_search.group(1))
         
@@ -136,32 +138,59 @@ class NetworkEvent:
         if parse_result.query: # So if there is a query component append it to the path
             path = path + '?' + parse_result.query
 
-        # Expecting postData@params>request>postData within a raw event json object
-        postData = raw_event["params"]["request"]["postData"]
+        if "postData" in raw_event["params"]["request"]:    
 
-        '''
-        the request_body in a NetworkEvent should always be a dict. So we need to process whatever we have into that.
-        There are two cases of interest:
-        - postData contains a stringified JSON object
-        - postData contains form data
-        '''
-        request_data = None
+            # Expecting postData@params>request>postData within a raw event json object
+            postData = raw_event["params"]["request"]["postData"]
 
-        # We can check the kind of request data in the headers
-        # Expecting content-type@params>request>headers>content-type in a raw even json object
-        content_type = raw_event["params"]["request"]["headers"]["content-type"]
+            '''
+            the request_body in a NetworkEvent should always be a dict. So we need to process whatever we have into that.
+            There are two cases of interest:
+            - postData contains a stringified JSON object
+            - postData contains form data
+            '''
+            request_data = None
 
-        if content_type == 'application/json':
-            request_data = json.loads(postData)
-        elif content_type == 'application/x-www-form-urlencoded':
-            request_data = parse_qs(postData)
+            # We can check the kind of request data in the headers
+            # Expecting content-type@params>request>headers>content-type in a raw even json object
+    
+            try:        
+                content_type = raw_event["params"]["request"]["headers"]["Content-Type"]
+            except KeyError:
+                content_type = raw_event["params"]["request"]["headers"]["content-type"]
+
+            '''
+            Extracts just the content type, ignoring other values in the header. IE: ; charset=UTF-8 
+            '''
+            content_type = NetworkEvent.parse_content_type_header(content_type)
+            
+
+            if content_type == 'application/json':
+                request_data = json.loads(postData)
+            elif content_type == 'application/x-www-form-urlencoded':
+                request_data = parse_qs(postData)
+            else:
+                raise RuntimeError(f"Unsupported request content-type: {content_type} for postData:\n{postData}")
+
+
+            result = NetworkEvent(method, path, request_data)
+
+            return result
+
         else:
-            raise RuntimeError(f"Unsupported request content-type: {content_type} for postData:\n{postData}")
 
+            return NetworkEvent(method, path, {})
 
-        result = NetworkEvent(method, path, request_data)
+    @staticmethod
+    def parse_content_type_header(value):
+        # print(f"prasing content-type value: {value}")
+        search = re.search(".+/.+(?=;)|.+/.+", value)
+        if search is not None:
+            return search.group(0)
 
-        return result
+        print(f"Failed to parse content-type header value: {value}")
+        return None
+            
 
     def __init__(self, method, path, request_body):
         self.method = method
@@ -192,7 +221,7 @@ class NetworkEvent:
         
 
         if "[[ANY]]" in path: # Handle [[ANY]] wild card in path reference
-            path_regex = path.replace("[[ANY]]", ".+").replace("/","\/")
+            path_regex = path.replace("[[ANY]]", ".+")
             print(f"reference path contains '[[ANY]]', rewrote path to the following regex: {path_regex}")
 
             path_search = re.search(path_regex, self.path)
@@ -212,7 +241,7 @@ class NetworkEvent:
             if key.startswith("_"): # Skip meta keys
                 continue
 
-            if not request_contains(key, value, self.request):
+            if not self.request_contains(key, value, self.request):
                 errors.append(f"Could not find kv pair in request satisfying: '{key}':'{value}'")
 
 
@@ -224,7 +253,7 @@ class NetworkEvent:
     Returns True if the provided key and corresponding value was found inside the request.
     '''
     def request_contains(self, key, value, request):
-
+        print(f"Looking for {key}: {value} in request")
         for request_key, request_value in request.items():
 
             # If the value is itself a dict, dive into it and look for the specified kv there.
@@ -232,7 +261,15 @@ class NetworkEvent:
                 return self.request_contains(key, value, request_value)
 
             # Handle dynamic value cases.
-            if key == request_key and value == "[[ANY]]":
+            # If the key and value match return True
+            if key == request_key and value == request_value:
+                return True
+            
+            # If the reference value isn't a string and doesn't match the request value, then this is a mismatch.
+            elif not isinstance(value, str) and value != request_value:
+                return False
+
+            elif key == request_key and value == "[[ANY]]":
                 return True
 
             elif key == request_key and value.startswith("[[_array_not_contains="):
@@ -275,9 +312,7 @@ class NetworkEvent:
 
                 return included_str in request_value
             
-            # If the key and value match return True
-            elif key == request_key and value == request_value:
-                return True
+
         
         # If nothing has matched return false.
         return False
@@ -288,11 +323,19 @@ class NetworkEvent:
     IE: if sample = "[[_array_not_contains='13']]" this function would return '13'.
     '''
     def extract_dynamic_value_parameter(self, sample):
-        value_search = re.search(f"(?<=\[\[_(starts_with||includes||array_not_contains)=').*?(?='\]\])", sample, re.DOTALL)
-        if value_search is not None:
-            return value_search.group(1)
+        matchers = [
+            r"(?<=\[\[_starts_with=').*?(?='\]\])",
+            r"(?<=\[\[_includes=').*?(?='\]\])",
+            r"(?<=\[\[_array_not_contains=').*?(?='\]\])"
+        ]
 
-        raise RuntimeError(f"Could not extract dynamic parameter value from:\n{sample}\n")
+        for pattern in matchers:
+            value_search = re.search(pattern, sample, re.DOTALL)
+            if value_search is not None:
+                return value_search.group(0)
+
+
+        raise RuntimeError(f"Could not extract dynamic parameter value from: " + sample)
 
 
 
@@ -397,8 +440,12 @@ class Evaluator:
                     if _match:
                         expected_api_invokations[api_call] = True
                     else:
-                        if mismatch_report[index] is None:
+                        try:
+                            if mismatch_report[index] is None:
+                                mismatch_report[index] = []
+                        except KeyError:
                             mismatch_report[index] = []
+
                         mismatch_report[index].append(errors)
 
             eval_result = {
@@ -414,26 +461,31 @@ class Evaluator:
 
         elif parent_task.type == 'Information Seeking':
             # Information seeking tasks are evaluated by comparing a ground truth answer to the output observed from the agent.
+            if not isinstance(instance_reference.answer_key, InformationSeekingAnswer):
+                raise RuntimeError(f"Error: task instance answer key is not of type 'InformationSeekingAnswer' but instead is of type: {type(instance_reference.answer_key)}")
 
             if parent_task.answer_type == 'Text':
-                observed_answer = instance_reference.parse_text_answer(output)
+                observed_answer = instance_reference.answer_key.parse_text_answer(output)
 
             elif parent_task.answer_type == 'Numeric':
-                observed_answer = instance_reference.parse_numeric_answer(output)
+                observed_answer = instance_reference.answer_key.parse_numeric_answer(output)
             
             elif parent_task.answer_type == 'Date Time':
-                observed_answer = instance_reference.parse_date_time_answer(output)
+                observed_answer = instance_reference.answer_key.parse_date_time_answer(output)
 
             else:
                 print(f"Unknown answer type: {parent_task.answer_type}")
 
             reference_answer = instance_reference.answer_key.answer
-                
+
+            if reference_answer is None:
+                raise RuntimeError(f"reference answer cannot be None.")
+
             eval_result = {
                 "id": instance_id,
                 "observed_answer": observed_answer,
                 "reference_answer": reference_answer,
-                "correct": observed_answer == reference_answer
+                "correct": observed_answer == reference_answer if not isinstance(reference_answer, list) else observed_answer in reference_answer # Correct if reference answer matches, or if reference answer has multiple values, the observed answer is one of the allowed values.
             }
             
             return eval_result
