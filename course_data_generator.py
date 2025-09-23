@@ -20,17 +20,42 @@ class Prompter:
         
     def set_course(self, course):
         self.course = course
+    
+    def set_valid_emails(self, emails):
+        self.emails = emails
 
-    def simple_prompt_template(self, sample, course):
-        return  """
-        Generate new realistic values based on the following snippet in the context of a '{course}' course. 
+    def insert_emails_into_prompt(self, prompt):
+        if self.emails is None:
+            raise RuntimeError("Cannot insert valid emails into prompt because self.emails == None!")
+        return prompt.replace("$emails$", str(self.emails))
 
-        ```yaml
-        {sample}
-        ```
-        
-        Your output should match the yaml format of the snippet but contain different values. If the sample contains a list or collection, your generated collection should contain the same number of elements. 
-        """.format(sample=sample, course=course)
+    '''
+    Note: sample should be stringified YAML of data.
+    '''
+    def simple_prompt_template(self, sample, data, course):
+        # for debugging uncomment line below
+        # print(f"'@ualberta.ca' in sample: {'@ualberta.ca' in sample} | 'students' not in data: {'students' not in data} | 'instructor' not in data: {'instructor' not in data} | 'main_user' not in data: {'main_user' not in data}")
+        # If users are mentioned in the sample, include a stub for listing valid user emails. 
+        if '@ualberta.ca' in sample and 'students' not in data and 'instructor' not in data and 'main_user' not in data: # don't include this in the student section prompt as that's where the valid users are generated.
+            return """
+            Generate new realistic values based on the following snippet in the context of a '{course}' course. Only the following are valid user (student) emails: $emails$
+
+            ```yaml
+            {sample}
+            ```
+            
+            Your output should match the yaml format of the snippet but contain different values. If the sample contains a list or collection, your generated collection should contain the same number of elements. 
+            """.format(sample=sample, course=course)
+        else:
+            return """
+            Generate new realistic values based on the following snippet in the context of a '{course}' course. 
+
+            ```yaml
+            {sample}
+            ```
+            
+            Your output should match the yaml format of the snippet but contain different values. If the sample contains a list or collection, your generated collection should contain the same number of elements. 
+            """.format(sample=sample, course=course)
 
     def generate_prompts(self):
 
@@ -46,7 +71,7 @@ class Prompter:
             '''
             Prompts should contain system/instruction prompt, the input prompt, and the sample used in the template.
             '''
-            prompt = (Prompter.DEFAULT_PROMPT_INSTRUCTIONS, self.simple_prompt_template(yaml_string, self.course), sample)
+            prompt = (Prompter.DEFAULT_PROMPT_INSTRUCTIONS, self.simple_prompt_template(yaml_string, sample, self.course), sample)
             prompts.append(prompt)
         
         return prompts
@@ -159,8 +184,13 @@ def is_valid_file(parser, arg):
     else:
         return open(arg, 'r')
 
-def generate_section(llm, index, prompt, generated_course, retries):
+def generate_section(llm, prompter, index, prompt, generated_course, retries):
     try:
+
+        if '$emails$' in prompt[1]:
+            # Update the prompt
+            prompt = (prompt[0], prompter.insert_emails_into_prompt(prompt[1]), prompt[2])
+
         print(f"Prompt[{index}]: {prompt[1]}\n")
         generated_output = llm.execute_prompt(prompt)
 
@@ -174,13 +204,23 @@ def generate_section(llm, index, prompt, generated_course, retries):
 
         # If the generated artifacts pass validation
         if validation_result:
+
+            # After successfully generating the students section, capture the student emails to include them in future prompts where student emails are required.
+            # This should increase the probability that only valid emails are used throughout the generated data.
+            if 'students' in generated_yaml:
+                student_emails = []
+                for s in generated_yaml['students']:
+                    student_emails.append(s['email'])
+            
+                prompter.set_valid_emails(student_emails)
+
             # updated our generated course dict with the new data.
             generated_course.update(generated_yaml)
         else:
             if retries < 5:
                 print(f"Generated data failed to pass validation:\n{errors}")
                 print(f"Retrying...")
-                generate_section(llm, index, prompt, generated_course, retries + 1)
+                generate_section(llm, prompter, index, prompt, generated_course, retries + 1)
             else:
                 print(f"Generated data failed to pass validation:\n{errors}")
                 print(f"Out of retries!")
@@ -189,7 +229,7 @@ def generate_section(llm, index, prompt, generated_course, retries):
     except yaml.scanner.ScannerError:
         if retries < 5:
             print(f"Generated yaml failed to parse, retrying.")
-            generate_section(llm, index, prompt, generated_course, retries + 1)
+            generate_section(llm, prompter, index, prompt, generated_course, retries + 1)
         else:
             print(f"Generated yaml failed to parse, out of retries.")
 
@@ -268,7 +308,7 @@ print(f"Need to generate {len(prompts)} elements.")
 start_time = time.time()
 
 for index, prompt in enumerate(prompts):
-    generate_section(llm, index, prompt, generated_course, 0)
+    generate_section(llm, prompter, index, prompt, generated_course, 0)
        
  
 
@@ -277,4 +317,4 @@ print(f"Generated course in {time.time() - start_time}s.")
 with open(args.output_path, 'w') as file:
     yaml.dump(generated_course, file, default_flow_style=False)
 
-print(f"Generated course written to file: {args.out_file}")
+print(f"Generated course written to file: {args.output_path}")
