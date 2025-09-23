@@ -2,6 +2,7 @@ import json
 import argparse
 import os.path
 import os
+from zoneinfo import ZoneInfo
 
 from core import *
 
@@ -27,6 +28,12 @@ def is_valid_dir(parser, arg):
 
 # Initalize Arg parser
 parser = argparse.ArgumentParser(description="Evaluation Scripts for Canvas Web Task Benchmark.")
+
+parser.add_argument('--answer-timezone',
+                    dest="answer_timezone",
+                    help="When providing date time answers to information seeking questions, what timezone will these answers be provided in? Value should be IANA time zone identifier.",
+                    default="Canada/Mountain"
+)
 
 parser.add_argument('-o', '--out',
                     dest="output_path",
@@ -97,12 +104,14 @@ if args.wv_interact_messages:
 
                         evaluator.register_output(output_obj.task_instance, output_obj.output)
 
+evaluator.set_answer_timezone(args.answer_timezone)
+
 evaluator.status()
 
 results = evaluator.evaluate()
 
 print("===============RESULTS===============")
-print(json.dumps(results, indent=4, default=str))
+# print(json.dumps(results, indent=4, default=str))
 
 with open(args.output_path, 'w') as out_file:
     json.dump(results, out_file, indent=4, default=str)

@@ -1,6 +1,7 @@
 import json
 import re
 import regex
+from zoneinfo import ZoneInfo
 from datetime import datetime
 from urllib.parse import urlparse
 from urllib.parse import parse_qs
@@ -77,6 +78,7 @@ class InformationSeekingAnswer:
         
         if self.type == 'Date Time':
             self.answer = datetime.strptime(data[self.type], InformationSeekingAnswer.date_format)
+            self.answer = self.answer.replace(tzinfo=ZoneInfo("Etc/UTC")) # Assume reference answers are provided in UTC+0
     
     def has_multiple_answers():
         return isinstance(self.answer, list)
@@ -286,18 +288,23 @@ class NetworkEvent:
         print(f"Looking for {key}: {value} in request")
         for request_key, request_value in request.items():
 
+            if key == 'read' and value == False:
+                print(f"request_key: {request_key}\nrequest_value: {request_value}")
+                print(f"{request.items()}")
+
             # If the value is itself a dict, dive into it and look for the specified kv there.
             if isinstance(request_value, dict):
                 return self.request_contains(key, value, request_value)
 
             # Handle dynamic value cases.
+            # IMPORTANT: None of these cases should return False! If there is a mismatch, we want to 'continue' and verify the remaining fields of the request. We only stop looking if we find a match.
             # If the key and value match return True
             if key == request_key and value == request_value:
                 return True
             
             # If the reference value isn't a string and doesn't match the request value, then this is a mismatch.
             elif not isinstance(value, str) and value != request_value:
-                return False
+                continue
 
             elif key == request_key and value == "[[ANY]]":
                 return True
@@ -310,7 +317,7 @@ class NetworkEvent:
 
                 if len(request_value) == 0:
                     # If the length of the request_value array is 0 then it doesn't contain the specified element.
-                    return False
+                    continue
                 else:
                     '''
                     Assume that arrays contain only one kind of data type.
@@ -321,8 +328,11 @@ class NetworkEvent:
                         # If the first element of the request value array is an integer, cast our target element to an int as well. 
                         target_element = int(target_element)
                     
-                    # Verify that the specified element appears in the request_value array. 
-                    return target_element in request_value
+                    # Verify that the specified element appears in the request_value array.
+                    if target_element in request_value:
+                        return True
+                    else:
+                        continue
 
 
             elif key == request_key and value.startswith("[[_array_not_contains="):
@@ -346,7 +356,10 @@ class NetworkEvent:
                         target_element = int(target_element)
                     
                     # Verify that the specified element does not appear in the request_value array. 
-                    return target_element not in request_value
+                    if target_element not in request_value:
+                        return True
+                    else:
+                        continue
                     
 
             elif key == request_key and value.startswith("[[_starts_with="):
@@ -355,7 +368,10 @@ class NetworkEvent:
                 
                 expected_start = self.extract_dynamic_value_parameter(value)
 
-                return request_value.startswith(expected_start)
+                if request_value.startswith(expected_start):
+                    return True
+                else:
+                    continue
 
             elif key == request_key and value.startswith("[[_includes="):
                 if not isinstance(request_value, str):
@@ -363,7 +379,10 @@ class NetworkEvent:
 
                 included_str = self.extract_dynamic_value_parameter(value)
 
-                return included_str in request_value
+                if included_str in request_value:
+                    return True
+                else: 
+                    continue
             
 
         
@@ -423,7 +442,10 @@ class Evaluator:
         self.network_events = {}
         self.outputs = {}
         self.tasks = []
+        self.answer_timezone = 'Canada/Mountain'
         
+    def set_answer_timezone(self, tz_identifier):
+        self.answer_timezone = tz_identifier
 
     def status(self):
         print(f"Tasks: {len(self.tasks)}\nTask Instances: {len(Task.ALL_TASK_INSTANCES)}\nNetwork Logs: {len(self.network_events)}\nOutputs: {len(self.outputs)}")
@@ -526,6 +548,9 @@ class Evaluator:
             
             elif parent_task.answer_type == 'Date Time':
                 observed_answer = instance_reference.answer_key.parse_date_time_answer(output)
+                if observed_answer is not None:
+                    observed_answer = observed_answer.replace(tzinfo=ZoneInfo(self.answer_timezone)) # Set answer timezone
+                    observed_answer = observed_answer.astimezone(ZoneInfo('Etc/UTC')) # Convert answer timezone into reference answer timezone (UTC+0)
 
             else:
                 print(f"Unknown answer type: {parent_task.answer_type}")
@@ -543,6 +568,9 @@ class Evaluator:
                 "reference_answer": reference_answer,
                 "correct": observed_answer == reference_answer if not isinstance(reference_answer, list) else observed_answer in reference_answer # Correct if reference answer matches, or if reference answer has multiple values, the observed answer is one of the allowed values.
             }
+
+            if parent_task.type == 'Information Seeking' and parent_task.answer_type == 'Date Time':
+                eval_result["timezone_note"] = f"Observed answer assumed to be in '{self.answer_timezone}' time and converted to 'Etc/UTC' before comparing to reference answer. 'observed_answer' value above is after conversion to 'Etc/UTC'."
 
             if observed_answer is None or eval_result['correct'] == False:
                 eval_result['raw_answer'] = output
