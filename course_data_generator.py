@@ -14,6 +14,8 @@ class Prompter:
 
     def __init__(self, seed_data):
         self.seed_course = seed_data['courses'][0]
+        self.assignments = []
+        self.pages = []
 
     def course_selection_prompt(self, existing_courses):
         return (Prompter.DEFAULT_PROMPT_INSTRUCTIONS, f"Generate the name of a university level course in a random academic field. (Eg:{existing_courses}). Try to generate something thematically distinct from all the given examples. Your output should be the name of the course and nothing else.")
@@ -21,6 +23,12 @@ class Prompter:
     def set_course(self, course):
         self.course = course
     
+    def add_valid_assignment(self, assignment):
+        self.assignments.append(assignment)
+
+    def add_valid_page(self, page):
+        self.pages.append(page)
+
     def set_valid_emails(self, emails):
         self.emails = emails
 
@@ -28,6 +36,34 @@ class Prompter:
         if self.emails is None:
             raise RuntimeError("Cannot insert valid emails into prompt because self.emails == None!")
         return prompt.replace("$emails$", str(self.emails))
+
+    def modules_prompt_template(self):
+
+        return """
+Generate new realistic values based on the following snippet in the context of a '{course}' course. The only valid values for [[Page]] are {pages}. The only valid values for [[Assignment]] are {assignments}.
+```yaml
+  modules:
+    - name: Module 1
+      workflow_state: active
+      content: 
+        - title: [[Page]]
+          completion_requirements: "must_mark_done"
+        - title: [[Assignment]]
+    - name: Module 2
+      workflow_state: active
+      content:
+        - title: [[Assignment]]
+        - title: [[Assignment]]
+    - name: Module 3
+      workflow_state: active
+      content: 
+        - title: [[Page]]
+          completion_requirements: "must_mark_done"
+        - title: [[Assignment]]
+        ```
+
+        Your output should match the yaml format of the snippet but should replace all [[Page]] and [[Assignment]] markers with valid values, change the names of the modules to reflect the '{course}' course. 
+        """.format(course=self.course, pages=str(self.pages), assignments=str(self.assignments) )
 
     '''
     Note: sample should be stringified YAML of data.
@@ -73,6 +109,10 @@ class Prompter:
             '''
             prompt = (Prompter.DEFAULT_PROMPT_INSTRUCTIONS, self.simple_prompt_template(yaml_string, sample, self.course), sample)
             prompts.append(prompt)
+        
+        # Reorder the prompts so that the modules prompt is computed last, as it depends on generated pages and assignments. 
+        # https://stackoverflow.com/questions/20320702/how-do-i-move-an-element-in-my-list-to-the-end-in-python
+        prompts.sort(key=lambda s: 'modules' in s[2])
         
         return prompts
 
@@ -190,6 +230,10 @@ def generate_section(llm, prompter, index, prompt, generated_course, retries):
         if '$emails$' in prompt[1]:
             # Update the prompt
             prompt = (prompt[0], prompter.insert_emails_into_prompt(prompt[1]), prompt[2])
+        
+        if 'modules' in prompt[2]:
+            # Update the modules prompt
+            prompt = (prompt[0], prompter.modules_prompt_template(), prompt[2])
 
         print(f"Prompt[{index}]: {prompt[1]}\n")
         generated_output = llm.execute_prompt(prompt)
@@ -213,6 +257,14 @@ def generate_section(llm, prompter, index, prompt, generated_course, retries):
                     student_emails.append(s['email'])
             
                 prompter.set_valid_emails(student_emails)
+
+            if 'pages' in generated_yaml:
+                for p in generated_yaml['pages']:
+                    prompter.add_valid_page(p['title'])
+            
+            if 'assignments' in generated_yaml:
+                for a in generated_yaml['assignments']:
+                    prompter.add_valid_assignment(a['title'])
 
             # updated our generated course dict with the new data.
             generated_course.update(generated_yaml)
@@ -314,7 +366,13 @@ for index, prompt in enumerate(prompts):
 
 print(f"Generated course in {time.time() - start_time}s.")
 
+output_structure = {
+    "courses": []
+}
+
+output_structure["courses"].append(generated_course)
+
 with open(args.output_path, 'w') as file:
-    yaml.dump(generated_course, file, default_flow_style=False)
+    yaml.dump(output_structure, file, default_flow_style=False)
 
 print(f"Generated course written to file: {args.output_path}")
