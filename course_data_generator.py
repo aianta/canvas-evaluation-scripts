@@ -339,38 +339,40 @@ seed_data = yaml.safe_load(args.seed_file)
 
 existing_courses = [seed_data["courses"][0]["name"]]
 
-# Initalize the prompter
-prompter = Prompter(seed_data)
-
-# Initalize the validator
-validator = Validator(seed_data)
-
-# Generate the name of the new course
-new_course = llm.execute_prompt(prompter.course_selection_prompt(existing_courses))
-print(f"Generating test data for {new_course}")
-prompter.set_course(new_course)
-
-# Initalize object to hold generated course content.
-generated_course = {}
-
-prompts = prompter.generate_prompts()
-
-print(f"Need to generate {len(prompts)} elements.")
-
-start_time = time.time()
-
-for index, prompt in enumerate(prompts):
-    generate_section(llm, prompter, index, prompt, generated_course, 0)
-       
- 
-
-print(f"Generated course in {time.time() - start_time}s.")
-
 output_structure = {
     "courses": []
 }
 
-output_structure["courses"].append(generated_course)
+for i in range(args.num_courses):
+    # Initalize the prompter
+    prompter = Prompter(seed_data)
+
+    # Initalize the validator
+    validator = Validator(seed_data)
+
+    # Generate the name of the new course
+    new_course = llm.execute_prompt(prompter.course_selection_prompt(existing_courses))
+    print(f"Generating test data for {new_course}")
+    prompter.set_course(new_course)
+
+    # Initalize object to hold generated course content.
+    generated_course = {}
+
+    prompts = prompter.generate_prompts()
+
+    print(f"Need to generate {len(prompts)} elements.")
+
+    start_time = time.time()
+
+    for index, prompt in enumerate(prompts):
+        generate_section(llm, prompter, index, prompt, generated_course, 0)
+        
+    print(f"Generated course in {time.time() - start_time}s.")
+
+    existing_courses.append(new_course)
+
+    output_structure["courses"].append(generated_course)
+    
 
 with open(args.output_path, 'w') as file:
     yaml.dump(output_structure, file, default_flow_style=False)
