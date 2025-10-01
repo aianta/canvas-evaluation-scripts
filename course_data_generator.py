@@ -16,13 +16,20 @@ class Prompter:
         self.seed_course = seed_data['courses'][0]
         self.assignments = []
         self.pages = []
+        self.entity_names = {}
 
     def course_selection_prompt(self, existing_courses):
         return (Prompter.DEFAULT_PROMPT_INSTRUCTIONS, f"Generate the name of a university level course in a random academic field. (Eg:{existing_courses}). Try to generate something thematically distinct from all the given examples. Your output should be the name of the course and nothing else.")
         
     def set_course(self, course):
         self.course = course
-    
+
+    def add_entity_names(self, _type, names):
+        self.entity_names[_type] = names
+
+    def get_entity_name(self, _type):
+        return self.entity_names[_type].pop()
+
     def add_valid_assignment(self, assignment):
         self.assignments.append(assignment)
 
@@ -93,28 +100,83 @@ Generate new realistic values based on the following snippet in the context of a
             Your output should match the yaml format of the snippet but contain different values. If the sample contains a list or collection, your generated collection should contain the same number of elements. 
             """.format(sample=sample, course=course)
 
+    def simple_name_generation_template(self, entity_type, sample_names, course):
+        seed_names_yaml = yaml.dump(sample_names, default_flow_style=False)
+
+        return """
+        Here is an example of {number_of_names} names for {entity_type} in {seed_course_name}.
+        
+        ```yaml
+        {sample_names}
+        ```
+
+        Generate {number_of_names} distinct names for {entity_type} in the {course} course. Your output should match the yaml format of the snippet but contain different values. 
+        """.format(number_of_names=len(sample_names), entity_type=entity_type, seed_course_name=self.seed_course['name'], sample_names=seed_names_yaml, course=course)
+
     def generate_prompts(self):
 
         prompts = []
 
         for key in self.seed_course:
-            sample = {
-                f"{key}": self.seed_course[key]
-            }
+            
+            # Assignment, quizzes, announcements and discussions can have relatively complex objects. To minimize generation errors, generate these one object at a time rather than trying to generate the whole section at once.
+            # if key in [] and isinstance(self.seed_course[key], list):
+            if key in ['assignments', 'quizzes', 'announcements', 'discussions', 'groups'] and isinstance(self.seed_course[key], list):
 
-            yaml_string = yaml.dump(sample, default_flow_style=False) 
 
-            '''
-            Prompts should contain system/instruction prompt, the input prompt, and the sample used in the template.
-            '''
-            prompt = (Prompter.DEFAULT_PROMPT_INSTRUCTIONS, self.simple_prompt_template(yaml_string, sample, self.course), sample)
-            prompts.append(prompt)
+                singular_map = {
+                    'assignments': 'assignment',
+                    'quizzes': 'quiz',
+                    'announcements': 'announcement',
+                    'discussions': 'discussion',
+                    'groups': 'group'
+                }
+
+                # Create a prompt to generate unique entity names for these sections
+                seed_names = [ x['title'] if key != 'groups' else x['name'] for x in self.seed_course[key]]
+                
+
+                prompt = (Prompter.DEFAULT_PROMPT_INSTRUCTIONS, self.simple_name_generation_template(key, seed_names, self.course), seed_names, key+"_names")
+                prompts.append(prompt)
+
+
+            # if (key == 'assignments' or key == 'quizzes' or key == 'announcements' or key == 'discussions') and (isinstance(self.seed_course[key], list)):
+                for index, element in enumerate(self.seed_course[key]):
+
+                    sample = element
+                    yaml_string = yaml.dump(sample, default_flow_style=False)
+
+                    prompt_inner_text = self.simple_prompt_template(yaml_string, sample, self.course) 
+
+                    if key == 'assignments':
+                        prompt_inner_text = prompt_inner_text + f"\nThe output should describe a(n) {singular_map[key]} called $entity_name$ with the same submission type as that of the example assignment above."
+                    elif key == 'quizzes':
+                        prompt_inner_text = prompt_inner_text + f"\nThe output should describe a(n) {singular_map[key]} called $entity_name$. Do not change the number of questions, answers or their types. Make sure all question_types match with those in the example quiz above."
+                    else:
+                        prompt_inner_text = prompt_inner_text + f"\nThe output should describe a(n) {singular_map[key]} called $entity_name$."
+
+                    prompt = (Prompter.DEFAULT_PROMPT_INSTRUCTIONS, prompt_inner_text , sample, key, index) 
+                    prompts.append(prompt)
+            else:
+                sample = {
+                    f"{key}": self.seed_course[key]
+                }
+
+                yaml_string = yaml.dump(sample, default_flow_style=False) 
+
+                '''
+                Prompts should contain system/instruction prompt, the input prompt, and the sample used in the template.
+                '''
+                prompt = (Prompter.DEFAULT_PROMPT_INSTRUCTIONS, self.simple_prompt_template(yaml_string, sample, self.course), sample)
+                prompts.append(prompt)
         
         # Reorder the prompts so that the modules prompt is computed last, as it depends on generated pages and assignments. 
         # https://stackoverflow.com/questions/20320702/how-do-i-move-an-element-in-my-list-to-the-end-in-python
         prompts.sort(key=lambda s: 'modules' in s[2])
         
         return prompts
+
+    
 
 
 class Validator:
@@ -124,18 +186,19 @@ class Validator:
     
     def validate(self, artifacts):
         '''
-        artifacts should be a tuple: (generated_yaml, sample_yaml)
+        artifacts should be a tuple: (generated_yaml, reference_yaml)
         '''
 
         generated_yaml = artifacts[0]
         reference_yaml = artifacts[1]
 
-        print(f"Validating ---------\nReference:\n{yaml.dump(reference_yaml, default_flow_style=False, indent=4)}\nGenerated:\n{yaml.dump(generated_yaml, default_flow_style=False, indent=4)}")
+        #print(f"Validating ---------\nReference:\n{yaml.dump(reference_yaml, default_flow_style=False, indent=4)}\nGenerated:\n{yaml.dump(generated_yaml, default_flow_style=False, indent=4)}")
 
         return self.does_structure_match(reference_yaml, generated_yaml)
     
-    def does_structure_match(self, reference, sample):
-        errors = []
+    def does_structure_match(self, reference, sample, errors=None):
+        if errors == None:
+            errors = []
 
         if isinstance(reference, dict):
 
@@ -149,23 +212,36 @@ class Validator:
                 if reference[reference_key] == 'instructor':
                     sample[reference_key] = 'instructor'
 
-                if reference_key not in sample:
+                # Catch errors where the LLM changes the question type
+                if 'question_type' == reference_key and sample[reference_key] != reference[reference_key]:
+                    errors.append(f"Question type difference between generated output and reference. Question type was {sample[reference_key]} but should have been {reference[reference_key]}.")
+                    continue
+
+                # Catch errors where the LLM changes the submission type of an assignment. 
+                if 'submission_type' == reference_key and sample[reference_key] != reference[reference_key]:
+                    errors.append(f"Submission type difference between generated output and reference. Submission type was {sample[reference_key]} but should have been {reference[reference_key]}.")
+                    continue
+
+
+                if reference_key not in sample and 'question_' not in reference_key: # quizzes will have dynamic 'question_<number>' fields. It's fine if we don't have exact matches for those.
                     errors.append(f"Failed to find {reference_key} in sample!\n{sample}")
                     continue
                 
                 # If the reference contains a dict at this key, ensure the structures of the value match that of the sample.
                 if isinstance(reference[reference_key], dict):
-                    _ , _errors = self.does_structure_match(reference[reference_key], sample[reference_key])
+                    _ , _errors = self.does_structure_match(reference[reference_key], sample[reference_key], errors)
                     errors.extend(_errors)
                     continue
 
                 if isinstance(reference[reference_key], list):
-                    _ , _errors = self.does_structure_match(reference[reference_key], sample[reference_key])
+                    _ , _errors = self.does_structure_match(reference[reference_key], sample[reference_key], errors)
                     continue
             
             return len(errors) == 0, errors
         
         if isinstance(reference, list):
+            
+            print(f"reference is a list with {len(reference)} items. Sample is {type(sample)}." + (f"Sample has {len(sample)} items." if isinstance(sample,list) else ""))
 
             if not isinstance(sample, list):
                 errors.append(f"Sample value was expected to be list, but instead was {type(sample)}")
@@ -176,8 +252,8 @@ class Validator:
             if len(errors) == 0:
                 for index, item in enumerate(reference):
                     if isinstance(item, dict):
-                        is_match, _errors = self.does_structure_match(item, sample[index])
-                        errors.extend(_errors)
+                        is_match, _errors = self.does_structure_match(item, sample[index], errors)
+                        #errors.extend(_errors)
 
             return len(errors) == 0, errors
         
@@ -229,7 +305,14 @@ def generate_section(llm, prompter, index, prompt, generated_course, retries):
 
         if '$emails$' in prompt[1]:
             # Update the prompt
-            prompt = (prompt[0], prompter.insert_emails_into_prompt(prompt[1]), prompt[2])
+            if len(prompt) > 3:
+                prompt = (prompt[0], prompter.insert_emails_into_prompt(prompt[1]), prompt[2], prompt[3], prompt[4])
+            else:
+                prompt = (prompt[0], prompter.insert_emails_into_prompt(prompt[1]), prompt[2])
+
+        if '$entity_name$' in prompt[1]:
+            # Update the prompt
+            prompt = (prompt[0], prompt[1].replace("$entity_name$", f"'{prompter.get_entity_name(prompt[3])}'"), prompt[2], prompt[3], prompt[4])
         
         if 'modules' in prompt[2]:
             # Update the modules prompt
@@ -242,9 +325,13 @@ def generate_section(llm, prompter, index, prompt, generated_course, retries):
 
         generated_yaml = llm.extract_yaml(generated_output)
 
+        # prompt[2] is the 3rd element of the prompt and contains the reference sample
         generation_artifacts = (generated_yaml, prompt[2])
 
         validation_result, errors = validator.validate(generation_artifacts)
+
+        print(f"{len(errors)} validation errors.")
+
 
         # If the generated artifacts pass validation
         if validation_result:
@@ -258,27 +345,51 @@ def generate_section(llm, prompter, index, prompt, generated_course, retries):
             
                 prompter.set_valid_emails(student_emails)
 
-            if 'pages' in generated_yaml:
-                for p in generated_yaml['pages']:
-                    prompter.add_valid_page(p['title'])
-            
-            if 'assignments' in generated_yaml:
-                for a in generated_yaml['assignments']:
-                    prompter.add_valid_assignment(a['title'])
 
             # updated our generated course dict with the new data.
-            generated_course.update(generated_yaml)
+
+            if len(prompt) > 3: # If the prompt contains a key and index because the generated result is an item in the 'assignments', 'discussions', 'announcements', or 'quizzes' section. 
+                # prompt[3] should be the key name from the reference course containing the complex objects which needed to be generated one at a time.
+                if prompt[3] == 'assignments': # Still need to capture generated assignment values
+                    prompter.add_valid_assignment(generated_yaml['title'])
+
+                if prompt[3] == 'pages': # Still need to capture generated page values.
+                    prompter.add_valid_page(generated_yaml['title'])
+
+                if "_names"  in prompt[3]: # If the purpose of the prompt was just to generate some names, update the prompter with those names and move on.
+                    prompter.add_entity_names(prompt[3].split('_')[0], generated_yaml)
+                    return
+
+                if prompt[3] not in generated_course:
+                    generated_course[prompt[3]] = []
+                
+                
+                generated_course[prompt[3]].append(generated_yaml) # Insert the generated item at a matching index in the generated course object.
+                print(f"Inserted generated output into '{prompt[3]}' of the generated_course. Generated course currently has {len(generated_course[prompt[3]])} {prompt[3]}.")
+            else:
+                # Handle 'normal' section.
+                generated_course.update(generated_yaml)
         else:
             if retries < 5:
-                print(f"Generated data failed to pass validation:\n{errors}")
+                print(f"Generated data failed to pass validation:\n")
+                for e_index,error in enumerate(errors):
+                    print(f"[Error {e_index+1}] {error}")
                 print(f"Retrying...")
                 generate_section(llm, prompter, index, prompt, generated_course, retries + 1)
             else:
-                print(f"Generated data failed to pass validation:\n{errors}")
+                print(f"Generated data failed to pass validation:\n")
+                for e_index,error in enumerate(errors):
+                    print(f"[Error {e_index+1}] {error}")
                 print(f"Out of retries!")
         
 
     except yaml.scanner.ScannerError:
+        if retries < 5:
+            print(f"Generated yaml failed to parse, retrying.")
+            generate_section(llm, prompter, index, prompt, generated_course, retries + 1)
+        else:
+            print(f"Generated yaml failed to parse, out of retries.")
+    except yaml.parser.ParserError:
         if retries < 5:
             print(f"Generated yaml failed to parse, retrying.")
             generate_section(llm, prompter, index, prompt, generated_course, retries + 1)
@@ -374,7 +485,26 @@ for i in range(args.num_courses):
     output_structure["courses"].append(generated_course)
     
 
+def print_course_key(course, key):
+    if key not in course:
+        print(f"{key} is missing from generated course!")
+    else:
+        print(f"{key}: {len(course[key])}")
+
+
+print(f"Generated {len(output_structure["courses"])} courses")
+for course in output_structure['courses']:
+    print(f"Course: {course['name']}")
+    print_course_key(course, 'pages')
+    print_course_key(course, 'assignments')
+    print_course_key(course, 'groups')
+    print_course_key(course, 'discussions')
+    print_course_key(course, 'announcements')
+    print_course_key(course, 'quizzes')
+    print("\n")
+
+
 with open(args.output_path, 'w') as file:
     yaml.dump(output_structure, file, default_flow_style=False)
 
-print(f"Generated course written to file: {args.output_path}")
+print(f"Generated course(s) written to file: {args.output_path}")
