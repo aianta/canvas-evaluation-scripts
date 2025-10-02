@@ -121,7 +121,7 @@ Generate new realistic values based on the following snippet in the context of a
             
             # Assignment, quizzes, announcements and discussions can have relatively complex objects. To minimize generation errors, generate these one object at a time rather than trying to generate the whole section at once.
             # if key in [] and isinstance(self.seed_course[key], list):
-            if key in ['assignments', 'quizzes', 'announcements', 'discussions', 'groups'] and isinstance(self.seed_course[key], list):
+            if key in ['assignments', 'quizzes', 'announcements', 'discussions', 'groups', 'pages'] and isinstance(self.seed_course[key], list):
 
 
                 singular_map = {
@@ -129,7 +129,8 @@ Generate new realistic values based on the following snippet in the context of a
                     'quizzes': 'quiz',
                     'announcements': 'announcement',
                     'discussions': 'discussion',
-                    'groups': 'group'
+                    'groups': 'group',
+                    'pages': 'page'
                 }
 
                 # Create a prompt to generate unique entity names for these sections
@@ -212,6 +213,18 @@ class Validator:
                 if reference[reference_key] == 'instructor':
                     sample[reference_key] = 'instructor'
 
+                # Force the correct value for is_public
+                if reference_key == 'is_public':
+                    sample[reference_key] = True
+
+                # Force the correct value for join_levels.
+                if reference_key == 'join_level':
+                    sample[reference_key] = 'parent_context_request'
+
+                # Force correct values in generated object from reference object for these fields.              
+                if reference_key in ['workflow_state', 'allowed_attempts', 'one_question_at_a_time', 'public', 'group_category', 'anonymous_peer_reviews','automatic_peer_reviews', 'intra_group_peer_reviews', 'grading_type', 'allow_rating', 'discussion_type', 'completion_requirements', 'comments_enabled', ]:
+                    sample[reference_key] = reference[reference_key]
+
                 # Catch errors where the LLM changes the question type
                 if 'question_type' == reference_key and sample[reference_key] != reference[reference_key]:
                     errors.append(f"Question type difference between generated output and reference. Question type was {sample[reference_key]} but should have been {reference[reference_key]}.")
@@ -241,10 +254,17 @@ class Validator:
         
         if isinstance(reference, list):
             
+           
+            
+
             print(f"reference is a list with {len(reference)} items. Sample is {type(sample)}." + (f"Sample has {len(sample)} items." if isinstance(sample,list) else ""))
 
             if not isinstance(sample, list):
                 errors.append(f"Sample value was expected to be list, but instead was {type(sample)}")
+
+            # Ensure the main_user exists in any generated list based on a reference list where they are included.
+            if 'main_user' in reference and isinstance(sample, list) and 'main_user' not in sample:
+                sample.append('main_user')
             
             if len(reference) > len(sample):
                 errors.append(f"reference list contains {len(reference)} elements, but sample only has {len(sample)}.")
