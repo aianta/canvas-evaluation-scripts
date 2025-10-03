@@ -234,15 +234,6 @@ class Validator:
 
             for reference_key in reference:
 
-                
-                if sample[reference_key] == 'main_user' and "@" in reference[reference_key]:
-                    errors.append(f"Generated output is using 'main_user' as a value for {reference_key} when the reference object was using a classmate.")
-                    continue
-
-                if sample[reference_key] == 'instructor' and "@" in reference[reference_key]:
-                    errors.append(f"Generated output is using 'instructor' as a value for {reference_key} when the reference object was using a classmate.")
-                    continue
-
                 # If the reference value for this key is 'main user' force it to be 'main user' in the generated output as well. This should ensure the correct relationships between content and users.
                 if reference[reference_key] == 'main_user':
                     sample[reference_key] = 'main_user'
@@ -313,6 +304,15 @@ class Validator:
                 if reference_key not in sample and 'question_' not in reference_key: # quizzes will have dynamic 'question_<number>' fields. It's fine if we don't have exact matches for those.
                     errors.append(f"Failed to find {reference_key} in sample!\n{sample}")
                     continue
+                
+                if sample[reference_key] == 'main_user' and "@" in reference[reference_key]:
+                    errors.append(f"Generated output is using 'main_user' as a value for {reference_key} when the reference object was using a classmate.")
+                    continue
+
+                if sample[reference_key] == 'instructor' and "@" in reference[reference_key]:
+                    errors.append(f"Generated output is using 'instructor' as a value for {reference_key} when the reference object was using a classmate.")
+                    continue
+
                 
                 # If the reference contains a dict at this key, ensure the structures of the value match that of the sample.
                 if isinstance(reference[reference_key], dict):
