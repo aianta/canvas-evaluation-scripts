@@ -46,6 +46,9 @@ class Prompter:
     def set_valid_emails(self, emails):
         self.emails = emails
 
+    def get_valid_emails(self):
+        return self.emails
+
     def insert_emails_into_prompt(self, prompt):
         if self.emails is None:
             raise RuntimeError("Cannot insert valid emails into prompt because self.emails == None!")
@@ -88,13 +91,14 @@ Generate new realistic values based on the following snippet in the context of a
         # If users are mentioned in the sample, include a stub for listing valid user emails. 
         if '@ualberta.ca' in sample and 'students' not in data and 'instructor' not in data and 'main_user' not in data: # don't include this in the student section prompt as that's where the valid users are generated.
             return """
-            Generate new realistic values based on the following snippet in the context of a '{course}' course. Only the following are valid user (student) emails: $emails$
+            Generate new realistic values based on the following snippet in the context of a '{course}' course. Only the following are valid user emails: $emails$.    
 
             ```yaml
             {sample}
             ```
             
-            Your output should match the yaml format of the snippet but contain different values. If the sample contains a list or collection, your generated collection should contain the same number of elements. 
+            Your output should match the yaml format of the snippet but contain different values. If the sample contains a list or collection, your generated collection should contain the same number of elements.
+            When generating values for fields called 'user', the value must be either a valid user email, 'main_user', or 'instructor'.  
             """.format(sample=sample, course=course)
         else:
             return """
@@ -198,16 +202,11 @@ Generate new realistic values based on the following snippet in the context of a
 
 class Validator:
 
-    def __init__(self, seed_data):
+    def __init__(self, seed_data, prompter):
         self.seed_data = seed_data
+        self.prompter = prompter
     
-    def validate(self, artifacts):
-        '''
-        artifacts should be a tuple: (generated_yaml, reference_yaml)
-        '''
-
-        generated_yaml = artifacts[0]
-        reference_yaml = artifacts[1]
+    def validate(self, generated_yaml, reference_yaml):
 
         #print(f"Validating ---------\nReference:\n{yaml.dump(reference_yaml, default_flow_style=False, indent=4)}\nGenerated:\n{yaml.dump(generated_yaml, default_flow_style=False, indent=4)}")
 
@@ -218,6 +217,19 @@ class Validator:
             errors = []
 
         if isinstance(reference, dict):
+            
+            # Remove extra keys from generated output.
+            # Break down sample dict into a list of key-value tuples.
+            # Create a new list of tuples containing only tuples whose key value can be found in the 'reference' dict.
+            # Use the filtered list of tuples to create a new dictionary that represents 'sample'
+            # sample = dict([x for x in list(sample.items()) if x[0] in reference])
+            # 
+            # https://stackoverflow.com/questions/32727294/remove-keys-from-object-not-in-a-list-in-python
+            # Need to use this method for deleting keys so that we're modifying the sample we are given, and these changes are reflected after validation completes. 
+            # The old list comprehension method above prevented any of the cleaning logic we wrote below from properly modifying the original generated input.
+            to_delete = set(sample.keys()).difference(list(reference.keys()))
+            for d in to_delete:
+                del sample[d]
 
             for reference_key in reference:
 
@@ -229,16 +241,40 @@ class Validator:
                 if reference[reference_key] == 'instructor':
                     sample[reference_key] = 'instructor'
 
+                # If we're dealing with a 'user' field, the value needs to be one of the valid emails, 'main_user' or 'instructor'
+                if reference_key == 'user':
+                    valid_values = self.prompter.get_valid_emails()
+                    valid_values.append('main_user')
+                    valid_values.append('instructor')
+                    if sample[reference_key] not in valid_values:
+                        errors.append(f"Invalid 'user' field value: '{sample[reference_key]}', needs to be one of {valid_values}.")
+                        continue
+
                 # Force the correct value for is_public
                 if reference_key == 'is_public':
                     sample[reference_key] = True
+
+
 
                 # Force the correct value for join_levels.
                 if reference_key == 'join_level':
                     sample[reference_key] = 'parent_context_request'
 
                 # Force correct values in generated object from reference object for these fields.              
-                if reference_key in ['workflow_state', 'allowed_attempts', 'one_question_at_a_time', 'public', 'group_category', 'anonymous_peer_reviews','automatic_peer_reviews', 'intra_group_peer_reviews', 'grading_type', 'allow_rating', 'discussion_type', 'completion_requirements', 'comments_enabled', ]:
+                if reference_key in ['workflow_state', 
+                    'allowed_attempts', 
+                    'one_question_at_a_time', 
+                    'public', 
+                    'group_category', 
+                    'anonymous_peer_reviews',
+                    'automatic_peer_reviews', 
+                    'intra_group_peer_reviews', 
+                    'grading_type', 
+                    'allow_rating', 
+                    'discussion_type', 
+                    'completion_requirements', 
+                    'comments_enabled',
+                    'leader' ]:
                     sample[reference_key] = reference[reference_key]
 
                 # Catch duplicate main_users
@@ -377,10 +413,17 @@ def generate_section(llm, prompter, index, prompt, generated_course, retries):
 
         generated_yaml = llm.extract_yaml(generated_output)
 
-        # prompt[2] is the 3rd element of the prompt and contains the reference sample
-        generation_artifacts = (generated_yaml, prompt[2])
+        original_generated_yaml_string = yaml.dump(generated_yaml, default_flow_style=False)
 
-        validation_result, errors = validator.validate(generation_artifacts)
+        # prompt[2] is the 3rd element of the prompt and contains the reference sample
+        validation_result, errors = validator.validate(generated_yaml, prompt[2])
+
+        validated_generated_yaml_string = yaml.dump(generated_yaml, default_flow_style=False)
+
+        if original_generated_yaml_string != validated_generated_yaml_string:
+            print(f"Cleaning happened during validation!")
+            print(f"Original Generated Output:\n{original_generated_yaml_string}\nAfter Validation:\n{validated_generated_yaml_string}")
+
 
         print(f"{len(errors)} validation errors.")
 
@@ -388,23 +431,14 @@ def generate_section(llm, prompter, index, prompt, generated_course, retries):
         # If the generated artifacts pass validation
         if validation_result:
 
+            # Capture the generated main user so we can avoid duplicating them over the course of the generation session.
             if 'main_user' in generated_yaml:
                 Prompter.MAIN_USERS.append(generated_yaml['main_user'])
                 print(f"MAIN_USERS: {Prompter.MAIN_USERS}")
-
+            # Capture the generated instructors so we can avoid duplicating them over the course of the generation session. 
             if 'instructor' in generated_yaml:
                 Prompter.INSTRUCTORS.append(generated_yaml['instructor'])
                 print(f"INSTRUCTORS: {Prompter.INSTRUCTORS}")
-            
-            # NOTE: as of October 2, 2025, we use a fixed set of students for all courses. Ensuring we don't duplicate student accounts. 
-            # After successfully generating the students section, capture the student emails to include them in future prompts where student emails are required.
-            # This should increase the probability that only valid emails are used throughout the generated data.
-            # if 'students' in generated_yaml:
-            #     student_emails = []
-            #     for s in generated_yaml['students']:
-            #         student_emails.append(s['email'])
-            
-            #     prompter.set_valid_emails(student_emails)
 
 
             # updated our generated course dict with the new data.
@@ -521,7 +555,7 @@ for i in range(args.num_courses):
     prompter = Prompter(seed_data)
 
     # Initalize the validator
-    validator = Validator(seed_data)
+    validator = Validator(seed_data, prompter)
 
     # Generate the name of the new course
     new_course = llm.execute_prompt(prompter.course_selection_prompt(existing_courses))
