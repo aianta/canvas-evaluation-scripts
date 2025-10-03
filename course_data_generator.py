@@ -2,6 +2,7 @@ import yaml
 import argparse
 import os
 import sys
+import random
 import re
 import time
 from openai import OpenAI
@@ -98,7 +99,7 @@ Generate new realistic values based on the following snippet in the context of a
             ```
             
             Your output should match the yaml format of the snippet but contain different values. If the sample contains a list or collection, your generated collection should contain the same number of elements.
-            When generating values for fields called 'user', the value must be either a valid user email, 'main_user', or 'instructor'.  
+            When generating values for fields called 'user', the value must be either a valid user email, 'main_user', or 'instructor', the correct output will follow the pattern observed in the sample above. If the sample uses an email, you should use an email, if the sample uses 'main_user' you should use 'main_user', if the sample uses 'instructor' you should use 'instructor'.   
             """.format(sample=sample, course=course)
         else:
             return """
@@ -233,6 +234,15 @@ class Validator:
 
             for reference_key in reference:
 
+                
+                if sample[reference_key] == 'main_user' and "@" in reference[reference_key]:
+                    errors.append(f"Generated output is using 'main_user' as a value for {reference_key} when the reference object was using a classmate.")
+                    continue
+
+                if sample[reference_key] == 'instructor' and "@" in reference[reference_key]:
+                    errors.append(f"Generated output is using 'instructor' as a value for {reference_key} when the reference object was using a classmate.")
+                    continue
+
                 # If the reference value for this key is 'main user' force it to be 'main user' in the generated output as well. This should ensure the correct relationships between content and users.
                 if reference[reference_key] == 'main_user':
                     sample[reference_key] = 'main_user'
@@ -251,8 +261,6 @@ class Validator:
                 # Force the correct value for is_public
                 if reference_key == 'is_public':
                     sample[reference_key] = True
-
-
 
                 # Force the correct value for join_levels.
                 if reference_key == 'join_level':
@@ -331,6 +339,10 @@ class Validator:
             # Ensure the main_user exists in any generated list based on a reference list where they are included.
             if 'main_user' in reference and isinstance(sample, list) and 'main_user' not in sample:
                 sample.append('main_user')
+
+            # Ensure instructor isn't used in any list where it doesn't appear in the corresponding reference list.
+            while 'instructor' not in reference and isinstance(sample, list) and 'instructor' in sample:
+                sample.remove('instructor')
             
             if len(reference) > len(sample):
                 errors.append(f"reference list contains {len(reference)} elements, but sample only has {len(sample)}.")
