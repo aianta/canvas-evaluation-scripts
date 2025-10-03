@@ -243,9 +243,7 @@ class Validator:
 
                 # If we're dealing with a 'user' field, the value needs to be one of the valid emails, 'main_user' or 'instructor'
                 if reference_key == 'user':
-                    valid_values = self.prompter.get_valid_emails()
-                    valid_values.append('main_user')
-                    valid_values.append('instructor')
+                    valid_values = self.prompter.get_valid_emails() + ['main_user', 'instructor']
                     if sample[reference_key] not in valid_values:
                         errors.append(f"Invalid 'user' field value: '{sample[reference_key]}', needs to be one of {valid_values}.")
                         continue
