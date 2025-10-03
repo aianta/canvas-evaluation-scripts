@@ -1,0 +1,2048 @@
+courses:
+- announcements:
+  - allow_rating: true
+    message: Please remember the Industry Guest Review Session is this Friday at 3
+      PM in Lab 4 Please arrive 10 minutes early and have a three minute project summary
+      ready Also upload your slides to the course site before the session
+    replies:
+    - replies:
+      - text: Thanks for the note We will have time for brief demos but keep them
+          to one minute each
+        user: instructor
+      text: Will we be expected to hand out printed materials or is a digital copy
+        enough
+      user: main_user
+    title: Industry Guest Review Session
+    user: instructor
+  - allow_rating: true
+    message: Reminder that the final prototype submission is due Friday at 11 59 PM
+      via the course portal Please include the design notebook assembly instructions
+      and any raw data Submit your team materials as a single ZIP and a short MP4
+      demo Late submissions will be accepted for up to 72 hours with a grade penalty
+    replies:
+    - replies:
+      - text: Accepted formats are PDF for the written report ZIP for source files
+          and MP4 for demo videos Maximum individual file size is 500 MB If you need
+          to include larger data files compress them and add a README Contact me early
+          if you expect bigger files
+        user: instructor
+      text: Which file formats are required for the final prototype and is there a
+        size limit
+      user: damian@ualberta.ca
+    - replies:
+      - text: Extensions can be granted for documented lab outages or medical reasons
+          Please contact me before the deadline when possible Late submissions incur
+          a 10 percent penalty per day up to the 72 hour limit
+        user: instructor
+      text: Can we request an extension if instrument delays prevent us from finishing
+        the prototype on time
+      user: priya@ualberta.ca
+    title: Final Prototype Submission Deadline
+    user: instructor
+  - allow_rating: false
+    message: Please review the updated lab protocols and complete the attached checklist
+      before arriving for any hands on sessions next week Failure to submit the checklist
+      will restrict bench access until compliance is confirmed
+    replies:
+    - text: Thanks for the heads up I will complete the checklist tonight
+      user: priya@ualberta.ca
+    - text: Quick question will there be a designated time to go over the new safety
+        steps
+      user: noah@ualberta.ca
+    title: Lab Protocol Update and Checklist
+    user: instructor
+  - allow_rating: true
+    message: Reminder that the Biodesign Project Pitch Workshop is scheduled for next
+      Tuesday at 3pm in Room 210. Each team will present a five minute pitch followed
+      by five minutes of feedback. Please upload a one slide summary to the course
+      page by Monday night. A sign up sheet for feedback slots is posted in the Announcements
+      section. Bring any prototype photos or diagrams you want reviewed.
+    replies:
+    - text: Thanks for the information Will teams need to prepare speaker notes as
+        well or are slides enough
+      user: priya@ualberta.ca
+    - text: Good to know I will upload our slide by Monday and sign up for a feedback
+        slot Looking forward to the workshop
+      user: main_user
+    title: Biodesign Project Pitch Workshop
+    user: instructor
+  - allow_rating: true
+    message: Team assignments for the semester project have been posted on the course
+      site. Please check the Teams tab to see your group membership, assigned roles,
+      and contact details. Each team should schedule a first meeting by Friday and
+      submit a one page team charter by next Monday. If you need a teammate change
+      request, email the instructor with your reason and proposed swap. Peer evaluation
+      guidelines and milestone dates are listed in the project brief. Instructor office
+      hours this week are extended for team consultations. Good luck as you begin
+      the design phase
+    replies:
+    - text: Thanks for posting this. Which platform should we use to book our first
+        team meeting?
+      user: damian@ualberta.ca
+    - text: I would like to request a partner change. I already emailed details to
+        the instructor. Can you confirm when changes will be finalised?
+      user: priya@ualberta.ca
+    - text: Where can we find the peer evaluation rubric mentioned in the brief I
+        want to review it before our meeting
+      user: emily@ualberta.ca
+    title: Team Assignments Released
+    user: instructor
+  assignments:
+  - created_at: '2025-09-01 08:30:00'
+    description: Hi team, for this assignment you will draft a Community Engagement
+      and Responsible Innovation Plan describing outreach approaches, ethical considerations,
+      and measures for inclusive stakeholder engagement within the Synthetic Biology
+      Design Studio course.
+    due_at: '2026-02-15 23:59:00'
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: false
+      count: 2
+      due_at: '2026-03-15 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 10
+    replies:
+    - text: I plan to include community workshops and accessible summaries for non
+        specialists
+      user: damian@ualberta.ca
+    - text: I'll emphasize stakeholder mapping and feedback loops in my plan
+      user: priya@ualberta.ca
+    - text: My focus will be on transparent risk communication and consent processes
+      user: emily@ualberta.ca
+    - text: I want to propose partnerships with local community labs and schools
+      user: main_user
+    submission_types:
+    - discussion_topic
+    title: Community Engagement and Responsible Innovation Plan
+    updated_at: '2025-09-01 08:30:00'
+  - created_at: '2025-11-20 09:30:00'
+    description: 'Please submit a final capstone report that documents your engineered
+      synthetic system. Include design rationale, genetic constructs and sequences,
+      chassis choice, experimental plan, validation assays, safety and containment
+      measures, expected performance metrics, and a short discussion of limitations
+      and next steps
+
+      '
+    due_at: '2026-04-15 23:59:00'
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: true
+      count: 2
+      due_at: '2026-05-01 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 100
+    replies:
+    - text: I plan to include design diagrams and simulated results in the appendix
+      user: damian@ualberta.ca
+    - text: Can we attach a short demo video and a sample protocol with the report
+      user: main_user
+    submission_types:
+    - discussion_topic
+    title: Final Capstone Synthetic System Report
+    updated_at: '2025-11-20 09:30:00'
+  - created_at: '2026-01-10 09:30:00'
+    description: Please read three peer design proposals and provide constructive
+      feedback focused on technical feasibility, experimental design, safety considerations,
+      and clarity of communication. For each proposal include at least one specific
+      suggestion for improvement and one positive comment. Use evidence from the course
+      readings where relevant.
+    due_at: '2026-02-15 23:59:00'
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: true
+      automatic_peer_reviews: false
+      count: 2
+      due_at: '2026-02-20 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: false
+    points_possible: 10
+    replies:
+    - text: I found the proposal on biodegradable biosensors clear and well supported.
+        I suggest adding a scalability plan and more detail on biosafety measures.
+      user: damian@ualberta.ca
+    - text: The circuit design is elegant but the testing timeline seems optimistic.
+        Recommend adding intermediate milestones and contingency plans to strengthen
+        the schedule.
+      user: main_user
+    - text: Great use of modular parts and standard parts. Consider comparing alternative
+        promoters and explain selection criteria to justify choices.
+      user: emily@ualberta.ca
+    - text: I liked the user interface mockups and data flow diagrams. Please add
+        more detail on data privacy and how experimental variability will be handled.
+      user: noah@ualberta.ca
+    submission_types:
+    - discussion_topic
+    title: Peer Review of Design Proposals
+    updated_at: '2026-01-10 09:30:00'
+  - created_at: 2026-02-12 09:30:00
+    description: Each team should prepare a five minute pitch and a stakeholder presentation
+      that explains the design goals risks and proposed mitigations. Include visuals
+      a brief stakeholder impact analysis and a slide on next steps.
+    due_at: 2026-04-05 17:00:00
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: true
+      count: 2
+      due_at: 2026-03-29 17:00:00
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 10
+    replies:
+    - text: Our team will focus on a modular biosensor and highlight potential regulatory
+        concerns and community impact. I can take the stakeholder analysis slide.
+      user: damian@ualberta.ca
+    - text: I can design the slides and create visuals. Should we include a short
+        demo mockup or keep the pitch conceptual
+      user: main_user
+    - text: For timing I suggest we rehearse and assign clear speaking roles. I can
+        lead the introduction and the closing summary.
+      user: emily@ualberta.ca
+    - text: We should cite applicable safety guidelines and propose concrete mitigation
+        steps. I will draft the risk mitigation slide and add references.
+      user: noah@ualberta.ca
+    submission_types:
+    - discussion_topic
+    title: Team Pitch and Stakeholder Presentation
+    updated_at: 2026-02-12 09:30:00
+  - created_at: '2026-01-10 09:00:00'
+    description: Prepare a concise report that documents an iterative build test and
+      learn cycle for your team project. Describe the objective for each cycle, the
+      experiment or prototype changes you made, the data collected, and the decisions
+      you took based on those results. Include visuals or tables where helpful and
+      summarize key lessons learned and next steps.
+    due_at: '2026-02-28 23:59:00'
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: false
+      count: 2
+      due_at: '2026-03-05 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: false
+    points_possible: 10
+    replies:
+    - text: I focused on how each cycle altered the build and the test metrics. Showing
+        before and after metrics made the impact clear to our stakeholders.
+      user: damian@ualberta.ca
+    - feedback:
+        author: emily@ualberta.ca
+        comment: Nice summary please add a short methods subsection to explain how
+          measurements were taken
+      text: We found it useful to state a hypothesis for every cycle so that results
+        could be judged against an expectation. This helped the team decide whether
+        to continue or pivot.
+      user: main_user
+    - text: Emphasize the decision rules you used to move between cycles. Clear criteria
+        made our experiments more efficient and reduced repeated work.
+      user: noah@ualberta.ca
+    - text: A brief reflection section that links findings to design changes is essential.
+        That section helped us communicate learnings to the client.
+      user: isabella@ualberta.ca
+    submission_types:
+    - discussion_topic
+    title: Iterative Build Test and Learn Cycle Report
+    updated_at: '2026-01-10 09:00:00'
+  - created_at: '2025-09-03 09:20:00'
+    description: 'Hello team
+
+
+      For this assignment please keep a troubleshooting and experimental logbook for
+      your project work in Synthetic Biology Design Studio
+
+      Record your experimental setup steps observations deviations from protocol troubleshooting
+      attempts and outcomes
+
+      Include timestamps photos or links to raw data where appropriate and note any
+      ideas for follow up experiments
+
+      This will be used for peer review and for grading of experimental rigor and
+      reproducibility
+
+      '
+    due_at: '2026-04-10 18:00:00'
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: true
+      count: 2
+      due_at: '2026-04-15 18:00:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 2
+    replies:
+    - text: I found that documenting each reagent lot number and exact incubation
+        times helped me identify a source of variability in my expression assays\nKeeping
+        a section for unexpected observations saved time during troubleshooting
+      user: damian@ualberta.ca
+    - feedback:
+        author: emily@ualberta.ca
+        comment: That level of detail is really useful especially when troubleshooting
+          across weeks
+      text: When a gel looked odd I started taking photos at every step which made
+        it much easier to trace when contamination or degradation occurred\nPhotos
+        plus short captions are a lifesaver
+      user: main_user
+    - text: I started using a simple version control approach for protocols where
+        I append a short note and date each time I change a parameter\nThis way I
+        can revert to a previous set of conditions that worked instead of guessing
+        what was changed
+      user: noah@ualberta.ca
+    - text: For troubleshooting I like to keep a separate section for hypotheses about
+        failure modes and then list experiments to test each hypothesis\nThat helped
+        prioritize which fixes to try first and saved reagent costs
+      user: isabella@ualberta.ca
+    submission_types:
+    - discussion_topic
+    title: Troubleshooting and Experimental Logbook
+    updated_at: '2025-09-03 09:20:00'
+  - created_at: '2025-09-01 09:30:00'
+    description: Run a short simulation exploring the environmental impacts of a synthetic
+      organism release scenario and submit the url to your hosted report and model
+      files
+    due_at: '2026-04-22 23:59:00'
+    points_possible: 40
+    submission_types:
+    - online_url
+    submissions:
+    - submission_type: online_url
+      url: https://example.com/reports/env-sim-student42
+      user: main_user
+    title: Environmental Impact Simulation Study
+    updated_at: '2025-09-01 09:30:00'
+  - created_at: '2026-01-10 09:30:00'
+    description: Design a biomaterial interface prototype and submit a 1500 word report
+      that explains the design goals materials selection fabrication methods and anticipated
+      biological interactions Compare at least two interface strategies and justify
+      your choices with literature examples Include a testing plan for in vitro evaluation
+      and a discussion of regulatory and ethical considerations
+    due_at: '2026-05-01 23:59:00'
+    group_category: default
+    points_possible: 150
+    submission_types:
+    - online_text_entry
+    title: Biomaterial Interface Design Project
+    updated_at: '2026-01-10 09:30:00'
+  - created_at: '2025-09-12 14:30:00'
+    description: Prepare a 1500 word risk assessment and regulatory compliance report
+      for a synthetic biology project that outlines hazards controls and compliance
+      pathways
+    due_at: '2026-03-15 23:59:00'
+    group_category: lab_report
+    points_possible: 150
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: '<p>In synthetic biology a robust risk assessment evaluates biological
+        hazards exposure pathways and potential environmental effects associated with
+        a design or experiment The process includes hazard identification likelihood
+        assessment consequence analysis and prioritization of mitigation measures
+        Key elements include containment strategies selection of appropriate biosafety
+        level engineering controls administrative controls and personal protective
+        equipment</p>
+
+        <p>Regulatory compliance requires mapping project activities to relevant statutes
+        guidance and standards at institutional national and international levels
+        The report should propose monitoring metrics incident response plans waste
+        treatment procedures and record keeping practices that support compliance
+        and enable audits The goal is a clear actionable plan that reduces risk and
+        demonstrates due diligence to regulators and stakeholders</p>
+
+        '
+      peer_review:
+      - author: instructor
+        comment: Strong structure and practical recommendations please add specific
+          regulatory references and a brief monitoring timeline
+      submission_type: online_text_entry
+      user: main_user
+    title: Risk Assessment and Regulatory Compliance Report
+    updated_at: '2025-09-12 14:30:00'
+  - created_at: '2025-09-10 09:30:00'
+    description: Prepare a detailed plan for managing project data and ensuring reproducibility
+      of results across the design process for the Synthetic Biology Design Studio.
+      Address file naming conventions, folder structure, metadata standards, version
+      control, data storage and backup procedures, code and analysis reproducibility,
+      data sharing and licensing, roles and responsibilities, and steps to validate
+      reproducibility. Minimum 800 words.
+    due_at: '2026-10-30 23:59:00'
+    group_category: default
+    points_possible: 50
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: '<p>My data management and reproducibility plan for the team project centers
+        on clear structure, consistent documentation, and tools that make analysis
+        repeatable. First I will establish a top level folder for the project with
+        subfolders for raw data processed data scripts notebooks figures and documentation.
+        Raw data will be write once and never overwritten. Any cleaning or transformation
+        will occur in the processed data folder with scripts that convert raw inputs
+        to processed outputs so that every step is executable and traceable.</p>
+
+        <p>File naming conventions will include project acronym an ISO date and a
+        brief descriptor separated by underscores for readability. For example a sequencing
+        file might be named projectA_20250715_reads.fastq and a cleaned table might
+        be projectA_20250716_expression_cleaned.csv. A data dictionary in the documentation
+        folder will define variable names units and expected value ranges so that
+        others can interpret files without direct consultation.</p>
+
+        <p>All code and analysis scripts will be tracked in a git repository hosted
+        on a team platform with branch based development. Each analysis will be captured
+        in a notebook that combines narrative code and outputs. Notebooks will be
+        parameterized where appropriate to avoid manual edits and to allow rerunning
+        with different inputs. For computational environments we will provide an environment
+        specification file and a lightweight container configuration so results can
+        be reproduced across machines.</p>
+
+        <p>Metadata standards will follow community recommendations where available.
+        For datasets we will include provenance information creator contact methods
+        collection date and processing steps in a machine readable metadata file.
+        Backups will be automated with daily snapshots of raw data and weekly snapshots
+        of processed data and code. Sensitive information will be stored in encrypted
+        locations with access logs and only shared after appropriate de identification
+        and approvals.</p>
+
+        <p>For reproducibility validation we will assign a team member to independently
+        run the full analysis from raw data to figures using the provided instructions
+        and record any deviations. Versioned releases of the code and data artifacts
+        will be created and linked to a project README that explains how to reproduce
+        key results. When appropriate we will deposit final datasets and code in an
+        open repository with a persistent identifier and a clear license that permits
+        reuse with attribution.</p>
+
+        <p>Roles and responsibilities will be documented so that one person owns the
+        data dictionary another manages backups and a code lead oversees version control
+        and container builds. Regular checkpoints will ensure documentation stays
+        current and a final reproducibility checklist will be completed before submission.</p>
+
+        '
+      feedback:
+        comment: Thorough plan that addresses structure documentation and reproducibility
+          tools
+        grade: 47
+        grader: instructor
+      peer_review:
+      - author: priya@ualberta.ca
+        comment: Strong folder and naming conventions consider adding specific examples
+          for common file types and scripts
+      - author: emily@ualberta.ca
+        comment: Clear pipeline for reproducibility I suggest including an explicit
+          test dataset and expected outputs to speed validation
+      - author: noah@ualberta.ca
+        comment: Good use of containers and versioning maybe add a short section on
+          long term archival and license choices
+      submission_type: online_text_entry
+      user: main_user
+    title: Data Management and Reproducibility Plan
+    updated_at: '2025-09-10 09:30:00'
+  - created_at: '2025-09-10 14:30:00'
+    description: Design a high throughput screening assay to identify modulators of
+      a biological target relevant to synthetic biology. Describe the assay format,
+      detection method, plate density, control strategy, quality control metrics including
+      how you will calculate and interpret Z prime and other screening statistics,
+      hit selection criteria, counterscreen and orthogonal validation plans, and considerations
+      for automation and data processing. Minimum 600 words.
+    due_at: '2026-11-30 23:59:00'
+    group_category: default
+    points_possible: 85
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: '<p>This proposal outlines a screening strategy to discover small molecule
+        modulators of an engineered transcriptional regulator used in a synthetic
+        biology circuit. The primary assay will be a homogeneous luminescence readout
+        in 384 well plates to maximize throughput while keeping reagent costs reasonable.
+        We will optimize a reaction volume of 20 microliters per well to ensure robust
+        signal to noise and compatibility with standard automated liquid handlers.
+        The detection modality is luminescence because it offers low background and
+        good dynamic range for this reporter system.</p>
+
+        <p>Assay development will begin with target and reagent titrations to establish
+        linear response and to select an enzyme or reporter concentration that yields
+        reproducible signal across wells. Positive control wells will contain a known
+        activator or inhibitor depending on the desired direction of modulation. Negative
+        control wells will contain vehicle only. We will include intra plate controls
+        on every plate, plus inter plate control columns to monitor drift. Plate layout
+        will randomize compound positions to reduce systematic edge effects.</p>
+
+        <p>Key quality metrics will be monitored during pilot runs. We will calculate
+        Z prime for each plate and aim for Z prime greater than 0.5 as a threshold
+        for a robust assay. Signal to background and coefficient of variation will
+        also be tracked. If Z prime is marginal, we will iterate on reagent concentrations,
+        incubation times, or assay buffering to improve assay window. For data processing
+        we will apply plate based normalization and median polish or B score methods
+        to correct spatial bias. Hit calling will use robust statistics such as activity
+        relative to plate median plus three median absolute deviations, and a secondary
+        filter of minimal percent effect relative to controls to avoid spurious calls.</p>
+
+        <p>Follow up triage includes counterscreens to identify assay interferents
+        and pan assay interference compounds. We will run an orthogonal assay using
+        a different detection principle, for example a fluorescence based reporter
+        or gel based activity readout, to confirm on target activity. Confirmed hits
+        will proceed to dose response curves to determine potency and selectivity,
+        and will be evaluated for cytotoxicity in a cell viability assay if relevant.</p>
+
+        <p>Automation considerations include programming the liquid handler for accurate
+        low volume dispensing, incorporating tip reuse policies to avoid cross talk,
+        and scheduling plate transfers to minimize timing variation. Sample tracking
+        and metadata collection will be enforced to support reproducibility. We will
+        implement an analysis pipeline that produces plate level QC reports, normalized
+        activity scores, and annotated hit lists ready for manual review. Finally,
+        the proposal documents expected resources, timelines for assay optimization
+        and pilot screen, and criteria for advancing hits into secondary validation.</p> '
+      feedback:
+        comment: Strong practical assay plan with clear attention to controls and
+          QC. Please add more detail on sample size justification and the specific
+          statistical thresholds you will use in the pilot screen. Also include a
+          brief note on how you will handle compound library quality issues.
+        grade: 78
+        grader: instructor
+      submission_type: online_text_entry
+      user: main_user
+    title: High Throughput Screening Assay Design
+    updated_at: '2025-09-10 14:30:00'
+  - created_at: '2026-01-12 14:45:00'
+    description: Draft a wet lab protocol for a selected synthetic biology experiment
+      and create a validation plan that details controls, expected results, acceptance
+      criteria, and safety considerations. Minimum 800 words.
+    due_at: '2026-03-01 23:59:00'
+    group_category: default
+    points_possible: 100
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p> In this assignment I drafted a complete wet lab protocol for a plasmid
+        construction workflow using Gibson assembly followed by transformation into
+        a common E coli strain. The protocol includes step by step methods for PCR
+        amplification of inserts, cleanup and quantification of DNA, assembly reaction
+        setup with reagent volumes and incubation times, and transformation and recovery
+        steps. The validation plan outlines positive and negative controls, expected
+        band sizes for gel verification, sequencing confirmation steps, and a plate
+        based colony PCR screening strategy. The plan specifies numbers of biological
+        and technical replicates, criteria for calling a successful construct, and
+        basic statistical checks to evaluate reproducibility. Safety measures cover
+        handling of bacterial cultures, waste decontamination, and biosafety level
+        considerations. I also include troubleshooting notes for low yield and suggestions
+        for alternative enzymes or cleanup methods. This draft is intended to be refined
+        with reagent concentrations and final volumes after instructor feedback and
+        a local risk assessment. </p>
+      feedback:
+        comment: Well structured draft please specify reagent concentrations and include
+          an estimated timeline for each phase in the next revision
+        grade: 88
+        grader: instructor
+      peer_review:
+      - author: priya@ualberta.ca
+        comment: Clear protocol steps and a thoughtful validation plan suggest careful
+          planning add a timeline and specific concentrations to improve reproducibility
+      submission_type: online_text_entry
+      user: main_user
+    title: Wet Lab Protocol Draft and Validation Plan
+    updated_at: '2026-01-12 14:45:00'
+  - created_at: '2025-09-15 09:30:00'
+    description: Design and optimize a heterologous metabolic pathway to produce a
+      target small molecule in a chosen microbial chassis. Include pathway selection
+      and justification, computational modeling of fluxes, genetic design choices
+      for enzyme expression, strategies for cofactor balancing and byproduct minimization,
+      and an experimental plan for iterative optimization. Minimum 600 words.
+    due_at: '2026-12-10 23:59:00'
+    group_category: default
+    points_possible: 100
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p>For this assignment I developed a pathway to convert glucose into a
+        medium chain polyketide in Escherichia coli. I began by surveying native and
+        heterologous routes and selected a set of enzymes based on reported turnover
+        numbers and substrate specificity. I built a stoichiometric model and performed
+        flux balance analysis to predict bottlenecks and theoretical yields. The model
+        indicated a limitation at the acyl carrier protein cycle, so I proposed increasing
+        flux through the upstream supply of malonyl CoA by overexpressing acetyl CoA
+        carboxylase and redirecting acetyl CoA from competing pathways. I incorporated
+        cofactor considerations by preferring NADPH dependent reductases and suggested
+        enhancing NADPH generation through pentose phosphate pathway upregulation.
+        For genetic construction I planned modular expression cassettes with tunable
+        promoters and ribosome binding sites to balance enzyme levels, and codon optimized
+        coding sequences to improve translation. I also described measures to reduce
+        byproduct formation by knocking down competing decarboxylases and implementing
+        dynamic regulation to limit pathway flux during early growth phases. The experimental
+        workflow includes building a small combinatorial library of expression variants,
+        measuring intermediate concentrations and product titer, and iterating design
+        based on measured fluxes. Finally I proposed adaptive laboratory evolution
+        for tolerance improvements and outlined criteria for success based on product
+        yield per glucose consumed and strain stability over serial culturing.</p>
+      feedback:
+        comment: Strong integration of modeling and practical design choices. Good
+          identification of bottlenecks and sensible genetic strategies. For a higher
+          grade include specific predicted flux values from the model and more detail
+          on measurement methods and controls for each assay.
+        grade: 92
+        grader: instructor
+      submission_type: online_text_entry
+      user: main_user
+    title: Metabolic Pathway Construction and Optimization
+    updated_at: '2025-09-15 09:30:00'
+  - created_at: '2025-09-15 14:30:00'
+    description: Model and simulate gene expression dynamics for a simple regulatory
+      circuit. Provide derivation of the mathematical model and explanation of assumptions.
+      Include parameter choices simulation outcomes and interpretation. Minimum 600
+      words.
+    due_at: '2026-12-15 23:59:00'
+    group_category: default
+    points_possible: 100
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p>In this assignment I construct a deterministic model of gene expression
+        for a single gene under simple negative feedback. I present a system of ordinary
+        differential equations for mRNA and protein concentrations and explain each
+        term and parameter. The mRNA production term uses a Hill function to capture
+        repression by the protein and degradation terms are first order. I include
+        plausible parameter values chosen from literature ranges and run numerical
+        simulations to show steady state behavior and response to perturbations. Results
+        include time series showing relaxation to steady state and a parameter sweep
+        showing how Hill coefficient and degradation rates affect expression levels.
+        I discuss limitations of the deterministic approach and note how intrinsic
+        noise could alter dynamics, motivating stochastic simulation as a next step.
+        Finally I reflect on biological assumptions such as constant cell volume and
+        fixed promoter copy number and suggest experimental measurements that could
+        validate the model. Code used for simulations is provided in a separate file
+        and described in the methods section. </p>
+      feedback:
+        comment: Clear mathematical presentation and thoughtful discussion of assumptions.
+          Please include a brief comparison with a stochastic simulation in a revision.
+        grade: 88
+        grader: instructor
+      peer_review:
+      - author: main_user
+        comment: Solid model and clear plots. Would like a bit more detail on how
+          parameters were chosen.
+      - author: emily@ualberta.ca
+        comment: Nice interpretation of results. Consider adding a short stochastic
+          example to support your discussion.
+      - author: noah@ualberta.ca
+        comment: Good use of Hill functions. A sensitivity analysis table would strengthen
+          the conclusions.
+      submission_type: online_text_entry
+      user: main_user
+    title: Modeling Gene Expression and Dynamics
+    updated_at: '2025-09-15 14:30:00'
+  - created_at: '2025-09-05 09:30:00'
+    description: Design and document a set of genetic parts using CAD principles.
+      Provide sequence files and annotated feature maps, predicted performance notes,
+      and an assembly plan. Include rationale for part choices and safety and ethical
+      considerations
+    due_at: '2026-02-12 23:59:00'
+    group_category: default
+    points_possible: 100
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p>For this assignment I assembled three genetic parts for modular expression
+        in E coli chassis. Submissions include annotated FASTA sequences, a parts
+        table with functional descriptions and expected expression levels, screenshots
+        of the CAD tool showing feature annotations, and a brief assembly strategy
+        using Golden Gate style cloning. I also included notes on sequence optimization
+        and a short safety plan describing containment and risk mitigation.</p>
+      feedback:
+        comment: Well organized and thorough. Please expand on predicted expression
+          measurements and provide a brief validation plan
+        grade: 88
+        grader: instructor
+      peer_review:
+      - author: priya@ualberta.ca
+        comment: Clear annotations and good CAD screenshots. Suggest adding expected
+          restriction sites to the assembly plan
+      submission_type: online_text_entry
+      user: main_user
+    title: Genetic Parts CAD and Documentation
+    updated_at: '2025-09-05 09:30:00'
+  - created_at: '2025-09-01 09:30:00'
+    description: Design an automated biofoundry workflow and document the plan in
+      a detailed project report of about 1200 words
+    due_at: '2026-12-15 17:00:00'
+    group_category: default
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: false
+      count: 3
+      due_at: '2026-02-10 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: false
+    points_possible: 85
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p>I propose a modular automated workflow for a teaching biofoundry that
+        integrates design software with robotic liquid handling and automated QC checks.
+        The pipeline starts with in silico design of expression constructs using standardized
+        parts and barcodes. Files are exported to a lab information management system
+        for plate mapping and worklist generation. A liquid handler performs assembly
+        and transformation steps followed by automated colony PCR and capillary sizing
+        for initial validation. Samples are tracked with two dimensional barcodes
+        and metadata are synced to a central database for downstream analysis. I will
+        describe required hardware interfaces, error handling strategies, and a sample
+        schedule to fit a two week build test cycle. </p>
+      submission_type: online_text_entry
+      user: main_user
+    - body: I am excited about integrating software driven design rules with automated
+        assembly to improve reproducibility and throughput in student projects
+      submission_type: online_text_entry
+      user: priya@ualberta.ca
+    - body: Focusing on standardized parts and clear plate maps will make it easier
+        to scale experiments and teach best practices in automation
+      submission_type: online_text_entry
+      user: emily@ualberta.ca
+    - body: I want to emphasize data pipelines and versioned metadata so analysis
+        can be reproduced and QA steps can be audited
+      submission_type: online_text_entry
+      user: noah@ualberta.ca
+    - body: Safety and containment procedures should be embedded in the workflow along
+        with documentation templates for reporting and compliance
+      submission_type: online_text_entry
+      user: isabella@ualberta.ca
+    title: Automated Biofoundry Workflow Design
+    updated_at: '2025-09-01 09:30:00'
+  - created_at: '2025-09-10 14:45:00'
+    description: Conduct a case study analysis of an ethics or policy issue in synthetic
+      biology. Choose a current or historical example such as gene drives synthetic
+      microbes for biomanufacturing or synthetic biology in agriculture. Write a 1000
+      to 1200 word report that identifies stakeholders assesses risks and benefits
+      discusses regulatory and governance frameworks and proposes actionable policy
+      recommendations for responsible research and deployment.
+    due_at: '2025-12-01 23:59:00'
+    group_category: default
+    points_possible: 75
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p> This case study examines the ethical and policy challenges surrounding
+        proposed field trials of a gene drive system intended to reduce disease vector
+        populations. The report outlines the scientific goals of the project and the
+        potential public health benefits while weighing ecological risks such as unintended
+        spread and impacts on non target species. Stakeholder analysis highlights
+        concerns from local communities indigenous groups regulators and conservation
+        organizations. The analysis evaluates existing governance mechanisms including
+        environmental assessment procedures international biosafety agreements and
+        institutional review boards and finds gaps in oversight and public engagement.
+        Recommendations emphasize phased testing robust ecological monitoring transparent
+        community consent adaptive risk management and clear data sharing requirements.
+        The conclusion calls for interdisciplinary governance that integrates ethical
+        reflection scientific uncertainty and equitable participation in decision
+        making. </p>
+      feedback:
+        comment: Well structured analysis include more detail on stakeholder engagement
+          strategies and cite specific governance instruments.
+        grade: 68
+        grader: instructor
+      peer_review:
+      - author: damian@ualberta.ca
+        comment: Thoughtful discussion of risks good recommendations could expand
+          on long term monitoring plans
+      submission_type: online_text_entry
+      user: main_user
+    title: Ethics and Policy Case Study in Synthetic Biology
+    updated_at: '2025-09-10 14:45:00'
+  - created_at: '2025-09-15 09:30:00'
+    description: Prepare a written proposal detailing biocontainment measures and
+      safety strategies for a synthetic biology project
+    due_at: '2026-02-15 23:59:00'
+    group_category: default
+    peer_reviews:
+      anonymous_peer_reviews: true
+      automatic_peer_reviews: true
+      count: 1
+      due_at: '2026-02-14 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 100
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p>This proposal outlines a comprehensive biocontainment and safety strategy
+        for a lab scale synthetic biology project. It begins with a project specific
+        risk assessment that identifies potential hazards associated with genetically
+        modified organisms and procedures. The plan specifies appropriate physical
+        containment levels, access controls, and engineering controls for laboratory
+        spaces. Administrative controls such as standard operating procedures training
+        and documentation are detailed. Biological containment measures include the
+        use of attenuated strains dependency designs and genetic safeguards to limit
+        survival outside controlled conditions. Waste handling, decontamination protocols,
+        and monitoring procedures for accidental release are described. Finally the
+        proposal presents an incident response plan and channels for regulatory compliance
+        and communication with institutional biosafety staff</p>
+      feedback:
+        comment: Well structured and practical plan with clear mitigation steps
+        grade: 92
+        grader: instructor
+      peer_review:
+      - author: priya@ualberta.ca
+        comment: Good risk assessment and clear containment tiers Consider adding
+          more detail on training frequency
+      submission_type: online_text_entry
+      user: main_user
+    - body: <p>This strategy proposal focuses on layered safety features that combine
+        genetic and physical approaches to reduce environmental risk. It proposes
+        built in genetic containment such as multiple orthogonal kill switches and
+        auxotrophy for synthetic nutrients not found in nature. The design emphasizes
+        reducing horizontal gene transfer potential by minimizing mobile elements
+        and using host strains with reduced recombination. Physical measures include
+        dedicated work areas sealed for negative pressure when relevant and validated
+        sterilization workflows for all effluents. The proposal also covers monitoring
+        plans using environmental sampling and molecular detection methods and a staged
+        response matrix for containment breach scenarios. Engagement with institutional
+        biosafety officers and community stakeholders is recommended to ensure transparency
+        and compliance</p>
+      feedback:
+        comment: Strong technical content Consider a clearer timeline for implementation
+          steps
+        grade: 88
+        grader: instructor
+      peer_review:
+      - author: omar@ualberta.ca
+        comment: Excellent use of genetic strategies Please expand on environmental
+          monitoring methods
+      submission_type: online_text_entry
+      user: emily@ualberta.ca
+    title: Biocontainment and Safety Strategy Proposal
+    updated_at: '2025-09-15 09:30:00'
+  - created_at: '2025-09-12 14:30:00'
+    description: Design a synthetic microbial consortium to perform a target biotransformation.
+      Provide a rationale for the species chosen, a design for interactions and stability,
+      an experimental validation plan, a basic computational model of population dynamics,
+      and a discussion of safety and ethical considerations. Include references to
+      primary literature and justify engineering choices.
+    due_at: '2026-04-20 23:59:00'
+    group_category: default
+    points_possible: 150
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p>This project outlines a proposed microbial consortium for biodegradation
+        of a model pollutant. The team proposes a three member community composed
+        of a primary degrader, an intermediate processor that reduces toxic intermediates,
+        and a support strain that supplies essential nutrients and stabilizes population
+        dynamics. Design decisions are based on complementary metabolic pathways and
+        engineered control circuits to limit overgrowth. The experimental plan includes
+        strain construction, batch and chemostat trials to measure degradation rate
+        and community stability, and qPCR based monitoring of relative abundances.
+        A simple ODE based model of population and substrate dynamics is presented
+        to predict steady states and response to perturbations. Risk assessment covers
+        containment strategies, genetic safeguards, and ethical implications of environmental
+        release. Deliverables include the full design report, annotated model code,
+        and a short presentation summarizing key results and limitations.</p>
+      feedback:
+        grader: instructor
+        rubric_assessment:
+        - comments: Strong conceptual design and clear justification for species choices.
+            Modeling section needs more parameter justification.
+          comments_enabled: true
+          criterion_id: crit1
+          description: Technical approach
+          id: r1
+          points: 75.0
+        - comments: Good attention to safety and ethics. Provide more detail on containment
+            measures and fail safe design.
+          comments_enabled: true
+          criterion_id: crit2
+          description: Safety and ethics
+          id: r2
+          points: 60.0
+      submission_type: online_text_entry
+      user: main_user
+    title: Microbial Consortia Engineering Project
+    updated_at: '2025-09-12 14:30:00'
+  - created_at: '2025-09-15 09:30:00'
+    description: Design and experimentally characterize a combinatorial library of
+      promoters and ribosome binding sites to map expression strengths across a range
+      of contexts. Include at least two experimental techniques such as plate reader
+      assays and flow cytometry, present quantitative metrics for promoter and RBS
+      strength, and discuss how sequence context and measurement noise affect interpretation
+      and standardization.
+    due_at: '2026-03-01 23:59:00'
+    group_category: default
+    peer_reviews:
+      anonymous_peer_reviews: true
+      automatic_peer_reviews: true
+      count: 2
+      due_at: '2026-02-25 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 100
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: '<p> This assignment asks you to construct a promoter and RBS library
+        and  characterize its activity using both bulk plate reader measurements and
+        single  cell flow cytometry. Report expression strengths using a consistent
+        metric  such as relative promoter units or fluorescence per optical density,
+        include  calibration and negative controls, and analyze sequence activity
+        relationships  with simple statistical models. Discuss sources of variability
+        and suggest  strategies to improve reproducibility for future designs.</p>
+
+        '
+      feedback:
+        comment: Strong experimental design and clear interpretation of results.
+        grade: 88
+        grader: instructor
+      peer_review:
+      - author: priya@ualberta.ca
+        comment: Clear methods and useful plots, consider adding more replicates and
+          a detailed calibration protocol.
+        rubric_assessment:
+        - comments: Good coverage of experimental approaches
+          comments_enabled: true
+          criterion_id: critA
+          description: Pass
+          id: ratA1
+          points: 50.0
+        - comments: Analysis is solid but could use clearer error estimates
+          comments_enabled: true
+          criterion_id: critB
+          description: B
+          id: ratB1
+          points: 50.0
+      submission_type: online_text_entry
+      user: main_user
+    title: Promoter and RBS Library Characterization
+    updated_at: '2025-09-15 09:30:00'
+  - created_at: 2025-09-01 090000
+    description: Draft a brief that summarizes your proposed synthetic circuit including
+      design goals components expected behaviors and validation experiments
+    due_at: 2026-03-10 235959
+    group_category: design teams
+    points_possible: 15
+    submission_types:
+    - online_text_entry
+    title: Synthetic Circuit Design Brief
+    topic: Synthetic gene circuits and modularity
+    updated_at: 2025-09-01 090000
+  code: SBDS301
+  discussions:
+  - discussion_type: threaded
+    message: 'Collaborative projects are central to our studio work
+
+      I would like to open a discussion on how you organize teamwork and plan project
+      tasks
+
+      What tools and methods do you use to keep everyone aligned and productive
+
+      Any tips on dividing work and resolving conflicts would be appreciated
+
+      '
+    replies:
+    - replies:
+      - text: I agree Damian I find setting weekly goals and short check ins helps
+          us stay on track
+        user: grace@ualberta.ca
+      text: We create a shared task board and assign small milestones for each week
+        It keeps things clear
+      user: damian@ualberta.ca
+    - replies:
+      - text: Nice idea Priya I will try time blocking for meetings and focused work
+        user: omar@ualberta.ca
+      text: We use time blocking and set fixed meeting times for planning and testing
+        It reduces last minute chaos
+      user: priya@ualberta.ca
+    - replies:
+      - text: That makes sense Noah Pair programming has helped us catch issues early
+          and learn from each other
+        user: emily@ualberta.ca
+      text: I find pairing on critical tasks and rotating roles helps distribute knowledge
+        and avoid bottlenecks
+      user: noah@ualberta.ca
+    - text: When conflicts come up we document the options discuss pros and cons and
+        vote or ask the TA to mediate
+      user: isabella@ualberta.ca
+    title: Collaboration and project planning in the studio
+    user: instructor
+  - discussion_type: threaded
+    message: For our session on Computational modeling for pathway design I want to
+      hear about your experiences using computational tools for metabolic and pathway
+      design Share any tools you have used workflows that worked challenges you ran
+      into and any tips for others
+    replies:
+    - text: I used COPASI and found parameter estimation really tricky At first I
+        tried manual tuning but then automated fitting helped a lot I can share my
+        COPASI file and a brief guide if anyone is interested
+      user: priya@ualberta.ca
+    title: Computational modeling for pathway design
+    user: instructor
+  - discussion_type: threaded
+    message: 'Welcome everyone I want to start a discussion on biosafety and risk
+      assessment in the lab This thread is for sharing concerns and practical strategies
+      for reducing risk Describe hazards you anticipate which controls you would prioritize
+      any prior training or incidents and questions you have Please keep comments
+      constructive and include any suggestions for protocols or PPE
+
+      '
+    replies:
+    - replies:
+      - text: For me the biggest concern is aerosol generation during procedures like
+          centrifugation and sonication I would prioritize containment and verified
+          PPE and use of biosafety cabinets when possible
+        user: grace@ualberta.ca
+      text: I am worried about cross contamination between biologicals and chemicals
+        and would like to learn more about compatible disinfectants and neutralization
+        steps
+      user: noah@ualberta.ca
+    - text: I have some lab experience and I can share a simple risk assessment checklist
+        and notes on waste segregation and emergency contacts on campus
+      user: emily@ualberta.ca
+    title: Biosafety and risk assessment in the lab
+    user: instructor
+  - discussion_type: threaded
+    message: 'This week we will focus on design principles for modular genetic circuits,
+      including strategies for part insulation, standardized interfaces, and testing
+      across multiple chassis. Think about trade offs between tunability and robustness,
+      how to reuse modules in different organisms, and which assays and design tools
+      best validate function. Share a design sketch or a practical concern and engage
+      with your peers
+
+      '
+    replies:
+    - replies:
+      - text: Insulation sequences and ribozymes can help reduce context dependence,
+          though they may increase metabolic burden in some hosts
+        user: priya@ualberta.ca
+      text: I like the plug and play idea, using standardized promoters and terminators
+        to make modules interchangeable, but host context still causes unpredictable
+        behavior
+      user: damian@ualberta.ca
+    - text: A big bottleneck is characterization throughput, high throughput screens
+        help but we also need better predictive models to cut down on experiments
+      user: emily@ualberta.ca
+    - text: When scaling networks I worry about orthogonality and crosstalk, especially
+        between sensors and actuators in the same cell
+      user: noah@ualberta.ca
+    title: Designing modular genetic circuits
+    user: instructor
+  - discussion_type: threaded
+    message: Hello everyone please discuss ethical challenges you expect in synthetic
+      biology projects such as dual use concerns data privacy community consent environmental
+      risk and equity Pick one challenge describe why it matters and propose at least
+      one mitigation strategy Then reply to at least one classmate
+    replies:
+    - replies:
+      - text: I agree that dual use is a top concern especially when methods can be
+          repurposed for harm We should consider tiered access to data and pre publication
+          review as safeguards
+        user: priya@ualberta.ca
+      text: One ethical challenge I keep returning to is dual use risk where tools
+        we develop could be misapplied outside intended research This matters because
+        even well intended projects can enable harm without controls I suggest documenting
+        risk assessments restricting access to sensitive protocols and working with
+        institutional biosafety officers to set sharing limits
+      user: damian@ualberta.ca
+    - text: Equity and access are key I worry about patents and commercial models
+        that restrict benefits to a few To address this we could prioritize open licensing
+        community benefit agreements and include diverse stakeholders early in the
+        design process
+      user: emily@ualberta.ca
+    - text: Environmental release is another concern especially for gene drive ideas
+        Containment strategies staged field trials and long term monitoring help reduce
+        risk I also think we should include local communities in decision making before
+        any release
+      user: main_user
+    title: Ethical challenges in synthetic biology projects
+    user: instructor
+  groups:
+  - description: Active lab team in the Synthetic Biology Design Studio focused on
+      enzyme engineering and collaborative prototyping
+    is_public: true
+    name: Enzyme Engineers
+  - description: Scaffold Squad for Synthetic Biology Design Studio
+    is_public: true
+    join_level: parent_context_request
+    leader: main_user
+    name: Scaffold Squad
+    users:
+    - priya@ualberta.ca
+    - noah@ualberta.ca
+    - isabella@ualberta.ca
+    - main_user
+  - description: Student group focused on toggle circuit design
+    is_public: true
+    join_level: parent_context_request
+    leader: main_user
+    name: Toggle Team
+    users:
+    - damian@ualberta.ca
+    - priya@ualberta.ca
+    - emily@ualberta.ca
+    - main_user
+  - description: Practical design and prototyping team for plant synthetic biology
+      projects
+    is_public: true
+    join_level: parent_context_request
+    leader: main_user
+    name: Cultivar Collective
+    users:
+    - noah@ualberta.ca
+    - emily@ualberta.ca
+    - omar@ualberta.ca
+    - main_user
+  - description: A synthetic biology design team focused on protein tagging and visualization
+    is_public: true
+    name: Protein Palette
+    users:
+    - damian@ualberta.ca
+    - priya@ualberta.ca
+    - emily@ualberta.ca
+    - main_user
+  - announcements:
+    - allow_rating: true
+      message: Hi team I am missing a gel box for the lab if anyone has an extra please
+        send me a note
+      title: Spare gel box anyone
+      user: main_user
+    description: Collaborative design group focused on genome engineering and safety
+    discussions:
+    - discussion_type: threaded
+      message: I propose we move our weekly meeting to Friday afternoon due to a lab
+        booking conflict
+      title: Proposed meeting time change
+      user: main_user
+    is_public: true
+    name: DNA Designers
+    pages:
+    - body: 'Has anyone started drafting the design brief for the project
+
+        We should list core features constraints and deliverables'
+      title: Project design brief
+      updates:
+      - body: We should emphasize biosafety record keeping and reproducibility in
+          the brief
+        revised_at: 2026-03-15 14 30 00
+        title: Project design brief
+    - body: 'I created a checklist for sample tracking and labeling
+
+        Please review and suggest edits'
+      title: Sample tracking checklist
+    users:
+    - main_user
+    - damian@ualberta.ca
+    - priya@ualberta.ca
+  - announcements:
+    - allow_rating: true
+      message: Could we schedule a workshop on genetic circuit design this Friday
+      title: Workshop on circuit design
+      user: main_user
+    description: Collaborative lab and design studio for synthetic biology
+    discussions:
+    - discussion_type: threaded
+      message: Does anyone have recommendations for software to model gene networks
+      title: Modeling tools and tips
+      user: main_user
+    is_public: true
+    name: Synthetic Systems
+    pages:
+    - body: Please add core design principles troubleshooting notes and key literature
+        for chassis selection
+      title: Design principles and chassis selection
+      updates:
+      - body: Added recent paper on minimal genome chassis and notes on scalability
+        revised_at: 2026-03-05 090000
+        title: Added chassis literature
+    - body: Propose potential project ideas aimed at biosensing environmental pollutants
+        and annotate feasibility
+      title: Project idea board
+    users:
+    - damian@ualberta.ca
+    - priya@ualberta.ca
+    - emily@ualberta.ca
+  - description: Collaborative team for synthetic biology design projects
+    is_public: true
+    name: Metabolic Makers
+    pages:
+    - body: Collaborate on metabolic engineering designs, share pathway diagrams,
+        computational models, and experimental protocols. Post updates on design cycles,
+        troubleshoot issues, and coordinate lab resources.
+      title: Metabolic Pathway Workshop
+    users:
+    - damian@ualberta.ca
+    - priya@ualberta.ca
+    - emily@ualberta.ca
+    - noah@ualberta.ca
+    - main_user
+  - description: Synthetic lab collaboration for building biological circuits
+    is_public: true
+    name: BioCircuit Studio
+    pages:
+    - body: Welcome to the BioCircuit Studio group workspace. Use this page to organize
+        design reviews meeting notes and presentation materials for the semester
+      title: Studio project hub
+    users:
+    - damian@ualberta.ca
+    - priya@ualberta.ca
+    - emily@ualberta.ca
+    - group_lead
+    - main_user
+  - description: Design team for Synthetic Biology Design Studio focusing on genetic
+      chassis engineering
+    is_public: true
+    name: Chassis Lab
+    pages:
+    - body: 'Central project page for Chassis Lab
+
+        Team focus - define chassis specifications and acceptance criteria - coordinate
+        wet lab protocols and computational models - prepare final design report and
+        presentation
+
+        Weekly meetings on Fridays to sync on experiments and modeling '
+      title: Project hub
+    users:
+    - damian@ualberta.ca
+    - priya@ualberta.ca
+    - emily@ualberta.ca
+    - main_user
+  - description: Project team for Synthetic Biology Design Studio
+    is_public: true
+    name: Bioware Builders
+    pages:
+    - body: 'Welcome to the Bioware Builders project page
+
+        This is the central place for coordinating our synthetic biology design work
+        for the term Find meeting notes task assignments and milestone updates here
+        Contribute your design sketches and lab plans before the review'
+      title: Team project hub
+    users:
+    - damian@ualberta.ca
+    - priya@ualberta.ca
+    - emily@ualberta.ca
+    - main_user
+  - description: Design studio team focused on engineering metabolic pathways for
+      capstone projects
+    is_public: true
+    name: Pathway Pioneers
+    users:
+    - damian@ualberta.ca
+    - grace@ualberta.ca
+    - chloe@ualberta.ca
+    - main_user
+  - description: Project group for Synthetic Biology Design Studio
+    is_public: true
+    name: Module Makers
+    users:
+    - damian@ualberta.ca
+    - priya@ualberta.ca
+    - isabella@ualberta.ca
+    - chloe@ualberta.ca
+    - main_user
+  - description: Project team for CRISPR module in Synthetic Biology Design Studio
+    is_public: true
+    name: CRISPR Crew
+    users:
+    - damian@ualberta.ca
+    - priya@ualberta.ca
+    - isabella@ualberta.ca
+  - description: Team for Synthetic Biology Design Studio final project
+    is_public: true
+    name: BioDesign Collective
+    users:
+    - priya@ualberta.ca
+    - noah@ualberta.ca
+    - main_user
+  - announcements:
+    - allow_rating: true
+      message: Hello team We will meet in the bioengineering studio on Friday afternoon
+        to finalize our project pitch Please bring diagrams and a one paragraph summary
+      title: Final Pitch Prep
+      user: main_user
+    description: Team for Synthetic Biology Design Studio course
+    is_public: true
+    name: Gene Architects
+    users:
+    - damian@ualberta.ca
+    - priya@ualberta.ca
+    - emily@ualberta.ca
+    - noah@ualberta.ca
+    - main_user
+  - announcements:
+    - allow_rating: true
+      message: Quick reminder team We will meet in the makerspace this Thursday at
+        5pm to prototype sensor circuits Bring laptops and lab notebooks and any parts
+        you want to test
+      title: Makerspace Prototype Session
+      user: main_user
+    description: Design and build genetic circuitry modules for the final project
+    is_public: true
+    name: Circuit Foundry
+    users:
+    - main_user
+    - emily@ualberta.ca
+    - noah@ualberta.ca
+  - description: Collaborative lab design group for Synthetic Biology Design Studio
+    is_public: true
+    name: SynBio Nexus
+    users:
+    - main_user
+    - priya@ualberta.ca
+    - ethan@ualberta.ca
+    - chloe@ualberta.ca
+  instructor:
+    email: s.khan@ualberta.ca
+    name: Dr Sylvia Khan
+    password: S3cureBio#2025
+  main_user:
+    email: elyse.wong@uottawa.ca
+    name: Elyse Wong
+    password: SyBioD3sign21!
+  modules:
+  - content:
+    - completion_requirements: must_mark_done
+      title: Synthetic Biology Design Studio Project Gallery
+    - title: Team Pitch and Stakeholder Presentation
+    name: Synthetic Biology Design Studio Module 1 Foundations
+    workflow_state: active
+  - content:
+    - title: Genetic Parts CAD and Documentation
+    - title: Wet Lab Protocol Draft and Validation Plan
+    name: Synthetic Biology Design Studio Module 2 Implementation
+    workflow_state: active
+  - content:
+    - completion_requirements: must_mark_done
+      title: Synthetic Biology Design Studio Project Gallery
+    - title: Risk Assessment and Regulatory Compliance Report
+    name: Synthetic Biology Design Studio Module 3 Evaluation
+    workflow_state: active
+  name: Synthetic Biology Design Studio 301
+  outcomes:
+  - Competency in genetic circuit design and functional prototyping
+  pages:
+  - body: 'Welcome to the Synthetic Biology Design Studio Project Gallery. This page
+      showcases curated student projects that explore engineered biological systems,
+      from genetic circuit design to biosensor prototypes. Each entry includes a concise
+      project summary, design rationale, experimental methods, safety and ethical
+      considerations, reproducibility notes, and links to protocols and data when
+      available. The gallery highlights open documentation practices and peer feedback
+      to support iterative design and rigorous evaluation. Users can filter projects
+      by theme, organism, or technique and view team credits, learning reflections,
+      and faculty annotations. The page is intended as a learning archive and a public
+      record that promotes responsible innovation and community collaboration
+
+      '
+    title: Synthetic Biology Design Studio Project Gallery
+    user: instructor
+  quizzes:
+  - description: A review to assess readiness for the final synthetic biology project
+    due_at: '2026-12-01 23:59:00'
+    published_at: '2025-11-15 09:00:00'
+    questions:
+    - answers:
+      - text: 'False'
+        weight: 0
+      - text: 'True'
+        weight: 100
+      name: Question 1
+      points_possible: 1
+      question_text: <p>Genetic circuits can perform simple logic operations in cells.</p>
+      question_type: true_false_question
+    - answers:
+      - text: 'False'
+        weight: 0
+      - text: 'True'
+        weight: 100
+      name: Question 2
+      points_possible: 1
+      question_text: <p>Plasmids are mobile DNA elements commonly used in synthetic
+        biology.</p>
+      question_type: true_false_question
+    - answers:
+      - id: 90101
+        text: promoter
+        weight: 100
+      name: Question 3
+      points_possible: 1
+      question_text: <p>What DNA sequence initiates transcription of a gene in engineered
+        constructs</p>
+      question_type: short_answer_question
+    title: Final Project Design Review
+    workflow_state: available
+  - description: A quiz on containment strategies and hazard evaluation for engineered
+      organisms
+    due_at: '2026-11-01 17:00:00'
+    published_at: '2025-09-01 09:00:00'
+    questions:
+    - answers:
+      - text: BSL1
+        weight: 100
+      name: Question 1
+      points_possible: 1
+      question_text: <p>Which biosafety level is generally appropriate for work with
+        nonpathogenic strains such as E coli K12?</p>
+      question_type: short_answer_question
+    - answers:
+      - text: assessment
+        weight: 100
+      name: Question 2
+      points_possible: 1
+      question_text: <p>The structured process used to evaluate both likelihood and
+        consequence of hazards is called risk __________.</p>
+      question_type: short_answer_question
+    - answers:
+      - text: biocontainment
+        weight: 100
+      name: Question 3
+      points_possible: 1
+      question_text: <p>Design strategies like genetic kill switches that limit survival
+        outside controlled settings are part of genetic __________.</p>
+      question_type: short_answer_question
+    title: Biocontainment and Risk Assessment
+    workflow_state: available
+  - description: A quiz on prototyping methods functional testing and analysis for
+      synthetic biology projects
+    due_at: '2026-12-01 23:59:00'
+    published_at: '2025-09-10 08:00:00'
+    questions:
+    - answers:
+      - text: BioBrick
+        weight: 100
+      name: Question 1
+      points_possible: 1
+      question_text: <p>The standardized DNA part used for assembling genetic circuits
+        is called a __________.</p>
+      question_type: short_answer_question
+    - answers:
+      - text: Iterative
+        weight: 100
+      name: Question 2
+      points_possible: 1
+      question_text: <p>The design approach that emphasizes repeated cycles of build
+        test and refine is described as __________ development.</p>
+      question_type: short_answer_question
+    - answers:
+      - text: Negative
+        weight: 100
+      name: Question 3
+      points_possible: 1
+      question_text: <p>A control sample expected to show no signal used to detect
+        contamination or background is the __________ control.</p>
+      question_type: short_answer_question
+    - answers:
+      - text: Replication
+        weight: 100
+      name: Question 4
+      points_possible: 1
+      question_text: <p>Repeating experiments to assess variability and ensure reliability
+        of results is called __________.</p>
+      question_type: short_answer_question
+    - answers:
+      - text: GFP
+        weight: 100
+      name: Question 5
+      points_possible: 1
+      question_text: <p>A fluorescent reporter commonly used to monitor gene expression
+        in cells is __________.</p>
+      question_type: short_answer_question
+    title: Prototyping and Testing Bio Designs
+    workflow_state: available
+  - allowed_attempts: 3
+    description: A quiz to assess knowledge of microbial chassis selection and optimization
+    due_at: '2026-11-15 23:59:00'
+    published_at: '2025-10-05 09:00:00'
+    questions:
+    - name: Question 1
+      points_possible: 3
+      question_text: <p>Describe one advantage of using Escherichia coli as a chassis
+        organism in synthetic biology workflows</p>
+      question_type: short_answer_question
+    - answers:
+      - text: 'True'
+        weight: 100
+      - text: 'False'
+        weight: 0
+      name: Question 2
+      points_possible: 2
+      question_text: <p>Saccharomyces cerevisiae is a eukaryotic chassis that is well
+        suited for high yield secreted protein production</p>
+      question_type: true_false_question
+    - answers:
+      - id: 301
+        text: Genetic stability across generations
+        weight: 100
+      - id: 302
+        text: Maximum growth rate in rich media
+        weight: 0
+      - id: 303
+        text: Ability to form biofilms on surfaces
+        weight: 0
+      - id: 304
+        text: Natural resistance to multiple antibiotics
+        weight: 0
+      name: Question 3
+      points_possible: 4
+      question_text: Which of the following is most important when selecting a chassis
+        for environmental release applications
+      question_type: multiple_choice_question
+    - answers:
+      - id: 401
+        text: Metabolic pathway modularity
+        weight: 0
+      - id: 402
+        text: Genome minimization to reduce unintended interactions
+        weight: 100
+      - id: 403
+        text: Visible colony morphology
+        weight: 0
+      - id: 404
+        text: Natural pigment production
+        weight: 0
+      name: Question 4
+      points_possible: 4
+      question_text: Which chassis modification strategy directly reduces host interference
+        with engineered circuits
+      question_type: multiple_choice_question
+    rubric:
+      description: A rubric to evaluate student ability to justify chassis choice
+        and propose optimization strategies
+      free_form_criterion_comments: false
+      points_possible: 13
+      public: true
+      title: Microbial Chassis Rubric
+    title: Microbial Chassis Selection and Optimization
+    workflow_state: available
+  - allowed_attempts: 5
+    description: A quiz covering basic data analysis methods for synthetic biology
+      experiments
+    due_at: 2027-05-10 170000
+    one_question_at_a_time: true
+    published_at: 2026-08-01 090000
+    questions:
+    - name: Question 1
+      points_possible: 30
+      question_text: <p>Describe how you would preprocess raw sequencing read counts
+        before statistical analysis</p>
+      question_type: short_answer_question
+    - answers:
+      - text: 'False'
+        weight: 0
+      - text: 'True'
+        weight: 100
+      name: Question 2
+      points_possible: 10
+      question_text: <p>Is normalization necessary when comparing gene expression
+        across samples?</p>
+      question_type: true_false_question
+    - answers:
+      - id: 101
+        text: Reduce dimensionality and capture major sources of variance
+        weight: 100
+      - id: 201
+        text: Remove batch effects by random sampling
+        weight: 0
+      - id: 301
+        text: Increase the number of features for downstream models
+        weight: 0
+      - id: 401
+        text: Directly annotate genes with functional terms
+        weight: 0
+      name: Question 3
+      points_possible: 10
+      question_text: What is the main goal of principal component analysis in omics
+        data
+      question_type: multiple_choice_question
+    rubric:
+      description: Rubric for grading short answer explanations and interpretation
+        of results
+      free_form_criterion_comments: false
+      points_possible: 20
+      public: true
+      title: Data Analysis for Synthetic Biology Rubric
+    title: Data Analysis for Synthetic Biology
+    workflow_state: available
+  - allowed_attempts: 3
+    description: A short diagnostic quiz on metabolic pathway design concepts for
+      Synthetic Biology Design Studio
+    due_at: '2026-11-20 17:00:00'
+    one_question_at_a_time: true
+    published_at: '2025-09-01 09:00:00'
+    questions:
+    - name: Question 1
+      points_possible: 10
+      question_text: <p>Describe how feedback inhibition functions in metabolic pathways
+        and give one example that would be relevant when engineering a pathway.</p>
+      question_type: short_answer_question
+    - answers:
+      - id: 110
+        text: false
+        weight: 100
+      - id: 210
+        text: true
+        weight: 0
+      name: Question 2
+      points_possible: 5
+      question_text: <p>Overexpressing a single pathway enzyme always leads to higher
+        final product yield.</p>
+      question_type: true_false_question
+    - answers:
+      - id: 120
+        text: ATP
+        weight: 0
+      - id: 220
+        text: NADPH
+        weight: 100
+      - id: 320
+        text: FAD
+        weight: 0
+      - id: 420
+        text: Coenzyme A
+        weight: 0
+      name: Question 3
+      points_possible: 10
+      question_text: <p>Which cofactor is most commonly used for reductive biosynthetic
+        reactions in engineered metabolic pathways?</p>
+      question_type: multiple_choice_question
+    - answers:
+      - id: 130
+        text: Maximizing product flux while maintaining host viability
+        weight: 100
+      - id: 230
+        text: Eliminating all native metabolic activity
+        weight: 0
+      - id: 330
+        text: Using random integration for all pathway genes
+        weight: 0
+      - id: 430
+        text: Increasing culture temperature to speed metabolism
+        weight: 0
+      name: Question 4
+      points_possible: 10
+      question_text: <p>What is a primary objective when optimizing a heterologous
+        metabolic pathway for production?</p>
+      question_type: multiple_choice_question
+    - name: Question 5
+      points_possible: 10
+      question_text: <p>Outline one practical strategy to reduce metabolic burden
+        from a heterologous pathway in a bacterial host.</p>
+      question_type: short_answer_question
+    rubric:
+      description: A rubric for grading quiz responses on basic metabolic pathway
+        engineering topics
+      free_form_criterion_comments: false
+      points_possible: 45
+      public: true
+      title: Metabolic Pathway Engineering Rubric
+    title: Metabolic Pathway Engineering Basics
+    workflow_state: available
+  - allowed_attempts: 3
+    description: A quiz assessing knowledge of common gene editing tools and ethical
+      considerations
+    due_at: '2026-11-15 23:59:00'
+    one_question_at_a_time: true
+    published_at: '2025-09-01 09:00:00'
+    questions:
+    - answers:
+      - id: 100
+        text: CRISPR Cas9
+        weight: 100
+      - id: 200
+        text: Zinc finger nucleases
+        weight: 0
+      - id: 300
+        text: TALENs
+        weight: 0
+      - id: 400
+        text: Meganucleases
+        weight: 0
+      name: Question 1
+      points_possible: 10
+      question_text: <p>Which gene editing system is known for using a guide RNA to
+        target DNA?</p>
+      question_type: multiple_choice_question
+    - answers:
+      - id: 100
+        text: 'True'
+        weight: 100
+      - id: 200
+        text: 'False'
+        weight: 0
+      name: Question 2
+      points_possible: 5
+      question_text: <p>Base editors enable single nucleotide changes without generating
+        double strand breaks.</p>
+      question_type: true_false_question
+    - answers:
+      - id: 100
+        text: Jennifer Doudna
+        weight: 100
+      - id: 200
+        text: Kary Mullis
+        weight: 0
+      - id: 300
+        text: James Watson
+        weight: 0
+      - id: 400
+        text: Rosalind Franklin
+        weight: 0
+      name: Question 3
+      points_possible: 10
+      question_text: <p>Which researcher is most prominently associated with CRISPR
+        Cas9 development?</p>
+      question_type: multiple_choice_question
+    - name: Question 4
+      points_possible: 15
+      question_text: <p>Describe ethical issues and biosafety concerns that arise
+        from germline gene editing.</p>
+      question_type: short_answer_question
+    rubric:
+      description: A rubric for grading understanding of gene editing methods and
+        societal impacts
+      free_form_criterion_comments: false
+      points_possible: 50
+      public: true
+      title: Gene Editing Rubric
+    title: Gene Editing Methods and Applications
+    workflow_state: available
+  - allowed_attempts: 2
+    description: A brief survey for students to share their lab safety experience
+      attitudes and ethical concerns relevant to synthetic biology design
+    due_at: 2025-09-15 170000
+    one_question_at_a_time: true
+    published_at: 2025-08-20 090000
+    questions:
+    - name: Question 1
+      points_possible: 5
+      question_text: <p>What prior laboratory experience do you have that is relevant
+        to synthetic biology</p>
+      question_type: short_answer_question
+    - answers:
+      - id: 110
+        text: None formal
+        weight: 0
+      - id: 210
+        text: Undergraduate lab course
+        weight: 0
+      - id: 310
+        text: Research assistant experience
+        weight: 0
+      - id: 410
+        text: Industrial or clinical lab work
+        weight: 0
+      - id: 510
+        text: Community biohacker experience
+        weight: 0
+      name: Question 2
+      points_possible: 5
+      question_text: <p>Which safety or ethics topic are you most interested in learning
+        about</p>
+      question_type: multiple_choice_question
+    - name: Question 3
+      points_possible: 5
+      question_text: <p>Describe one ethical concern you think is important when designing
+        synthetic organisms and why</p>
+      question_type: essay_question
+    - answers:
+      - id: 111
+        text: Hands on bench training
+        weight: 0
+      - id: 211
+        text: Interactive online modules
+        weight: 0
+      - id: 311
+        text: Small group workshops
+        weight: 0
+      - id: 411
+        text: Assigned readings and protocols
+        weight: 0
+      name: Question 4
+      points_possible: 5
+      question_text: <p>How do you prefer to receive lab safety training</p>
+      question_type: multiple_choice_question
+    quiz_type: survey
+    title: Lab Safety and Ethics for SynBio
+    workflow_state: available
+  - allowed_attempts: 4
+    description: A timed quiz on computational modeling approaches in synthetic biology
+      design
+    due_at: '2026-12-15 17:00:00'
+    one_question_at_a_time: true
+    published_at: '2025-09-01 09:30:00'
+    questions:
+    - answers:
+      - id: 100
+        text: Deterministic model
+        weight: 100
+      - id: 200
+        text: Stochastic model
+        weight: 0
+      - id: 300
+        text: Agent based model
+        weight: 0
+      - id: 400
+        text: Logical model
+        weight: 0
+      id: 28
+      name: Question 1
+      points_possible: 10
+      question_text: <p>Which model type assumes continuous concentrations and deterministic
+        reaction rates when simulating genetic circuits?</p>
+      question_type: multiple_choice_question
+    rubric:
+      description: Criteria for assessing students ability to build and interpret
+        models and run simulations
+      free_form_criterion_comments: false
+      points_possible: 50
+      public: true
+      title: Modeling and Simulation Rubric
+    submissions:
+    - attempts:
+      - answers:
+        - answer_id: 100
+          correct: true
+          points: 10.0
+          question_id: 28
+          text: '100'
+        feedback:
+          comment: Good choice explain why deterministic models apply in this context
+          grader: instructor
+        workflow_state: complete
+      user: main_user
+    title: Modeling and Simulation in Bio Design
+    workflow_state: available
+  - allowed_attempts: 3
+    description: A quiz evaluating practical knowledge of genetic circuit components
+      and logic design
+    due_at: '2026-11-20 23:59:00'
+    one_question_at_a_time: true
+    published_at: '2025-10-10 09:00:00'
+    questions:
+    - answers:
+      - id: 201
+        text: Promoter
+        weight: 100
+      - id: 202
+        text: Ribosome binding site
+        weight: 0
+      - id: 203
+        text: Terminator
+        weight: 0
+      - id: 204
+        text: Operator
+        weight: 0
+      id: 51
+      name: Question 1
+      points_possible: 15
+      question_text: <p>In a typical bacterial genetic circuit which element primarily
+        determines transcription start and overall promoter strength</p>
+      question_type: multiple_choice_question
+    rubric:
+      description: A rubric for assessing design reasoning modeling and implementation
+        choices
+      free_form_criterion_comments: false
+      points_possible: 75
+      public: true
+      title: Design Circuit Rubric
+    submissions:
+    - attempts:
+      - answers:
+        - answer_id: 500
+          attempt: 1
+          correct: false
+          points: 0.0
+          question_id: 51
+          text: '500'
+        workflow_state: complete
+      - answers:
+        - answer_id: 600
+          attempt: 2
+          correct: true
+          points: 15.0
+          question_id: 51
+          text: Promoter
+        workflow_state: complete
+      user: main_user
+    title: Circuit Design Workshop
+    workflow_state: available
+  - allowed_attempts: 5
+    description: A short quiz to assess knowledge of common genetic parts and assembly
+      toolkits
+    due_at: '2026-12-10 23:59:00'
+    one_question_at_a_time: true
+    published_at: '2025-09-15 09:00:00'
+    questions:
+    - answers:
+      - id: 110
+        text: Promoter
+        weight: 100
+      - id: 220
+        text: Terminator
+        weight: 0
+      - id: 330
+        text: Origin of replication
+        weight: 0
+      - id: 440
+        text: Selectable marker
+        weight: 0
+      id: 32
+      name: Question 1
+      points_possible: 10
+      question_text: <p>Which genetic element directly initiates transcription in
+        prokaryotes?</p>
+      question_type: multiple_choice_question
+    rubric:
+      description: Criteria for evaluating student understanding of genetic parts
+        selection and rationale
+      free_form_criterion_comments: false
+      points_possible: 40
+      public: true
+      title: Genetic Parts Rubric
+    submissions:
+    - attempts:
+      - answers:
+        - answer_id: 330
+          attempt: 1
+          correct: false
+          points: 0.0
+          question_id: 29
+          text: '330'
+        workflow_state: complete
+      - answers:
+        - answer_id: 110
+          attempt: 2
+          correct: true
+          points: 10.0
+          question_id: 27
+          text: '110'
+        workflow_state: complete
+      user: main_user
+    title: Genetic Parts and Toolkits
+    workflow_state: available
+  - allowed_attempts: 5
+    description: A quiz assessing understanding of core design principles in synthetic
+      biology and genetic circuit engineering
+    due_at: '2026-12-15 23:59:00'
+    one_question_at_a_time: false
+    published_at: '2025-09-01 09:00:00'
+    questions:
+    - answers:
+      - id: 111
+        text: Modularity
+        weight: 100
+      - id: 211
+        text: Redundancy
+        weight: 0
+      - id: 311
+        text: Homeostasis
+        weight: 0
+      - id: 411
+        text: Latency
+        weight: 0
+      id: 55
+      name: Question 1
+      points_possible: 10
+      question_text: <p>Which design principle emphasizes building systems from discrete
+        interchangeable parts?</p>
+      question_type: multiple_choice_question
+    - answers:
+      - id: 112
+        text: Orthogonality
+        weight: 100
+      - id: 212
+        text: Parsimony
+        weight: 0
+      - id: 312
+        text: Amplification
+        weight: 0
+      - id: 412
+        text: Diffusion
+        weight: 0
+      id: 56
+      name: Question 2
+      points_possible: 10
+      question_text: <p>Which principle refers to components operating without interfering
+        with native cellular processes?</p>
+      question_type: multiple_choice_question
+    rubric:
+      description: Rubric for evaluating application of design principles and rationale
+        in engineered biological systems
+      free_form_criterion_comments: false
+      points_possible: 50
+      public: true
+      title: Design Principles Rubric
+    submissions:
+    - attempts:
+      - answers:
+        - answer_id: 311
+          correct: false
+          points: 0.0
+          question_id: 55
+          text: '311'
+        partial:
+          attempt: 1
+          last_question_id: 55
+          question_55: '311'
+          question_55_marked: false
+        workflow_state: submitted
+      user: main_user
+    title: Design Principles for Synthetic Biology
+    workflow_state: available
+  students:
+  - email: damian@ualberta.ca
+    name: Damian Learner
+    password: Yx9Pm4QwR2z
+  - email: priya@ualberta.ca
+    name: Priya Learner
+    password: 7bV2K8HnZ5c
+  - email: emily@ualberta.ca
+    name: Emily Learner
+    password: pL0sQe4T9rU
+  - email: noah@ualberta.ca
+    name: Noah Learner
+    password: 4Gk8N2sVbXm
+  - email: isabella@ualberta.ca
+    name: Isabella Learner
+    password: rT6vA1WzP0k
+  - email: marcus@ualberta.ca
+    name: Marcus Learner
+    password: H8n3bQ5yZ2w
+  - email: grace@ualberta.ca
+    name: Grace Learner
+    password: s9F2mLc7V1a
+  - email: ethan@ualberta.ca
+    name: Ethan Learner
+    password: K3p5Z8rN0jY
+  - email: chloe@ualberta.ca
+    name: Chloe Learner
+    password: 2wQ6mX9bR7t
+  - email: omar@ualberta.ca
+    name: Omar Learner
+    password: aV5nT1kZ8sP
+  unused_announcements:
+  - message: Hey everyone, we should schedule our first design studio session to assign
+      roles and brainstorm project ideas for the Synthetic Biology Design Studio course.
+      Which days this week work for you and what 2 hour blocks suit you best
+    title: Kickoff meeting for design teams
+  unused_discussions:
+  - message: Share a prototype or design you built in the studio this semester and
+      explain what worked well and what you would change next time
+    title: Design Studio Favorite Prototype
+  - message: Describe a biosafety practice you adopted in the lab and how it impacted
+      your workflow or thinking about risk mitigation
+    title: Biosafety Observations
+  - message: Which experimental result surprised your team and how did it change your
+      design or hypotheses going forward
+    title: Unexpected Results
+  - message: Discuss an ethical tradeoff you faced while designing a synthetic biology
+      project and how you approached resolving it
+    title: Ethical Tradeoffs
+  - message: What collaboration strategies helped your team stay organized during
+      the design build test cycle and why were they effective
+    title: Collaboration Strategies
+  - message: Propose a way to communicate your project to a non technical audience
+      and explain what elements you would include to make it accessible
+    title: Outreach and Communication
+  unused_group_names:
+  - SynBio Pioneers
+  - The CRISPR Collective
+  - BioBrick Builders
+  - Genomic Grove
+  - Circuit Foundry
+  unused_pages:
+  - message: Hi team I set up this page to gather design concepts and lab workflows
+      plus notes on chassis organisms safety and resource estimates for our semester
+      project
+    title: Project Ideas and Logistics

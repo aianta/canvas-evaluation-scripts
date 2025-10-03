@@ -12,11 +12,18 @@ class Prompter:
     You are an agent responsible for producing realistic content for university courses in a yaml format. This includes social content produced by the interactions of students and instructors on a digital learning management system. Do not use the ':' character in your generated values, or remember to enclose string values in quotes if they contain ':' characters.
     """
 
+    # Define some class variables to hold users and instructors which we have already created during a generation session. 
+    # Use these lists later to modify generation prompts to prevent duplicates.
+    MAIN_USERS = []
+
+    INSTRUCTORS = []
+
     def __init__(self, seed_data):
         self.seed_course = seed_data['courses'][0]
         self.assignments = []
         self.pages = []
         self.entity_names = {}
+        self.set_valid_emails([s['email'] for s in seed_data['students']])
 
     def course_selection_prompt(self, existing_courses):
         return (Prompter.DEFAULT_PROMPT_INSTRUCTIONS, f"Generate the name of a university level course in a random academic field. (Eg:{existing_courses}). Try to generate something thematically distinct from all the given examples. Your output should be the name of the course and nothing else.")
@@ -141,7 +148,7 @@ Generate new realistic values based on the following snippet in the context of a
                 prompts.append(prompt)
 
 
-            # if (key == 'assignments' or key == 'quizzes' or key == 'announcements' or key == 'discussions') and (isinstance(self.seed_course[key], list)):
+           
                 for index, element in enumerate(self.seed_course[key]):
 
                     sample = element
@@ -169,6 +176,15 @@ Generate new realistic values based on the following snippet in the context of a
                 Prompts should contain system/instruction prompt, the input prompt, and the sample used in the template.
                 '''
                 prompt = (Prompter.DEFAULT_PROMPT_INSTRUCTIONS, self.simple_prompt_template(yaml_string, sample, self.course), sample)
+
+                if key == "main_user" and len(Prompter.MAIN_USERS) > 0:
+                    # Prevent duplicate main_users
+                    prompt = (prompt[0], prompt[1] + f"\n Do not use the following names and email addresses: {[(x['name'], x['email']) for x in Prompter.MAIN_USERS]}", prompt[2])
+
+                if key == "instructor" and len(Prompter.INSTRUCTORS) > 0:
+                    # Prevent duplicate instructors
+                    prompt = (prompt[0], prompt[1] + f"\n Do not use the following names and email addresses: {[(x['name'], x['email']) for x in Prompter.INSTRUCTORS]}", prompt[2])
+
                 prompts.append(prompt)
         
         # Reorder the prompts so that the modules prompt is computed last, as it depends on generated pages and assignments. 
@@ -224,6 +240,22 @@ class Validator:
                 # Force correct values in generated object from reference object for these fields.              
                 if reference_key in ['workflow_state', 'allowed_attempts', 'one_question_at_a_time', 'public', 'group_category', 'anonymous_peer_reviews','automatic_peer_reviews', 'intra_group_peer_reviews', 'grading_type', 'allow_rating', 'discussion_type', 'completion_requirements', 'comments_enabled', ]:
                     sample[reference_key] = reference[reference_key]
+
+                # Catch duplicate main_users
+                if reference_key == 'main_user':
+                    existing_emails = [x['email'] for x in Prompter.MAIN_USERS]
+                    existing_names = [x['name'] for x in Prompter.MAIN_USERS]
+                    if sample[reference_key]['name'] in existing_names or sample[reference_key]['email'] in existing_emails:
+                        errors.append(f"The generated main_user {sample[reference_key]} already exists!")
+                        continue
+                
+                # Catch duplicate instructors
+                if reference_key == 'instructor':
+                    existing_emails = [x['email'] for x in Prompter.INSTRUCTORS]
+                    existing_names = [x['name'] for x in Prompter.INSTRUCTORS]
+                    if sample[reference_key]['name'] in existing_names or sample[reference_key]['email'] in existing_emails:
+                        errors.append(f"The generated instructor {sample[reference_key]} already exists!")
+                        continue
 
                 # Catch errors where the LLM changes the question type
                 if 'question_type' == reference_key and sample[reference_key] != reference[reference_key]:
@@ -356,14 +388,23 @@ def generate_section(llm, prompter, index, prompt, generated_course, retries):
         # If the generated artifacts pass validation
         if validation_result:
 
+            if 'main_user' in generated_yaml:
+                Prompter.MAIN_USERS.append(generated_yaml['main_user'])
+                print(f"MAIN_USERS: {Prompter.MAIN_USERS}")
+
+            if 'instructor' in generated_yaml:
+                Prompter.INSTRUCTORS.append(generated_yaml['instructor'])
+                print(f"INSTRUCTORS: {Prompter.INSTRUCTORS}")
+            
+            # NOTE: as of October 2, 2025, we use a fixed set of students for all courses. Ensuring we don't duplicate student accounts. 
             # After successfully generating the students section, capture the student emails to include them in future prompts where student emails are required.
             # This should increase the probability that only valid emails are used throughout the generated data.
-            if 'students' in generated_yaml:
-                student_emails = []
-                for s in generated_yaml['students']:
-                    student_emails.append(s['email'])
+            # if 'students' in generated_yaml:
+            #     student_emails = []
+            #     for s in generated_yaml['students']:
+            #         student_emails.append(s['email'])
             
-                prompter.set_valid_emails(student_emails)
+            #     prompter.set_valid_emails(student_emails)
 
 
             # updated our generated course dict with the new data.
@@ -471,6 +512,7 @@ seed_data = yaml.safe_load(args.seed_file)
 existing_courses = [seed_data["courses"][0]["name"]]
 
 output_structure = {
+    "students": seed_data["students"],
     "courses": []
 }
 
