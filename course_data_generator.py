@@ -305,11 +305,11 @@ class Validator:
                     errors.append(f"Failed to find {reference_key} in sample!\n{sample}")
                     continue
                 
-                if sample[reference_key] == 'main_user' and "@" in reference[reference_key]:
+                if 'question_' not in reference_key and sample[reference_key] == 'main_user' and "@" in reference[reference_key]:
                     errors.append(f"Generated output is using 'main_user' as a value for {reference_key} when the reference object was using a classmate.")
                     continue
 
-                if sample[reference_key] == 'instructor' and "@" in reference[reference_key]:
+                if 'question_' not in reference_key and sample[reference_key] == 'instructor' and "@" in reference[reference_key]:
                     errors.append(f"Generated output is using 'instructor' as a value for {reference_key} when the reference object was using a classmate.")
                     continue
 
