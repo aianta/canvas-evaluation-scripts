@@ -271,7 +271,8 @@ class Validator:
                     'discussion_type', 
                     'completion_requirements', 
                     'comments_enabled',
-                    'leader' ]:
+                    'leader',
+                    'quiz_type' ]:
                     sample[reference_key] = reference[reference_key]
 
                 # Catch duplicate main_users
