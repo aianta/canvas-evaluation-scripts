@@ -9,7 +9,12 @@ from core import *
 '''
 Example usage with WebVoyager results:
 
-python evaluation_script.py -t tasks.json -o results.json --wv-network-logs /home/aianta/shock_and_awe/WebVoyager --wv-interact-messages /home/aianta/shock_and_awe/WebVoyager/results/20250919_12_17_59
+To Evaluate WebVoyager results
+python evaluation_script.py -t tasks.json -o results.json --wv-network-logs /home/aianta/shock_and_awe/WebVoyager --wv-interact-messages /home/aianta/shock_and_awe/WebVoyager/results/20251014_17_54_50
+
+To Evaluate OdoBot results
+python evaluation_script.py -t tasks.json -o results.json --odobot-execution-events /home/aianta/shock_and_awe/odobot_results 
+
 '''
 
 
@@ -59,6 +64,12 @@ parser.add_argument("--wv-interact-messages",
                     help="Path to the directory containing web voyager result artifacts including folders that themselves contain interaction_messages.json files collected while executing tasks.",
                     type=lambda x: is_valid_dir(parser, x))
 
+parser.add_argument("--odobot-execution-events",
+                    dest="odobot_execution_events",
+                    help="Path to the folder containing Odobot execution event logs in .json format.",
+                    type=lambda x: is_valid_dir(parser, x)
+)
+
 args = parser.parse_args()
 
 # Initalize the Evaluator that perfoms the core evaluation logic
@@ -72,6 +83,15 @@ args.tasks_file.close()
 task_list = [Task(x) for x in task_list]
 
 evaluator.register_tasks(task_list)
+
+if args.odobot_execution_events:
+    print (f"Looking for Odobot execution event logs in: {args.odobot_execution_events}")
+    with os.scandir(args.odobot_execution_events) as _dir:
+        for entry in _dir:
+            if entry.name.endswith('.json'): #If it is a json file, try and parse it as a OdoBotExecutionEventLog
+                event_log = OdoBotExecutionEventLog.to_execution_event_log(entry.path)
+                if event_log is not None:
+                    evaluator.register_network_events(network_log.task_instance, network_log.network_events)
 
 
 if args.wv_network_logs:

@@ -1,12 +1,7 @@
 import json
 import pprint
 
-
 TASKS_PATH = "sample_generated_data/10-course-pack-oct-6-2025/tasks.json"
-
-'''
-Prepares output from data generation scripts into format appropriate for web voyager execution. 
-'''
 
 def read_tasks(path):
     with open(f'{path}', 'r') as f:
@@ -15,14 +10,12 @@ def read_tasks(path):
 
 tasks = read_tasks(TASKS_PATH)
 
-web_voyager_tasks = []
+odobotNL_tasks = []
 
-for index,task in enumerate(tasks):
+for index, task in enumerate(tasks):
     print(f"Task {index}")
 
-
-
-    for i_index, instance in enumerate(task["instances"]):
+    for i_index, instance in enumerate(task['instances']):
         print(f"Instance {i_index}")
 
         prefix = f"Use the username: {instance["instance_username"]} and password: {instance["instance_password"]} to login to Canvas.\n"
@@ -58,17 +51,16 @@ Answer: '[Text]'"""
 
         ques_value = f"{prefix}{instance["instance_text"]}{"" if suffix is None else suffix}"
 
-        web_voyager_task = {
-            "web": "http://localhost:8088",
-            "web_name": "Canvas LMS",
-            "description": f"Instance of task {task['id']}",
-            "id": f"{instance['id']}",
-            "ques": ques_value
+        odobotNL_task = {
+            "odoBotNL": {
+                "id": f"{instance['id']}",
+                "_evalId": f"{index + 1}|OdoBotNL|{instance['id']}",
+                "userLocation": "http://localhost:8088",
+                "task": ques_value
+            }
         }
 
-        web_voyager_tasks.append(web_voyager_task)
+        odobotNL_tasks.append(odobotNL_task)
 
-with open("webvoyager_tasks.jsonl", "w") as f:
-    for t in web_voyager_tasks:
-        f.write(f"{json.dumps(t)}\n")
-    
+with open("odoBotNL_tasks.json", "w") as f:
+    f.write(f"{json.dumps(odobotNL_tasks)}")

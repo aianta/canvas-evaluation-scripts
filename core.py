@@ -140,6 +140,35 @@ class WebVoyagerOutput:
 
 class NetworkEvent:
 
+    def from_odobot_event(raw_event):
+        # Expecting method@eventDetails>method
+        method = raw_event["eventDetails"]["method"]
+
+        # Expecting url@eventDetails>url
+        parse_result = urlparse(raw_event["eventDetails"]["url"])
+        path = parse_result.path
+
+        # Our ground truth api_calls combine paths and queries into a single 'api_path' field
+        if parse_result.query: # So if there is a query component append it to the path
+            path = path + '?' + parse_result.query
+
+        request_data = None
+        
+        if "requestBody" in raw_event['eventDetails'] and "requestBody" !== "null":
+            
+            request_data = json.loads(raw_event['eventDetails']["requestBody"])
+
+            result = NetworkEvent(method, path, request_data)
+
+            return result
+        else:
+
+            return NetworkEvent(method, path, {})
+
+            
+
+
+
     @staticmethod
     def to_network_event(raw_event):
 
@@ -410,6 +439,26 @@ class NetworkEvent:
 
         raise RuntimeError(f"Could not extract dynamic parameter value from: " + sample)
 
+class OdoBotExecutionEventLog:
+
+    @staticmethod
+    def to_execution_event_log(path):
+        for instance_id in Task.ALL_TASK_INSTANCES:
+            if instance_id in path:
+                return OdoBotExecutionEventLog(open(path, 'r'), instance_id)
+
+    def __init__(self, file, instance_id):
+        self.task_instance = instance_id
+        self.file = file
+        self.events = json.load(file)
+        self.file.close()
+
+        # Filter out everything except NET events. 
+        self.network_events = [x for x in self.events if x['eventDetails']['name'] === 'NETWORK_EVENT']
+
+        self.network_events = [NetworkEvent.from_odobot_event(x) for x in self.network_events]
+
+        print(f"Loaded {len(self.network_events)} network events from {self.file.name} for task {self.task_instance}")
 
 
 class WebVoyagerNetworkLog:
@@ -466,8 +515,11 @@ class Evaluator:
             print(f"Mismatching numbers of network logs ({len(self.network_events)}) to outputs ({len(self.outputs)})")
 
     def evaluate(self):
-        
-        self.validate()
+        # Only validate ourselves if at least one output is defined. 
+        # NOTE: When using the evaluator to evaluate OdoBot as of October 31, 2025. OdoBot does not support information-seeking tasks, and therefore will not register outputs.        
+        if len(self.outputs) > 0:
+            self.validate()
+
 
         number_correct = 0
         number_incorrect = 0
