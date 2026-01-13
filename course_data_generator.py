@@ -88,9 +88,9 @@ Generate new realistic values based on the following snippet in the context of a
     '''
     def simple_prompt_template(self, sample, data, course):
         # for debugging uncomment line below
-        # print(f"'@ualberta.ca' in sample: {'@ualberta.ca' in sample} | 'students' not in data: {'students' not in data} | 'instructor' not in data: {'instructor' not in data} | 'main_user' not in data: {'main_user' not in data}")
+        # print(f"'@instituterson.ca' in sample: {'@instituterson.ca' in sample} | 'students' not in data: {'students' not in data} | 'instructor' not in data: {'instructor' not in data} | 'main_user' not in data: {'main_user' not in data}")
         # If users are mentioned in the sample, include a stub for listing valid user emails. 
-        if '@ualberta.ca' in sample and 'students' not in data and 'instructor' not in data and 'main_user' not in data: # don't include this in the student section prompt as that's where the valid users are generated.
+        if '@instituterson.ca' in sample and 'students' not in data and 'instructor' not in data and 'main_user' not in data: # don't include this in the student section prompt as that's where the valid users are generated.
             return """
             Generate new realistic values based on the following snippet in the context of a '{course}' course. Only the following are valid user emails: $emails$.    
 
@@ -130,7 +130,6 @@ Generate new realistic values based on the following snippet in the context of a
         prompts = []
 
         for key in self.seed_course:
-            
             # Assignment, quizzes, announcements and discussions can have relatively complex objects. To minimize generation errors, generate these one object at a time rather than trying to generate the whole section at once.
             # if key in [] and isinstance(self.seed_course[key], list):
             if key in ['assignments', 'quizzes', 'announcements', 'discussions', 'groups', 'pages'] and isinstance(self.seed_course[key], list):
@@ -213,7 +212,7 @@ class Validator:
 
         return self.does_structure_match(reference_yaml, generated_yaml)
     
-    def does_structure_match(self, reference, sample, errors=None):
+    def does_structure_match(self, reference, sample, errors=None, list_key=None):
         if errors == None:
             errors = []
 
@@ -245,6 +244,10 @@ class Validator:
                 # If we're dealing with a 'user' field, the value needs to be one of the valid emails, 'main_user' or 'instructor'
                 if reference_key == 'user':
                     valid_values = self.prompter.get_valid_emails() + ['main_user', 'instructor']
+                    if reference_key not in sample:
+                        errors.append(f"User field expected in sample, but could not be found! sample fields: {sample.keys()}")
+                        continue
+
                     if sample[reference_key] not in valid_values:
                         errors.append(f"Invalid 'user' field value: '{sample[reference_key]}', needs to be one of {valid_values}.")
                         continue
@@ -322,14 +325,12 @@ class Validator:
                     continue
 
                 if isinstance(reference[reference_key], list):
-                    _ , _errors = self.does_structure_match(reference[reference_key], sample[reference_key], errors)
+                    _ , _errors = self.does_structure_match(reference[reference_key], sample[reference_key], errors, list_key=reference_key)
                     continue
             
             return len(errors) == 0, errors
         
         if isinstance(reference, list):
-            
-           
             
 
             print(f"reference is a list with {len(reference)} items. Sample is {type(sample)}." + (f"Sample has {len(sample)} items." if isinstance(sample,list) else ""))
@@ -347,6 +348,13 @@ class Validator:
             
             if len(reference) > len(sample):
                 errors.append(f"reference list contains {len(reference)} elements, but sample only has {len(sample)}.")
+
+            if list_key is not None and list_key == "users":
+                # Ensure users belonging to a group are from a valid list of possible users.
+                valid_group_member_options = self.prompter.get_valid_emails() + ["main_user"]
+                for element in sample:
+                    if element not in valid_group_member_options:
+                        errors.append(f"List of users contained invalid value '{element}', valid options are: {valid_group_member_options}.")
 
             if len(errors) == 0:
                 for index, item in enumerate(reference):
@@ -399,7 +407,7 @@ def is_valid_file(parser, arg):
     else:
         return open(arg, 'r')
 
-def generate_section(llm, prompter, index, prompt, generated_course, retries):
+def generate_section(llm, prompter, validator, index, prompt, generated_course, retries, errors=None, previous_output=None):
     try:
 
         if '$emails$' in prompt[1]:
@@ -416,6 +424,23 @@ def generate_section(llm, prompter, index, prompt, generated_course, retries):
         if 'modules' in prompt[2]:
             # Update the modules prompt
             prompt = (prompt[0], prompter.modules_prompt_template(), prompt[2])
+
+        # Add in errors to prompt[1] if any were reported.
+        if errors is not None:
+            patched_prompt_1 = f"{prompt[1]}\n"
+
+            if previous_output is not None:
+                patched_prompt_1 += f"In a previous attempt you've generated the following incorrect output:\n\n{previous_output}"
+                patched_prompt_1 += f"\n\nThe output above has the following errors:\n"
+                for e_index,error in enumerate(errors):
+                    patched_prompt_1 += f"[Error {e_index+1}] {error}\n"
+                patched_prompt_1 += f"\nTry again by fixing these errors."
+            else:
+                patched_prompt_1 += f"Avoid the following errors when generating output:\n"
+                for e_index,error in enumerate(errors):
+                    patched_prompt_1 += f"[Error {e_index+1}] {error}\n"
+
+            prompt = (prompt[0], patched_prompt_1) + prompt[2:-1]
 
         print(f"Prompt[{index}]: {prompt[1]}\n")
         generated_output = llm.execute_prompt(prompt)
@@ -480,8 +505,9 @@ def generate_section(llm, prompter, index, prompt, generated_course, retries):
                 print(f"Generated data failed to pass validation:\n")
                 for e_index,error in enumerate(errors):
                     print(f"[Error {e_index+1}] {error}")
+                    print(f"Adding errors to prompt for retry...")
                 print(f"Retrying...")
-                generate_section(llm, prompter, index, prompt, generated_course, retries + 1)
+                generate_section(llm, prompter, validator, index, prompt, generated_course, retries + 1, errors, validated_generated_yaml_string)
             else:
                 print(f"Generated data failed to pass validation:\n")
                 for e_index,error in enumerate(errors):
@@ -492,16 +518,63 @@ def generate_section(llm, prompter, index, prompt, generated_course, retries):
     except yaml.scanner.ScannerError:
         if retries < 5:
             print(f"Generated yaml failed to parse, retrying.")
-            generate_section(llm, prompter, index, prompt, generated_course, retries + 1)
+            generate_section(llm, prompter, validator, index, prompt, generated_course, retries + 1, ["Output failed to parse as yaml!"], generated_output)
         else:
             print(f"Generated yaml failed to parse, out of retries.")
     except yaml.parser.ParserError:
         if retries < 5:
             print(f"Generated yaml failed to parse, retrying.")
-            generate_section(llm, prompter, index, prompt, generated_course, retries + 1)
+            generate_section(llm, prompter, validator, index, prompt, generated_course, retries + 1, ["Output failed to parse as yaml!"], generated_output)
         else:
             print(f"Generated yaml failed to parse, out of retries.")
 
+
+def generate_course(llm, existing_courses, retries ):
+     # Initalize the prompter
+    prompter = Prompter(seed_data)
+
+    # Initalize the validator
+    validator = Validator(seed_data, prompter)
+
+     # Generate the name of the new course
+    new_course = llm.execute_prompt(prompter.course_selection_prompt(existing_courses))
+    print(f"Generating test data for {new_course}")
+    prompter.set_course(new_course)
+
+    # Initalize object to hold generated course content.
+    generated_course = {}
+
+    prompts = prompter.generate_prompts()
+
+    print(f"Need to generate {len(prompts)} elements.")
+    print(f"Element generation prompts:")
+
+    for index,prompt in enumerate(prompts):
+        print(f"{index} - {str(prompt[3:4:1])}\n")
+
+
+    start_time = time.time()
+
+    for index, prompt in enumerate(prompts):
+        generate_section(llm, prompter, validator, index, prompt, generated_course, 0)
+        
+    print(f"Generated course in {time.time() - start_time}s.")
+
+    print(f"Seed course root-level keys: {prompter.seed_course.keys()}")
+    print(f"Generated course root-level keys: {generated_course.keys()}")
+
+    # Validate that the new course has all the same root keys as the seed course
+    for key in prompter.seed_course:
+
+        if key not in generated_course and retries < 5:
+            print(f"Generated course is missing '{key}' field! Trying again...")
+            return generate_course(llm, existing_courses, retries + 1)
+        
+        if key not in generated_course and retries >= 5:
+            print(f"Generated course is missing '{key}' field. Out of retries!")
+            sys.exit(1)
+    
+    return generated_course
 
 # Initalize Arg Parser
 parser = argparse.ArgumentParser(description="Course data generation script. This script generates sample course and user content data in a format suitable for the data generation ruby scripts responsible for configuring a canvas environment. It requires one seed course worth of test data to start.")
@@ -562,35 +635,15 @@ output_structure = {
 }
 
 for i in range(args.num_courses):
-    # Initalize the prompter
-    prompter = Prompter(seed_data)
+   
 
-    # Initalize the validator
-    validator = Validator(seed_data, prompter)
+    generated_course = generate_course(llm, existing_courses, 0)
 
-    # Generate the name of the new course
-    new_course = llm.execute_prompt(prompter.course_selection_prompt(existing_courses))
-    print(f"Generating test data for {new_course}")
-    prompter.set_course(new_course)
-
-    # Initalize object to hold generated course content.
-    generated_course = {}
-
-    prompts = prompter.generate_prompts()
-
-    print(f"Need to generate {len(prompts)} elements.")
-
-    start_time = time.time()
-
-    for index, prompt in enumerate(prompts):
-        generate_section(llm, prompter, index, prompt, generated_course, 0)
-        
-    print(f"Generated course in {time.time() - start_time}s.")
-
-    existing_courses.append(new_course)
+    existing_courses.append(generated_course["name"])
 
     output_structure["courses"].append(generated_course)
-    
+
+
 
 def print_course_key(course, key):
     if key not in course:
