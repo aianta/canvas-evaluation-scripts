@@ -1,0 +1,1513 @@
+---
+students:
+- name: Terrance Studentson
+  email: terrance@instituterson.ca
+  password: Xs224D3drZaR
+- name: Phillip Studentson
+  email: phillip@instituterson.ca
+  password: 6bE1G83JrT1i
+- name: Sarah Studentson
+  email: sarah@instituterson.ca
+  password: 30OubNfH3Z3T
+- name: Steven Studentson
+  email: steven@instituterson.ca
+  password: 62YubNzH6Z8T
+- name: Abigail Studentson
+  email: abigail@instituterson.ca
+  password: 3qI256uBMmoh
+- name: Alex Studentson
+  email: alex@instituterson.ca
+  password: nzV0K4L5Bzyb
+- name: Jared Studentson
+  email: jared@instituterson.ca
+  password: ch8DgQh7WV7e
+- name: Monica Studentson
+  email: monica@instituterson.ca
+  password: ZKnc0HeqKGvA
+- name: Ryan Studentson
+  email: ryan@instituterson.ca
+  password: f6ptLPMtaF3A
+- name: Lisa Studentson
+  email: lisa@instituterson.ca
+  password: GnriV4qZJnjJ
+courses:
+- name: Psychology 101
+  code: "PSY101"
+  unused_group_names: 
+    - NeuroNauts
+    - The Insight Syndicate
+    - Mind Over Matter
+    - The Cortex Collective
+    - The Freudian Slip-Ups
+  unused_announcements:
+    - title: "First study group meeting?"
+      message: "Hi guys, so when would you be free to do our first group study meeting?"
+  unused_discussions:
+    - title: "Favorite Lab Experiment"
+      message: "Share your favorite lab experiment from this semester and explain why you enjoyed it."
+    - title: "Psychology in Everyday Life"
+      message: "Describe a way you have noticed psychology principles influencing your daily decisions or behavior."
+    - title: "Most Surprising Study"
+      message: "Which psychology study have you read so far this semester that surprised you the most, and why?"
+    - title: "Ethical Dilemmas in Research"
+      message: "Discuss an ethical dilemma you think researchers might face when conducting experiments with human participants."
+    - title: "Memory Tricks"
+      message: "What strategies or techniques have you personally used to improve memory, and how effective were they?"
+    - title: "Fictional Characters and Psychology"
+      message: "Pick a character from a book, TV show, or movie and analyze their behavior using psychological theories."
+  unused_pages:
+    - title: "Brainstorming for Group Project"
+      message: "Hey guys, I figured I'd create a page where we could all brainstorm ideas for the group project this semester."
+  instructor:
+    name: Tammy Teacherson
+    email: tammy@instituterson.ca
+    password: U4A3O659xgNs
+  main_user:
+    name: Sammy Studentson
+    email: sammy@instituterson.ca
+    password: op3TPfE3J5MK
+  modules:
+    - name: Module 1
+      workflow_state: active
+      content: 
+        - title: Psychology & Pseudeo Science
+          completion_requirements: "must_mark_done"
+        - title: Childhood Development Essay
+    - name: Module 2
+      workflow_state: active
+      content:
+        - title: Researchers in the field of Psychology
+        - title: The Role of Memory in Learning # this needs to be an assignment for which the logged in user has already been graded.
+    - name: Module 3
+      workflow_state: active
+      content: 
+        - title: Psychology & Pseudeo Science
+          completion_requirements: "must_mark_done"
+        - title: Cognitive Psychology Research Summary
+  outcomes:
+    - "Knowledge of Psychology"
+  announcements:
+    - title: Materials for Lab 8
+      message: Please remember to have procured all the PPE listed in the Lab 8 instructions before the day of the lab. Thank you!
+      user: instructor
+      allow_rating: true
+      replies: 
+        - user: main_user
+          text: Does this include the closed-toe shoes?
+          replies:
+            - user: instructor
+              text: Yes it does.
+    - title: Assignment Deadline Reminder
+      message: Just a reminder that the “Cognitive Biases in Daily Life” reflection paper is due this Sunday at 11:59 PM. Please make sure to submit your work on time through the course portal. Late submissions will be accepted for up to 48 hours with a grade penalty.
+      user: instructor
+      allow_rating: true
+      replies: 
+        - user: abigail@instituterson.ca
+          text: How much is the grade penalty for late submissions?
+          replies:
+            - user: instructor
+              text: The penalty is 5% per day late, up to the 48-hour limit. 
+        - user: steven@instituterson.ca
+          text: Can we still get feedback if we submit late?
+          replies:
+            - user: instructor
+              text: Yes, all submissions will receive feedback regardless of whether they are on time or late.
+    - title: There will be no class next week!
+      message: Don't bother coming in next week as there will be no class.
+      user: instructor
+      allow_rating: true
+      replies: 
+        - user: phillip@instituterson.ca
+          text: Alright! Finally some time to catch up on studying!
+        - user: sarah@instituterson.ca
+          text: Awww, I was looking forward to sleeping in class next week. 
+    - title: "Reminder: Midterm Exam Next Friday"
+      message: Just a reminder that our midterm exam will take place next Friday during regular class time. The exam will cover Chapters 1–6, so please make sure to review your notes and the assigned readings. A study guide has been posted on the course page to help you prepare. Good luck, and don't hesitate to reach out with any questions!
+      user: instructor
+      allow_rating: true
+      replies: 
+        - user: terrance@instituterson.ca
+          text: Thanks for the reminder! Will the exam be multiple choice or short answer?
+        - user: main_user
+          text: Appreciate the study guide upload, it'll be really helpful. 
+    - title: "Guest Lecture This Wednesday"
+      message: We're excited to announce that Dr. Karen Mitchell, a clinical psychologist specializing in anxiety disorders, will be giving a guest lecture this Wednesday during class time. She'll be sharing insights from her research and clinical practice, and there will be a Q&A session at the end. Attendance is strongly encouraged, as this will be highly relevant to our upcoming unit on abnormal psychology.
+      user: instructor
+      allow_rating: true
+      replies: 
+        - user: sarah@instituterson.ca
+          text: That sounds amazing! Will the lecture be recorded for those who can't make it?
+        - user: phillip@instituterson.ca
+          text: Looking forward to this, I'm really interested in anxiety research.
+        - user: terrance@instituterson.ca
+          text: Great! Will we be tested on material from the guest lecture in the next exam?
+  discussions:
+    - title: How do you manage stress during the semester?
+      message: |
+        Hi Everyone, university life can be exciting but also stressful at times. I'd like to start a discussion on strategies you use to cope with stress during the semester. Sharing what works for you might help someone else discover a new technique! 
+      user: instructor
+      discussion_type: threaded
+      replies:
+        - user: sarah@instituterson.ca
+          text: I usually manage stress by scheduling my week ahead of time and making checklists. It helps me stay on track.
+          replies:
+            - user: steven@instituterson.ca
+              text: That's smart, Sarah. I've been meaning to try using checklists more consistently.
+        - user: terrance@instituterson.ca
+          text: I like to deal with stress by going for runs. Exercise clears my head.
+          replies:
+            - user: alex@instituterson.ca
+              text: Same here, Terrance. I hit the gym whenever midterms start piling up—it makes a big difference.
+        - user: abigail@instituterson.ca
+          text: Meditation and breathing exercises help me relax. I try to practice mindfulness at least a few minutes each day.
+          replies:
+            - user: monica@instituterson.ca
+              text: That sounds really healthy. I've tried meditation apps but never stuck with them—maybe I should give it another go.
+        - user: jared@instituterson.ca
+          text: I usually manage stress by hanging out with friends. Talking about things unrelated to school helps me recharge.
+    - title: Memory and experiences
+      message: As we are discussing memory in class this week, I'd like to start a self-reflective conversation about how you interact with your own memory. Share any stories you have related to remembering something, or misremembering something!
+      user: instructor
+      discussion_type: threaded
+      replies:
+        - user: phillip@instituterson.ca
+          text: I always find that I am better able to commit things from short term memory to long term by repeating them to myself a few times. 
+    - title: What aspect of psychology do you find most interesting?
+      message: |
+        Hi Everyone, I hope you've all had a great first week of classes. This semester I am looking to engage with students on a variety of weekly opinion questions. Starting with what aspects of psychology you personally find interesting. Leave your answers in a comment below! 
+      user: instructor
+      discussion_type: threaded
+      replies:
+        - user: terrance@instituterson.ca
+          text: I think the study of abnormal behavior will be the most interesting!
+          replies:
+            - user: phillip@instituterson.ca
+              text: No way is that more interesting than the neuroscience aspects.
+        - user: sarah@instituterson.ca
+          text: I am looking forward to better understanding the mechanisms behind procrastination. 
+    - title: How does culture shape psychological development?
+      message: |
+        Hi Everyone, for this week's discussion I'd like you to reflect on the role of culture in shaping human thoughts, emotions, and behaviors. Think about questions like: Do cultural values influence how people perceive mental health? How might upbringing in different cultural contexts change the way individuals develop socially and cognitively? Share your thoughts and feel free to engage with your peers' perspectives. 
+      user: instructor
+      discussion_type: threaded
+      replies:
+        - user: abigail@instituterson.ca
+          text: I think culture plays a big role in how people view mental health treatment. In some cultures, going to therapy is normal, while in others it's stigmatized.
+          replies:
+            - user: terrance@instituterson.ca
+              text: I agree! It's interesting how stigma can affect whether people even seek help in the first place. 
+        - user: phillip@instituterson.ca
+          text: I believe cultural background influences parenting styles, which in turn impacts cognitive development in children.
+        - user: sarah@instituterson.ca
+          text: What fascinates me is how collectivist versus individualist cultures change the way people think about identity and relationships.
+    - title: Which psychological theory do you find most useful in everyday life?
+      message: |
+        Hi Everyone, for this discussion I'd like you to share which psychological theory you find most applicable to real-world situations. This could be something that helps you understand your own behavior, make better decisions, or interpret the actions of others. Be sure to explain why you find it useful, and respond to at least one classmate's post! 
+      user: instructor
+      discussion_type: threaded
+      replies:
+        - user: terrance@instituterson.ca
+          text: I find cognitive dissonance theory really useful. It explains why people sometimes change their beliefs or justify decisions after making them.
+          replies:
+            - user: sarah@instituterson.ca
+              text: That's a good one! I notice it in myself when I make purchases I later regret but then try to rationalize them.
+        - user: phillip@instituterson.ca
+          text: I think operant conditioning is the most practical. It helps me understand how habits are formed and how to change them.
+        - user: main_user
+          text: For me, Maslow's hierarchy of needs is the most helpful. It reminds me that sometimes struggles are about unmet basic needs, not just motivation.
+  groups:
+    - name: Group J 
+      is_public: true
+      description: A friendly group always open to new memebers. 
+    - name: Group X 
+      is_public: true
+      join_level: parent_context_request
+      description: A test group
+      leader: main_user
+      users:
+        - main_user
+        - jared@instituterson.ca
+        - monica@instituterson.ca
+    - name: Group O 
+      is_public: true
+      join_level: parent_context_request
+      description: A test group
+      leader: main_user
+      users:
+        - main_user
+        - alex@instituterson.ca
+        - ryan@instituterson.ca
+    - name: Group Q 
+      is_public: true
+      join_level: parent_context_request
+      description: A test group
+      leader: main_user
+      users:
+        - main_user
+        - lisa@instituterson.ca
+        - abigail@instituterson.ca
+    - name: Group H
+      is_public: true
+      description: A psych student group
+      users:
+        - main_user
+        - steven@instituterson.ca
+        - abigail@instituterson.ca
+    - name: Group A
+      is_public: true
+      description: A team
+      users: 
+        - main_user
+        - phillip@instituterson.ca
+        - terrance@instituterson.ca
+      announcements:
+        - title: Do any of you have an extra textbook?
+          message: Hi guys, I'm looking for an extra textbook for this course, if you have one lying around please send me a message.
+          user: main_user
+          allow_rating: true
+
+      discussions:
+        - title: I'll be away next week.
+          message: Just letting everyone know I'll be on vacation next week and unavailable. 
+          user: main_user
+          discussion_type: threaded
+      pages:
+        - title: Thoughts on the course so far
+          body: |
+            So, what are your guys' thoughts on the course so far?
+          updates:
+            - title: Thoughts on the course so far
+              body: Ok, guys, really, what are your thoughts?!
+              revised_at: 2026-01-01 18:00:00
+        - title: Planning for the group project
+          body: |
+            I figured we should have a page to organize our notes around the group project.
+    - name: Group B
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - alex@instituterson.ca
+        - monica@instituterson.ca
+        - jared@instituterson.ca
+        - main_user
+      announcements:
+        - title: Meeting this weekend
+          message: Hey everyone, should we plan a study session this Saturday afternoon at the library?
+          user: main_user
+          allow_rating: true
+      discussions:
+        - title: Midterm review strategies
+          message: Any tips or resources for preparing for the upcoming midterm? 
+          user: main_user
+          discussion_type: threaded
+        - title: How do you guys study for this course?
+          message: I'm having trouble identifying what to focus on when studying for this course. How do you guys make the best use of your study time? 
+          user: main_user
+          discussion_type: threaded
+      pages:
+        - title: Key concepts from Chapter 3
+          body: |
+            Let's collect all the main theories, definitions, and examples from Chapter 3 here for easier revision.
+          updates:
+            - title: Added more notes on Chapter 3
+              body: Included details on the stages of cognitive development.
+              revised_at: 2026-02-12 14:00:00
+        - title: Group project topic ideas
+          body: |
+            We should brainstorm possible topics for the group project. Drop suggestions here!
+    - name: Group K
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - alex@instituterson.ca
+        - monica@instituterson.ca
+        - abigail@instituterson.ca
+        - main_user
+      pages:
+        - title: Study Tips & Tricks
+          body: |
+            Share helpful study techniques, mnemonic devices, and time management strategies.
+    - name: Group N
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - terrance@instituterson.ca
+        - phillip@instituterson.ca
+        - abigail@instituterson.ca
+        - main_user
+      discussions:
+      - title: Does anyone else feel they're noticing more pop psychology 'facts' being spread in the media?
+        message: Ever since the prof highlighted how common it is for questionable 'facts' to get passed of as real psychology, I've been noticing a lot more instances of this on my social media feeds.  
+        user: main_user
+        discussion_type: threaded
+      pages:
+        - title: Group project presentation
+          body: |
+            The main page for the group project presentation this semester.
+    - name: Group N1
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - terrance@instituterson.ca
+        - alex@instituterson.ca
+        - main_user
+      pages:
+        - title: Group project presentation
+          body: |
+            The main page for the group project presentation this semester.
+    - name: Group Z
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - terrance@instituterson.ca
+        - ryan@instituterson.ca
+        - lisa@instituterson.ca
+        - main_user
+      pages:
+        - title: Group project presentation
+          body: |
+            The main page for the group project presentation this semester.
+    - name: Group Y
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - terrance@instituterson.ca
+        - lisa@instituterson.ca
+        - main_user
+    - name: Group U
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - terrance@instituterson.ca
+        - ryan@instituterson.ca
+        - lisa@instituterson.ca
+        - main_user
+    - name: Group U2
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - jared@instituterson.ca
+        - monica@instituterson.ca
+        - ryan@instituterson.ca
+    - name: Group M
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - alex@instituterson.ca
+        - main_user
+    - name: Group S
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - terrance@instituterson.ca
+        - steven@instituterson.ca
+        - jared@instituterson.ca
+        - main_user
+      announcements:
+        - title: Saturday Study Session
+          message: Hi team! Let's meet at the library this Saturday afternoon to review for our upcoming quiz. Who's in?
+          user: main_user
+          allow_rating: true
+    - name: Group G2
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - main_user
+        - phillip@instituterson.ca
+        - jared@instituterson.ca
+      announcements:
+        - title: Saturday Study Session
+          message: Hi team! Let's meet at the library this Saturday afternoon to review for our upcoming quiz. Who's in?
+          user: main_user
+          allow_rating: true 
+    - name: Group P
+      is_public: true
+      description: Study partners for psychology course
+      users: 
+        - main_user
+        - alex@instituterson.ca
+        - phillip@instituterson.ca
+        - abigail@instituterson.ca
+
+  pages:
+    - title: Psychology & Pseudeo Science
+      user: instructor
+      body: |
+        Psychology, as a scientific discipline, is grounded in empirical research and the systematic study of behavior and mental processes. It relies on rigorous methodologies, peer-reviewed evidence, and ethical standards to understand the complexities of the human mind. In contrast, pseudoscience often masquerades as legitimate science but lacks the foundational principles of scientific inquiry—such as falsifiability, reproducibility, and critical peer evaluation. Practices like astrology, phrenology, or certain fringe self-help techniques may claim psychological benefits but typically rely on anecdotal evidence, confirmation bias, or misleading jargon. Distinguishing between psychology and pseudoscience is vital—not just for academic integrity, but for protecting individuals from potentially harmful or exploitative practices disguised as therapeutic truth.
+
+  assignments:   
+    - title: Researchers in the field of Psychology
+      description: |
+        Hi Everyone, for this assignment, you'll have to reply with the name of a researcher in the field of psychology.
+      due_at: 2026-03-01 18:00:00
+      points_possible: 2
+      created_at: 2025-07-29 10:00:00
+      updated_at: 2025-07-29 10:00:00
+      submission_types: ["discussion_topic"]
+      grading_type: "points"
+      replies:
+        - user: sarah@instituterson.ca
+          text: My favorite psychologist is Erik Erikson!
+        - user: terrance@instituterson.ca
+          text: Sigmund Freud is a classic.
+        - user: phillip@instituterson.ca
+          text: Can't go wrong with Carl Rogers.
+        - user: main_user
+          text: It's gotta be my boy B.F. Skinner.
+      peer_reviews: 
+        enabled: true
+        count: 2
+        due_at: 2026-04-01 18:00:00
+        intra_group_peer_reviews: true
+        anonymous_peer_reviews: false
+        automatic_peer_reviews: true
+    - title: Influential Psychological Experiments
+      description: |
+        Hi Everyone, for this assignment, please share one psychological experiment that you find particularly interesting. Explain briefly what the experiment studied and why you think it was important.
+      due_at: 2026-03-01 18:00:00
+      points_possible: 2
+      created_at: 2025-07-29 10:00:00
+      updated_at: 2025-07-29 10:00:00
+      submission_types: ["discussion_topic"]
+      grading_type: "points"
+      replies:
+        - user: sarah@instituterson.ca
+          text: My favorite experiment is the Stanford prison experiment!
+        - user: main_user
+          text: It's gotta the milgram experiment.
+      peer_reviews: 
+        enabled: true
+        count: 2
+        due_at: 2026-04-01 18:00:00
+        intra_group_peer_reviews: true
+        anonymous_peer_reviews: false
+        automatic_peer_reviews: true
+    - title: Theories of Personality
+      description: |
+        Hi Everyone, for this assignment, please share which theory of personality (such as Freud's psychoanalytic theory, trait theory, humanistic theory, or social-cognitive theory) you find most convincing or useful in understanding human behavior. Briefly explain why you chose it and provide an example to support your view.
+      due_at: 2026-03-10 18:00:00
+      points_possible: 2
+      created_at: 2025-08-21 10:00:00
+      updated_at: 2025-08-21 10:00:00
+      submission_types: ["discussion_topic"]
+      grading_type: "points"
+      replies:
+        - user: sarah@instituterson.ca
+          text: I find the humanistic theory most convincing because it focuses on self-actualization and personal growth. Maslow's hierarchy of needs really resonates with how people prioritize goals in life.  
+        - user: main_user
+          text: I like trait theory the best. The Big Five personality model makes sense to me because it gives a clear framework for describing differences between people.  
+        - user: terrance@instituterson.ca
+          text: Freud's psychoanalytic theory is fascinating even though it's controversial. The idea that unconscious drives and childhood experiences shape adult behavior explains a lot of patterns I see in people.  
+        - user: phillip@instituterson.ca
+          text: I think the social-cognitive theory is the most practical. Bandura's concept of self-efficacy shows how believing in yourself can influence motivation and achievement.  
+      peer_reviews: 
+        enabled: true
+        count: 2
+        due_at: 2026-03-15 18:00:00
+        intra_group_peer_reviews: true
+        anonymous_peer_reviews: false
+        automatic_peer_reviews: true
+    - title: The Role of Emotions in Decision Making
+      description: |
+        Hi Everyone, for this assignment, please discuss how emotions influence decision making. You may want to reference theories such as the Somatic Marker Hypothesis (Damasio), the James-Lange theory, or modern research on emotional regulation. Provide an example from either everyday life or a psychological study to support your answer.
+      due_at: 2026-03-24 18:00:00
+      points_possible: 2
+      created_at: 2025-08-25 10:00:00
+      updated_at: 2025-08-25 10:00:00
+      submission_types: ["discussion_topic"]
+      grading_type: "points"
+      replies:
+        - user: sarah@instituterson.ca
+          text: I think emotions play a huge role in decision making. Damasio's Somatic Marker Hypothesis makes sense because gut feelings often guide us when logical reasoning takes too long.  
+        - user: main_user
+          text: I agree—emotions are important! For example, fear can stop people from taking risks even when the odds are in their favor. This shows how strong emotional regulation is needed for good decision making.  
+        - user: terrance@instituterson.ca
+          text: The James-Lange theory is interesting to me. It suggests that physical arousal comes first, and then we interpret it as emotion. I wonder how that interpretation affects snap decisions.  
+        - user: phillip@instituterson.ca
+          text: I'd say emotions influence most of our daily choices. Bandura didn't focus directly on emotions, but self-efficacy ties in—if you feel confident, you're more likely to decide to take on a challenge. 
+      peer_reviews:
+        enabled: true
+        count: 2
+        due_at: 2026-03-15 18:00:00
+        intra_group_peer_reviews: true
+        anonymous_peer_reviews: false
+        automatic_peer_reviews: true      
+    - title: Nature vs. Nurture Debate
+      description: |
+        Hi Everyone, for this discussion, please share your thoughts on whether you think human behavior is more strongly influenced by genetics (nature) or environment (nurture). Provide an example to support your argument and explain why you lean more toward one side, or if you think both play an equal role.
+      due_at: 2026-03-20 18:00:00
+      points_possible: 2
+      created_at: 2025-08-21 10:15:00
+      updated_at: 2025-08-21 10:15:00
+      submission_types: ["discussion_topic"]
+      grading_type: "points"
+      replies:
+        - user: sarah@instituterson.ca
+          text: I think nurture plays a stronger role. For example, children raised in supportive environments often thrive, even if they have genetic risks for certain disorders.  
+        - user: main_user
+          text: I lean more toward nature because traits like intelligence and temperament seem strongly linked to genetics, though environment still matters.  
+          feedback:
+            author: sarah@instituterson.ca
+            comment: I feel like you could have elaborated more here honestly.
+        - user: terrance@instituterson.ca
+          text: I believe it's a balance. Genes may set certain limits, but the environment determines how much potential is reached. Language development is a good example.  
+        - user: phillip@instituterson.ca
+          text: Nurture has a bigger influence in my opinion. Education and culture shape values and behavior much more than biology alone.  
+      peer_reviews: 
+        enabled: true
+        count: 2
+        due_at: 2026-03-25 18:00:00
+        intra_group_peer_reviews: true
+        anonymous_peer_reviews: false
+        automatic_peer_reviews: true
+    - title: The Role of Technology in Modern Psychology
+      description: |
+        Hi Everyone, for this discussion, please share your thoughts on how technology has impacted the field of psychology. 
+        You might consider areas like therapy apps, online counseling, brain imaging, social media's effect on behavior, or artificial intelligence. 
+        Do you think technology has been more beneficial or harmful to psychology overall? Provide an example to support your viewpoint.
+      due_at: 2026-04-10 18:00:00
+      points_possible: 2
+      created_at: 2025-08-28 14:45:00
+      updated_at: 2025-08-28 14:45:00
+      submission_types: ["discussion_topic"]
+      grading_type: "points"
+      replies:
+        - user: phillip@instituterson.ca
+          text: I think technology has helped make therapy more accessible. Apps like BetterHelp or Talkspace allow people who can't attend in-person sessions to still get help.  
+        - user: main_user
+          text: I feel like social media has had a negative impact on mental health, especially with increased anxiety and body image issues. Technology isn't always positive.  
+          feedback:
+            author: ryan@instituterson.ca
+            comment: That's a really good point. I agree it's a double-edged sword.
+        - user: abigail@instituterson.ca
+          text: Brain imaging technology like fMRI has been amazing for understanding how mental processes work. It's opened up a lot of new research opportunities.  
+        - user: lisa@instituterson.ca
+          text: I think AI will play a huge role in the future of psychology, like personalized mental health support or identifying early warning signs of disorders.  
+      peer_reviews: 
+        enabled: true
+        count: 2
+        due_at: 2026-04-15 18:00:00
+        intra_group_peer_reviews: true
+        anonymous_peer_reviews: false
+        automatic_peer_reviews: true
+    - title: Psychology Video on learning
+      description: For this assignment you must go out onto the internet and find an interesting video about how humans learn. Submit the url to the video. 
+      due_at: 2026-03-15 18:00:00
+      points_possible: 32
+      created_at: 2025-07-31 10:00:00
+      updated_at: 2025-07-31 10:00:00
+      submission_types: ["online_url"]
+      submissions:
+        - user: main_user
+          submission_type: online_url
+          url: https://www.youtube.com/watch?v=kKvK2foOTJM
+    - title: Cognitive Development Analysis
+      group_category: default
+      description: Write a 1200 word essay analyzing key theories of cognitive development (such as Piaget's stages of development, Vygotsky's sociocultural theory, or information-processing models). Compare at least two perspectives and provide examples of how these theories apply to real-life learning or educational settings.
+      due_at: 2026-03-05 18:00:00
+      points_possible: 100
+      created_at: 2025-08-25 10:00:00
+      updated_at: 2025-08-25 10:00:00
+      submission_types: ["online_text_entry"]
+    - title: Abnormal Behavior Essay
+      group_category: default
+      description: Write a 1000 word essay about abnormal behavior.
+      due_at: 2026-02-01 18:00:00
+      points_possible: 100
+      created_at: 2025-07-29 10:00:00
+      updated_at: 2025-07-29 10:00:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+           <p> In psychology, abnormal behavior refers to patterns of emotion, thought, or action that deviate significantly from societal norms and may interfere with daily functioning. This includes behaviors that are distressing to the individual, socially disruptive, or harmful—often manifesting in conditions like anxiety disorders, depression, schizophrenia, or personality disorders. Psychologists assess abnormal behavior by considering factors such as the intensity, duration, and context of symptoms, always accounting for cultural and situational differences. It's not just about what's “unusual”—it's about understanding the deeper psychological, biological, and environmental causes to support effective diagnosis and treatment.</p>
+          peer_review:
+            - author: instructor
+              comment: Well done!
+    - title: "Memory and Recall Reflection"
+      group_category: default
+      description: "Reflect on a situation where your memory failed or was distorted, explain the psychological mechanisms involved, and connect it to course concepts. Minimum 500 words."
+      due_at: 2026-11-01 23:59:00
+      points_possible: 60
+      created_at: 2025-08-20 14:00:00
+      updated_at: 2025-08-20 14:00:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+            <p> A personal example of memory distortion occurred when I tried to recall details from a group project meeting last semester. I remembered that one of my teammates suggested a specific approach to data analysis, but later realized that my recollection was influenced by my own preference for that approach rather than what was actually said. This aligns with the concept of reconstructive memory in psychology, which shows that memory is not a perfect recording but rather reconstructed based on prior knowledge, expectations, and biases. This experience made me more aware of how easily memories can be shaped by subjective interpretation and motivated me to take more detailed notes during collaborative work. Understanding these mechanisms is essential for academic accuracy and everyday decision-making. </p>
+          peer_review:
+            - author: alex@instituterson.ca
+              comment: Great reflection, you could add an example of a memory experiment to strengthen it.
+            - author: lisa@instituterson.ca
+              comment: I like how you connected personal experience to theory; consider mentioning cognitive schemas.
+            - author: ryan@instituterson.ca
+              comment: Clear explanation, but maybe include more about the consequences of memory distortion.
+          feedback:
+            grade: 55
+            grader: instructor
+            comment: Excellent integration of personal experience and theory; very well written.
+    - title: "Cognitive Biases in Daily Life"
+      group_category: default
+      description: "Identify a time when you experienced or witnessed a cognitive bias in real life (e.g., confirmation bias, hindsight bias, availability heuristic). Explain the situation, the type of bias, and how awareness of the bias might have changed the outcome. Minimum 600 words."
+      due_at: 2026-12-15 23:59:00
+      points_possible: 70
+      created_at: 2025-08-25 10:00:00
+      updated_at: 2025-08-25 10:00:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+            <p>One clear example of cognitive bias in my daily life occurred during a family discussion about buying a new car. I strongly believed that electric vehicles were the superior choice, and when looking at reviews online, I only paid attention to the ones that supported my preexisting view. This is an example of confirmation bias, where I sought out information that aligned with my opinion while ignoring contradictory evidence, such as concerns about charging infrastructure or long-term battery costs. By being aware of this bias, I realize I could have made a more balanced and informed judgment by actively seeking opposing viewpoints. Understanding how these biases work is important for making rational decisions in both personal and professional contexts. </p>
+          feedback:
+            grade: 62
+            grader: instructor
+            comment: Great example of confirmation bias applied to a real-life decision. Next time, try to expand further on how psychological research supports your interpretation, and add more depth on the long-term implications of recognizing such biases.
+    - title: "Cognitive Biases Reflection"
+      group_category: default
+      description: "Reflect on a cognitive bias you have personally experienced, describe the situation, and connect it to psychological theory. Minimum 500 words."
+      due_at: 2026-10-15 23:59:00
+      points_possible: 50
+      created_at: 2025-08-05 09:30:00
+      updated_at: 2025-08-05 09:30:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+            <p> One cognitive bias I have personally experienced is the confirmation bias. While preparing for a debate on the effectiveness of mindfulness in reducing stress, I found myself selectively searching for studies that supported my pre-existing belief that mindfulness is highly effective. Although I encountered some evidence suggesting mixed results, I was more inclined to dismiss or minimize those findings, instead focusing on sources that reinforced my viewpoint. This is consistent with psychological literature that explains how confirmation bias helps maintain cognitive consistency, but can also distort our interpretation of evidence. Recognizing this bias has helped me slow down and evaluate information more critically, which is essential not only for academic work but also for making better decisions in daily life. </p>
+          peer_review:
+            - author: monica@instituterson.ca
+              comment: Good example, but could use more references to theory.
+          feedback:
+            grade: 42
+            grader: instructor
+            comment: Strong personal connection, next time cite at least one primary study.
+    - title: "Stress and Coping Strategies"
+      group_category: default
+      description: "Reflect on a stressful situation you have encountered, describe your emotional and behavioral responses, and analyze the coping strategies you used. Connect your reflection to psychological theories of stress and coping. Minimum 600 words."
+      due_at: 2027-01-20 23:59:00
+      points_possible: 80
+      created_at: 2025-08-27 12:00:00
+      updated_at: 2025-08-27 12:00:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+            <p>During the final exam period last semester, I felt overwhelmed by the number of tests and deadlines. My initial emotional response was anxiety, paired with physical tension and trouble sleeping. I coped by creating a strict study schedule and practicing short mindfulness exercises before studying. According to Lazarus and Folkman's model of stress and coping, I was using both problem-focused coping (through planning and time management) and emotion-focused coping (through mindfulness to regulate stress levels). Reflecting on this, I recognize that while my strategies were helpful, I could have improved by seeking more social support instead of isolating myself to study. Understanding these theories allows me to refine how I approach stressful events in the future. </p>
+          feedback:
+            grade: 74
+            grader: instructor
+            comment: Excellent application of Lazarus and Folkman's model. You did a great job identifying both coping strategies and their effectiveness. For improvement, include more detail on the long-term outcomes of your methods and how you might integrate additional coping resources.
+    - title: "Memory and Forgetting Analysis"
+      group_category: default
+      description: "Analyze a personal experience of forgetting or misremembering an event. Explain the situation and link it to memory theories in psychology. Minimum 500 words."
+      due_at: 2026-11-01 23:59:00
+      points_possible: 50
+      created_at: 2025-08-20 10:00:00
+      updated_at: 2025-08-20 10:00:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+            <p> I once forgot an important deadline for submitting a project in my previous course. At the time, I believed I had plenty of time and did not set reminders. When the day arrived, I realized I had completely misremembered the due date. This experience can be explained by the concept of prospective memory, which refers to remembering to perform an intended action in the future. Research suggests that without external cues or intentional rehearsal, prospective memory often fails. Additionally, my memory error was influenced by interference from other tasks I was managing simultaneously, which aligns with the theory of interference in memory research. Reflecting on this experience highlights the importance of strategies like setting reminders and breaking tasks into smaller steps to improve memory performance. </p>
+          peer_review:
+            - author: main_user
+              comment: Great personal example, could include more discussion of interference theory.
+            - author: monica@instituterson.ca
+              comment: Well-written reflection, maybe add one real study to support your points.
+            - author: terrance@instituterson.ca
+              comment: Interesting connection to prospective memory, consider mentioning real-world applications.
+          feedback:
+            grade: 45
+            grader: instructor
+            comment: Strong explanation and personal insight, next time include at least one empirical reference.
+    - title: "Experimental Design Proposal"
+      group_category: default
+      description: "Propose a basic experimental design for testing a psychological question of your choice. Include hypothesis, method, and expected results."
+      due_at: 2026-11-20 17:00:00
+      points_possible: 75
+      created_at: 2025-08-10 11:15:00
+      updated_at: 2025-08-10 11:15:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+            <p> For this assignment, I propose an experiment examining whether short daily sessions of guided meditation can improve working memory in undergraduate students. The hypothesis is that students who practice 10 minutes of guided meditation each day for two weeks will show significantly higher scores on a digit span task compared to a control group that does not meditate. Participants would be randomly assigned to either the meditation or control group. The method includes a pre-test and post-test of working memory, with sessions conducted in a quiet room at the university. I expect that the meditation group will demonstrate improved working memory performance, supporting prior research linking mindfulness with cognitive enhancement. </p>
+          peer_review:
+            - author: terrance@instituterson.ca
+              comment: Interesting idea, but clarify sample size.
+          feedback:
+            grade: 68
+            grader: instructor
+            comment: Solid design, but remember to include ethical considerations in proposals.
+    - title: "Modern Psychology Essay"
+      group_category: default
+      description: "Express your interest in modern psychological research in the form of a 1000 word essay."
+      due_at: 2026-11-20 17:00:00
+      points_possible: 75
+      created_at: 2025-08-10 11:15:00
+      updated_at: 2025-08-10 11:15:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+            <p> For this assignment, I propose an experiment examining whether short daily sessions of guided meditation can improve working memory in undergraduate students. The hypothesis is that students who practice 10 minutes of guided meditation each day for two weeks will show significantly higher scores on a digit span task compared to a control group that does not meditate. Participants would be randomly assigned to either the meditation or control group. The method includes a pre-test and post-test of working memory, with sessions conducted in a quiet room at the university. I expect that the meditation group will demonstrate improved working memory performance, supporting prior research linking mindfulness with cognitive enhancement. </p>
+        - user: phillip@instituterson.ca
+          submission_type: online_text_entry
+          body: "I actually think I prefer learning about psychology in the 1800s."
+        - user: abigail@instituterson.ca
+          submission_type: online_text_entry
+          body: "I've always been interested in modern behavioral studies, especially in young adults."
+        - user: terrance@instituterson.ca
+          submission_type: online_text_entry
+          body: "I love modern studies on how peer pressure works through friend groups."
+        - user: alex@instituterson.ca
+          submission_type: online_text_entry
+          body: "I'm really interested in modern psychology research into the effects of social media on society."
+      peer_reviews:
+        enabled: true
+        count: 2
+        due_at: 2026-03-25 18:00:00
+        intra_group_peer_reviews: true
+        anonymous_peer_reviews: false
+        automatic_peer_reviews: true
+
+    - title: "Cognitive Psychology Research Summary"
+      group_category: default
+      description: "Summarize a peer-reviewed research article in cognitive psychology, focusing on memory or attention. Your summary should be 800–1000 words."
+      due_at: 2026-11-15 23:59:00
+      points_possible: 50
+      created_at: 2025-08-05 09:30:00
+      updated_at: 2025-08-05 09:30:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+            <p> In their 2018 study, Smith and colleagues investigated the effects of divided attention on memory recall. Participants were asked to memorize a list of words while simultaneously performing a secondary task. Results showed that recall performance decreased significantly under divided attention conditions, supporting the limited capacity model of working memory. The study highlights how multitasking impairs encoding processes, making information less likely to be stored in long-term memory. These findings are especially relevant in educational contexts where students often study while distracted by technology. The authors suggest strategies such as focused attention training to improve memory retention. </p>
+          peer_review:
+            - author: phillip@instituterson.ca
+              comment: Clear summary, but maybe add more detail about the methodology.
+          feedback:
+            grade: 42
+            grader: instructor
+            comment: Great effort—work on expanding the analysis of implications.
+    - title: "Childhood Development Essay"
+      group_category: default
+      description: "Write a 1000 word essay about an aspect of childhood psychological development."
+      due_at: 2026-01-02 18:00:00
+      points_possible: 100
+      created_at: 2025-07-28 10:00:00
+      updated_at: 2025-07-28 10:00:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+            <p> Childhood psychological development is a dynamic process where the foundations of personality, emotional regulation, social skills, and cognitive abilities begin to form. From infancy through adolescence, children navigate stages of attachment, trust-building, autonomy, and identity exploration—each influenced by interactions with caregivers, peers, and their environment. Milestones such as developing language, understanding emotions, and grasping moral reasoning are shaped by both biology and experience. This formative period lays the groundwork for future mental health, relationships, and learning, making early support and nurturing critical for well-rounded development. </p>
+          peer_review:
+            - author: terrance@instituterson.ca
+              comment: Not bad.
+          feedback:
+            grade: 95
+            grader: instructor
+            comment: excellent job
+
+        - user: terrance@instituterson.ca
+          submission_type: online_text_entry
+          body: |
+            <p> Another vital aspect of childhood psychological development is the formation of executive functions—cognitive skills that include working memory, impulse control, and flexible thinking. These functions begin to take shape in early childhood and are heavily influenced by both brain maturation and life experiences. As children learn to manage their emotions, plan tasks, follow instructions, and shift attention between activities, they gradually develop the self-regulation needed for academic success and social interaction. Structured play, supportive caregiving, and responsive environments help refine these mental tools, setting the stage for independent decision-making and problem-solving throughout life.</p>
+      peer_reviews: 
+        enabled: true
+        count: 1
+        due_at: 2026-01-01 18:00:00
+        intra_group_peer_reviews: true
+        anonymous_peer_reviews: true
+        automatic_peer_reviews: true
+    - title: "The Influence of Social Interaction on Cognitive Development"
+      group_category: default
+      description: "Write a 1000 word essay analyzing how social interaction contributes to cognitive development. Reference at least two major psychological theories (e.g., Vygotsky's sociocultural theory, Piaget's stages of development) and explain how they compare in their understanding of the role of social factors in learning."
+      due_at: 2026-03-10 18:00:00
+      points_possible: 100
+      created_at: 2025-08-25 10:00:00
+      updated_at: 2025-08-25 10:00:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+            <p>Social interaction is a powerful driver of cognitive development, shaping how individuals acquire knowledge, problem-solving strategies, and cultural norms. Vygotsky's sociocultural theory emphasizes the Zone of Proximal Development (ZPD), where learners progress through guidance and collaboration with more knowledgeable peers or adults. This framework suggests that learning is inherently social, and cognitive growth is facilitated by communication, dialogue, and shared activity. In contrast, Piaget's stages of development place more emphasis on individual discovery through interaction with the environment. While Piaget acknowledged the importance of peers, he viewed development as a sequence of universal stages rather than a process deeply embedded in social context. Both perspectives highlight the importance of active engagement but differ in how much weight they assign to social influence. Modern research tends to integrate these theories, recognizing that social scaffolding accelerates skill acquisition while individual exploration reinforces deeper understanding. Together, they show that cognitive development is both socially mediated and individually constructed.</p>
+          feedback:
+            grader: instructor
+            rubric_assessment:
+                  - id: rat1
+                    points: 40.0
+                    criterion_id: crit1
+                    comments_enabled: true
+                    description: Pass
+                    comments: "Not your best work, but it was fine."
+                  - id: rat2
+                    points: 50.0
+                    criterion_id: crit2
+                    description: B
+                    comments: "Passing grade for sure. Good Job!"
+                    comments_enabled: true
+    
+    - title: "The Role of Memory in Learning"
+      group_category: default
+      description: "Write a 1200 word essay on how different types of memory (short-term, working, long-term) influence the learning process, and include at least two psychological theories or experiments to support your arguments."
+      due_at: 2026-02-15 18:00:00
+      points_possible: 100
+      created_at: 2025-08-21 10:00:00
+      updated_at: 2025-08-21 10:00:00
+      submission_types: ["online_text_entry"]
+      submissions:
+        - user: main_user
+          submission_type: online_text_entry
+          body: |
+            <p> Memory is a central process in learning, as it allows information to be encoded, stored, and retrieved when needed. Short-term memory provides a temporary holding space, while working memory actively manipulates information to support problem-solving and reasoning. Long-term memory, on the other hand, stores knowledge and skills for extended periods, making cumulative learning possible. Classic studies, such as Miller's ‘Magic Number 7' and Baddeley's model of working memory, demonstrate how cognitive limitations shape learning efficiency. Reinforcement through practice, meaningful connections, and emotional engagement strengthens long-term retention, highlighting the importance of teaching strategies that align with cognitive psychology principles.</p>
+          peer_review:
+            - author: phillip@instituterson.ca
+              comment: Very detailed explanation, but you could expand on the role of emotional memory in learning.
+              rubric_assessment:
+                  - id: rat1
+                    points: 50.0
+                    criterion_id: crit1
+                    comments_enabled: true
+                    description: Pass
+                    comments: "Really good job here."
+                  - id: rat2
+                    points: 50.0
+                    criterion_id: crit2
+                    description: B
+                    comments: "Definitely a pass."
+                    comments_enabled: true
+          feedback:
+            grade: 92
+            grader: instructor
+            comment: Excellent essay with strong theoretical grounding.
+      peer_reviews: 
+        enabled: true
+        count: 2
+        due_at: 2026-02-10 18:00:00
+        intra_group_peer_reviews: true
+        anonymous_peer_reviews: true
+        automatic_peer_reviews: true
+
+    - title: "Brain Anaomolies"
+      group_category: default
+      description: "Write a paragraph about what you learned from today's class discussion topic: 'Brain Anomolies'."
+      due_at: 2026-01-15 18:00:00
+      points_possible: 10
+      created_at: 2025-07-28 10:00:00
+      updated_at: 2025-07-28 10:00:00 
+      submission_types: ["online_text_entry"]
+  quizzes:
+    - title: A quick review of the biology
+      description: A quiz to test your background knowledge of biology related to psychology.
+      due_at: 2026-09-12 18:00:00
+      published_at: 2025-07-29 10:00:00
+      workflow_state: available
+      questions:
+      - name: Question 1
+        question_type: "true_false_question"
+        points_possible: 1
+        question_text: "<p>Biology starts with the letter 'b'.</p>"
+        answers:
+          - weight: 0
+            text: "False"
+          - weight: 100
+            text: "True"
+      - name: Question 2
+        question_type: "true_false_question"
+        points_possible: 1
+        question_text: <p>The hunan body contains cells.</p>
+        answers:
+          - weight: 0
+            text: "False"
+          - weight: 100
+            text: "True"
+      - name: Question 3
+        question_type: "short_answer_question"
+        points_possible: 1
+        question_text: "<p>The _____________ is the powerhouse of the cell!</p>"
+        answers:
+          - weight: 100
+            text: "mitochondria"
+            id: 90100
+    - title: Inside the Mind
+      description: A Psychology Quiz.
+      due_at: 2026-09-12 18:00:00
+      published_at: 2025-07-29 10:00:00
+      workflow_state: available
+      questions:
+      - name: Question 1
+        question_type: "short_answer_question"
+        points_possible: 1
+        question_text: "<p>The _____________  nervous system controls involuntary bodily functions like heartbeat and digestion.</p>"
+        answers:
+          - weight: 100
+            text: "Autonomic"
+      - name: Question 2
+        question_type: "short_answer_question"
+        points_possible: 1
+        question_text: "<p>In Freud's theory of personality, the __________ operates on the pleasure principle and seeks immediate gratification.</p>"
+        answers:
+          - weight: 100
+            text: "Id"
+      - name: Question 3
+        question_type: "short_answer_question"
+        points_possible: 1
+        question_text: "<p>The phenomenon where individuals perform better on tasks in the presence of others is called social __________.</p>"
+        answers:
+          - weight: 100
+            text: "Facilitation"
+    - title: Exploring the Psyche
+      description: A Psychology Quiz on theories, concepts, and research.
+      due_at: 2026-10-05 23:59:00
+      published_at: 2025-08-20 09:00:00
+      workflow_state: available
+      questions:
+      - name: Question 1
+        question_type: "short_answer_question"
+        points_possible: 1
+        question_text: "<p>The brain structure primarily responsible for forming new memories is the __________.</p>"
+        answers:
+          - weight: 100
+            text: "Hippocampus"
+      - name: Question 2
+        question_type: "short_answer_question"
+        points_possible: 1
+        question_text: "<p>According to Maslow's hierarchy of needs, the highest level is __________ needs.</p>"
+        answers:
+          - weight: 100
+            text: "Self-actualization"
+      - name: Question 3
+        question_type: "short_answer_question"
+        points_possible: 1
+        question_text: "<p>The tendency to attribute others' behavior to internal factors while underestimating situational influences is called the fundamental __________ error.</p>"
+        answers:
+          - weight: 100
+            text: "Attribution"
+      - name: Question 4
+        question_type: "short_answer_question"
+        points_possible: 1
+        question_text: "<p>Pavlov's experiments with dogs demonstrated the principle of classical __________.</p>"
+        answers:
+          - weight: 100
+            text: "Conditioning"
+      - name: Question 5
+        question_type: "short_answer_question"
+        points_possible: 1
+        question_text: "<p>In cognitive psychology, short-term memory is often referred to as __________ memory.</p>"
+        answers:
+          - weight: 100
+            text: "Working"
+    - title: Foundations of Psychology
+      description: A quiz to test core knowledge of psychology concepts
+      due_at: 2026-09-05 18:00:00
+      published_at: 2025-07-30 10:00:00
+      workflow_state: available
+      allowed_attempts: 2
+      rubric: 
+        title: Foundations of Psychology Rubric
+        description: A rubric to assess understanding of introductory psychology concepts.
+        public: true
+        points_possible: 12
+        free_form_criterion_comments: false
+      questions:
+        - name: Question 1
+          question_type: short_answer_question
+          question_text: "<p>Who is often referred to as the father of modern psychology, and why?</p>"
+          points_possible: 2
+        - name: Question 2
+          question_type: "true_false_question"
+          points_possible: 2
+          question_text: "<p>The humanistic approach in psychology emphasizes free will and personal growth.</p>"
+          answers:
+            - weight: 100
+              text: "True"
+            - weight: 0
+              text: "False"
+        - name: Question 3
+          question_type: multiple_choice_question
+          points_possible: 4
+          question_text: Which of the following best describes the main goal of developmental psychology?
+          answers:
+            - weight: 0
+              text: To analyze the role of neurotransmitters in mood disorders
+              id: 101
+            - weight: 100
+              text: To study how people change physically, cognitively, and socially throughout life
+              id: 102
+            - weight: 0
+              text: To measure intelligence through standardized tests
+              id: 103
+            - weight: 0
+              text: To examine the biological basis of behavior
+              id: 104
+        - name: Question 4
+          question_type: multiple_choice_question
+          points_possible: 4
+          question_text: In Freud's theory of personality, which part operates on the “reality principle”?
+          answers:
+            - weight: 0
+              text: Id
+              id: 201
+            - weight: 100
+              text: Ego
+              id: 202
+            - weight: 0
+              text: Superego
+              id: 203
+            - weight: 0
+              text: Conscious mind
+              id: 204 
+    - title: Warming up to psychology
+      description: A quiz to test the knowledge of some psychology stuff
+      due_at: 2026-09-01 18:00:00
+      published_at: 2025-07-28 10:00:00
+      workflow_state: available
+      allowed_attempts: 3
+      one_question_at_a_time: true
+      rubric: 
+        title: Warming up to psychology Rubric
+        description: A simple rubric used to assess a psychology quiz.
+        public: true
+        points_possible: 10
+        free_form_criterion_comments: false
+      questions:
+        - name: Question 1
+          question_type: short_answer_question
+          question_text: "<p>What is the difference between classical and operant conditioning?</p>"
+          points_possible: 32
+        - name: Question 2
+          question_type: "true_false_question"
+          points_possible: 10
+          question_text: "<p>Is psychology a science?</p>"
+          answers:
+            - weight: 0
+              text: "False"
+            - weight: 100
+              text: "True"
+        - name: Question 3
+          question_type: multiple_choice_question
+          points_possible: 10
+          question_text: What is the primary focus of cognitive psychology?
+          answers:
+            - weight: 0
+              text: The study of unconscious motives and desires
+              id: 100
+            - weight: 0
+              text: The study of observable behaviors and their environmental causes
+              id: 200
+            - weight: 100
+              text: The study of mental processes such as perception, memory, and problem-solving
+              id: 300
+            - weight: 0
+              text: The study of the influence of social interactions on behavior
+              id: 400
+    - title: Introduction to Psychology Concepts
+      description: A quiz to test foundational knowledge in psychology.
+      due_at: 2026-09-15 18:00:00
+      published_at: 2025-08-20 10:00:00
+      workflow_state: available
+      allowed_attempts: 3
+      one_question_at_a_time: true
+      rubric: 
+        title: Introduction to Psychology Concepts Rubric
+        description: A simple rubric used to assess a basic psychology quiz.
+        public: true
+        points_possible: 45
+        free_form_criterion_comments: false
+      questions:
+        - name: Question 1
+          question_type: short_answer_question
+          question_text: "<p>Explain the difference between a psychologist and a psychiatrist.</p>"
+          points_possible: 10
+        - name: Question 2
+          question_type: true_false_question
+          points_possible: 5
+          question_text: "<p>Sigmund Freud is known for his contributions to behaviorism.</p>"
+          answers:
+            - weight: 100
+              text: "False"
+              id: 100
+            - weight: 0
+              text: "True"
+              id: 200
+        - name: Question 3
+          question_type: multiple_choice_question
+          points_possible: 10
+          question_text: "<p>Which part of the brain is primarily responsible for regulating emotions?</p>"
+          answers:
+            - weight: 0
+              text: Cerebellum
+              id: 100
+            - weight: 100
+              text: Amygdala
+              id: 200
+            - weight: 0
+              text: Hippocampus
+              id: 300
+            - weight: 0
+              text: Occipital lobe
+              id: 400
+        - name: Question 4
+          question_type: multiple_choice_question
+          points_possible: 10
+          question_text: "<p>What is the main focus of developmental psychology?</p>"
+          answers:
+            - weight: 100
+              text: Understanding changes in behavior and mental processes across the lifespan
+              id: 100
+            - weight: 0
+              text: Studying mental processes like memory and attention
+              id: 200
+            - weight: 0
+              text: Analyzing unconscious motives and desires
+              id: 300
+            - weight: 0
+              text: Investigating social influences on behavior
+              id: 400
+        - name: Question 5
+          question_type: short_answer_question
+          points_possible: 10
+          question_text: "<p>Describe one key difference between classical conditioning and operant conditioning.</p>"
+    - title: Psychological Theories and Approaches
+      description: A quiz to test knowledge of major psychological theories and perspectives.
+      due_at: 2026-10-10 18:00:00
+      published_at: 2025-08-27 12:30:00
+      workflow_state: available
+      allowed_attempts: 3
+      one_question_at_a_time: true
+      rubric: 
+        title: Psychological Theories and Approaches Rubric
+        description: A rubric for evaluating student understanding of key psychological theories.
+        public: true
+        points_possible: 50
+        free_form_criterion_comments: false
+      questions:
+        - name: Question 1
+          question_type: multiple_choice_question
+          points_possible: 10
+          question_text: "<p>Which psychological approach emphasizes the role of unconscious drives and childhood experiences?</p>"
+          answers:
+            - weight: 100
+              text: Psychodynamic
+              id: 100
+            - weight: 0
+              text: Humanistic
+              id: 200
+            - weight: 0
+              text: Behavioral
+              id: 300
+            - weight: 0
+              text: Cognitive
+              id: 400
+        - name: Question 2
+          question_type: true_false_question
+          points_possible: 5
+          question_text: "<p>The humanistic perspective in psychology focuses on self-actualization and personal growth.</p>"
+          answers:
+            - weight: 100
+              text: "True"
+              id: 100
+            - weight: 0
+              text: "False"
+              id: 200
+        - name: Question 3
+          question_type: multiple_choice_question
+          points_possible: 10
+          question_text: "<p>Which researcher is most closely associated with classical conditioning?</p>"
+          answers:
+            - weight: 100
+              text: Ivan Pavlov
+              id: 100
+            - weight: 0
+              text: B.F. Skinner
+              id: 200
+            - weight: 0
+              text: Albert Bandura
+              id: 300
+            - weight: 0
+              text: Carl Rogers
+              id: 400
+        - name: Question 4
+          question_type: short_answer_question
+          points_possible: 15
+          question_text: "<p>Explain the difference between the cognitive and behavioral approaches to psychology.</p>"
+    - title: Psychology Class Survey
+      description: A casual survey quiz for students to share their thoughts, experiences, and interests related to psychology.
+      due_at: 2026-12-05 18:00:00
+      published_at: 2025-08-28 14:00:00
+      workflow_state: available
+      allowed_attempts: 1
+      one_question_at_a_time: true
+      quiz_type: 'survey'
+      questions:
+        - name: Question 1
+          question_type: short_answer_question
+          points_possible: 5
+          question_text: "<p>What made you interested in taking this psychology course?</p>"
+        - name: Question 2
+          question_type: multiple_choice_question
+          points_possible: 5
+          question_text: "<p>Which area of psychology are you most excited to learn about?</p>"
+          answers:
+            - weight: 0
+              text: Cognitive psychology
+              id: 100
+            - weight: 0
+              text: Social psychology
+              id: 200
+            - weight: 0
+              text: Developmental psychology
+              id: 300
+            - weight: 0
+              text: Abnormal psychology
+              id: 400
+            - weight: 0
+              text: Biological psychology
+              id: 500
+        - name: Question 3
+          question_type: essay_question
+          points_possible: 5
+          question_text: "<p>Describe one way you think psychology connects to your everyday life.</p>"
+        - name: Question 4
+          question_type: multiple_choice_question
+          points_possible: 5
+          question_text: "<p>How do you prefer to engage with class material?</p>"
+          answers:
+            - weight: 0
+              text: Listening to lectures
+              id: 101
+            - weight: 0
+              text: Group discussions
+              id: 201
+            - weight: 0
+              text: Hands-on activities
+              id: 301
+            - weight: 0
+              text: Reading and writing assignments
+              id: 401
+    - title: Biological Bases of Behavior
+      description: A quiz to test knowledge of how biology influences psychological processes and behavior.
+      due_at: 2026-11-05 18:00:00
+      published_at: 2025-08-27 13:00:00
+      workflow_state: available
+      allowed_attempts: 3
+      one_question_at_a_time: true
+      rubric: 
+        title: Biological Bases of Behavior Rubric
+        description: A rubric for evaluating student understanding of biological psychology concepts.
+        public: true
+        points_possible: 50
+        free_form_criterion_comments: false
+      questions:
+        - name: Question 1
+          id: 28
+          question_type: multiple_choice_question
+          points_possible: 10
+          question_text: "<p>Which lobe of the brain is primarily responsible for decision-making and planning?</p>"
+          answers:
+            - weight: 100
+              text: Frontal lobe
+              id: 100
+            - weight: 0
+              text: Temporal lobe
+              id: 200
+            - weight: 0
+              text: Parietal lobe
+              id: 300
+            - weight: 0
+              text: Occipital lobe
+              id: 400
+      submissions:
+        - user: main_user
+          attempts:
+            - workflow_state: "complete"
+              answers:
+              - correct: false
+                points: 0.0
+                question_id: 28
+                answer_id: 300
+                text: "300"
+              feedback:
+                grader: instructor
+                comment: You can do better than this.
+    - title: Advanced Topics in Cognitive Psychology
+      description: A quiz to assess deeper understanding of advanced concepts in memory, cognition, and related processes.
+      due_at: 2026-12-05 18:00:00
+      published_at: 2025-09-04 14:30:00
+      workflow_state: available
+      allowed_attempts: 2
+      one_question_at_a_time: true
+      rubric: 
+        title: Advanced Cognition Rubric
+        description: A rubric for evaluating higher-level knowledge of memory and cognitive psychology.
+        public: true
+        points_possible: 60
+        free_form_criterion_comments: false
+      questions:
+        - name: Question 1
+          id: 41
+          question_type: multiple_choice_question
+          points_possible: 10
+          question_text: "<p>According to Baddeley’s model of working memory, which component is primarily responsible for holding and manipulating visual and spatial information?</p>"
+          answers:
+            - weight: 100
+              text: Visuospatial sketchpad
+              id: 101
+            - weight: 0
+              text: Phonological loop
+              id: 102
+            - weight: 0
+              text: Episodic buffer
+              id: 103
+            - weight: 0
+              text: Central executive
+              id: 104
+      submissions:
+        - user: main_user
+          attempts:
+            - workflow_state: "complete"
+              answers:
+              - correct: false
+                points: 0.0
+                question_id: 28
+                answer_id: 300
+                text: "300"
+                attempt: 1
+            - workflow_state: "complete"
+              answers:
+                - correct: false
+                  points: 0.0
+                  question_id: 26
+                  answer_id: 400
+                  text: "400"
+                  attempt: 2
+    - title: Memory and Cognition
+      description: A quiz to test knowledge of key concepts in memory and cognitive psychology.
+      due_at: 2026-11-15 18:00:00
+      published_at: 2025-08-28 14:30:00
+      workflow_state: available
+      allowed_attempts: 3
+      one_question_at_a_time: true
+      rubric: 
+        title: Memory and Cognition Rubric
+        description: A rubric for evaluating student understanding of memory and cognition concepts.
+        public: true
+        points_possible: 50
+        free_form_criterion_comments: false
+      questions:
+        - name: Question 1
+          id: 31
+          question_type: multiple_choice_question
+          points_possible: 10
+          question_text: "<p>Which type of memory has the shortest duration, typically lasting only a few seconds?</p>"
+          answers:
+            - weight: 100
+              text: Sensory memory
+              id: 100
+            - weight: 0
+              text: Short-term memory
+              id: 200
+            - weight: 0
+              text: Long-term memory
+              id: 300
+            - weight: 0
+              text: Working memory
+              id: 400
+      submissions:
+        - user: main_user
+          attempts:
+            - workflow_state: "complete"
+              answers:
+              - correct: false
+                points: 0.0
+                question_id: 28
+                answer_id: 300
+                text: "300"
+                attempt: 1
+            - workflow_state: "complete"
+              answers:
+                - correct: false
+                  points: 0.0
+                  question_id: 26
+                  answer_id: 400
+                  text: "400"
+                  attempt: 2
+    - title: Sensation and Perception
+      description: A quiz to test knowledge of how humans sense and interpret the world around them.
+      due_at: 2026-11-20 18:00:00
+      published_at: 2025-08-28 13:00:00
+      workflow_state: available
+      allowed_attempts: 3
+      one_question_at_a_time: true
+      rubric: 
+        title: Sensation and Perception Rubric
+        description: A rubric for evaluating student understanding of sensory processes and perceptual mechanisms.
+        public: true
+        points_possible: 50
+        free_form_criterion_comments: false
+      questions:
+        - name: Question 1
+          id: 29
+          question_type: multiple_choice_question
+          points_possible: 10
+          question_text: "<p>Which part of the eye is responsible for focusing light onto the retina?</p>"
+          answers:
+            - weight: 100
+              text: Lens
+              id: 101
+            - weight: 0
+              text: Cornea
+              id: 201
+            - weight: 0
+              text: Iris
+              id: 301
+            - weight: 0
+              text: Pupil
+              id: 401
+        - name: Question 2
+          id: 30
+          question_type: multiple_choice_question
+          points_possible: 10
+          question_text: "<p>Which theory of color vision suggests that the eye has three types of receptors sensitive to different wavelengths?</p>"
+          answers:
+            - weight: 100
+              text: Trichromatic theory
+              id: 102
+            - weight: 0
+              text: Opponent-process theory
+              id: 202
+            - weight: 0
+              text: Gate-control theory
+              id: 302
+            - weight: 0
+              text: Place theory
+              id: 402
+      submissions:
+        - user: main_user
+          attempts:
+            - workflow_state: untaken
+              answers:
+              - correct: false
+                points: 0.0
+                question_id: 29
+                answer_id: 301
+                text: "301"
+              partial:
+                attempt: 1
+                question_29: "301"
+                question_29_marked: false
+                last_question_id: 29
