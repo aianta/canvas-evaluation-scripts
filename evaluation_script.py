@@ -15,6 +15,9 @@ python evaluation_script.py -t tasks.json -o results.json --wv-network-logs /hom
 To Evaluate OdoBot results
 python evaluation_script.py -t tasks.json -o results.json --odobot-execution-events /home/aianta/shock_and_awe/odobot_results 
 
+
+To Evaluate Ground truth for sanity checking
+python evaluation_script.py -t tasks.json -o ground_truth.json --odobot-execution-events ./trajectories
 '''
 
 
@@ -91,7 +94,7 @@ if args.odobot_execution_events:
             if entry.name.endswith('.json'): #If it is a json file, try and parse it as a OdoBotExecutionEventLog
                 event_log = OdoBotExecutionEventLog.to_execution_event_log(entry.path)
                 if event_log is not None:
-                    evaluator.register_network_events(network_log.task_instance, network_log.network_events)
+                    evaluator.register_network_events(event_log.task_instance, event_log.network_events)
 
 
 if args.wv_network_logs:
@@ -131,7 +134,7 @@ evaluator.status()
 results = evaluator.evaluate()
 
 print("===============RESULTS===============")
-# print(json.dumps(results, indent=4, default=str))
+#print(json.dumps(results, indent=4, default=str))
 
 with open(args.output_path, 'w') as out_file:
     json.dump(results, out_file, indent=4, default=str)

@@ -154,7 +154,7 @@ class NetworkEvent:
 
         request_data = None
         
-        if "requestBody" in raw_event['eventDetails'] and "requestBody" !== "null":
+        if "requestBody" in raw_event['eventDetails'] and raw_event['eventDetails']["requestBody"] is not None and raw_event['eventDetails']["requestBody"] != "null" :
             
             request_data = json.loads(raw_event['eventDetails']["requestBody"])
 
@@ -272,6 +272,7 @@ class NetworkEvent:
 
         if "[[ANY]]" in path: # Handle [[ANY]] wild card in path reference
             path_regex = path.replace("[[ANY]]", ".+")
+            path_regex = path_regex.replace("?", "\?") # Be careful of '?' in urls when creating/using regexes.
             print(f"reference path contains '[[ANY]]', rewrote path to the following regex: {path_regex}")
 
             path_search = re.search(path_regex, self.path)
@@ -314,8 +315,11 @@ class NetworkEvent:
     Returns True if the provided key and corresponding value was found inside the request.
     '''
     def request_contains(self, key, value, request):
-        print(f"Looking for {key}: {value} in request")
+        print(f"Looking for {key}: {value} [{type(value)}] in request\n{request}")
+
+
         for request_key, request_value in request.items():
+
 
             if key == 'read' and value == False:
                 print(f"request_key: {request_key}\nrequest_value: {request_value}")
@@ -323,7 +327,11 @@ class NetworkEvent:
 
             # If the value is itself a dict, dive into it and look for the specified kv there.
             if isinstance(request_value, dict):
-                return self.request_contains(key, value, request_value)
+                # IMPORTANT: None of these cases should return False! If there is a mismatch, we want to 'continue' and verify the remaining fields of the request. We only stop looking if we find a match.
+                if not self.request_contains(key, value, request_value):
+                    continue
+                else:
+                    return True
 
             # Handle dynamic value cases.
             # IMPORTANT: None of these cases should return False! If there is a mismatch, we want to 'continue' and verify the remaining fields of the request. We only stop looking if we find a match.
@@ -452,9 +460,14 @@ class OdoBotExecutionEventLog:
         self.file = file
         self.events = json.load(file)
         self.file.close()
+        
+        print(f"Loading events from: {self.file.name}")
 
         # Filter out everything except NET events. 
-        self.network_events = [x for x in self.events if x['eventDetails']['name'] === 'NETWORK_EVENT']
+        self.network_events = [x for x in self.events if 'name' in x['eventDetails'] and x['eventDetails']['name'] == 'NETWORK_EVENT']
+
+        print(f"# of network_events: {len(self.network_events)}")
+        print(self.network_events[0])
 
         self.network_events = [NetworkEvent.from_odobot_event(x) for x in self.network_events]
 
@@ -525,8 +538,8 @@ class Evaluator:
         number_incorrect = 0
         detailed_report = []
 
-        for instance_id in self.outputs:
-            result = self.evaluate_instance(instance_id, self.network_events[instance_id], self.outputs[instance_id])
+        for instance_id in self.network_events:
+            result = self.evaluate_instance(instance_id, self.network_events[instance_id], self.outputs[instance_id] if instance_id in self.outputs else None)
 
             if result["correct"]:
                 number_correct += 1
@@ -534,6 +547,7 @@ class Evaluator:
                 number_incorrect += 1
 
             detailed_report.append(result)
+            
 
         return {
             "correct": number_correct,
