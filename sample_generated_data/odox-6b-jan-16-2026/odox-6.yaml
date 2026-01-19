@@ -1,0 +1,2109 @@
+courses:
+- announcements:
+  - allow_rating: true
+    message: Materials for the midterm review session including slides practice problems
+      and a model answer set have been uploaded to Course Files Please review them
+      before the session and post any clarifying questions in Q and A
+    replies:
+    - replies:
+      - text: Yes the uploaded packet includes a timed practice exam and worked solutions
+        user: instructor
+      text: Will the review session focus more on problem solving or on core concepts
+      user: main_user
+    title: Midterm review session materials uploaded
+    user: instructor
+  - allow_rating: true
+    message: We are organizing a field trip to the planetary simulation facility on
+      Friday March 18 at 9 AM Meet at the main concourse by 8 45 AM We have room for
+      20 students Please sign up on the course portal by Wednesday at noon Transportation
+      will be provided Wear closed toe shoes and bring your student ID Complete the
+      online safety module before the trip
+    replies:
+    - replies:
+      - text: Yes a shuttle will be provided It will leave from the north entrance
+          at 8 30 AM Please arrive 15 minutes early
+        user: instructor
+      text: Will transportation be provided to the facility
+      user: terrance@instituterson.ca
+    - replies:
+      - text: Yes please complete the safety module at least 48 hours before the trip
+          We will verify completion before boarding
+        user: instructor
+      text: Do we need to complete the online safety module before attending
+      user: sarah@instituterson.ca
+    title: Field trip to planetary simulation facility
+    user: instructor
+  - allow_rating: true
+    message: An external researcher will present recent findings on extremophiles
+      and implications for habitability next Thursday at 3pm in room CL 15 Please
+      join us for a question and answer session after the talk
+    replies:
+    - text: Excited to hear about this will there be slides shared after class
+      user: monica@instituterson.ca
+    - text: Can this be moved to an earlier time I have a lab at 4pm
+      user: ryan@instituterson.ca
+    title: Guest lecture on extremophile research
+    user: instructor
+  - allow_rating: true
+    message: The deadline for the habitability model assignment has been extended
+      to Friday April 22 to give teams extra time to complete simulations and finalize
+      results Please upload revised reports and code to the assignment page by that
+      date The grading rubric is unchanged and late penalties will only apply after
+      Monday April 24 If you need an accommodation please contact me during office
+      hours or by email
+    replies:
+    - text: Thanks that extra time is really helpful Will we need to resubmit the
+        data sets used for simulations or only the report and code
+      user: sarah@instituterson.ca
+    - text: Appreciate the extension I can finish my final model runs by the new deadline
+      user: main_user
+    title: Assignment deadline extended for habitability models
+    user: instructor
+  - allow_rating: true
+    message: Please note we will hold a hands on lab sample handling workshop next
+      week to review sterile technique sample labeling storage and chain of custody
+      Sessions will be offered Wednesday 10 am to 12 pm Thursday 2 pm to 4 pm and
+      Friday 9 am to 11 am Each session is limited to 20 students Please sign up via
+      the form linked in the course announcements by end of day Monday PPE will be
+      provided and must be worn Attendance is strongly recommended for anyone working
+      on field or lab projects in Astrobiology and Planetary Habitability 312 Contact
+      your TA if you need an alternative time
+    replies:
+    - text: Thanks for organizing this Will there be a sign up link in the announcement
+        or should we use the lab booking page
+      user: monica@instituterson.ca
+    - text: Is prior lab safety training required to attend I completed the online
+        safety modules last term
+      user: steven@instituterson.ca
+    - text: I am away on a field trip that week Can I get an exemption or a make up
+        session
+      user: abigail@instituterson.ca
+    title: Lab sample handling workshop schedule
+    user: instructor
+  assignments:
+  - created_at: '2026-01-10 09:30:00'
+    description: This project asks you to perform a data analysis on astrobiology
+      datasets You'll assess habitability indicators and submit a short report plus
+      code notebook
+    due_at: '2026-05-15 23:59:00'
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: true
+      count: 2
+      due_at: '2026-06-15 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 30
+    replies:
+    - text: I plan to apply principal component analysis to the spectral data to find
+        dominant features
+      user: abigail@instituterson.ca
+    - text: I'm going to use Bayesian hierarchical models to combine datasets and
+        estimate probabilities of habitability
+      user: alex@instituterson.ca
+    - text: Using Gaussian process regression will help interpolate sparse time series
+        for atmospheric signals
+      user: lisa@instituterson.ca
+    - text: Sounds great I will focus on building reproducible Jupyter notebooks and
+        clean visualizations
+      user: main_user
+    submission_types:
+    - discussion_topic
+    title: Data Analysis Project in Astrobiology
+    updated_at: '2026-01-10 09:30:00'
+  - created_at: '2026-01-12 11:15:00'
+    description: For this assignment please choose one observation or experiment related
+      to methane on Mars or other planetary bodies Explain what was measured what
+      instruments were used and why the result matters for habitability and potential
+      biology Also propose one follow up test or measurement
+    due_at: '2026-03-22 23:59:00'
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: true
+      count: 2
+      due_at: '2026-04-05 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 5
+    replies:
+    - text: Curiosity detected methane spikes near Gale Crater which is fascinating
+        and suggests transient sources
+      user: alex@instituterson.ca
+    - text: I will examine isotopic evidence and instrument limitations in my post
+      user: main_user
+    submission_types:
+    - discussion_topic
+    title: Methane on Mars and Other Worlds
+    updated_at: '2026-01-12 11:15:00'
+  - created_at: '2026-01-08 09:30:00'
+    description: Consider the challenge of telling real biosignatures from false positives
+      and avoiding false negatives. For this discussion post describe one scenario
+      where a common biosignature could give a false positive and one scenario where
+      a biosignature could be missed. Explain briefly what additional observations
+      or methods would help resolve each case and give at least one specific example.
+    due_at: '2026-02-28 23:59:00'
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: true
+      count: 2
+      due_at: '2026-03-05 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 4
+    replies:
+    - text: A common false positive is abiotic methane from serpentinization being
+        mistaken for biological methane. Carbon isotope ratios and methane to ethane
+        abundance ratios can help distinguish abiotic sources from biology.
+      user: abigail@instituterson.ca
+    - text: I worry about terrestrial contamination producing false positives in returned
+        samples. Using strict cleanliness protocols and independent replication in
+        separate laboratories helps reduce that risk.
+      user: main_user
+    - text: A false negative could occur if life uses an unexpected solvent or molecular
+        set so our targeted sensors miss it. Broad spectral surveys and untargeted
+        molecular analysis increase the chance of detecting novel biochemistry.
+      user: terrance@instituterson.ca
+    - text: Relying on oxygen alone can mislead because abiotic oxygen buildup is
+        possible. Combining atmospheric context with surface geology and photochemical
+        modelling improves confidence in interpretation.
+      user: monica@instituterson.ca
+    submission_types:
+    - discussion_topic
+    title: False Positives and False Negatives in Biosignature Interpretation
+    updated_at: '2026-01-08 09:30:00'
+  - created_at: 2026-02-15 090000
+    description: For this assignment analyze two planetary bodies and compare their
+      potential habitability. Focus on factors such as atmosphere composition surface
+      temperature water inventory energy sources and geological activity. Use observational
+      data or published models to support your case and include at least one prediction
+      that could be tested by a future mission.
+    due_at: 2026-05-10 180000
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: true
+      count: 2
+      due_at: 2026-05-01 180000
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 10
+    replies:
+    - text: This case study helped me contrast Venus and Earth in terms of greenhouse
+        forcing and escape processes. Comparing bulk composition and surface conditions
+        made the limits of habitability clearer.
+      user: monica@instituterson.ca
+    - text: I compared Mars and Europa using recent mission data. The study highlighted
+        how subsurface liquid water and heat flux can compensate for thin atmospheres
+        when assessing habitability.
+      user: main_user
+    - text: My analysis focused on a hot super Earth and an icy mini Neptune. Differences
+        in insolation and atmospheric retention explain why one might retain habitable
+        niches while the other cannot.
+      user: ryan@instituterson.ca
+    - text: I used remote sensing and isotopic evidence to argue that certain biosignatures
+        are ambiguous without geological context. This case study clarified the need
+        for multiple lines of evidence.
+      user: abigail@instituterson.ca
+    submission_types:
+    - discussion_topic
+    title: Comparative Planetology Case Study
+    updated_at: 2026-02-15 090000
+  - created_at: '2026-01-15 09:30:00'
+    description: Welcome to the Mission Design for Life Detection assignment Please
+      propose a mission concept that would maximize the chance of detecting signs
+      of life Explain your target environment key instruments measurement strategies
+      and how you would validate a positive detection Include tradeoffs and a brief
+      justification for each choice
+    due_at: '2026-04-10 23:59:00'
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: true
+      count: 2
+      due_at: '2026-04-15 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 10
+    replies:
+    - text: I would target a shallow subsurface aquifer on an icy moon and deploy
+        a cryobot with a sterile sampler coupled to an organic analyzer This approach
+        focuses on environments with liquid water and chemical energy gradients for
+        life Detection would rely on combined evidence from isotopic ratios organic
+        biomarkers and environmental context
+      user: abigail@instituterson.ca
+    - feedback:
+        author: abigail@instituterson.ca
+        comment: Nice concept I would like to see more on contamination control and
+          detection thresholds
+      text: My design emphasizes a balloon platform that can sample the lower atmosphere
+        of a habitable exoplanet analog The platform would carry a compact mass spectrometer
+        and tunable laser spectrometer to search for disequilibria gases and complex
+        organics
+      user: main_user
+    - text: I favor a sample return mission when feasible because laboratory analysis
+        on Earth gives the highest confidence in life detection Combining returned
+        samples with in situ biosignature screening could reduce false positives
+      user: terrance@instituterson.ca
+    - text: Consider integrating microscopy with single cell sequencing capabilities
+        on a lander This could provide direct morphological evidence and molecular
+        confirmation without the risks of sample return
+      user: phillip@instituterson.ca
+    submission_types:
+    - discussion_topic
+    title: Mission Design for Life Detection
+    updated_at: '2026-01-15 09:30:00'
+  - created_at: '2026-03-02 09:30:00'
+    description: 'For this discussion please examine biogeochemical signatures in
+      rock records
+
+      Consider how isotopic ratios trace biological activity mineral textures like
+      stromatolites
+
+      and trace element patterns that point to metabolic processes
+
+      How can these signals be distinguished from abiotic processes and what are the
+      limits
+
+      for preservation through deep time
+
+      Relate your discussion to detection strategies for life on other worlds such
+      as Mars
+
+      and identify one example from the literature that supports your argument
+
+      '
+    due_at: '2026-04-20 23:59:00'
+    grading_type: points
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: true
+      count: 2
+      due_at: '2026-04-27 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 5
+    replies:
+    - text: Carbon isotope excursions are one of the clearest lines of evidence for
+        ancient biology\nNegative d13C values in sedimentary carbonates often point
+        to organic carbon burial and microbial activity\nStromatolite structures combined
+        with isotope data strengthen the biogenic interpretation\nI think integrating
+        multiple proxies is key to building a robust case
+      user: steven@instituterson.ca
+    - feedback:
+        author: sarah@instituterson.ca
+        comment: Good synthesis I agree that multiproxy approaches reduce ambiguity\nAlso
+          consider taphonomic loss and metamorphic overprinting when interpreting
+          signals
+      text: Mineralogical context matters a lot\nSecondary alteration can change isotopic
+        signatures so sedimentary fabric and geochemistry need to be assessed together\nWhat
+        methods would you propose to test for diagenetic alteration in a sample set
+      user: main_user
+    - text: Sulfur isotope patterns and mass independent fractionation provide insights
+        into early microbial metabolisms\nElevated pyrite abundance together with
+        exotic isotope ratios can indicate sulfate reduction or elemental cycling
+        by microbes\nThese methods are also being applied to Martian analog sediments
+        to prioritize samples for rover missions
+      user: monica@instituterson.ca
+    - text: High resolution tools like SIMS and LA ICP MS allow us to map isotope
+        ratios at micron scale which helps link microfossil morphology to chemistry\nCombined
+        petrographic and geochemical work is essential to avoid false positives when
+        searching for life signatures\nI would highlight a recent study that paired
+        microtextural analysis with isotope mapping as a model approach
+      user: terrance@instituterson.ca
+    submission_types:
+    - discussion_topic
+    title: Biogeochemical Signatures in Rock Records
+    updated_at: '2026-03-02 09:30:00'
+  - created_at: '2026-01-12 08:15:00'
+    description: Virtual lab simulation exploring synthesis pathways of small organic
+      molecules under early Earth conditions Submit the url to your completed simulation
+      session and a short summary of results
+    due_at: '2026-02-28 23:59:00'
+    points_possible: 48
+    submission_types:
+    - online_url
+    submissions:
+    - submission_type: online_url
+      url: https://labxchange.org/simulations/prebiotic-chemistry/session/abc123
+      user: main_user
+    title: Laboratory Simulation of Prebiotic Chemistry
+    updated_at: '2026-01-12 08:15:00'
+  - created_at: 2026-01-10 093000
+    description: Write a 1500 word research essay reviewing the processes that drive
+      the evolution of planetary atmospheres and their implications for habitability.
+      Discuss mechanisms such as atmospheric escape volcanic outgassing photochemistry
+      and delivery by impacts. Compare the atmospheric histories of at least two planets
+      or moons and evaluate how differences in evolution influence potential for life.
+      Support your analysis with at least three peer reviewed sources include a short
+      methods note on your literature search and provide a bibliography. Figures or
+      diagrams may be included as inline images or attachments.
+    due_at: 2026-04-20 235900
+    group_category: default
+    points_possible: 150
+    submission_types:
+    - online_text_entry
+    title: Evolution of Planetary Atmospheres
+    updated_at: 2026-02-12 140500
+  - created_at: '2025-09-01 09:30:00'
+    description: Prepare a 1200 word report on planetary protection measures and contamination
+      control for robotic and crewed missions
+    due_at: '2026-03-15 23:59:00'
+    group_category: default
+    points_possible: 100
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: '<p> Planetary protection seeks to avoid harmful cross contamination between
+        Earth and other planetary bodies while preserving the integrity of astrobiological
+        investigations. This report should cover forward contamination pathways from
+        spacecraft hardware and human presence, and backward contamination risks associated
+        with sample return and human exploration. Describe sterilization and bioburden
+        reduction techniques such as dry heat microbial reduction, vapor hydrogen
+        peroxide treatment, and validated cleaning protocols for components and instruments.
+        Discuss facility controls including clean room classification, personnel procedures,
+        witness plates, and environmental monitoring. Assess how environmental conditions
+        on target bodies influence microbial survival and the implications for mission
+        design. Summarize relevant international guidance and standards including
+        COSPAR policy and institutional certification processes. Offer practical recommendations
+        for mission planning that balance scientific access with contamination risk
+        mitigation, and identify research priorities to close gaps in testing and
+        verification.</p>
+
+        '
+      peer_review:
+      - author: instructor
+        comment: Excellent synthesis of strategic and technical considerations
+      submission_type: online_text_entry
+      user: main_user
+    title: Planetary Protection and Contamination Protocols
+    updated_at: '2025-09-01 09:30:00'
+  - created_at: '2025-09-10 09:30:00'
+    description: Analyze the role of radioactive decay in generating heat within planetary
+      interiors, discuss key isotopes involved, and evaluate how radionuclide heating
+      affects thermal evolution and potential habitability. Provide calculations for
+      heat production for a selected planet or moon, include assumptions, and discuss
+      uncertainties. Minimum 600 words.
+    due_at: '2026-10-15 23:59:00'
+    group_category: default
+    points_possible: 80
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p> In this assignment I calculated the contribution of long lived radionuclides
+        to the heat budget of a hypothetical rocky exoplanet. I began by estimating
+        the abundances of potassium forty uranium two thirty eight and thorium two
+        thirty two based on chondritic ratios scaled to the planet mass. Using published
+        decay constants and energy per decay values I computed volumetric heating
+        rates and then integrated over the mantle volume to get a global power. My
+        results indicate that radionuclide heating alone can sustain a magma ocean
+        for several hundred million years if initial abundances are high, but with
+        lower abundances the heat production declines rapidly leading to early mantle
+        solidification. I discussed how this heating interacts with other heat sources
+        such as accretional energy and tidal dissipation and how it influences core
+        formation and dynamo activity. I also examined observational constraints and
+        sources of uncertainty including composition heterogeneity and partitioning
+        of heat producing elements into crustal reservoirs. Finally I connected these
+        calculations to habitability by considering the implications for long term
+        surface temperature regulation and internal magnetic shielding. </p>
+      feedback:
+        comment: Solid quantitative approach and clear discussion of uncertainties;
+          good use of data
+        grade: 72
+        grader: instructor
+      peer_review:
+      - author: monica@instituterson.ca
+        comment: Strong calculations, you might add a figure showing heat production
+          versus time
+      - author: jared@instituterson.ca
+        comment: Nice link to habitability, consider expanding on how radiogenic heating
+          affects volatile retention
+      - author: terrance@instituterson.ca
+        comment: Clear methodology; include references for decay energies and half
+          lives
+      submission_type: online_text_entry
+      user: main_user
+    title: Radionuclide Heating in Planetary Interiors
+    updated_at: '2025-09-10 09:30:00'
+  - created_at: '2026-01-10 09:15:00'
+    description: Analyze and compare two remote sensing methods used to assess planetary
+      habitability. Describe sensors and platforms, target observables, signal limitations,
+      and potential false positives. Include at least one case study where remote
+      data informed a habitability assessment. Minimum 700 words.
+    due_at: '2026-03-22 23:59:00'
+    group_category: default
+    points_possible: 85
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p>For my submission I examined thermal infrared imaging and multispectral
+        reflectance observations as applied to Mars analog field sites. Thermal infrared
+        sensors capture surface temperature contrasts that can indicate active geothermal
+        processes or subsurface ice, while multispectral data reveal mineralogical
+        signatures tied to water alteration. In a recent field campaign I saw how
+        an initial interpretation based on daytime thermal contrast suggested active
+        outgassing, but follow up measurements revealed the effect was due to dark
+        rock exposure and solar heating. This demonstrates the importance of accounting
+        for observation geometry and diurnal cycles when interpreting remote data.
+        A robust analysis uses multiple sensors, ground truth where possible, and
+        models of environmental confounders. I discuss a case study of the detection
+        of phyllosilicates in an ancient basin, how instrument spectral resolution
+        affected confidence, and how combined datasets reduced false positive risk.
+        Finally I reflect on the implications for target selection in future missions
+        and on how methodological awareness can improve habitability assessments.</p>
+      feedback:
+        comment: Well written comparison of techniques and a thoughtful case study.
+          Consider adding figures or references to specific instrument missions to
+          strengthen evidence and expand on limitations.
+        grade: 78
+        grader: instructor
+      submission_type: online_text_entry
+      user: main_user
+    title: Remote Sensing Techniques for Habitability
+    updated_at: '2026-01-11 14:40:00'
+  - created_at: '2025-09-12 14:45:00'
+    description: Analyze two major geochemical cycles and discuss how their functioning
+      affects planetary habitability. Provide examples from Earth and one other planetary
+      body or exoplanet. Minimum 500 words.
+    due_at: '2026-10-15 23:59:00'
+    group_category: default
+    points_possible: 50
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: '<p>Throughout this course I examined how cycles of carbon and water shape
+        planetary habitability. On Earth the carbon cycle links atmospheric CO2 to
+        biological activity and long term climate regulation via rock weathering and
+        sedimentation. Changes to that cycle can produce strong climate feedbacks
+        that either stabilize surface conditions or push the planet toward extreme
+        greenhouse or snowball states. The water cycle governs the availability and
+        distribution of liquid on the surface through evaporation condensation and
+        precipitation. Oceans and ice reservoirs act as buffers that moderate temperature
+        swings and support diverse chemical environments for life.</p>
+
+        <p>Comparative examples highlight the role of cycling. Mars shows geological
+        signs of a formerly active water cycle yet lost much of its volatiles and
+        atmosphere leaving the surface cold and dry. Europa on the other hand appears
+        to host a subsurface ocean maintained by tidal heating where water and potential
+        chemical exchange with the rocky interior could sustain habitable niches despite
+        the absence of surface liquid water. These contrasts illustrate that both
+        the presence of key volatiles and the rates and pathways of their cycling
+        determine long term habitability.</p>
+
+        <p>Integrating observational constraints with simple box models clarifies
+        how fluxes and reservoir sizes set residence times and climate sensitivity.
+        For further work I will quantify typical flux magnitudes and compare their
+        timescales to biological and geological processes to better define habitability
+        boundaries.</p>'
+      feedback:
+        comment: Clear linkage between cycles and habitability however include more
+          quantitative estimates next time
+        grade: 46
+        grader: instructor
+      peer_review:
+      - author: terrance@instituterson.ca
+        comment: Good synthesis of concepts could expand on the role of volcanic degassing
+          in the carbon cycle
+      submission_type: online_text_entry
+      user: main_user
+    title: Geochemical Cycles and Habitability
+    updated_at: '2025-09-12 14:45:00'
+  - created_at: '2026-09-01 09:30:00'
+    description: Write a research style report evaluating the habitability of super
+      Earth exoplanets. Discuss interior structure and geology, atmosphere retention
+      and composition, magnetic field generation, the role of the host star and orbital
+      environment, and surface conditions that affect liquid water stability. Use
+      recent literature and include at least three peer reviewed sources. Minimum
+      1000 words.
+    due_at: '2027-02-15 23:59:00'
+    group_category: default
+    points_possible: 100
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: '<p>In this report I examine the factors that control habitability on
+        super Earths with masses between two and ten Earth masses. Observational surveys
+        show a wide diversity in mass and radius among these planets, which implies
+        a range of bulk compositions from predominantly rocky to volatile rich. A
+        key determinant of surface habitability is whether the planet can retain a
+        secondary atmosphere that supports stable surface temperatures and liquid
+        water. Higher gravity on many super Earths favors atmosphere retention but
+        vigorous early stellar irradiation and strong stellar winds can drive significant
+        atmospheric escape for planets close to active stars. </p>
+
+        <p>Internal structure and heat budget are central to long term habitability.
+        Larger mantle reservoirs and elevated radiogenic heating can sustain mantle
+        convection and possibly plate like behavior for longer periods than on Earth.
+        Sustained tectonics supports carbon cycling and stabilizes climate through
+        long term weathering feedbacks. Conversely, a stagnant lid regime could limit
+        surface recycling and reduce the likelihood of long term stable climates.
+        The presence and strength of a dynamo generated magnetic field also matters
+        because it can mitigate atmospheric loss driven by stellar particle flux.
+        Dynamo lifetime depends on core size, composition, and cooling rate, which
+        in turn relate to formation history and volatile inventory. </p>
+
+        <p>Stellar environment and orbital dynamics impose additional constraints.
+        Planets orbiting low mass M dwarfs face high levels of extreme ultraviolet
+        radiation and flares early in their history. Tidal effects can lead to synchronous
+        rotation for close in planets which alters climate patterns but does not by
+        itself preclude habitable conditions if heat redistribution is efficient.
+        For planets in wider orbits around Sun like stars, insolation variability
+        is less severe and the classical habitable zone concept is more directly applicable.
+        </p>
+
+        <p>Ultimately habitability of any given super Earth is a product of interacting
+        factors including mass and radius, volatile inventory, internal heating and
+        tectonics, magnetic shielding, and the activity history of the host star.
+        Future observations that constrain bulk composition, atmospheric spectra,
+        and stellar activity histories will be critical. This synthesis highlights
+        the need to couple interior evolution models with atmospheric escape calculations
+        and climate models to assess habitability probabilities across the observed
+        population of super Earths. </p>
+
+        '
+      feedback:
+        comment: Strong synthesis of observational constraints and theory. The discussion
+          of interior dynamics and magnetic protection was clear and well organized.
+          For improvement provide explicit citations to the peer reviewed sources
+          you used and expand on quantitative estimates of atmospheric loss for different
+          stellar activity levels.
+        grade: 92
+        grader: instructor
+      submission_type: online_text_entry
+      user: main_user
+    title: Habitability of Super Earths
+    updated_at: '2026-09-01 09:30:00'
+  - created_at: '2026-02-14 09:30:00'
+    description: 'Investigate the physical and chemical dynamics of subsurface oceans
+      in icy
+
+      moons such as Europa and Enceladus. Explain the main sources of internal heat
+
+      and how tidal dissipation and radiogenic heating contribute to maintaining a
+
+      liquid layer beneath an ice shell. Discuss fluid circulation patterns heat
+
+      transport and the role of hydrothermal activity in generating chemical
+
+      gradients that could support microbial life. Compare modeling approaches and
+
+      observational constraints and end with at least one clear testable prediction
+
+      for future missions Minimum 500 words'
+    due_at: '2026-11-20 23:59:00'
+    group_category: default
+    points_possible: 60
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: '<p>This essay examines the dynamics of subsurface oceans beneath the
+        ice
+
+        shells of icy moons focusing on energy sources transport processes and
+
+        potential habitability. Tidal flexing caused by orbital resonances generates
+
+        mechanical energy that is dissipated as heat in the interior This process
+        can
+
+        produce spatially heterogeneous heating that drives convection within the
+
+        ocean and localized melting at the base of the ice shell Heat transport by
+
+        ocean circulation redistributes energy and helps sustain liquid water over
+
+        geological timescales</p>
+
+
+        <p>Hydrothermal activity at the seafloor can provide chemical disequilibria
+
+        needed for metabolism by supplying reduced compounds to oxidized ocean water
+
+        Vertical mixing and plume transport are key for delivering nutrients from
+
+        rock water interactions into the bulk ocean Modeling of these processes
+
+        requires coupling tidal heating models thermal evolution and fluid dynamics
+
+        simulations Observations of plume activity and induced magnetic fields offer
+
+        constraints on ocean depth salinity and basic circulation patterns</p>
+
+
+        <p>To assess habitability one must evaluate energy availability nutrient
+
+        fluxes and stability of liquid water Chemical gradients produced by
+
+        serpentinization and radiolysis could sustain chemosynthetic ecosystems even
+
+        in the absence of sunlight A useful prediction for upcoming missions is that
+
+        spatial variability in plume composition will reflect heterogeneity in
+
+        seafloor processes Sampling multiple vents or plume sources should reveal
+
+        distinct signatures that can be linked to local geology</p>
+
+
+        <p>In summary the combined effects of tidal heating ocean circulation and
+
+        seafloor chemistry create dynamic environments with promising implications
+
+        for habitability Future observations that resolve plume chemistry and
+
+        precise geophysical measurements will refine models and test the predictions
+
+        outlined here</p>'
+      feedback:
+        comment: Solid technical discussion and clear predictions please include more
+          specific references to recent mission findings and indicate model assumptions
+          more explicitly
+        grade: 58
+        grader: instructor
+      peer_review:
+      - author: main_user
+        comment: Well organized argument and good discussion of hydrothermal activity
+      - author: phillip@instituterson.ca
+        comment: Nice overview consider expanding the section on magnetic induction
+          constraints
+      - author: sarah@instituterson.ca
+        comment: Strong synthesis maybe add a brief figure or schematic in future
+      submission_type: online_text_entry
+      user: main_user
+    title: Icy Moon Subsurface Ocean Dynamics
+    updated_at: '2026-02-14 09:30:00'
+  - created_at: '2026-02-15 09:30:00'
+    description: Participate in a hands on modeling workshop exploring equilibrium
+      climate states on terrestrial planets Build a simple energy balance model run
+      parameter sweeps and interpret habitability implications Submit a brief report
+      with methods plots and interpretation
+    due_at: '2026-03-01 23:59:00'
+    group_category: default
+    points_possible: 85
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p>For this workshop I implemented a simple one dimensional energy balance
+        model to investigate how surface albedo and atmospheric greenhouse strength
+        affect global mean temperature on an Earth like planet I ran a parameter sweep
+        over albedo values from 0.1 to 0.6 and varied a bulk greenhouse parameter
+        to simulate different atmospheric compositions For each run I recorded equilibrium
+        mean surface temperature and produced plots of temperature versus parameter
+        values I included a brief methods section describing the model equations numerical
+        scheme and initial conditions and attached example model code snippets I conclude
+        that increases in greenhouse strength produce larger temperature gains than
+        equivalent decreases in albedo but that high albedo can still trigger rapid
+        cooling in some regimes</p>
+      feedback:
+        comment: Good implementation and clear plots Include a short discussion of
+          model limitations and numerical stability in the final version
+        grade: 80
+        grader: instructor
+      peer_review:
+      - author: sarah@instituterson.ca
+        comment: Informative results consider adding a supplementary figure showing
+          time to equilibrium for selected runs
+      submission_type: online_text_entry
+      user: main_user
+    title: Planetary Climate Modeling Workshop
+    updated_at: '2026-02-15 09:30:00'
+  - created_at: '2026-01-20 09:30:00'
+    description: Analyze how high energy stellar radiation leads to atmospheric escape
+      on small rocky planets. Write a 1200 word report that compares thermal and non
+      thermal escape processes and discusses observational signatures for future missions.
+    due_at: '2026-11-30 23:59:00'
+    group_category: default
+    peer_reviews:
+      anonymous_peer_reviews: false
+      automatic_peer_reviews: true
+      count: 2
+      due_at: '2026-10-15 12:00:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 85
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: '<p>For this assignment I outline a modeling project to estimate atmospheric
+        escape rates for an Earth sized exoplanet orbiting an M dwarf. I will use
+        a 1D hydrodynamic escape model driven by measured XUV fluxes to compare hydrogen
+        loss for different initial atmospheres. The plan includes sensitivity tests
+        for stellar activity levels and for planetary magnetic field strength. I expect
+        that planets around active M dwarfs lose hydrogen envelopes rapidly unless
+        they have strong magnetic protection or high initial volatile inventories.</p>
+
+        '
+      submission_type: online_text_entry
+      user: main_user
+    - body: I am most interested in how stellar flares change short term escape rates
+        and what that means for habitability.
+      submission_type: online_text_entry
+      user: sarah@instituterson.ca
+    - body: I would like to focus on observational methods to detect escaping atmospheres
+        using ultraviolet spectroscopy.
+      submission_type: online_text_entry
+      user: steven@instituterson.ca
+    - body: How does stellar wind pressure compare to thermal escape for small planets
+        close to their stars I wonder.
+      submission_type: online_text_entry
+      user: jared@instituterson.ca
+    - body: I want to explore case studies of known exoplanets that show signs of
+        atmospheric loss and tie that to their stellar environments.
+      submission_type: online_text_entry
+      user: monica@instituterson.ca
+    title: Stellar Radiation and Atmospheric Escape
+    updated_at: '2026-01-20 09:30:00'
+  - created_at: '2026-03-10 10:00:00'
+    description: "Investigate a peer reviewed research article on extremophiles and\
+      \ evaluate how the organism adaptations inform the search for life on other\
+      \ worlds. Your analysis should be 800\u20131000 words and include methods, key\
+      \ findings, and astrobiological implications."
+    due_at: '2026-11-20 23:59:00'
+    group_category: default
+    points_possible: 60
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p>In a 2021 study Martinez and colleagues characterized a hyperthermophilic
+        archaeon isolated from a deep sea hydrothermal vent. The team combined genomic
+        sequencing with laboratory assays to identify thermostable enzymes, unique
+        ether linked membrane lipids, and robust DNA repair pathways that enable growth
+        above 90 degrees Celsius. Experimental simulations of vent fluid chemistry
+        showed active sulfur based respiration and metabolic flexibility under fluctuating
+        redox conditions. The authors argue these adaptations make such organisms
+        strong analogues for potential life in extraterrestrial hydrothermal environments,
+        and they recommend specific lipid and enzyme fragments as target biosignatures
+        for plume sampling missions. The study links molecular adaptations to mission
+        relevant detection strategies and highlights limitations when extrapolating
+        from Earth systems to icy ocean worlds.</p>
+      feedback:
+        comment: Good work connecting physiology to detection strategies review the
+          discussion on biosignature ambiguity.
+        grade: 54
+        grader: instructor
+      peer_review:
+      - author: sarah@instituterson.ca
+        comment: Thoughtful summary and clear implications, consider adding a brief
+          critique of experimental limitations
+      submission_type: online_text_entry
+      user: main_user
+    title: Extremophiles as Analogues for Extraterrestrial Life
+    updated_at: '2026-03-10 10:00:00'
+  - created_at: '2025-09-15 09:30:00'
+    description: Write a 1000 word essay on key factors that determine habitability
+      of planets orbiting M dwarf stars
+    due_at: '2026-03-01 23:59:00'
+    group_category: default
+    peer_reviews:
+      anonymous_peer_reviews: true
+      automatic_peer_reviews: true
+      count: 1
+      due_at: '2026-02-28 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 100
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: '<p>Planets around M dwarf stars face unique habitability challenges and
+        opportunities. The close in habitable zone means tidal locking is common which
+        can create large temperature contrasts between day and night sides. Stellar
+        activity including energetic flares can erode atmospheres and drive intense
+        radiation at the surface. At the same time, long lifetimes of M dwarfs offer
+        extended windows for biological evolution if atmospheres and magnetic shielding
+        persist. Understanding these interacting processes is essential to assess
+        whether liquid water and stable climates can exist on worlds orbiting these
+        abundant stars.</p>
+
+        '
+      feedback:
+        comment: Well argued and sources cited
+        grade: 92
+        grader: instructor
+      peer_review:
+      - author: monica@instituterson.ca
+        comment: Interesting synthesis of trade offs between tidal locking and atmospheric
+          circulation
+      submission_type: online_text_entry
+      user: main_user
+    - body: '<p>This essay examines atmospheric retention magnetic field importance
+        and volatile delivery for M dwarf planets. High energy particle fluxes and
+        X ray radiation can strip light atmospheres unless replenished by outgassing
+        or cometary impacts. Planets with strong intrinsic magnetospheres may better
+        preserve surface conditions suitable for life. Modeling of atmospheric chemistry
+        under active stellar spectra is critical to predict surface habitability and
+        biosignature detectability for future observations.</p>
+
+        '
+      submission_type: online_text_entry
+      user: sarah@instituterson.ca
+    title: Habitability Factors for M Dwarf Planets
+    updated_at: '2025-09-15 09:30:00'
+  - created_at: '2026-01-15 09:30:00'
+    description: Write a 1500 word report evaluating current and proposed biosignature
+      detection strategies for icy moons and exoplanets. Compare at least two detection
+      methods such as spectroscopy and in situ sampling, discuss advantages and limitations,
+      detail instrumentation requirements, and include a brief hypothetical data interpretation.
+    due_at: '2026-04-20 23:59:00'
+    group_category: default
+    points_possible: 100
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: <p>This report surveys methods for detecting biosignatures on icy moons
+        and exoplanets. Remote spectroscopy can identify atmospheric gases and surface
+        compounds that may indicate biological activity while in situ sampling provides
+        contextual chemical and isotopic analysis. Each approach has tradeoffs. Spectroscopy
+        enables broad coverage and repeated observations but may produce ambiguous
+        signals due to abiotic processes. In situ instruments can offer higher confidence
+        through direct analysis yet require complex mission architectures and higher
+        cost. The report compares instrumentation such as high resolution spectrometers
+        and compact wet chemistry labs, reviews recent mission concepts, and presents
+        a mock data set with interpretation steps for a candidate biosignature. The
+        conclusion recommends a staged strategy that integrates remote sensing for
+        target selection with focused in situ follow up to minimize false positives.</p>
+      feedback:
+        grader: instructor
+        rubric_assessment:
+        - comments: Clear technical analysis but needed deeper discussion of false
+            positives
+          comments_enabled: true
+          criterion_id: crit1
+          description: Pass
+          id: rat1
+          points: 42.0
+        - comments: Good synthesis and recommendations Well organized
+          comments_enabled: true
+          criterion_id: crit2
+          description: B
+          id: rat2
+          points: 48.0
+      submission_type: online_text_entry
+      user: main_user
+    title: Biosignature Detection Strategies
+    updated_at: '2026-01-15 09:30:00'
+  - created_at: '2026-01-10 09:30:00'
+    description: Analyze spectroscopic techniques used to characterize exoplanet atmospheres
+      and produce a 1500 word report comparing transmission, emission, and reflection
+      spectroscopy while discussing limitations and future directions. Include at
+      least two recent research studies to support your discussion.
+    due_at: '2026-03-01 23:59:00'
+    group_category: default
+    peer_reviews:
+      anonymous_peer_reviews: true
+      automatic_peer_reviews: true
+      count: 2
+      due_at: '2026-02-25 23:59:00'
+      enabled: true
+      intra_group_peer_reviews: true
+    points_possible: 100
+    submission_types:
+    - online_text_entry
+    submissions:
+    - body: '<p>Characterizing exoplanet atmospheres relies heavily on spectroscopy
+        to identify molecular signatures and temperature structures. Transmission
+        spectroscopy during transits reveals absorption features of gases like water
+        vapor, methane, and carbon monoxide, while emission spectroscopy obtained
+        during secondary eclipses provides thermal emission spectra that constrain
+        temperature profiles. Reflection spectroscopy can inform on albedo and cloud
+        properties. Instruments such as the Hubble Space Telescope and JWST have enabled
+        detections of broad molecular bands, while high resolution ground based spectrographs
+        allow for precise radial velocity linked line detections. Retrieval models
+        invert observed spectra to estimate abundances and temperatures, but degeneracies
+        between composition and clouds remain a significant challenge. Recent studies
+        demonstrate advances in statistical retrievals and cross correlation techniques
+        that improve confidence in molecular detections. The report compares signal
+        to noise requirements, wavelength coverage, and model degeneracies across
+        methods, and recommends observational strategies for distinguishing between
+        cloudy and clear atmospheres.</p>
+
+        '
+      feedback:
+        comment: Well researched report with clear comparisons of techniques and practical
+          recommendations.
+        grade: 88
+        grader: instructor
+      peer_review:
+      - author: sarah@instituterson.ca
+        comment: Strong comparative analysis; consider adding a figure or table to
+          summarize instrument capabilities and mention haze impacts in more detail.
+        rubric_assessment:
+        - comments: Thorough and clear discussion of methods.
+          comments_enabled: true
+          criterion_id: crit1
+          description: Pass
+          id: rat3
+          points: 45.0
+        - comments: Good critical evaluation but needs more recent citations and a
+            short conclusion.
+          comments_enabled: true
+          criterion_id: crit2
+          description: B
+          id: rat4
+          points: 43.0
+      submission_type: online_text_entry
+      user: main_user
+    title: Exoplanet Atmospheres and Spectroscopy
+    updated_at: '2026-01-10 09:30:00'
+  - created_at: '2026-01-10 09:00:00'
+    description: Write a 250 to 300 word reflection summarizing the mechanisms for
+      prebiotic chemistry discussed in lecture and evaluate how those processes could
+      operate in icy ocean environments such as Europa or Enceladus
+    due_at: '2026-02-05 23:59:00'
+    group_category: default
+    points_possible: 20
+    submission_types:
+    - online_text_entry
+    title: Origins of Life on Ocean Worlds
+    updated_at: '2026-01-12 16:30:00'
+  code: AST312
+  discussions:
+  - discussion_type: threaded
+    message: 'Hello all I am opening a discussion on the ethical implications of detecting
+      extraterrestrial life. What responsibilities do we have as scientists and citizens
+      when a detection is possible or confirmed? Sharing short thoughts or resources
+      could help shape our class debate.
+
+      '
+    replies:
+    - replies:
+      - text: Good point Sarah I also worry about contamination risks and the need
+          for strict protocols before we claim a discovery.
+        user: steven@instituterson.ca
+      text: I think the biggest issue is deciding who speaks for humanity when we
+        make a detection and how to handle messages or samples responsibly.
+      user: sarah@instituterson.ca
+    - replies:
+      - text: Same here Terrance I worry about premature announcements and media hype
+          causing public misunderstanding.
+        user: alex@instituterson.ca
+      text: There are legal and political angles too like how governments might respond
+        and what regulations apply.
+      user: terrance@instituterson.ca
+    - replies:
+      - text: That resonates Abigail Also we should consider the rights of non human
+          life forms and our obligation to avoid harm.
+        user: monica@instituterson.ca
+      text: Ethical issues also hit research priorities like should we divert telescopes
+        and missions to follow up a possible signal.
+      user: abigail@instituterson.ca
+    - text: I think public engagement matters a lot we should involve diverse voices
+        before major decisions are made.
+      user: jared@instituterson.ca
+    title: Ethical implications of detecting extraterrestrial life
+    user: instructor
+  - discussion_type: threaded
+    message: As we explore extremophiles and terrestrial analogs for space this week
+      I want you to reflect on examples from Earth that could inform life detection
+      on other worlds Share a brief description of a specific analog environment or
+      organism and explain why it is relevant to astrobiology You can mention field
+      trips lab work literature or media that shaped your view
+    replies:
+    - text: The hypersaline springs I read about are a great example Their salt tolerant
+        microbes demonstrate extreme osmotic adaptation and metabolic flexibility
+        Studying them could help us predict where life might persist on ancient Mars
+        or salty ocean worlds
+      user: sarah@instituterson.ca
+    title: Extremophiles and terrestrial analogs for space
+    user: instructor
+  - discussion_type: threaded
+    message: 'Welcome to the course discussion on the role of planetary geology in
+      habitability. Share a single geological process you think most strongly affects
+      habitability and explain your reasoning in one or two sentences
+
+      '
+    replies:
+    - replies:
+      - text: Volcanic outgassing can replenish an atmosphere and supply water and
+          gases that support habitability
+        user: ryan@instituterson.ca
+      text: I find impact cratering interesting since it can both sterilize surfaces
+        and deliver volatiles and organics
+      user: abigail@instituterson.ca
+    - text: Plate tectonics stands out to me because it drives long term climate stability
+        and nutrient recycling
+      user: monica@instituterson.ca
+    title: Role of planetary geology in habitability
+    user: instructor
+  - discussion_type: threaded
+    message: 'For this week think about how we identify atmospheric biosignatures
+      and how abiotic processes can mimic them Consider examples like oxygen methane
+      and seasonal gas changes What observations and contextual data would help rule
+      out false positives Think about host star activity surface pressure photochemistry
+      and planetary history Share papers ideas and respond to classmates
+
+      '
+    replies:
+    - replies:
+      - text: I agree that host star UV can drive photochemistry that produces O2
+          without life Strong irradiation can split CO2 and lead to oxygen buildup
+          so caution is needed
+        user: ryan@instituterson.ca
+      text: Detection of O2 alone seems risky as evidence for life We want multiple
+        lines of evidence such as reduced gases surface features or temporal variations
+      user: alex@instituterson.ca
+    - text: Abiotic methane can come from processes like serpentinization so even
+        CH4 detections need context Concurrent detection of oxidized and reduced species
+        would be more convincing but still needs careful analysis
+      user: monica@instituterson.ca
+    - text: Instrument systematics and retrieval assumptions can produce apparent
+        signatures Laboratory spectra and cross instrument comparisons will be important
+        to reduce false positives
+      user: steven@instituterson.ca
+    title: Atmospheric signatures and false positives
+    user: instructor
+  - discussion_type: threaded
+    message: 'Welcome to week 5 discussion Please describe which biosignatures or
+      detection methods you think are most promising for finding life in subsurface
+      oceans such as Europa or Enceladus Explain why and cite any relevant missions
+      or instruments You must reply to at least one classmate
+
+      '
+    replies:
+    - replies:
+      - text: Great point I had not considered plume sampling as a low risk high reward
+          approach It seems promising for Enceladus
+        user: alex@instituterson.ca
+      text: I think sampling plume ejecta is the most practical near term strategy
+        Plumes provide direct access to subsurface material without drilling Cassini
+        data already hinted at organics and salts so follow up missions could be decisive
+      user: abigail@instituterson.ca
+    - text: I lean toward magnetometer and gravity studies combined with infrared
+        mapping Detecting induced magnetic signatures and thermal anomalies helps
+        locate liquid layers and potential energy sources
+      user: ryan@instituterson.ca
+    - text: My focus would be on searching for chemical disequilibrium and patterns
+        of complex organics True biosignatures should show ongoing processes not just
+        raw organics
+      user: main_user
+    title: Searching for life on ocean worlds
+    user: instructor
+  groups:
+  - description: A hands on practicum for ASTRO 312 students to collaborate on lab
+      work field studies and mission design
+    is_public: true
+    name: Astrobiology Practicum
+  - description: Research group focused on orbital mechanics and habitability studies
+    is_public: true
+    join_level: parent_context_request
+    leader: main_user
+    name: Orbital Dynamics Group
+    users:
+    - main_user
+    - phillip@instituterson.ca
+    - abigail@instituterson.ca
+  - description: Focused on planetary energy budgets
+    is_public: true
+    join_level: parent_context_request
+    leader: main_user
+    name: Radiative Balance Team
+    users:
+    - main_user
+    - sarah@instituterson.ca
+    - terrance@instituterson.ca
+  - description: A working group on fossil records and habitability through deep time
+    is_public: true
+    join_level: parent_context_request
+    leader: main_user
+    name: Paleobiology Cluster
+    users:
+    - main_user
+    - sarah@instituterson.ca
+    - steven@instituterson.ca
+  - description: A student research group focused on methane cycling and planetary
+      habitability
+    is_public: true
+    name: Methane Cycle Collective
+    users:
+    - main_user
+    - phillip@instituterson.ca
+    - sarah@instituterson.ca
+  - announcements:
+    - allow_rating: true
+      message: Hey all Im looking to borrow the astrobiology lab manual for a week
+        If anyone can help please DM me
+      title: Borrowing lab manual
+      user: main_user
+    description: Study group focusing on red dwarf habitability
+    discussions:
+    - discussion_type: threaded
+      message: Reminder that our data meeting is moved to Friday evening I will share
+        slides beforehand
+      title: Data meeting rescheduled
+      user: main_user
+    is_public: true
+    name: Red Dwarf Study Group
+    pages:
+    - body: What are your notes on stellar flares and habitable zone boundaries for
+        red dwarf stars Lets compile key papers and figures
+      title: Notes on flares and habitability
+      updates:
+      - body: Added a list of recent papers and rough summaries Please review and
+          add comments
+        revised_at: 2026-02-15 14 30 00
+        title: Notes on flares and habitability
+    - body: Project plan for week by week tasks and who is doing simulations and who
+        is writing the report
+      title: Project plan and task list
+    users:
+    - main_user
+    - sarah@instituterson.ca
+    - jared@instituterson.ca
+  - announcements:
+    - allow_rating: true
+      message: Does anyone want to meet on Friday evening to go over subsurface habitability
+        models
+      title: Friday model review
+      user: main_user
+    description: Collaborative unit focusing on subsurface habitability topics
+    discussions:
+    - discussion_type: threaded
+      message: Has anyone found recent papers on ice shell pore habitability or biosignatures
+      title: Recent papers and biosignatures
+      user: main_user
+    - discussion_type: threaded
+      message: What parameters should we include when simulating subsurface thermal
+        profiles
+      title: Simulation parameters for subsurface models
+      user: main_user
+    is_public: true
+    name: Subsurface Habitability Unit
+    pages:
+    - body: Collect summaries of key subsurface environments such as ocean worlds
+        icy shells and aquifers for quick reference
+      title: Key environments and mechanisms
+      updates:
+      - body: Added notes on Europa ice shell convection and potential nutrient transport
+        revised_at: 2026-03-08 150000
+        title: Europa notes added
+    - body: Post proposed methods and datasets for the unit project and label availability
+        for field or lab work
+      title: Project methods and datasets
+    users:
+    - terrance@instituterson.ca
+    - sarah@instituterson.ca
+    - steven@instituterson.ca
+    - main_user
+  - description: Collaborative group for analyzing planetary atmospheres and habitability
+    is_public: true
+    name: Planetary Atmospheres Team
+    pages:
+    - body: 'Coordinate observation times for exoplanet transits Share radiative transfer
+        scripts and notebooks Compare atmospheric retrieval techniques and model outputs
+        Collect papers on biosignatures and habitability metrics Plan weekly data
+        review sessions '
+      title: Spectra Discussion and Data Sharing
+    users:
+    - terrance@instituterson.ca
+    - phillip@instituterson.ca
+    - lisa@instituterson.ca
+    - main_user
+  - description: Field research group for Astrobiology and Planetary Habitability
+      312 course
+    discussions:
+    - discussion_type: threaded
+      message: 'I have been tracking recent news items about microbes in harsh environments
+
+        and wondering which claims are actually supported by primary literature.
+
+        Could we each post one trusted paper or database entry that we can cite for
+
+        the review section of our project
+
+        '
+      title: Seeing many bold claims about space and extreme microbes lately
+      user: main_user
+    is_public: true
+    name: Extremophile Squad
+    pages:
+    - body: 'Central hub for the Extremophile Squad resources and notes
+
+
+        Use this page to link protocols raw data and draft figures for the group
+
+        presentation and final paper
+
+        '
+      title: Team resources and lab notes
+    users:
+    - sarah@instituterson.ca
+    - steven@instituterson.ca
+    - jared@instituterson.ca
+    - main_user
+  - description: Climate simulations group for Astrobiology and Planetary Habitability
+      312
+    is_public: true
+    name: Climate Modeling Cell
+    pages:
+    - body: Central hub for coordinating model runs data sharing and slide drafts
+        for the final project. Please upload model output to the shared folder and
+        note parameter changes in the log.
+      title: Model coordination hub
+    users:
+    - phillip@instituterson.ca
+    - monica@instituterson.ca
+    - main_user
+  - description: Titan Research Group is a collaborative research team in Astrobiology
+      and Planetary Habitability 312 focused on Titan habitability and biosignature
+      studies
+    is_public: true
+    name: Titan Research Group
+    pages:
+    - body: 'Central page for the Titan Research Group with meeting notes task assignments
+        and links to data resources '
+      title: Titan research overview
+    users:
+    - phillip@instituterson.ca
+    - monica@instituterson.ca
+    - alex@instituterson.ca
+    - main_user
+  - description: Europa research group for Astrobiology and Planetary Habitability
+      312 project
+    is_public: true
+    name: Europa Crew
+    users:
+    - abigail@instituterson.ca
+    - steven@instituterson.ca
+    - main_user
+  - description: Student research team for Astrobiology and Planetary Habitability
+      312 focusing on biosignature detection
+    is_public: true
+    name: Biosignature Lab
+    users:
+    - sarah@instituterson.ca
+    - steven@instituterson.ca
+    - abigail@instituterson.ca
+    - main_user
+  - description: Collaborative study group exploring exoplanet atmospheres and biosignature
+      detection for Astrobiology and Planetary Habitability 312
+    is_public: true
+    name: Exoplanet Explorers
+    users:
+    - terrance@instituterson.ca
+    - abigail@instituterson.ca
+    - alex@instituterson.ca
+  - description: Research group focused on early Earth environments and habitability
+      for Astrobiology 312
+    is_public: true
+    name: Early Earth Unit
+    users:
+    - sarah@instituterson.ca
+    - main_user
+  - announcements:
+    - allow_rating: true
+      message: Hey team we should meet in the observatory room after class on Thursday
+        to finalize our poster for Astrobiology and Planetary Habitability 312 Are
+        you available
+      title: Poster Prep Thursday
+      user: main_user
+    description: Research and lab work group for Astrobiology and Planetary Habitability
+      312
+    is_public: true
+    name: Tardigrade Team
+    users:
+    - abigail@instituterson.ca
+    - monica@instituterson.ca
+    - phillip@instituterson.ca
+    - main_user
+  - announcements:
+    - allow_rating: true
+      message: Hi all We will meet in the Earth Sciences building room 214 on Friday
+        at 5pm to review exoplanet climate models and practice past quiz questions
+        Please bring your laptop and notes
+      title: Friday Review Meeting
+      user: main_user
+    description: Collaborative study group for Astrobiology and Planetary Habitability
+      312 focused on exoplanets biosignatures and habitability modeling
+    is_public: true
+    name: Kepler Collective
+    users:
+    - main_user
+    - sarah@instituterson.ca
+    - steven@instituterson.ca
+  - description: Research group for HabZone modeling in Astrobiology 312
+    is_public: true
+    name: HabZone Alpha
+    users:
+    - main_user
+    - terrance@instituterson.ca
+    - sarah@instituterson.ca
+    - steven@instituterson.ca
+  instructor:
+    email: j.santiago@instituterson.ca
+    name: Dr Javier Santiago
+    password: pY8r_93BvQ2!
+  main_user:
+    email: riley.parker@instituterson.ca
+    name: Riley Parker
+    password: hG7r9Kp2VzQ1
+  modules:
+  - content:
+    - completion_requirements: must_mark_done
+      title: Exoplanet Atmospheres and Habitability
+    - title: Exoplanet Atmospheres and Spectroscopy
+    name: Astrobiology 312 Week 1 Exoplanet Atmospheres
+    workflow_state: active
+  - content:
+    - title: Stellar Radiation and Atmospheric Escape
+    - title: Habitability Factors for M Dwarf Planets
+    name: Astrobiology 312 Week 2 Stellar and Atmospheric Processes
+    workflow_state: active
+  - content:
+    - completion_requirements: must_mark_done
+      title: Exoplanet Atmospheres and Habitability
+    - title: Biosignature Detection Strategies
+    name: Astrobiology 312 Week 3 Biosignatures and Habitability
+    workflow_state: active
+  name: Astrobiology and Planetary Habitability 312
+  outcomes:
+  - Ability to evaluate planetary habitability and identify potential biosignatures
+  pages:
+  - body: 'Exoplanet atmospheres are a primary determinant of planetary habitability
+      because they control surface temperature, shield against harmful radiation,
+      and mediate volatile cycles. Observational techniques such as transit and eclipse
+      spectroscopy, direct imaging, and phase curve analysis provide constraints on
+      molecular composition, thermal profiles, and cloud properties. Important physical
+      and chemical processes include atmospheric escape driven by stellar irradiation,
+      photochemistry that can create or destroy potential biosignatures, and radiative
+      transfer that governs greenhouse warming. Candidate biosignature gases like
+      water vapor, oxygen, ozone, methane, and carbon dioxide must be interpreted
+      with care to avoid abiotic false positives caused by geophysical or stellar
+      effects. Modeling tools range from one dimensional radiative convective calculations
+      to three dimensional general circulation models, each with trade offs in complexity
+      and computational cost. This page summarizes diagnostic observables, best practice
+      approaches for atmospheric retrievals, common pitfalls in habitability inference,
+      and recent mission capabilities relevant to the field. Students will find recommended
+      readings, data sets for hands on practice, and questions for critical evaluation
+      of current claims about habitable worlds. Active participation in data interpretation
+      exercises is encouraged to develop skills in uncertainty quantification and
+      hypothesis testing
+
+      '
+    title: Exoplanet Atmospheres and Habitability
+    user: instructor
+  quizzes:
+  - description: A brief quiz checking core science concepts that support astrobiology
+      research
+    due_at: '2026-10-05 17:00:00'
+    published_at: '2025-08-15 09:30:00'
+    questions:
+    - answers:
+      - text: 'False'
+        weight: 0
+      - text: 'True'
+        weight: 100
+      name: Question 1
+      points_possible: 1
+      question_text: <p>Liquid water is necessary for life as we know it.</p>
+      question_type: true_false_question
+    - answers:
+      - text: 'False'
+        weight: 0
+      - text: 'True'
+        weight: 100
+      name: Question 2
+      points_possible: 1
+      question_text: <p>Some microbes can thrive in the hot, acidic fluids of hydrothermal
+        vents.</p>
+      question_type: true_false_question
+    - answers:
+      - id: 90210
+        text: photosynthesis
+        weight: 100
+      name: Question 3
+      points_possible: 1
+      question_text: <p>Name the process by which organisms convert light energy into
+        chemical energy.</p>
+      question_type: short_answer_question
+    title: Future Directions in Astrobiology
+    workflow_state: available
+  - description: A quiz on physical and chemical conditions relevant to Mars and icy
+      moons
+    due_at: '2026-10-03 23:59:00'
+    published_at: '2026-01-15 09:00:00'
+    questions:
+    - answers:
+      - text: Carbon dioxide
+        weight: 100
+      name: Question 1
+      points_possible: 1
+      question_text: <p>The _____________ gas makes up the largest fraction of the
+        Martian atmosphere.</p>
+      question_type: short_answer_question
+    - answers:
+      - text: Ocean
+        weight: 100
+      name: Question 2
+      points_possible: 1
+      question_text: <p>Europa and some other icy moons are believed to host a global
+        subsurface __________ beneath their ice shells.</p>
+      question_type: short_answer_question
+    - answers:
+      - text: Tidal heating
+        weight: 100
+      name: Question 3
+      points_possible: 1
+      question_text: <p>The primary internal heating process that can sustain liquid
+        water inside icy moons by flexing their interiors is called __________.</p>
+      question_type: short_answer_question
+    title: Mars and Icy Moon Environments
+    workflow_state: available
+  - description: A short quiz on rocks, surface processes, and habitability implications
+      for planetary environments
+    due_at: '2026-11-15 23:59:00'
+    published_at: '2025-09-01 08:00:00'
+    questions:
+    - answers:
+      - text: Basalt
+        weight: 100
+      name: Question 1
+      points_possible: 1
+      question_text: <p>The dark volcanic rock that makes up much of the lunar maria
+        and widespread plains on Mars is called __________.</p>
+      question_type: short_answer_question
+    - answers:
+      - text: Impact cratering
+        weight: 100
+      name: Question 2
+      points_possible: 1
+      question_text: <p>The primary process responsible for creating bowl shaped depressions
+        and ejecta blankets across many planetary surfaces is __________.</p>
+      question_type: short_answer_question
+    - answers:
+      - text: Regolith
+        weight: 100
+      name: Question 3
+      points_possible: 1
+      question_text: <p>The layer of loose, fragmented rock and dust that covers solid
+        rock on airless bodies like the Moon is called __________.</p>
+      question_type: short_answer_question
+    - answers:
+      - text: Aeolian
+        weight: 100
+      name: Question 4
+      points_possible: 1
+      question_text: <p>Wind driven transport, dune formation, and dust lifting on
+        Mars are examples of __________ processes.</p>
+      question_type: short_answer_question
+    - answers:
+      - text: Hydrothermal vents
+        weight: 100
+      name: Question 5
+      points_possible: 1
+      question_text: <p>On icy ocean worlds, seafloor hot spots that emit heated,
+        chemically rich fluids and can sustain microbial ecosystems are known as __________.</p>
+      question_type: short_answer_question
+    title: Planetary Geology and Surface Processes
+    workflow_state: available
+  - allowed_attempts: 2
+    description: A short quiz on detecting and interpreting biosignatures in planetary
+      spectra
+    due_at: '2026-11-15 23:59:00'
+    published_at: '2025-09-01 09:00:00'
+    questions:
+    - name: Question 1
+      points_possible: 3
+      question_text: <p>Briefly define biosignature and give one spectral example
+        relevant to exoplanet studies</p>
+      question_type: short_answer_question
+    - answers:
+      - text: 'True'
+        weight: 0
+      - text: 'False'
+        weight: 100
+      name: Question 2
+      points_possible: 2
+      question_text: <p>Oxygen lines in a planetary spectrum always indicate life</p>
+      question_type: true_false_question
+    - answers:
+      - id: 101
+        text: A gas produced primarily by biological activity and detectable in a
+          planet spectrum
+        weight: 100
+      - id: 102
+        text: A feature caused only by stellar activity
+        weight: 0
+      - id: 103
+        text: A random noise spike in a low signal observation
+        weight: 0
+      - id: 104
+        text: A spectral line from the interstellar medium
+        weight: 0
+      name: Question 3
+      points_possible: 4
+      question_text: Which of the following best describes a biosignature gas in a
+        planetary atmosphere
+      question_type: multiple_choice_question
+    - answers:
+      - id: 201
+        text: Ultraviolet
+        weight: 0
+      - id: 202
+        text: Visible
+        weight: 0
+      - id: 203
+        text: Infrared
+        weight: 100
+      - id: 204
+        text: Microwave
+        weight: 0
+      name: Question 4
+      points_possible: 4
+      question_text: Which part of the electromagnetic spectrum is most commonly used
+        to detect water vapor in exoplanet atmospheres
+      question_type: multiple_choice_question
+    rubric:
+      description: Rubric to assess understanding of spectral biosignatures and basic
+        interpretation
+      free_form_criterion_comments: false
+      points_possible: 13
+      public: true
+      title: Biosignatures Rubric
+    title: Biosignatures in Planetary Spectra
+    workflow_state: available
+  - allowed_attempts: 3
+    description: Short formative quiz on habitability of icy worlds for Astrobiology
+      and Planetary Habitability 312
+    due_at: '2026-11-15 23:59:00'
+    one_question_at_a_time: true
+    published_at: '2025-09-10 09:00:00'
+    questions:
+    - name: Question 1
+      points_possible: 30
+      question_text: <p>Describe two energy sources that could power life in subsurface
+        oceans of icy moons</p>
+      question_type: short_answer_question
+    - answers:
+      - text: 'False'
+        weight: 0
+      - text: 'True'
+        weight: 100
+      name: Question 2
+      points_possible: 15
+      question_text: <p>Can tidal heating maintain liquid water beneath the ice shell
+        of Europa</p>
+      question_type: true_false_question
+    - answers:
+      - id: 100
+        text: The rate of comet impacts on the surface
+        weight: 0
+      - id: 200
+        text: The chemical composition and availability of oxidants and reductants
+          in the ocean
+        weight: 100
+      - id: 300
+        text: The distance of the moon from the galactic center
+        weight: 0
+      - id: 400
+        text: The presence of a magnetic field around the host planet
+        weight: 0
+      name: Question 3
+      points_possible: 10
+      question_text: Which factor most directly affects the potential for metabolic
+        energy in an icy moon ocean
+      question_type: multiple_choice_question
+    rubric:
+      description: Rubric for assessing short answers and selections on water worlds
+        and ice covered planets
+      free_form_criterion_comments: false
+      points_possible: 15
+      public: true
+      title: Water worlds quiz rubric
+    title: Water Worlds and Ice Covered Planets
+    workflow_state: available
+  - allowed_attempts: 3
+    description: A short quiz on stellar evolution and habitable zones
+    due_at: '2026-04-20 23:59:00'
+    one_question_at_a_time: true
+    published_at: '2026-02-10 09:00:00'
+    questions:
+    - name: Question 1
+      points_possible: 10
+      question_text: <p>Explain the difference between a main sequence star and a
+        red giant in terms of core fusion processes and structure.</p>
+      question_type: short_answer_question
+    - answers:
+      - id: 100
+        text: 'False'
+        weight: 100
+      - id: 200
+        text: 'True'
+        weight: 0
+      name: Question 2
+      points_possible: 5
+      question_text: <p>The location of a star's habitable zone remains constant over
+        the entire lifetime of the star.</p>
+      question_type: true_false_question
+    - answers:
+      - id: 100
+        text: Stellar luminosity
+        weight: 100
+      - id: 200
+        text: Stellar magnetic field strength
+        weight: 0
+      - id: 300
+        text: Stellar metallicity
+        weight: 0
+      - id: 400
+        text: Stellar rotation rate
+        weight: 0
+      name: Question 3
+      points_possible: 10
+      question_text: <p>Which stellar property primarily determines the distance of
+        the circumstellar habitable zone?</p>
+      question_type: multiple_choice_question
+    - answers:
+      - id: 100
+        text: The star's luminosity and effective temperature setting where liquid
+          water can persist
+        weight: 100
+      - id: 200
+        text: The number of planets in the system
+        weight: 0
+      - id: 300
+        text: The presence of moons around planets
+        weight: 0
+      - id: 400
+        text: The interstellar environment around the star
+        weight: 0
+      name: Question 4
+      points_possible: 10
+      question_text: <p>What best describes the primary factor that sets the width
+        of a star's habitable zone?</p>
+      question_type: multiple_choice_question
+    - name: Question 5
+      points_possible: 10
+      question_text: <p>Describe one process that can cause a planet to move out of
+        the habitable zone over geological timescales.</p>
+      question_type: short_answer_question
+    rubric:
+      description: A rubric for grading short answers and multiple choice on stellar
+        habitability concepts
+      free_form_criterion_comments: false
+      points_possible: 45
+      public: true
+      title: Stellar Habitable Zone Quick Rubric
+    title: Stellar Evolution and Habitable Zones
+    workflow_state: available
+  - allowed_attempts: 3
+    description: A quiz on prebiotic chemistry and the RNA world, assessing key experiments
+      and hypotheses.
+    due_at: '2026-11-15 23:59:00'
+    one_question_at_a_time: true
+    published_at: '2025-09-01 09:00:00'
+    questions:
+    - answers:
+      - id: 100
+        text: Formose reaction
+        weight: 0
+      - id: 200
+        text: Miller Urey synthesis
+        weight: 0
+      - id: 300
+        text: Clay catalysis
+        weight: 100
+      - id: 400
+        text: Hydrothermal vent synthesis
+        weight: 0
+      name: Question 1
+      points_possible: 10
+      question_text: <p>Which prebiotic process is hypothesized to have promoted the
+        polymerization of nucleotides on early Earth?</p>
+      question_type: multiple_choice_question
+    - answers:
+      - id: 100
+        text: 'True'
+        weight: 100
+      - id: 200
+        text: 'False'
+        weight: 0
+      name: Question 2
+      points_possible: 5
+      question_text: <p>The RNA world hypothesis proposes that RNA once served as
+        both genetic material and a catalyst before proteins and DNA became dominant.</p>
+      question_type: true_false_question
+    - answers:
+      - id: 100
+        text: Walter Gilbert
+        weight: 100
+      - id: 200
+        text: Leslie Orgel
+        weight: 0
+      - id: 300
+        text: Stanley Miller
+        weight: 0
+      - id: 400
+        text: Sidney Fox
+        weight: 0
+      name: Question 3
+      points_possible: 10
+      question_text: <p>Which researcher is most closely associated with coinage of
+        the term RNA world?</p>
+      question_type: multiple_choice_question
+    - name: Question 4
+      points_possible: 15
+      question_text: <p>Explain the major chemical obstacles to forming stable ribonucleotides
+        prebiotically and describe two possible laboratory or environmental solutions
+        that have been proposed.</p>
+      question_type: short_answer_question
+    rubric:
+      description: Rubric for assessing explanations of prebiotic nucleotide formation
+        and RNA world arguments.
+      free_form_criterion_comments: false
+      points_possible: 50
+      public: true
+      title: Prebiotic Chemistry Rubric
+    title: Prebiotic Chemistry and the RNA World
+    workflow_state: available
+  - allowed_attempts: 1
+    description: An introductory survey for students in Astrobiology and Planetary
+      Habitability 312 to share prior experience interests and expectations about
+      hydrothermal environments
+    due_at: '2026-12-01 23:59:00'
+    one_question_at_a_time: true
+    published_at: '2026-09-01 09:00:00'
+    questions:
+    - name: Question 1
+      points_possible: 5
+      question_text: <p>What prior experience or background do you have with hydrothermal
+        systems or other extreme environments</p>
+      question_type: short_answer_question
+    - answers:
+      - id: 110
+        text: Microbial ecology
+        weight: 0
+      - id: 210
+        text: Geochemistry
+        weight: 0
+      - id: 310
+        text: Planetary geology
+        weight: 0
+      - id: 410
+        text: Marine biology
+        weight: 0
+      - id: 510
+        text: Astrobiology
+        weight: 0
+      name: Question 2
+      points_possible: 5
+      question_text: <p>Which aspect of hydrothermal systems are you most eager to
+        explore in this course</p>
+      question_type: multiple_choice_question
+    - name: Question 3
+      points_possible: 5
+      question_text: <p>Describe a hypothesis for how life could originate or persist
+        in hydrothermal settings and what evidence would support it</p>
+      question_type: essay_question
+    - answers:
+      - id: 111
+        text: Fieldwork and sampling
+        weight: 0
+      - id: 211
+        text: Laboratory experiments
+        weight: 0
+      - id: 311
+        text: Computational modeling and simulation
+        weight: 0
+      - id: 411
+        text: Readings lectures and seminars
+        weight: 0
+      name: Question 4
+      points_possible: 5
+      question_text: <p>How do you prefer to engage with course material on hydrothermal
+        systems</p>
+      question_type: multiple_choice_question
+    quiz_type: survey
+    title: Hydrothermal Systems and Life
+    workflow_state: available
+  - allowed_attempts: 3
+    description: A quiz about how atmospheric composition and climate affect planetary
+      habitability
+    due_at: '2026-03-10 23:59:00'
+    one_question_at_a_time: true
+    published_at: '2026-02-15 09:30:00'
+    questions:
+    - answers:
+      - id: 110
+        text: Carbon dioxide
+        weight: 100
+      - id: 210
+        text: Nitrogen
+        weight: 0
+      - id: 310
+        text: Oxygen
+        weight: 0
+      - id: 410
+        text: Methane
+        weight: 0
+      id: 72
+      name: Question 1
+      points_possible: 15
+      question_text: <p>Which gas is the primary contributor to the natural greenhouse
+        effect on Earth?</p>
+      question_type: multiple_choice_question
+    rubric:
+      description: A rubric for assessing understanding of atmospheric processes and
+        climate feedbacks
+      free_form_criterion_comments: false
+      points_possible: 40
+      public: true
+      title: Atmospheric Composition and Climate Rubric
+    submissions:
+    - attempts:
+      - answers:
+        - answer_id: 210
+          correct: false
+          points: 0.0
+          question_id: 72
+          text: '210'
+        feedback:
+          comment: Review the role of trace gases and main greenhouse gases and try
+            again
+          grader: instructor
+        workflow_state: complete
+      user: main_user
+    title: Planetary Atmospheres and Climate
+    workflow_state: available
+  - allowed_attempts: 2
+    description: A short assessment of extreme environments and habitability criteria
+      focusing on microbial adaptations
+    due_at: 2026-11-15 170000
+    one_question_at_a_time: true
+    published_at: 2025-09-10 090000
+    questions:
+    - answers:
+      - id: 101
+        text: Thermophile
+        weight: 100
+      - id: 102
+        text: Halophile
+        weight: 0
+      - id: 103
+        text: Acidophile
+        weight: 0
+      - id: 104
+        text: Psychrophile
+        weight: 0
+      id: 52
+      name: Question 1
+      points_possible: 10
+      question_text: <p>Which type of extremophile is best adapted to high temperature
+        environments such as hydrothermal vents</p>
+      question_type: multiple_choice_question
+    rubric:
+      description: Rubric for grading understanding of extremophile physiology and
+        habitability
+      free_form_criterion_comments: false
+      points_possible: 40
+      public: true
+      title: Extremophiles Rubric
+    submissions:
+    - attempts:
+      - answers:
+        - answer_id: 501
+          attempt: 1
+          correct: false
+          points: 0.0
+          question_id: 52
+          text: '501'
+        workflow_state: complete
+      - answers:
+        - answer_id: 502
+          attempt: 2
+          correct: true
+          points: 10.0
+          question_id: 52
+          text: '502'
+        workflow_state: complete
+      user: main_user
+    title: Extremophiles and Habitability
+    workflow_state: available
+  - allowed_attempts: 3
+    description: A quiz to evaluate methods used to discover planets outside the solar
+      system
+    due_at: '2026-12-10 23:59:00'
+    one_question_at_a_time: true
+    published_at: '2025-09-01 09:00:00'
+    questions:
+    - answers:
+      - id: 110
+        text: Transit photometry
+        weight: 100
+      - id: 220
+        text: Radial velocity
+        weight: 0
+      - id: 330
+        text: Direct imaging
+        weight: 0
+      - id: 440
+        text: Gravitational microlensing
+        weight: 0
+      id: 45
+      name: Question 1
+      points_possible: 10
+      question_text: <p>Which exoplanet detection method identifies planets by monitoring
+        periodic dips in a star's brightness when a planet crosses in front</p>
+      question_type: multiple_choice_question
+    rubric:
+      description: A rubric for assessing understanding of exoplanet detection principles
+        and interpretation of observations
+      free_form_criterion_comments: false
+      points_possible: 50
+      public: true
+      title: Exoplanet Detection Rubric
+    submissions:
+    - attempts:
+      - answers:
+        - answer_id: 330
+          attempt: 1
+          correct: false
+          points: 0.0
+          question_id: 45
+          text: '330'
+        workflow_state: complete
+      - answers:
+        - answer_id: 220
+          attempt: 2
+          correct: false
+          points: 0.0
+          question_id: 45
+          text: '220'
+        workflow_state: complete
+      user: main_user
+    title: Exoplanet Detection Methods
+    workflow_state: available
+  - allowed_attempts: 3
+    description: A quiz exploring hypotheses evidence and experiments about the origins
+      of life on Earth
+    due_at: '2026-12-15 23:59:00'
+    one_question_at_a_time: true
+    published_at: '2026-09-01 09:00:00'
+    questions:
+    - answers:
+      - id: 111
+        text: RNA world hypothesis
+        weight: 100
+      - id: 211
+        text: Panspermia
+        weight: 0
+      - id: 311
+        text: Spontaneous generation
+        weight: 0
+      - id: 411
+        text: Primordial soup
+        weight: 0
+      id: 129
+      name: Question 1
+      points_possible: 10
+      question_text: <p>Which hypothesis proposes that early life was based on self
+        replicating RNA molecules?</p>
+      question_type: multiple_choice_question
+    - answers:
+      - id: 112
+        text: Miller Urey experiment
+        weight: 100
+      - id: 212
+        text: Keeling curve
+        weight: 0
+      - id: 312
+        text: Drake equation
+        weight: 0
+      - id: 412
+        text: Faint young sun paradox
+        weight: 0
+      id: 130
+      name: Question 2
+      points_possible: 10
+      question_text: <p>Which experiment demonstrated that organic compounds can form
+        from simple gases under simulated early Earth conditions?</p>
+      question_type: multiple_choice_question
+    rubric:
+      description: A rubric for assessing student understanding of theories experiments
+        and geological context for early life on Earth
+      free_form_criterion_comments: false
+      points_possible: 50
+      public: true
+      title: Origins Rubric
+    submissions:
+    - attempts:
+      - answers:
+        - answer_id: 311
+          correct: false
+          points: 0.0
+          question_id: 129
+          text: '311'
+        partial:
+          attempt: 1
+          last_question_id: 129
+        workflow_state: untaken
+      user: main_user
+    title: Origins of Life on Earth
+    workflow_state: available
+  unused_announcements:
+  - message: Hey everyone are you free Sunday afternoon to meet online and review
+      the habitable zone assignment and sample exam questions
+    title: Sunday review meetup
+  unused_discussions:
+  - message: Share which lab or field activity from this semester you found most engaging
+      and explain what made it effective for learning about life in extreme environments
+    title: Favorite Field Activity
+  - message: Describe a way concepts from astrobiology have influenced how you think
+      about environmental decisions or everyday choices outside class
+    title: Daily Relevance of Astrobiology
+  - message: Which discovery or reading from this course surprised you the most about
+      planetary habitability and why did it change your perspective
+    title: Most Unexpected Discovery
+  - message: Discuss an ethical dilemma related to preventing biological contamination
+      of other worlds and propose how researchers and agencies should address it
+    title: Ethical Issues in Planetary Protection
+  - message: What study strategies or note taking techniques have you used to remember
+      complex models of planetary atmospheres and how effective were they
+    title: Study Strategies for Complex Models
+  - message: Pick a fictional planet or alien organism from a book or show and analyze
+      its plausibility using principles of habitability and known limits of life
+    title: Fictional World Plausibility Analysis
+  unused_group_names:
+  - Exobiology Explorers
+  - Habitable Worlds Collective
+  - Biosignature Hunters
+  - Planetary Habitability Guild
+  - Paleoclimate Probers
+  unused_pages:
+  - message: Hi everyone I set up this page to collect potential project topics and
+      references for Astrobiology and Planetary Habitability 312 Please add research
+      questions proposed methods and any papers youd recommend Also note if you prefer
+      lab fieldwork or modeling
+    title: Project topics and resource hub
+students:
+- email: terrance@instituterson.ca
+  name: Terrance Studentson
+  password: Xs224D3drZaR
+- email: phillip@instituterson.ca
+  name: Phillip Studentson
+  password: 6bE1G83JrT1i
+- email: sarah@instituterson.ca
+  name: Sarah Studentson
+  password: 30OubNfH3Z3T
+- email: steven@instituterson.ca
+  name: Steven Studentson
+  password: 62YubNzH6Z8T
+- email: abigail@instituterson.ca
+  name: Abigail Studentson
+  password: 3qI256uBMmoh
+- email: alex@instituterson.ca
+  name: Alex Studentson
+  password: nzV0K4L5Bzyb
+- email: jared@instituterson.ca
+  name: Jared Studentson
+  password: ch8DgQh7WV7e
+- email: monica@instituterson.ca
+  name: Monica Studentson
+  password: ZKnc0HeqKGvA
+- email: ryan@instituterson.ca
+  name: Ryan Studentson
+  password: f6ptLPMtaF3A
+- email: lisa@instituterson.ca
+  name: Lisa Studentson
+  password: GnriV4qZJnjJ
