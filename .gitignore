@@ -2,3 +2,5 @@
 *.json
 *.jsonl
 trajectories
+!tasks.json
+/tasks.json

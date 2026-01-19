@@ -1,0 +1,2172 @@
+[
+    {
+        "id": "9b30427c-2025-48db-baed-2cff271cd819",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course '[[Course]]' switch from your current group '[[Group 1]]' to the group '[[Group 2]]' within the 'Student Groups' group set.",
+        "parameters": [
+            "Course",
+            "Group 1",
+            "Group 2"
+        ],
+        "instances": [
+            {
+                "id": "d0c29888-b392-46b5-9961-909130864589",
+                "instance_text": "Task: In the course 'Astrobiology and Planetary Habitability 312' switch from your current group 'Radiative Balance Team' to the group 'Exoplanet Explorers' within the 'Student Groups' group set.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Group 1": "Radiative Balance Team",
+                    "Group 2": "Exoplanet Explorers"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/groups/3/memberships/self",
+                        "request_kv": {
+                            "_method": "DELETE"
+                        }
+                    },
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/groups/14/memberships",
+                        "request_kv": {
+                            "_method": "POST"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "0b925826-6333-43cf-9eb0-4b5cb49a7e7d",
+        "type": "Information Seeking",
+        "answer_type": "Date Time",
+        "parameterized_text": "Task: In the course \"[[Course]]\" use the Syllabus page to find the due date for the assignment titled \"[[Assignment]]\".",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "85fccc60-1ded-4b33-b7f3-f6c874214dad",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" use the Syllabus page to find the due date for the assignment titled \"Geochemical Cycles and Habitability\".",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Geochemical Cycles and Habitability"
+                },
+                "answer_key": {
+                    "Date Time": "2026-10-15 23:59"
+                }
+            }
+        ]
+    },
+    {
+        "id": "0be01f7a-0c6e-49c3-af20-52f9b97ef728",
+        "type": "Side-effect",
+        "parameterized_text": "Task: View the feedback left by your instructor for the assignment '[[Assignment]]' in the course '[[Course]]', and add a comment saying 'Thank you for the feedback!' using the Feedback sidebar.",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "fd787f26-015d-4e4f-960b-73bbb92538de",
+                "instance_text": "Task: View the feedback left by your instructor for the assignment 'Planetary Climate Modeling Workshop' in the course 'Astrobiology and Planetary Habitability 312', and add a comment saying 'Thank you for the feedback!' using the Feedback sidebar.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Planetary Climate Modeling Workshop"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/assignments/31/submissions/13",
+                        "request_kv": {
+                            "_type": "form data",
+                            "submission[comment]": [
+                                "Thank you for the feedback!"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "117ad520-4107-4488-9101-a2a951daebdf",
+        "type": "Information Seeking",
+        "answer_type": "Numeric",
+        "parameterized_text": "Task: View the rubric for the quiz titled \"[[Quiz]]\" in the course \"[[Course]]\" by navigating to the Grades page, clicking on \"[[Quiz]]\" and then clicking the \"Show Rubric\" link on the submission details page. What is the sum total number of points possible across all criteria on the rubric?",
+        "parameters": [
+            "Course",
+            "Quiz"
+        ],
+        "instances": [
+            {
+                "id": "655e990e-4e85-448d-a975-c7986ab2cd7d",
+                "instance_text": "Task: View the rubric for the quiz titled \"Prebiotic Chemistry and the RNA World\" in the course \"Astrobiology and Planetary Habitability 312\" by navigating to the Grades page, clicking on \"Prebiotic Chemistry and the RNA World\" and then clicking the \"Show Rubric\" link on the submission details page. What is the sum total number of points possible across all criteria on the rubric?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Quiz": "Prebiotic Chemistry and the RNA World"
+                },
+                "answer_key": {
+                    "Number": 10
+                }
+            }
+        ]
+    },
+    {
+        "id": "14875b88-4d4f-44be-a989-cff2a705958e",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Create a new student group named \"[[Group]]\" in the course \"[[Course]]\", set the group membership to \"Membership by invitation only\", and invite students named \"[[User 1]]\" and \"[[User 2]]\" to join the group.",
+        "parameters": [
+            "Course",
+            "Group",
+            "User 1",
+            "User 2"
+        ],
+        "instances": [
+            {
+                "id": "1632e5e4-fb58-4aeb-b2da-d33c75e5f4d2",
+                "instance_text": "Task: Create a new student group named \"Habitable Worlds Collective\" in the course \"Astrobiology and Planetary Habitability 312\", set the group membership to \"Membership by invitation only\", and invite students named \"Terrance Studentson\" and \"Phillip Studentson\" to join the group.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Group": "Habitable Worlds Collective",
+                    "User 1": "Terrance Studentson",
+                    "User 2": "Phillip Studentson"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/groups",
+                        "request_kv": {
+                            "join_level": "invitation_only",
+                            "invitees": [
+                                "2",
+                                "3"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "0b62c5d4-a6fe-4083-9123-45e3087c1440",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In your group \"[[Group]]\" for the course [[Course]], create a new announcement with the title \"[[Announcement]]\" and the following content: \"[[Announcement Message]]\" then publish it.",
+        "parameters": [
+            "Course",
+            "Group",
+            "Announcement",
+            "Announcement Message"
+        ],
+        "instances": [
+            {
+                "id": "01d7ea3f-8a5c-4c0e-b0cf-5cb7710e241d",
+                "instance_text": "Task: In your group \"Methane Cycle Collective\" for the course Astrobiology and Planetary Habitability 312, create a new announcement with the title \"Sunday review meetup\" and the following content: \"Hey everyone are you free Sunday afternoon to meet online and review the habitable zone assignment and sample exam questions\" then publish it.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Group": "Methane Cycle Collective",
+                    "Announcement": "Sunday review meetup",
+                    "Announcement Message": "Hey everyone are you free Sunday afternoon to meet online and review the habitable zone assignment and sample exam questions"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/groups/5/discussion_topics",
+                        "request_kv": {
+                            "message": "\u003cp\u003eHey everyone are you free Sunday afternoon to meet online and review the habitable zone assignment and sample exam questions\u003c/p\u003e",
+                            "title": "Sunday review meetup"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "14fe049e-9db4-497a-97c9-507a2c60d55e",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Subscribe to the \"[[Discussion]]\" discussion in the \"[[Course]]\" course so that you receive notifications when new comments are posted.",
+        "parameters": [
+            "Course",
+            "Discussion"
+        ],
+        "instances": [
+            {
+                "id": "dcd79171-2bab-4fdf-b4cb-8118d5d89d93",
+                "instance_text": "Task: Subscribe to the \"Atmospheric signatures and false positives\" discussion in the \"Astrobiology and Planetary Habitability 312\" course so that you receive notifications when new comments are posted.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "Atmospheric signatures and false positives"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/graphql",
+                        "request_kv": {
+                            "operationName": "subscribeToDiscussionTopic",
+                            "discussionTopicId": "12"
+                        },
+                        "answer_id": 1
+                    },
+                    {
+                        "method": "PUT",
+                        "path": "/api/v1/courses/1/discussion_topics/12/subscribed",
+                        "request_kv": {},
+                        "answer_id": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "158b7ece-5c61-466f-9447-9ab9e43c0b03",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Take the \"[[Quiz]]\" quiz in the \"[[Course]]\" course, answer all questions, flag question 3 for review, and submit the quiz when finished.",
+        "parameters": [
+            "Course",
+            "Quiz"
+        ],
+        "instances": [
+            {
+                "id": "6c900c05-8c36-4429-ab92-c6345580d092",
+                "instance_text": "Task: Take the \"Biosignatures in Planetary Spectra\" quiz in the \"Astrobiology and Planetary Habitability 312\" course, answer all questions, flag question 3 for review, and submit the quiz when finished.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Quiz": "Biosignatures in Planetary Spectra"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/quizzes/4/take",
+                        "request_kv": {}
+                    },
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/quizzes/4/submissions/backup",
+                        "request_kv": {
+                            "question_14_marked": [
+                                "1"
+                            ]
+                        }
+                    },
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/quizzes/4/submissions",
+                        "request_kv": {}
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "175397c6-1439-40ab-8b74-8f0e479ef8c5",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" open the quiz titled \"[[Quiz]]\" and answer Question [[Question Index]], which is a short answer question, by typing \"[[Answer]]\" into the provided text box.",
+        "parameters": [
+            "Course",
+            "Quiz",
+            "Question Index",
+            "Answer"
+        ],
+        "instances": [
+            {
+                "id": "19c33612-51a1-4a2d-a6c4-172d43c14605",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" open the quiz titled \"Future Directions in Astrobiology\" and answer Question 3, which is a short answer question, by typing \"photosynthesis\" into the provided text box.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Quiz": "Future Directions in Astrobiology",
+                    "Question Index": "3",
+                    "Answer": "photosynthesis"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/quizzes/1/submissions/backup",
+                        "request_kv": {
+                            "question_3": [
+                                "photosynthesis"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "1977dbaa-1d14-4b08-a40b-0090df524371",
+        "type": "Side-effect",
+        "parameterized_text": "Task:  In your group ([[Group]]) for the course \"[[Course]]\" close your own discussion titled \"[[Discussion]]\" for comments.",
+        "parameters": [
+            "Course",
+            "Group",
+            "Discussion"
+        ],
+        "instances": [
+            {
+                "id": "6dfd477c-005f-48e1-8408-9087f9f55c7a",
+                "instance_text": "Task:  In your group (Subsurface Habitability Unit) for the course \"Astrobiology and Planetary Habitability 312\" close your own discussion titled \"Simulation parameters for subsurface models\" for comments.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Group": "Subsurface Habitability Unit",
+                    "Discussion": "Simulation parameters for subsurface models"
+                },
+                "answer_key": [
+                    {
+                        "method": "PUT",
+                        "path": "/api/v1/groups/7/discussion_topics/5",
+                        "request_kv": {
+                            "locked": true
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "19816faf-81ee-4235-8228-eb3d45e6bad3",
+        "type": "Information Seeking",
+        "answer_type": "Date Time",
+        "parameterized_text": "Task: View the details of the \"[[Assignment]]\" assignment in the \"[[Course]]\" course, and return its due date.",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "969f5129-4ffb-414c-ac52-ae8efd00ac70",
+                "instance_text": "Task: View the details of the \"Origins of Life on Ocean Worlds\" assignment in the \"Astrobiology and Planetary Habitability 312\" course, and return its due date.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Origins of Life on Ocean Worlds"
+                },
+                "answer_key": {
+                    "Date Time": "2026-02-05 23:59"
+                }
+            }
+        ]
+    },
+    {
+        "id": "2b0a143f-fb9c-4f8e-9606-211e6bcb8171",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" use the People page to search for the user named \"[[User]]\" view their profile details, and send them a message with the text: \"Hi, I have a question about the lab assignment. Can we discuss it?\" and the subject line \"Hi!\".",
+        "parameters": [
+            "Course",
+            "User"
+        ],
+        "instances": [
+            {
+                "id": "66a056d7-844b-43ed-b9a4-0a4db817436b",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" use the People page to search for the user named \"Sarah Studentson\" view their profile details, and send them a message with the text: \"Hi, I have a question about the lab assignment. Can we discuss it?\" and the subject line \"Hi!\".",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "User": "Sarah Studentson"
+                },
+                "answer_key": [
+                    {
+                        "method": "GET",
+                        "path": "/api/v1/courses/1/users",
+                        "request_kv": {}
+                    },
+                    {
+                        "method": "POST",
+                        "path": "/api/graphql",
+                        "request_kv": {
+                            "operationName": "CreateConversation",
+                            "body": "Hi, I have a question about the lab assignment. Can we discuss it?",
+                            "subject": "Hi!",
+                            "recipients": [
+                                "4"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "2f354ba2-b00c-4f3d-8b05-ae149f8e870d",
+        "type": "Information Seeking",
+        "answer_type": "Text",
+        "parameterized_text": "Task: In the course \"[[Course]]\" view the page titled \"[[Page]]\" by navigating to the Pages Index and selecting the page from the list. Return the contents of the page body.",
+        "parameters": [
+            "Course",
+            "Page"
+        ],
+        "instances": [
+            {
+                "id": "223e3de0-71ed-4340-93bb-66fd65ba3eff",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" view the page titled \"Exoplanet Atmospheres and Habitability\" by navigating to the Pages Index and selecting the page from the list. Return the contents of the page body.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Page": "Exoplanet Atmospheres and Habitability"
+                },
+                "answer_key": {
+                    "Text": "Exoplanet atmospheres are a primary determinant of planetary habitability because they control surface temperature, shield against harmful radiation, and mediate volatile cycles. Observational techniques such as transit and eclipse spectroscopy, direct imaging, and phase curve analysis provide constraints on molecular composition, thermal profiles, and cloud properties. Important physical and chemical processes include atmospheric escape driven by stellar irradiation, photochemistry that can create or destroy potential biosignatures, and radiative transfer that governs greenhouse warming. Candidate biosignature gases like water vapor, oxygen, ozone, methane, and carbon dioxide must be interpreted with care to avoid abiotic false positives caused by geophysical or stellar effects. Modeling tools range from one dimensional radiative convective calculations to three dimensional general circulation models, each with trade offs in complexity and computational cost. This page summarizes diagnostic observables, best practice approaches for atmospheric retrievals, common pitfalls in habitability inference, and recent mission capabilities relevant to the field. Students will find recommended readings, data sets for hands on practice, and questions for critical evaluation of current claims about habitable worlds. Active participation in data interpretation exercises is encouraged to develop skills in uncertainty quantification and hypothesis testing"
+                }
+            }
+        ]
+    },
+    {
+        "id": "2fb04821-58a4-4b0e-90b9-2b24882f4582",
+        "type": "Information Seeking",
+        "answer_type": "Numeric",
+        "parameterized_text": "Task: In the course \"[[Course]]\" use the Quizzes page to find the quiz titled \"[[Quiz]]\", report the number of questions this quiz has.",
+        "parameters": [
+            "Course",
+            "Quiz"
+        ],
+        "instances": [
+            {
+                "id": "d81db7bf-ae57-4fb4-82aa-2634d2434385",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" use the Quizzes page to find the quiz titled \"Mars and Icy Moon Environments\", report the number of questions this quiz has.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Quiz": "Mars and Icy Moon Environments"
+                },
+                "answer_key": {
+                    "Number": 3
+                }
+            }
+        ]
+    },
+    {
+        "id": "353feae6-0efa-4913-8220-8ab2567696b4",
+        "type": "Information Seeking",
+        "answer_type": "Date Time",
+        "parameterized_text": "Task: In the \"[[Group]]\" group, view the revision history of the page titled \"[[Page]]\" and identify the most recent edit and report when it was made.",
+        "parameters": [
+            "Group",
+            "Page"
+        ],
+        "instances": [
+            {
+                "id": "ce9dbd5b-a0c1-48c3-bbc6-bcf20e7b770b",
+                "instance_text": "Task: In the \"Red Dwarf Study Group\" group, view the revision history of the page titled \"Notes on flares and habitability\" and identify the most recent edit and report when it was made.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Group": "Red Dwarf Study Group",
+                    "Page": "Notes on flares and habitability"
+                },
+                "answer_key": {
+                    "Date Time": "2026-02-15 00:00"
+                }
+            }
+        ]
+    },
+    {
+        "id": "37949dc8-cc9a-46ec-9a04-9fc70de7739a",
+        "type": "Information Seeking",
+        "answer_type": "Date Time",
+        "parameterized_text": "Task: In the course \"[[Course]]\" use the Assignments page to search for the assignment titled \"[[Assignment]]\". When is this assignment due?",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "1a208733-c402-4555-b185-eadf7a806d14",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" use the Assignments page to search for the assignment titled \"Remote Sensing Techniques for Habitability\". When is this assignment due?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Remote Sensing Techniques for Habitability"
+                },
+                "answer_key": {
+                    "Date Time": "2026-03-22 23:59"
+                }
+            }
+        ]
+    },
+    {
+        "id": "382d57c2-b2e5-4024-9c05-9c5d195d2a27",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" remove the assignment with the title \"[[Assignment]]\" from your list of To Dos.",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "a0e2aab0-001e-46bc-b2d0-5659fbb88222",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" remove the assignment with the title \"Evolution of Planetary Atmospheres\" from your list of To Dos.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Evolution of Planetary Atmospheres"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/planner/overrides",
+                        "request_kv": {
+                            "marked_complete": true,
+                            "plannable_id": "24"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "5718e37a-b1d1-4ec9-a223-7fd262419682",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In your \"[[Group]]\" group, create a new discussion titled \"[[Discussion]]\" write \"[[Discussion Message]]\" allow group members to like the discussion, and add it to other group members' to-do lists.",
+        "parameters": [
+            "Group",
+            "Discussion",
+            "Discussion Message"
+        ],
+        "instances": [
+            {
+                "id": "eafc307d-ad6c-450f-8453-1a9a4b255840",
+                "instance_text": "Task: In your \"HabZone Alpha\" group, create a new discussion titled \"Favorite Field Activity\" write \"Share which lab or field activity from this semester you found most engaging and explain what made it effective for learning about life in extreme environments\" allow group members to like the discussion, and add it to other group members' to-do lists.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Group": "HabZone Alpha",
+                    "Discussion": "Favorite Field Activity",
+                    "Discussion Message": "Share which lab or field activity from this semester you found most engaging and explain what made it effective for learning about life in extreme environments"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/groups/18/discussion_topics",
+                        "request_kv": {
+                            "allow_rating": "1",
+                            "allow_todo_date": "1",
+                            "message": "\u003cp\u003eShare which lab or field activity from this semester you found most engaging and explain what made it effective for learning about life in extreme environments\u003c/p\u003e",
+                            "title": "Favorite Field Activity"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "a1c4e8bf-af9a-49c5-9672-5e83c0170b9b",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Reply to the main discussion in the \"[[Discussion]]\" discussion in the \"[[Course]]\" course with the following text: \"I believe that local communities can play a significant role in addressing climate change by implementing sustainable practices.\"",
+        "parameters": [
+            "Course",
+            "Discussion"
+        ],
+        "instances": [
+            {
+                "id": "1fd716da-64e0-4526-b364-c90324c627ac",
+                "instance_text": "Task: Reply to the main discussion in the \"Role of planetary geology in habitability\" discussion in the \"Astrobiology and Planetary Habitability 312\" course with the following text: \"I believe that local communities can play a significant role in addressing climate change by implementing sustainable practices.\"",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "Role of planetary geology in habitability"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/graphql",
+                        "request_kv": {
+                            "operationName": "CreateDiscussionEntry",
+                            "discussionTopicId": "11",
+                            "message": "[[_starts_with='\u003cp\u003eI believe that local communities can play a significant role in addressing climate change by implementing sustainable practices.\u003c/p\u003e']]"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "a5660a7c-dbac-48d4-ace3-fbd6bb71d57b",
+        "type": "Information Seeking",
+        "answer_type": "Numeric",
+        "parameterized_text": "Task: View the current groups you are enrolled in for the course \"[[Course]]\" by using the Global Navigation Menu in Canvas. How many groups are you currently a part of?",
+        "parameters": [
+            "Course"
+        ],
+        "instances": [
+            {
+                "id": "c1cfa2b5-baf1-449d-8af1-271fbad3325b",
+                "instance_text": "Task: View the current groups you are enrolled in for the course \"Astrobiology and Planetary Habitability 312\" by using the Global Navigation Menu in Canvas. How many groups are you currently a part of?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312"
+                },
+                "answer_key": {
+                    "Number": 16
+                }
+            }
+        ]
+    },
+    {
+        "id": "a7ab7dbf-7c80-4a13-80a4-f09947504d51",
+        "type": "Information Seeking",
+        "answer_type": "Numeric",
+        "parameterized_text": "Task: Check if you can retake the \"[[Quiz]]\" in the \"[[Course]]\" course and report how many attempts you have remaining.",
+        "parameters": [
+            "Course",
+            "Quiz"
+        ],
+        "instances": [
+            {
+                "id": "9d7de4ac-fe45-43e9-95ff-0fc6069385e4",
+                "instance_text": "Task: Check if you can retake the \"Exoplanet Detection Methods\" in the \"Astrobiology and Planetary Habitability 312\" course and report how many attempts you have remaining.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Quiz": "Exoplanet Detection Methods"
+                },
+                "answer_key": {
+                    "Number": 1
+                }
+            }
+        ]
+    },
+    {
+        "id": "1c156f92-b926-4817-b78a-b8ad85de2484",
+        "type": "Information Seeking",
+        "answer_type": "Text",
+        "parameterized_text": "Task: View the comments left by your instructor ([[Teacher]]) on your \"[[Assignment]]\" assignment in the \"[[Course]]\" course. What was the feedback [[Teacher]] gave you?",
+        "parameters": [
+            "Course",
+            "Teacher",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "1b598fe4-573e-4f96-965a-83bbdfc0ca3f",
+                "instance_text": "Task: View the comments left by your instructor (Dr Javier Santiago) on your \"Planetary Protection and Contamination Protocols\" assignment in the \"Astrobiology and Planetary Habitability 312\" course. What was the feedback Dr Javier Santiago gave you?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Teacher": "Dr Javier Santiago",
+                    "Assignment": "Planetary Protection and Contamination Protocols"
+                },
+                "answer_key": {
+                    "Text": "Excellent synthesis of strategic and technical considerations"
+                }
+            }
+        ]
+    },
+    {
+        "id": "1bfdc4bc-1ab2-4846-b840-4c65d9f9c83f",
+        "type": "Information Seeking",
+        "answer_type": "Text",
+        "parameterized_text": "Task: In the Canvas course \"[[Course]]\" locate and view the peer feedback you received for the assignment titled \"[[Assignment]]\" by accessing the submission details page. What was the feedback [[User]] provided to your submission?",
+        "parameters": [
+            "Course",
+            "Assignment",
+            "User"
+        ],
+        "instances": [
+            {
+                "id": "07d32f2d-a2ef-45a5-8668-18d71a6d5785",
+                "instance_text": "Task: In the Canvas course \"Astrobiology and Planetary Habitability 312\" locate and view the peer feedback you received for the assignment titled \"Icy Moon Subsurface Ocean Dynamics\" by accessing the submission details page. What was the feedback Phillip Studentson provided to your submission?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Icy Moon Subsurface Ocean Dynamics",
+                    "User": "Phillip Studentson"
+                },
+                "answer_key": {
+                    "Text": "Nice overview consider expanding the section on magnetic induction constraints"
+                }
+            }
+        ]
+    },
+    {
+        "id": "229bb30d-7652-40a9-934d-3e14d54e7ab9",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" open the discussion titled \"[[Discussion]]\" and manually mark the reply from \"[[User]]\" as unread.",
+        "parameters": [
+            "Course",
+            "Discussion",
+            "User"
+        ],
+        "instances": [
+            {
+                "id": "2b533569-848c-46d9-a5d6-dfc698463205",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" open the discussion titled \"Data Analysis Project in Astrobiology\" and manually mark the reply from \"Abigail Studentson\" as unread.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "Data Analysis Project in Astrobiology",
+                    "User": "Abigail Studentson"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/graphql",
+                        "request_kv": {
+                            "operationName": "UpdateDiscussionEntryParticipant",
+                            "discussionEntryId": "33",
+                            "forcedReadState": true,
+                            "read": false
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "2776ed0f-e34e-4ffc-8884-9720a48a7420",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" reply to the announcement titled \"[[Announcement]]\" by posting the message \"Great announcement, @[[User]]! Looking forward to this week.\" and mention the user [[User]] in your reply.",
+        "parameters": [
+            "Course",
+            "Announcement",
+            "User"
+        ],
+        "instances": [
+            {
+                "id": "16e64c2f-ebc7-4523-853b-19df16040b81",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" reply to the announcement titled \"Field trip to planetary simulation facility\" by posting the message \"Great announcement, @Dr Javier Santiago! Looking forward to this week.\" and mention the user Dr Javier Santiago in your reply.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Announcement": "Field trip to planetary simulation facility",
+                    "User": "Dr Javier Santiago"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/graphql",
+                        "request_kv": {
+                            "operationName": "CreateDiscussionEntry",
+                            "discussionTopicId": "15",
+                            "message": "[[_includes='@Dr Javier Santiago']]"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "279dcf3e-77f5-4a1b-8ced-ebdb8bb7e462",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Submit a peer review comment for the discussion \"[[Discussion]]\" in the course \"[[Course]]\" by reviewing [[User]]'s reply and entering the following comment in the comment sidebar: \"Great analysis! I especially liked your use of recent data to support your points.\" Then, click the Save button to complete the peer review.",
+        "parameters": [
+            "Course",
+            "Discussion",
+            "User"
+        ],
+        "instances": [
+            {
+                "id": "2af9bb55-960f-4377-a9ae-710ab4a89545",
+                "instance_text": "Task: Submit a peer review comment for the discussion \"Comparative Planetology Case Study\" in the course \"Astrobiology and Planetary Habitability 312\" by reviewing Abigail Studentson's reply and entering the following comment in the comment sidebar: \"Great analysis! I especially liked your use of recent data to support your points.\" Then, click the Save button to complete the peer review.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "Comparative Planetology Case Study",
+                    "User": "Abigail Studentson"
+                },
+                "answer_key": [
+                    {
+                        "method": "GET",
+                        "path": "/courses/1/assignments/20/submissions/6",
+                        "request_kv": {}
+                    },
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/assignments/20/submissions/6",
+                        "request_kv": {
+                            "_type": "form data",
+                            "submission[comment]": [
+                                "Great analysis! I especially liked your use of recent data to support your points."
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "29d80dd0-2506-41bc-ad55-40db3359b84c",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Take the quiz titled \"[[Quiz]]\" in the course \"[[Course]]\" answering each question as it appears on the screen, and use the Next button to advance to the next question after answering. Do not leave any question blank.",
+        "parameters": [
+            "Course",
+            "Quiz"
+        ],
+        "instances": [
+            {
+                "id": "33ff4d10-9231-4bf1-b620-94f5908a4f54",
+                "instance_text": "Task: Take the quiz titled \"Stellar Evolution and Habitable Zones\" in the course \"Astrobiology and Planetary Habitability 312\" answering each question as it appears on the screen, and use the Next button to advance to the next question after answering. Do not leave any question blank.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Quiz": "Stellar Evolution and Habitable Zones"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/quizzes/6/submissions/66/record_answer?next_question_path=/courses/1/quizzes/6/take/questions/23",
+                        "request_kv": {}
+                    },
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/quizzes/6/submissions",
+                        "request_kv": {}
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "3b389112-ccb7-4272-853e-8dbe81a1c6c8",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Delete the page titled \"[[Page]]\" from the \"[[Group]]\" group in your [[Course]] course in Canvas.",
+        "parameters": [
+            "Course",
+            "Group",
+            "Page"
+        ],
+        "instances": [
+            {
+                "id": "5c931197-e71b-4ac0-a52f-66cb1a7dbe2a",
+                "instance_text": "Task: Delete the page titled \"Model coordination hub\" from the \"Climate Modeling Cell\" group in your Astrobiology and Planetary Habitability 312 course in Canvas.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Group": "Climate Modeling Cell",
+                    "Page": "Model coordination hub"
+                },
+                "answer_key": [
+                    {
+                        "method": "DELETE",
+                        "path": "/api/v1/groups/10/pages/model-coordination-hub",
+                        "request_kv": {}
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "45974a3d-36dc-409e-9fe4-8cbd0adc3517",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Delete the announcement titled \"[[Announcement]]\" from the \"[[Group]]\" group in the [[Course]] course on Canvas.",
+        "parameters": [
+            "Course",
+            "Group",
+            "Announcement"
+        ],
+        "instances": [
+            {
+                "id": "744ec9fa-e491-4fe2-a9aa-754e3e1f08ce",
+                "instance_text": "Task: Delete the announcement titled \"Poster Prep Thursday\" from the \"Tardigrade Team\" group in the Astrobiology and Planetary Habitability 312 course on Canvas.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Group": "Tardigrade Team",
+                    "Announcement": "Poster Prep Thursday"
+                },
+                "answer_key": [
+                    {
+                        "method": "DELETE",
+                        "path": "/api/v1/groups/16/discussion_topics/7",
+                        "request_kv": {}
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "6242d2f1-f67e-4d56-a856-b9a5f536672f",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" create a new course discussion titled \"[[Discussion]]\" In the discussion content, enter the following text: \"[[Discussion Message]]\" Save the discussion.",
+        "parameters": [
+            "Course",
+            "Discussion",
+            "Discussion Message"
+        ],
+        "instances": [
+            {
+                "id": "277d89e8-5e36-4fff-b668-58c23973d023",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" create a new course discussion titled \"Daily Relevance of Astrobiology\" In the discussion content, enter the following text: \"Describe a way concepts from astrobiology have influenced how you think about environmental decisions or everyday choices outside class\" Save the discussion.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "Daily Relevance of Astrobiology",
+                    "Discussion Message": "Describe a way concepts from astrobiology have influenced how you think about environmental decisions or everyday choices outside class"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/courses/1/discussion_topics",
+                        "request_kv": {
+                            "title": "Daily Relevance of Astrobiology",
+                            "message": "\u003cp\u003eDescribe a way concepts from astrobiology have influenced how you think about environmental decisions or everyday choices outside class\u003c/p\u003e"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "b18ec1c0-213c-480c-8c5e-b770e86e8c76",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the \"[[Group]]\" group create a new group page titled \"[[Page]]\". In the page content, enter the following text: \"[[Page Message]]\" Set the page so that anyone can edit it, and check the box to notify users that this content has changed. Save the page.",
+        "parameters": [
+            "Group",
+            "Page",
+            "Page Message"
+        ],
+        "instances": [
+            {
+                "id": "5b5fe023-13db-49ec-a9d8-c6507824c006",
+                "instance_text": "Task: In the \"Europa Crew\" group create a new group page titled \"Project topics and resource hub\". In the page content, enter the following text: \"Hi everyone I set up this page to collect potential project topics and references for Astrobiology and Planetary Habitability 312 Please add research questions proposed methods and any papers youd recommend Also note if you prefer lab fieldwork or modeling\" Set the page so that anyone can edit it, and check the box to notify users that this content has changed. Save the page.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Group": "Europa Crew",
+                    "Page": "Project topics and resource hub",
+                    "Page Message": "Hi everyone I set up this page to collect potential project topics and references for Astrobiology and Planetary Habitability 312 Please add research questions proposed methods and any papers youd recommend Also note if you prefer lab fieldwork or modeling"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/groups/12/pages",
+                        "request_kv": {
+                            "title": "Project topics and resource hub",
+                            "body": "[[_includes='Hi everyone I set up this page to collect potential project topics and references for Astrobiology and Planetary Habitability 312 Please add research questions proposed methods and any papers youd recommend Also note if you prefer lab fieldwork or modeling']]",
+                            "editing_roles": "members,public",
+                            "notify_of_update": "1"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "b68ad0fe-8cd4-40b1-ad7f-88b43510da75",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Add a text comment with an emoji to your submission for the assignment \"[[Assignment]]\" in the course \"[[Course]]\" saying \"Great feedback received!\".",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "16aefbe5-9883-4522-a707-64e03f887c8e",
+                "instance_text": "Task: Add a text comment with an emoji to your submission for the assignment \"Radionuclide Heating in Planetary Interiors\" in the course \"Astrobiology and Planetary Habitability 312\" saying \"Great feedback received!\".",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Radionuclide Heating in Planetary Interiors"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/assignments/26/submissions/13",
+                        "request_kv": {
+                            "_type": "form data",
+                            "submission[comment]": "[[_includes='Great feedback received!']]"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "bd1583a6-7c16-4d45-9cfb-e6bce6d088a0",
+        "type": "Information Seeking",
+        "answer_type": "Text",
+        "parameterized_text": "Task: Check if you have a peer review discussion to complete for the course \"[[Course]]\" and identify the name of a student whose post you need to review.",
+        "parameters": [
+            "Course",
+            "Discussion"
+        ],
+        "instances": [
+            {
+                "id": "44abbf20-e16d-4b1c-bf15-81af64274b72",
+                "instance_text": "Task: Check if you have a peer review discussion to complete for the course \"Astrobiology and Planetary Habitability 312\" and identify the name of a student whose post you need to review.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "Mission Design for Life Detection"
+                },
+                "answer_key": {
+                    "Text": [
+                        "Terrance Studentson",
+                        "Phillip Studentson",
+                        "Abigail Studentson",
+                        "Riley Parker"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": "681d72b5-e5fb-4895-960c-f5127e10fcac",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" go to the Modules section and mark the content page titled \"[[Page]]\" as done.",
+        "parameters": [
+            "Course",
+            "Page"
+        ],
+        "instances": [
+            {
+                "id": "6164096b-7969-44d3-8766-21cd1920205c",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" go to the Modules section and mark the content page titled \"Exoplanet Atmospheres and Habitability\" as done.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Page": "Exoplanet Atmospheres and Habitability"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/courses/1/modules/3/items/5/done",
+                        "request_kv": {}
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "0455d1fc-9c89-490f-aea1-f6234029f2ba",
+        "type": "Information Seeking",
+        "answer_type": "Date Time",
+        "parameterized_text": "Task: Verify that you have successfully submitted your \"[[Assignment]]\" assignment in the \"[[Course]]\" course by viewing the submission confirmation details. What is the date time that you made your submission?",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "155d45e7-cc30-4882-8ef7-76c5383a679d",
+                "instance_text": "Task: Verify that you have successfully submitted your \"Stellar Radiation and Atmospheric Escape\" assignment in the \"Astrobiology and Planetary Habitability 312\" course by viewing the submission confirmation details. What is the date time that you made your submission?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Stellar Radiation and Atmospheric Escape"
+                },
+                "answer_key": {
+                    "Date Time": "2026-01-16 19:05"
+                }
+            }
+        ]
+    },
+    {
+        "id": "e0cfbef6-1383-463e-ac40-db871e962295",
+        "type": "Side-effect",
+        "parameterized_text": "Task: As the student group leader of \"[[Group 1]]\" in the \"[[Course]]\" course, change your group's name to \"[[Group 2]]\".",
+        "parameters": [
+            "Course",
+            "Group 1",
+            "Group 2"
+        ],
+        "instances": [
+            {
+                "id": "c822333b-8527-48d6-8d49-93ac277f5e28",
+                "instance_text": "Task: As the student group leader of \"Orbital Dynamics Group\" in the \"Astrobiology and Planetary Habitability 312\" course, change your group's name to \"Exobiology Explorers\".",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Group 1": "Orbital Dynamics Group",
+                    "Group 2": "Exobiology Explorers"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/groups/2",
+                        "request_kv": {
+                            "name": [
+                                "Exobiology Explorers"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "bc69c1dc-3ccc-4cef-80ec-ed2a5d931c5e",
+        "type": "Side-effect",
+        "parameterized_text": "Task: As the student group leader of \"[[Group]]\" in the \"[[Course]]\" course, remove the member named \"[[User]]\" from the group. Submit your changes.",
+        "parameters": [
+            "Course",
+            "Group",
+            "User"
+        ],
+        "instances": [
+            {
+                "id": "0f9da38a-6434-41a2-85e4-955957e42f75",
+                "instance_text": "Task: As the student group leader of \"Paleobiology Cluster\" in the \"Astrobiology and Planetary Habitability 312\" course, remove the member named \"Steven Studentson\" from the group. Submit your changes.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Group": "Paleobiology Cluster",
+                    "User": "Steven Studentson"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/groups/4",
+                        "request_kv": {
+                            "_method": "PUT",
+                            "members[]": "[[_array_not_contains='5']]"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "8d2b6c85-7bc4-4683-b468-bf85542aa2c7",
+        "type": "Information Seeking",
+        "answer_type": "Numeric",
+        "parameterized_text": "Task: View the peer review rubric assessment and comments left by [[User]] for the assignment \"[[Assignment]]\" in the course \"[[Course]]\". How many points did [[User]] give you for the first criteria in the rubric?",
+        "parameters": [
+            "Course",
+            "Assignment",
+            "User"
+        ],
+        "instances": [
+            {
+                "id": "95e59b2d-7c97-44c1-ba66-8cef01deb073",
+                "instance_text": "Task: View the peer review rubric assessment and comments left by Sarah Studentson for the assignment \"Exoplanet Atmospheres and Spectroscopy\" in the course \"Astrobiology and Planetary Habitability 312\". How many points did Sarah Studentson give you for the first criteria in the rubric?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Exoplanet Atmospheres and Spectroscopy",
+                    "User": "Sarah Studentson"
+                },
+                "answer_key": {
+                    "Number": 45
+                }
+            }
+        ]
+    },
+    {
+        "id": "c9819826-9891-4b9a-824b-f94f91a6598b",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Complete a peer review for the assignment \"[[Assignment]]\" in the course \"[[Course]]\" by leaving the following comment in the comment sidebar: \"Great job but consider adding more sources to support your arguments.\" Submit your assessment to finish the peer review.",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "5e55b062-ec60-432f-8188-a9d7ed161899",
+                "instance_text": "Task: Complete a peer review for the assignment \"Data Analysis Project in Astrobiology\" in the course \"Astrobiology and Planetary Habitability 312\" by leaving the following comment in the comment sidebar: \"Great job but consider adding more sources to support your arguments.\" Submit your assessment to finish the peer review.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Data Analysis Project in Astrobiology"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/assignments/17/submissions/[[ANY]]",
+                        "request_kv": {
+                            "_type": "form data",
+                            "submission[comment]": [
+                                "Great job but consider adding more sources to support your arguments."
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "42ad8db4-826a-414a-9ad6-b5c9abd93078",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" open the discussion titled \"[[Discussion]]\" locate the reply by student \"[[User]]\" and click the Like icon to like this reply.",
+        "parameters": [
+            "Course",
+            "Discussion",
+            "User"
+        ],
+        "instances": [
+            {
+                "id": "6fee48d4-ce44-4f59-b7e5-a2c0e0ccfa2d",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" open the discussion titled \"False Positives and False Negatives in Biosignature Interpretation\" locate the reply by student \"Abigail Studentson\" and click the Like icon to like this reply.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "False Positives and False Negatives in Biosignature Interpretation",
+                    "User": "Abigail Studentson"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/graphql",
+                        "request_kv": {
+                            "operationName": "UpdateDiscussionEntryParticipant",
+                            "rating": "liked",
+                            "discussionEntryId": "39"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "542dda0b-1dd9-4c1b-86b3-7343786c226c",
+        "type": "Information Seeking",
+        "answer_type": "Numeric",
+        "parameterized_text": "Task: View the rubric results for your submission to the assignment \"[[Assignment]]\" in the course \"[[Course]]\". How many points did you recieve for the [[Criteria]] criteria in the rubric?",
+        "parameters": [
+            "Course",
+            "Assignment",
+            "Criteria"
+        ],
+        "instances": [
+            {
+                "id": "5ca4c67c-3b52-4471-90bd-4af2eb38a590",
+                "instance_text": "Task: View the rubric results for your submission to the assignment \"Biosignature Detection Strategies\" in the course \"Astrobiology and Planetary Habitability 312\". How many points did you recieve for the Quality criteria in the rubric?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Biosignature Detection Strategies",
+                    "Criteria": "Quality"
+                },
+                "answer_key": {
+                    "Number": 50
+                }
+            }
+        ]
+    },
+    {
+        "id": "6f4fd860-3339-4de0-9172-d18ac3a6d89f",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Reply to the announcement titled \"[[Announcement]]\" in the \"[[Course]]\" course with the message: \"Thank you for the information! Looking forward to this semester.\"",
+        "parameters": [
+            "Course",
+            "Announcement"
+        ],
+        "instances": [
+            {
+                "id": "1c8849b6-0d6e-4202-ae33-3427422312ef",
+                "instance_text": "Task: Reply to the announcement titled \"Midterm review session materials uploaded\" in the \"Astrobiology and Planetary Habitability 312\" course with the message: \"Thank you for the information! Looking forward to this semester.\"",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Announcement": "Midterm review session materials uploaded"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/graphql",
+                        "request_kv": {
+                            "operationName": "CreateDiscussionEntry",
+                            "discussionTopicId": "14",
+                            "message": "[[_starts_with='\u003cp\u003eThank you for the information! Looking forward to this semester.\u003c/p\u003e']]"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "72966af5-5445-4226-8236-e94352fb514b",
+        "type": "Information Seeking",
+        "answer_type": "Numeric",
+        "parameterized_text": "Task: In the course \"[[Course]]\" open the discussion titled \"[[Discussion]]\". How many replies are there for this discussion?",
+        "parameters": [
+            "Course",
+            "Discussion"
+        ],
+        "instances": [
+            {
+                "id": "ab1ea773-5c1e-495b-82a5-4d5ab5a01e5a",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" open the discussion titled \"Ethical implications of detecting extraterrestrial life\". How many replies are there for this discussion?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "Ethical implications of detecting extraterrestrial life"
+                },
+                "answer_key": {
+                    "Number": 7
+                }
+            }
+        ]
+    },
+    {
+        "id": "0e27e906-bd1d-4ecb-957f-f8acb9c51e08",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" report a reply in the discussion titled \"[[Discussion]]\" as inappropriate. Select \"inappropriate\" as the reason for reporting and submit your report.",
+        "parameters": [
+            "Course",
+            "Discussion"
+        ],
+        "instances": [
+            {
+                "id": "ac6f86b0-9249-4c3a-b5a3-d52d9ffba650",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" report a reply in the discussion titled \"Extremophiles and terrestrial analogs for space\" as inappropriate. Select \"inappropriate\" as the reason for reporting and submit your report.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "Extremophiles and terrestrial analogs for space"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/graphql",
+                        "request_kv": {
+                            "operationName": "UpdateDiscussionEntryParticipant",
+                            "reportType": "inappropriate"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "8aa2d6ba-d913-4972-ac2a-0056fc386691",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In your [[Course]] course, edit your reply in the \"[[Discussion]]\" discussion by changing the text to \"I believe renewable energy is essential for our future.\" and save your changes.",
+        "parameters": [
+            "Course",
+            "Discussion"
+        ],
+        "instances": [
+            {
+                "id": "cd6626bb-b6df-4545-afa5-e70a097bce9c",
+                "instance_text": "Task: In your Astrobiology and Planetary Habitability 312 course, edit your reply in the \"Searching for life on ocean worlds\" discussion by changing the text to \"I believe renewable energy is essential for our future.\" and save your changes.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "Searching for life on ocean worlds"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/graphql",
+                        "request_kv": {
+                            "operationName": "UpdateDiscussionEntry",
+                            "message": "\u003cp\u003eI believe renewable energy is essential for our future.\u003c/p\u003e"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "8be2d07d-8263-4add-9198-662264777c6c",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the \"[[Announcement]]\" announcement for the \"[[Course]]\" find the reply by [[Author]] that says: \"[[Quoted Reply Text]]\" and use the Quote Reply feature to respond to them with the text \"Thank you for the clarification!\".",
+        "parameters": [
+            "Course",
+            "Announcement",
+            "Author",
+            "Quoted Reply Text"
+        ],
+        "instances": [
+            {
+                "id": "29d1edc2-357e-4949-aa37-0b9783a99d6f",
+                "instance_text": "Task: In the \"Lab sample handling workshop schedule\" announcement for the \"Astrobiology and Planetary Habitability 312\" find the reply by Abigail Studentson that says: \"I am away on a field trip that week Can I get an exemption or a make up session\" and use the Quote Reply feature to respond to them with the text \"Thank you for the clarification!\".",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Announcement": "Lab sample handling workshop schedule",
+                    "Author": "Abigail Studentson",
+                    "Quoted Reply Text": "I am away on a field trip that week Can I get an exemption or a make up session"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/graphql",
+                        "request_kv": {
+                            "operationName": "CreateDiscussionEntry",
+                            "discussionTopicId": "18",
+                            "message": "\u003cp\u003eThank you for the clarification!\u003c/p\u003e",
+                            "quotedEntryId": "32"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "9151a1c8-9803-4a89-b6a4-4b6dfa2190cf",
+        "type": "Side-effect",
+        "parameterized_text": "Task:  Add the external RSS feed \"https://news.ycombinator.com/rss\" to the \"[[Group]]\" group announcements in Canvas, set it to display only posts with the phrase \"AI\" in the title, and choose the \"Full article\" option for content display.",
+        "parameters": [
+            "Group"
+        ],
+        "instances": [
+            {
+                "id": "e82bb4af-4969-4657-9c34-3a99826afd11",
+                "instance_text": "Task:  Add the external RSS feed \"https://news.ycombinator.com/rss\" to the \"Biosignature Lab\" group announcements in Canvas, set it to display only posts with the phrase \"AI\" in the title, and choose the \"Full article\" option for content display.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Group": "Biosignature Lab"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/groups/13/external_feeds",
+                        "request_kv": {
+                            "header_match": "AI",
+                            "url": "https://news.ycombinator.com/rss",
+                            "verbosity": "full"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "96290cff-cfa7-4712-8f63-0a853cdbf0c7",
+        "type": "Information Seeking",
+        "answer_type": "Text",
+        "parameterized_text": "Task: Locate and open your assigned peer review for the \"[[Assignment]]\" assignment in the \"[[Course]]\" course using the To Do list on your Canvas Dashboard. What is the name of the student whose submission you are reviewing?",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "45f00e3b-772b-4b1a-adbc-568e45b3e78c",
+                "instance_text": "Task: Locate and open your assigned peer review for the \"Biogeochemical Signatures in Rock Records\" assignment in the \"Astrobiology and Planetary Habitability 312\" course using the To Do list on your Canvas Dashboard. What is the name of the student whose submission you are reviewing?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Biogeochemical Signatures in Rock Records"
+                },
+                "answer_key": {
+                    "Text": [
+                        "Terrance Studentson",
+                        "Steven Studentson",
+                        "Monica Studentson",
+                        "Riley Parker"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": "98d2e0b9-478c-4eec-b40b-82a61e78ba87",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" use the What-If Grades feature to enter a hypothetical score of 85 for the assignment \"[[Assignment]]\" and view how this affects your total grade.",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "bef2f758-6c76-4bb1-babb-cdd62783c938",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" use the What-If Grades feature to enter a hypothetical score of 85 for the assignment \"Methane on Mars and Other Worlds\" and view how this affects your total grade.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Methane on Mars and Other Worlds"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/assignments/18/submissions/13",
+                        "request_kv": {
+                            "_type": "form data",
+                            "submission[student_entered_score]": [
+                                "85"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "9b7f10f1-60fe-4bbe-968c-9b828cdbeb8f",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the \"[[Group]]\" group, edit the page titled \"[[Page]]\" by changing its title to \"Final [[Page]]\" and adding the following text to the top of the page: \"This is the finalized version of our group research outline for submission.\" Save your changes.",
+        "parameters": [
+            "Group",
+            "Page"
+        ],
+        "instances": [
+            {
+                "id": "5068c9c1-e386-4c06-88f4-68fedd22a4d2",
+                "instance_text": "Task: In the \"Extremophile Squad\" group, edit the page titled \"Team resources and lab notes\" by changing its title to \"Final Team resources and lab notes\" and adding the following text to the top of the page: \"This is the finalized version of our group research outline for submission.\" Save your changes.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Group": "Extremophile Squad",
+                    "Page": "Team resources and lab notes"
+                },
+                "answer_key": [
+                    {
+                        "method": "PUT",
+                        "path": "/api/v1/groups/9/pages/team-resources-and-lab-notes",
+                        "request_kv": {
+                            "title": "Final Team resources and lab notes",
+                            "body": "[[_starts_with='\u003cp\u003eThis is the finalized version of our group research outline for submission.']]"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "aa62cf92-1cdd-4b30-b49c-9f4e8791776f",
+        "type": "Information Seeking",
+        "answer_type": "Text",
+        "parameterized_text": "Task: View the rubric for the assignment titled \"[[Assignment]]\" in the course \"[[Course]]\" by navigating to the Assignments page, clicking on \"[[Assignment]]\" and locating the rubric displayed below the assignment instructions. What is the heading of the rubric for this assignment?",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "8299658f-ab40-4f13-931c-835d872b346c",
+                "instance_text": "Task: View the rubric for the assignment titled \"False Positives and False Negatives in Biosignature Interpretation\" in the course \"Astrobiology and Planetary Habitability 312\" by navigating to the Assignments page, clicking on \"False Positives and False Negatives in Biosignature Interpretation\" and locating the rubric displayed below the assignment instructions. What is the heading of the rubric for this assignment?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "False Positives and False Negatives in Biosignature Interpretation"
+                },
+                "answer_key": {
+                    "Text": "Rubric for False Positives and False Negatives in Biosignature Interpretation"
+                }
+            }
+        ]
+    },
+    {
+        "id": "c7a8b1a8-cd2c-4581-9cc3-89d2a1a4f788",
+        "type": "Information Seeking",
+        "answer_type": "Numeric",
+        "parameterized_text": "Task: View the rubric for the graded discussion titled \"[[Discussion]]\" in the course \"[[Course]]\" by navigating to the Discussions section, selecting the discussion, and opening the rubric. How many points can you score for the first criteria of the rubric?",
+        "parameters": [
+            "Course",
+            "Discussion"
+        ],
+        "instances": [
+            {
+                "id": "b29f5f11-7007-4ac3-9a09-4585ac656687",
+                "instance_text": "Task: View the rubric for the graded discussion titled \"Methane on Mars and Other Worlds\" in the course \"Astrobiology and Planetary Habitability 312\" by navigating to the Discussions section, selecting the discussion, and opening the rubric. How many points can you score for the first criteria of the rubric?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "Methane on Mars and Other Worlds"
+                },
+                "answer_key": {
+                    "Number": 3
+                }
+            }
+        ]
+    },
+    {
+        "id": "cfb8fa30-c680-4b13-9dd0-d49e4567ff15",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Submit the URL \"https://www.exampleproject.com\" as your assignment submission for the assignment titled \"[[Assignment]]\" in the course \"[[Course]]\" on Canvas.",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "cdab622d-2051-443c-bf77-738643274ff0",
+                "instance_text": "Task: Submit the URL \"https://www.exampleproject.com\" as your assignment submission for the assignment titled \"Laboratory Simulation of Prebiotic Chemistry\" in the course \"Astrobiology and Planetary Habitability 312\" on Canvas.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Laboratory Simulation of Prebiotic Chemistry"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/assignments/23/submissions",
+                        "request_kv": {
+                            "_type": "form data",
+                            "submission[url]": "[[_array_contains='https://www.exampleproject.com']]"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "d6ac9877-e256-4487-86cc-2bb0b085c804",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" use the search field in the Announcements Index Page to find the announcement titled \"[[Announcement]]\". Then, mark all announcements as read using the \"Mark All as Read\" button.",
+        "parameters": [
+            "Course",
+            "Announcement"
+        ],
+        "instances": [
+            {
+                "id": "4663d3bc-c591-4b73-b4ee-14c5edb9b712",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" use the search field in the Announcements Index Page to find the announcement titled \"Assignment deadline extended for habitability models\". Then, mark all announcements as read using the \"Mark All as Read\" button.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Announcement": "Assignment deadline extended for habitability models"
+                },
+                "answer_key": [
+                    {
+                        "method": "GET",
+                        "path": "/api/v1/courses/1/discussion_topics?search_term=Assignment%20deadline%20extended%20for%20habitability%20models",
+                        "request_kv": {}
+                    },
+                    {
+                        "method": "PUT",
+                        "path": "/api/v1/courses/1/discussion_topics/read_all",
+                        "request_kv": {}
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "d8f661f0-6bcc-4778-8b5e-ed716f425cd8",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Submit a text entry for the [[Assignment]] assignment in the course \"[[Course]]\" by entering the text \"The most interesting concept I learned this week was cognitive dissonance.\"",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "e6cbdeeb-6c6b-432e-9598-f3b4b0d82c5e",
+                "instance_text": "Task: Submit a text entry for the Habitability of Super Earths assignment in the course \"Astrobiology and Planetary Habitability 312\" by entering the text \"The most interesting concept I learned this week was cognitive dissonance.\"",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Habitability of Super Earths"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/assignments/29/submissions",
+                        "request_kv": {
+                            "_type": "form data",
+                            "submission[body]": [
+                                "\u003cp\u003eThe most interesting concept I learned this week was cognitive dissonance.\u003c/p\u003e"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "db729474-de9b-410b-9476-7e1b49775d3a",
+        "type": "Information Seeking",
+        "answer_type": "Numeric",
+        "parameterized_text": "Task: Check if your instructor has graded your \"[[Assignment]]\" assignment in the \"[[Course]]\" course and note the score you received.",
+        "parameters": [
+            "Course",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "1fbd7e26-1ca2-48a8-bff1-03b8f6315894",
+                "instance_text": "Task: Check if your instructor has graded your \"Habitability Factors for M Dwarf Planets\" assignment in the \"Astrobiology and Planetary Habitability 312\" course and note the score you received.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Habitability Factors for M Dwarf Planets"
+                },
+                "answer_key": {
+                    "Number": 92
+                }
+            }
+        ]
+    },
+    {
+        "id": "e070c0de-41d2-42aa-8a7c-c93f98fdc4c4",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Edit the announcement titled \"[[Announcement]]\" in the group [[Group]] in the [[Course]] course by changing the content to \"Our first group meeting will be held on Friday at 3 PM in the atrium.\" Then, click the Save button to save your changes.",
+        "parameters": [
+            "Course",
+            "Group",
+            "Announcement"
+        ],
+        "instances": [
+            {
+                "id": "d0f50efe-8fc1-4623-99c7-fca4ca29b81f",
+                "instance_text": "Task: Edit the announcement titled \"Friday Review Meeting\" in the group Kepler Collective in the Astrobiology and Planetary Habitability 312 course by changing the content to \"Our first group meeting will be held on Friday at 3 PM in the atrium.\" Then, click the Save button to save your changes.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Group": "Kepler Collective",
+                    "Announcement": "Friday Review Meeting"
+                },
+                "answer_key": [
+                    {
+                        "method": "PUT",
+                        "path": "/api/v1/groups/17/discussion_topics/8",
+                        "request_kv": {
+                            "message": "\u003cp\u003eOur first group meeting will be held on Friday at 3 PM in the atrium.\u003c/p\u003e"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "e178ca11-ad42-4c2e-811c-cb3c25177dc8",
+        "type": "Side-effect",
+        "parameterized_text": "Task:  \nEmbed a YouTube video into the \"[[Page]]\" page in the \"[[Group]]\" group, using the following embedding snippet:\n\n\u003ciframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/m5a4phGJsRY?si=sCq1ix4e4OtMdHUg\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen\u003e\u003c/iframe\u003e\n\nthen save the changes.",
+        "parameters": [
+            "Group",
+            "Page"
+        ],
+        "instances": [
+            {
+                "id": "898b2352-5f59-4675-816b-0bd83efdf53b",
+                "instance_text": "Task:  \nEmbed a YouTube video into the \"Spectra Discussion and Data Sharing\" page in the \"Planetary Atmospheres Team\" group, using the following embedding snippet:\n\n\u003ciframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/m5a4phGJsRY?si=sCq1ix4e4OtMdHUg\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen\u003e\u003c/iframe\u003e\n\nthen save the changes.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Group": "Planetary Atmospheres Team",
+                    "Page": "Spectra Discussion and Data Sharing"
+                },
+                "answer_key": [
+                    {
+                        "method": "PUT",
+                        "path": "/api/v1/groups/8/pages/spectra-discussion-and-data-sharing",
+                        "request_kv": {
+                            "body": "[[_includes='https://www.youtube.com/embed/m5a4phGJsRY?si=sCq1ix4e4OtMdHUg']]"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "e476f98d-e1e1-4fb7-b8d4-2b0bc832ff69",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Leave the group \"[[Group]]\" in the course \"[[Course]]\" using the People page in Canvas.",
+        "parameters": [
+            "Course",
+            "Group"
+        ],
+        "instances": [
+            {
+                "id": "0b78149d-82aa-427b-8fcb-ad88c8e8a8e7",
+                "instance_text": "Task: Leave the group \"Titan Research Group\" in the course \"Astrobiology and Planetary Habitability 312\" using the People page in Canvas.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Group": "Titan Research Group"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/groups/11/memberships/self",
+                        "request_kv": {
+                            "_method": "DELETE"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "e5f9684d-4b57-45c7-81e3-0d065f75545b",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In your \"[[Course]]\" course, change your discussion settings so that you must manually mark discussion replies as read.",
+        "parameters": [
+            "Course"
+        ],
+        "instances": [
+            {
+                "id": "3d58eaf8-594f-4df6-9acc-472709040b70",
+                "instance_text": "Task: In your \"Astrobiology and Planetary Habitability 312\" course, change your discussion settings so that you must manually mark discussion replies as read.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312"
+                },
+                "answer_key": [
+                    {
+                        "method": "PUT",
+                        "path": "/api/v1/users/13/settings",
+                        "request_kv": {
+                            "manual_mark_as_read": true
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "f5e1c597-c2ad-45f6-aa7c-7b7dee0d3675",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" view all available groups, and join the self sign-up group named \"[[Group]]\"",
+        "parameters": [
+            "Course",
+            "Group"
+        ],
+        "instances": [
+            {
+                "id": "c22a80f8-c261-4ef3-98fa-84d2910f8c2f",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" view all available groups, and join the self sign-up group named \"Astrobiology Practicum\"",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Group": "Astrobiology Practicum"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/groups/1/memberships",
+                        "request_kv": {
+                            "_method": "POST"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "f9e0dc04-ac1e-4189-8c58-91a66d561e06",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Take the \"[[Quiz]]\" quiz in the \"[[Course]]\" course, answer all questions, and submit the quiz.",
+        "parameters": [
+            "Course",
+            "Quiz"
+        ],
+        "instances": [
+            {
+                "id": "c04dbcc5-672a-48f6-a391-d97ca4c294c4",
+                "instance_text": "Task: Take the \"Water Worlds and Ice Covered Planets\" quiz in the \"Astrobiology and Planetary Habitability 312\" course, answer all questions, and submit the quiz.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Quiz": "Water Worlds and Ice Covered Planets"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/quizzes/5/submissions",
+                        "request_kv": {
+                            "question_18": "[[ANY]]"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fa70e65c-16fb-4d03-9041-bcf07cf6ae02",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the course \"[[Course]]\" find the announcement titled \"[[Announcement]]\" in your Course Activity Stream and remove this notification from your activity stream.",
+        "parameters": [
+            "Course",
+            "Announcement"
+        ],
+        "instances": [
+            {
+                "id": "d6521525-7b04-46eb-bf23-bbd5bef2f61a",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" find the announcement titled \"Guest lecture on extremophile research\" in your Course Activity Stream and remove this notification from your activity stream.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Announcement": "Guest lecture on extremophile research"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/dashboard/ignore_stream_item/151",
+                        "request_kv": {
+                            "_method": "DELETE"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": null,
+        "type": "Information Seeking",
+        "answer_type": "Date Time",
+        "parameterized_text": "Task: In the course \"[[Course]]\" view all modules, expand the module titled [[Module]]\" and identify the due date for the assignment named \"[[Assignment]].\"",
+        "parameters": [
+            "Course",
+            "Assignment",
+            "Module"
+        ],
+        "instances": [
+            {
+                "id": "9e537adb-57bb-4eb5-9b4b-4889bc9ac59f",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" view all modules, expand the module titled Astrobiology 312 Week 1 Exoplanet Atmospheres\" and identify the due date for the assignment named \"Exoplanet Atmospheres and Spectroscopy.\"",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Assignment": "Exoplanet Atmospheres and Spectroscopy",
+                    "Module": "Astrobiology 312 Week 1 Exoplanet Atmospheres"
+                },
+                "answer_key": {
+                    "Date Time": "2026-03-01 23:59"
+                }
+            }
+        ]
+    },
+    {
+        "id": "d098f836-5e11-4e64-ac4c-55dd100ec323",
+        "type": "Side-effect",
+        "parameterized_text": "Task: View your instructor's comments on the \"[[Quiz]]\" quiz in the \"[[Course]]\" course and add a comment saying \"Thank you for the feedback!\" to your quiz submission.",
+        "parameters": [
+            "Course",
+            "Quiz"
+        ],
+        "instances": [
+            {
+                "id": "d774fe4d-7d8d-4073-bf42-5d09b43df915",
+                "instance_text": "Task: View your instructor's comments on the \"Planetary Atmospheres and Climate\" quiz in the \"Astrobiology and Planetary Habitability 312\" course and add a comment saying \"Thank you for the feedback!\" to your quiz submission.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Quiz": "Planetary Atmospheres and Climate"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/assignments/8/submissions/13",
+                        "request_kv": {
+                            "_type": "form data",
+                            "submission[comment]": [
+                                "Thank you for the feedback!"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fa9d33b1-09e0-43af-996a-74f9acbee197",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Resume the \"[[Quiz]]\" in the \"[[Course]]\" course that you previously started but did not finish.",
+        "parameters": [
+            "Course",
+            "Quiz"
+        ],
+        "instances": [
+            {
+                "id": "e762d306-e256-4417-98c6-8f01106c9a86",
+                "instance_text": "Task: Resume the \"Origins of Life on Earth\" in the \"Astrobiology and Planetary Habitability 312\" course that you previously started but did not finish.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Quiz": "Origins of Life on Earth"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/quizzes/12/take",
+                        "request_kv": {}
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "f36e03d8-3c1a-4223-ad61-8aca0b4546fb",
+        "type": "Side-effect",
+        "parameterized_text": "Task: Submit the \"[[Survey]]\" survey in the \"[[Course]]\" course by answering all questions and submitting your responses.",
+        "parameters": [
+            "Course",
+            "Survey"
+        ],
+        "instances": [
+            {
+                "id": "c9ffdaec-d64b-4893-87c0-75329fa85a82",
+                "instance_text": "Task: Submit the \"Hydrothermal Systems and Life\" survey in the \"Astrobiology and Planetary Habitability 312\" course by answering all questions and submitting your responses.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Survey": "Hydrothermal Systems and Life"
+                },
+                "answer_key": [
+                    {
+                        "method": "POST",
+                        "path": "/courses/1/quizzes/8/submissions",
+                        "request_kv": {}
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fedf3006-7245-4d24-bade-d60bd0e8f6ba",
+        "type": "Information Seeking",
+        "answer_type": "Numeric",
+        "parameterized_text": "Task: View the results of your second attempt on the \"[[Quiz]]\" in the \"[[Course]]\" course, and report the time it took in minutes to complete that attempt as displayed in the Last Attempt Details section.",
+        "parameters": [
+            "Course",
+            "Quiz"
+        ],
+        "instances": [
+            {
+                "id": "3044cb8e-dc97-47bf-a88d-b5ffd0386df4",
+                "instance_text": "Task: View the results of your second attempt on the \"Extremophiles and Habitability\" in the \"Astrobiology and Planetary Habitability 312\" course, and report the time it took in minutes to complete that attempt as displayed in the Last Attempt Details section.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Quiz": "Extremophiles and Habitability"
+                },
+                "answer_key": {
+                    "Number": 1
+                }
+            }
+        ]
+    },
+    {
+        "id": "b26bef34-a1ce-45c7-9b8a-13651d76d367",
+        "type": "Information Seeking",
+        "answer_type": "Text",
+        "parameterized_text": "Task: View the feedback you received from [[User]] for the \"[[Discussion]]\" peer-reviewed discussion by accessing the Feedback tray from the Course Grades page in your \"[[Course]]\" course. What was the comment that [[User]] left for your submission?",
+        "parameters": [
+            "Course",
+            "Discussion",
+            "User"
+        ],
+        "instances": [
+            {
+                "id": "d077e5e8-8bb0-4a8c-8d1f-a235a2b31d46",
+                "instance_text": "Task: View the feedback you received from Sarah Studentson for the \"Biogeochemical Signatures in Rock Records\" peer-reviewed discussion by accessing the Feedback tray from the Course Grades page in your \"Astrobiology and Planetary Habitability 312\" course. What was the comment that Sarah Studentson left for your submission?",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Discussion": "Biogeochemical Signatures in Rock Records",
+                    "User": "Sarah Studentson"
+                },
+                "answer_key": {
+                    "Text": "Good synthesis I agree that multiproxy approaches reduce ambiguity\\nAlso consider taphonomic loss and metamorphic overprinting when interpreting signals"
+                }
+            }
+        ]
+    },
+    {
+        "id": "d8f5a7b0-64e5-4c07-aff4-44d0e26f2eb2",
+        "type": "Information Seeking",
+        "answer_type": "Numeric",
+        "parameterized_text": "Task: In the course \"[[Course]]\" view your Learning Mastery grades for the outcome group \"[[Course]]\" expand the group to see all outcomes, and report the number of mastered outcomes.",
+        "parameters": [
+            "Course"
+        ],
+        "instances": [
+            {
+                "id": "fe9599aa-0e5d-42bc-b789-4e73dc49b2cc",
+                "instance_text": "Task: In the course \"Astrobiology and Planetary Habitability 312\" view your Learning Mastery grades for the outcome group \"Astrobiology and Planetary Habitability 312\" expand the group to see all outcomes, and report the number of mastered outcomes.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312"
+                },
+                "answer_key": {
+                    "Number": 0
+                }
+            }
+        ]
+    },
+    {
+        "id": "ff0f349b-4812-41ae-8b85-ae6c2899db2c",
+        "type": "Side-effect",
+        "parameterized_text": "Task: In the \"[[Course]]\" course, navigate to the \"[[Module]]\" module, click the \"Choose Assignment Group\" link, and select the assignment titled \"[[Assignment]]\" by clicking the Select button.",
+        "parameters": [
+            "Course",
+            "Module",
+            "Assignment"
+        ],
+        "instances": [
+            {
+                "id": "d69231e7-1e37-4713-8446-06dea0d3e35c",
+                "instance_text": "Task: In the \"Astrobiology and Planetary Habitability 312\" course, navigate to the \"Special Module A\" module, click the \"Choose Assignment Group\" link, and select the assignment titled \"Data Analysis Project in Astrobiology\" by clicking the Select button.",
+                "instance_username": "riley.parker@instituterson.ca",
+                "instance_password": "hG7r9Kp2VzQ1",
+                "mapping": {
+                    "Course": "Astrobiology and Planetary Habitability 312",
+                    "Module": "Special Module A",
+                    "Assignment": "Data Analysis Project in Astrobiology"
+                },
+                "answer_key": [
+                    {
+                        "method": "GET",
+                        "path": "/courses/1/modules/items/30/choose",
+                        "request_kv": {}
+                    },
+                    {
+                        "method": "POST",
+                        "path": "/api/v1/courses/1/modules/4/items/30/select_mastery_path",
+                        "request_kv": {
+                            "assignment_set_id": 1
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
