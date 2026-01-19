@@ -40,13 +40,27 @@ class TaskInstance:
         self.parent_task = parent_task
         self.instance_text = data["instance_text"]
         self.mapping = data["mapping"]
-        
+        self.answer_options = None
+
         if parent_task.type == 'Side-effect':
             '''
             If the parent task is a side-effect task, the answer key will be in the form of a JSON Array
             containing objects with 'method', 'path' and 'request_kv' fields.
             '''
-            self.answer_key = [SideEffectAnswer(x) for x in data["answer_key"]]
+
+            '''
+            This mechanism allows there to be multiple independant options for evaluating a task.
+            Basically, if an answer key item specifies an answer id, the answers get segregated by id
+            and fullfilling anyone of them in full passes the task.
+            '''
+            unique_answers = set([x['answer_id'] for x in data["answer_key"] if 'answer_id' in x])
+            if len(unique_answers) > 0:
+                self.answer_options = []
+
+                for a_id in unique_answers:
+                    self.answer_options.append([SideEffectAnswer(x) for x in data["answer_key"] if x["answer_id"] == a_id])
+            else:
+                self.answer_key = [SideEffectAnswer(x) for x in data["answer_key"]]
         elif parent_task.type == "Information Seeking":
             '''
             If the parent task is an information seeking task the answer key will be a JSON object containing a single key, whose value is either a literal or
@@ -239,6 +253,17 @@ class NetworkEvent:
     def __init__(self, method, path, request_body):
         self.method = method
         self.path = path
+        self.query_string = None
+        self.query_string_dict = None
+
+        query_string, query_string_dict = self.get_path_query_string_dict(self.path)
+
+        if query_string is not None:
+            self.query_string = query_string
+        
+        if query_string_dict is not None:
+            self.query_string_dict = query_string_dict
+
 
         '''
         By the time we get to here, form data stuff should have been processed into a dict.
@@ -247,6 +272,16 @@ class NetworkEvent:
             raise RuntimeError(f"request_body must be a dict. Got {type(request_body)}")
 
         self.request = request_body
+
+    def get_path_query_string_dict(self, path):
+        if '?' in path: # If we have a query string, let's do some processing...
+            query_string = path[path.index('?')+1:] 
+            query_string_dict = parse_qs(query_string)
+
+            return query_string, query_string_dict
+        else:
+            print(f"No query string detected in path: {path}")
+            return None, None
 
     def get_path_without_query(self):
         try:
@@ -281,8 +316,31 @@ class NetworkEvent:
         
 
         elif self.path != path:
+            # However, if the path segments of the url match
+            if '?' in path and self.get_path_without_query() == path[0:path.index('?')]:
+                print(f"base path: {self.get_path_without_query()} matches: {path[0:path.index('?')]}")
+                
+                # And there is a query segment in the reference url to consider
+                if self.query_string_dict is not None: 
+                
+                    # And all key-value pairs of the reference query segment appear in the observed query string
+                    _ , reference_query_string_dict = self.get_path_query_string_dict(path)
+                    for reference_query_key, reference_query_value in reference_query_string_dict.items():
+                        print(f"Looking for refernce_query_key: {reference_query_key}={reference_query_value} in path query string: {self.query_string}")
+                        
+                        # Because query values are multimaps (more than one value can exist for a single key), we first convert all values to lower case before comparing, so the comparison isn't case sensitive.
+                        # For example a search term 'Guest Lecture on extremophile research' will match the value 'guest lecture on extremophile research'. 
+                        if reference_query_key in self.query_string_dict and [x.lower() for x in self.query_string_dict[reference_query_key]] == [x.lower() for x in reference_query_value]:
+                            continue
+                        else:
+                            errors.append(f"Expected to find {reference_query_key}={reference_query_value} in observed path. But observed path was: {self.path}")
+                    
+                    # Then consider this a match as far as the path/url goes.
+                    pass
+
+
             # If the reference path does not contain a query component (?key=value), then try matching the observed path without a query component to the reference path and see if that works.
-            if not '?' in path and self.get_path_without_query() == path:
+            elif not '?' in path and self.get_path_without_query() == path:
                 pass
             else:
                 errors.append(f"The expected path was {path} but the observed path was: {self.path}")
@@ -411,11 +469,18 @@ class NetworkEvent:
                     continue
 
             elif key == request_key and value.startswith("[[_includes="):
-                if not isinstance(request_value, str):
-                    raise RuntimeError(f"Expected '{key}' value to be a string because reference value was: {value}. Instead, '{key}' value was of type: {type(request_value)}")
 
                 included_str = self.extract_dynamic_value_parameter(value)
 
+                if isinstance(request_value, list):
+                    for item in request_value:
+                        if included_str in item:
+                            return True
+
+                if not isinstance(request_value, str):
+                    raise RuntimeError(f"Expected '{key}' value to be a string because reference value was: {value}. Instead, '{key}' value was of type: {type(request_value)}")
+
+               
                 if included_str in request_value:
                     return True
                 else: 
@@ -556,6 +621,45 @@ class Evaluator:
             "details": detailed_report
         }
     
+    def evaluate_against_answer(self, instance, instance_reference_answer, network_events):
+
+        # Side-effect tasks are evaluated by verifying that one or more reference api calls are observable in the network logs of a task. 
+        # Begin by initalizing a dict whose keys are the answers we're looking for and whose values are a boolean flag which is flipped when a match is found.
+        # If all values in this dict are True, the side-effect task was completed successfully.
+        expected_api_invokations = {}
+        for answer in instance_reference_answer:
+            expected_api_invokations[answer] = False
+        
+        mismatch_report = {} # Define a dict for holding additional info about mismatches, useful for analysis/debugging
+        
+        for index, event in enumerate(network_events):
+            
+            # Go through each provided network event and see if it matches any of the ground truth side-effect answers.
+            for api_call in expected_api_invokations:
+                _match, errors = event.matches(api_call.method, api_call.path, api_call.request_kv)
+                if _match:
+                    expected_api_invokations[api_call] = True
+                else:
+                    try:
+                        if mismatch_report[index] is None:
+                            mismatch_report[index] = []
+                    except KeyError:
+                        mismatch_report[index] = []
+
+                    mismatch_report[index].append(errors)
+
+        eval_result = {
+            "id": instance.id,
+            "correct": all(list(expected_api_invokations.values()))
+        }
+
+        # If the task is determined not to have been completed successfully, include a mismatch_report for debugging/analysis
+        if not eval_result["correct"]:
+            eval_result["mismatch_report"] = mismatch_report
+
+        return eval_result
+
+
 
     def evaluate_instance(self, instance_id, network_events, output):
         print(f"Evaluating task instance {instance_id}")
@@ -565,41 +669,24 @@ class Evaluator:
         parent_task = instance_reference.parent_task
 
         if parent_task.type == 'Side-effect':
-            # Side-effect tasks are evaluated by verifying that one or more reference api calls are observable in the network logs of a task. 
-            # Begin by initalizing a dict whose keys are the answers we're looking for and whose values are a boolean flag which is flipped when a match is found.
-            # If all values in this dict are True, the side-effect task was completed successfully.
-            expected_api_invokations = {}
-            for answer in instance_reference.answer_key:
-                expected_api_invokations[answer] = False
-            
-            mismatch_report = {} # Define a dict for holding additional info about mismatches, useful for analysis/debugging
-            
-            for index, event in enumerate(network_events):
+
+            if instance_reference.answer_options is not None:
+
+                eval_result = None
+
+                for answer_option in instance_reference.answer_options:
+
+                    eval_result = self.evaluate_against_answer(instance_reference, answer_option, network_events)
+
+                    if eval_result["correct"] == True:
+                        return eval_result # If one of the options passes evaluation we're done.
                 
-                # Go through each provided network event and see if it matches any of the ground truth side-effect answers.
-                for api_call in expected_api_invokations:
-                    _match, errors = event.matches(api_call.method, api_call.path, api_call.request_kv)
-                    if _match:
-                        expected_api_invokations[api_call] = True
-                    else:
-                        try:
-                            if mismatch_report[index] is None:
-                                mismatch_report[index] = []
-                        except KeyError:
-                            mismatch_report[index] = []
+                #TODO: maybe one day we should return all the failed options for debugging...
+                return eval_result # Otherwise return the last failed one. 
 
-                        mismatch_report[index].append(errors)
+            else:
 
-            eval_result = {
-                "id": instance_id,
-                "correct": all(list(expected_api_invokations.values()))
-            }
-
-            # If the task is determined not to have been completed successfully, include a mismatch_report for debugging/analysis
-            if not eval_result["correct"]:
-                eval_result["mismatch_report"] = mismatch_report
-
-            return eval_result
+                return self.evaluate_against_answer(instance_reference, instance_reference.answer_key, network_events)
 
         elif parent_task.type == 'Information Seeking':
             # Information seeking tasks are evaluated by comparing a ground truth answer to the output observed from the agent.
