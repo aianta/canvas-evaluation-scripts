@@ -91,10 +91,17 @@ if args.odobot_execution_events:
     print (f"Looking for Odobot execution event logs in: {args.odobot_execution_events}")
     with os.scandir(args.odobot_execution_events) as _dir:
         for entry in _dir:
-            if entry.name.endswith('.json'): #If it is a json file, try and parse it as a OdoBotExecutionEventLog
+            if entry.name.endswith('.json') and 'task-query' not in entry.name: #If it is a json file, try and parse it as a OdoBotExecutionEventLog
                 event_log = OdoBotExecutionEventLog.to_execution_event_log(entry.path)
                 if event_log is not None:
                     evaluator.register_network_events(event_log.task_instance, event_log.network_events)
+            # Load task query construction results as well so we can automatically evaluate if the bot chose a correct target API/GraphQL endpoint for the task
+            if entry.name.endswith('.json') and 'task-query' in entry.name:
+                with open(entry.path, 'r') as tqc_file:
+                    task_query_construction_result = json.load(tqc_file)
+                    task_instance_id = next(x for x in Task.ALL_TASK_INSTANCES if x in entry.path)
+                    evaluator.register_odobot_target(task_instance_id, task_query_construction_result['targets'][0] )
+
 
 
 if args.wv_network_logs:

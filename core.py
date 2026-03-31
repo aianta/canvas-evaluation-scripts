@@ -532,7 +532,8 @@ class OdoBotExecutionEventLog:
         self.network_events = [x for x in self.events if 'name' in x['eventDetails'] and x['eventDetails']['name'] == 'NETWORK_EVENT']
 
         print(f"# of network_events: {len(self.network_events)}")
-        print(self.network_events[0])
+        if len(self.network_events)>0:
+            print(self.network_events[0])
 
         self.network_events = [NetworkEvent.from_odobot_event(x) for x in self.network_events]
 
@@ -570,6 +571,7 @@ class Evaluator:
         self.outputs = {}
         self.tasks = []
         self.answer_timezone = 'Canada/Mountain'
+        self.odobot_targets = {}
         
     def set_answer_timezone(self, tz_identifier):
         self.answer_timezone = tz_identifier
@@ -581,11 +583,43 @@ class Evaluator:
         self.tasks = tasks
         print(f"{len(self.tasks)} tasks with {len(Task.ALL_TASK_INSTANCES)} instances defined in Evaluator!")
 
+    def register_odobot_target(self, instance_id, target):
+        self.odobot_targets[instance_id] = target
+
     def register_network_events(self, instance_id, events):
         self.network_events[instance_id] = events
 
     def register_output(self, instance_id, output):
         self.outputs[instance_id] = output
+
+    '''
+    TODO: This doesn't work because odobot uses normalized paths ie: /dashboard/ignore_stream_item/* which won't exactly match /dashboard/ignore_stream_item/152
+    Need to fix this before we can use this to automatically validate targeting
+    '''
+    def check_odobot_target(self, eval_result):
+        if 'odobot_target_method' in eval_result and 'target_methods' in eval_result:
+            if eval_result['odobot_target_method'] in eval_result['target_methods']:
+                eval_result['target_methods_match'] = True
+            else:
+                eval_result['target_methods_match'] = False
+        
+        if 'odobot_target_path' in eval_result and 'target_paths' in eval_result:
+            if eval_result['odobot_target_path'] in eval_result['target_paths']:
+                eval_result['target_paths_match'] = True
+            else:
+                eval_result['target_paths_match'] = False
+        
+
+        if 'odobot_target_operation_name' in eval_result and 'target_kvs' in eval_result:
+            stringy_kvs = [json.dumps(kv) for kv in eval_result['target_kvs']]
+            matching_stringy_kvs = [kv for kv in stringy_kvs if eval_result['odobot_target_operation_name'] in kv]
+            if len(matching_stringy_kvs) > 0:
+                eval_result['target_operation_name_match'] = True
+            else:
+                eval_result['target_operation_name_match'] = False
+        
+        return eval_result
+
 
     def validate(self):
 
@@ -617,6 +651,7 @@ class Evaluator:
         return {
             "correct": number_correct,
             "incorrect": number_incorrect,
+            "total": number_correct + number_incorrect,
             "%_correct": round(((number_correct / (number_correct + number_incorrect))*100),2) if (number_correct + number_incorrect) > 0 else "N/A",
             "details": detailed_report
         }
@@ -670,13 +705,29 @@ class Evaluator:
 
         if parent_task.type == 'Side-effect':
 
+            eval_result = {}
+
+            if instance_reference.id in self.odobot_targets:
+                eval_result['odobot_target_method'] = self.odobot_targets[instance_reference.id]['method']
+                eval_result['odobot_target_path'] = self.odobot_targets[instance_reference.id]['path']
+                if 'operationName' in self.odobot_targets[instance_reference.id]:
+                    eval_result['odobot_target_operation_name'] = self.odobot_targets[instance_reference.id]['operationName']
+                
+                eval_result['target_methods'] = []
+                eval_result['target_paths'] = []
+                eval_result['target_kvs'] = []
+
             if instance_reference.answer_options is not None:
 
-                eval_result = None
-
+                
                 for answer_option in instance_reference.answer_options:
+                    if instance_reference.id in self.odobot_targets:
+                        eval_result['target_methods'] += [option.method for option in answer_option]
+                        eval_result['target_paths'] += [option.path for option in answer_option]
+                        eval_result['target_kvs'] += [option.request_kv for option in answer_option]
 
-                    eval_result = self.evaluate_against_answer(instance_reference, answer_option, network_events)
+
+                    eval_result = eval_result | self.evaluate_against_answer(instance_reference, answer_option, network_events)
 
                     if eval_result["correct"] == True:
                         return eval_result # If one of the options passes evaluation we're done.
@@ -686,7 +737,13 @@ class Evaluator:
 
             else:
 
-                return self.evaluate_against_answer(instance_reference, instance_reference.answer_key, network_events)
+                eval_result = eval_result | self.evaluate_against_answer(instance_reference, instance_reference.answer_key, network_events)
+                if instance_reference.id in self.odobot_targets:
+                    eval_result['target_methods'] += [answer.method for answer in instance_reference.answer_key]
+                    eval_result['target_paths'] += [answer.path for answer in instance_reference.answer_key]
+                    eval_result['target_kvs'] += [answer.request_kv for answer in instance_reference.answer_key]
+                
+                return eval_result
 
         elif parent_task.type == 'Information Seeking':
             # Information seeking tasks are evaluated by comparing a ground truth answer to the output observed from the agent.
