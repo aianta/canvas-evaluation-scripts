@@ -184,7 +184,7 @@
       request_kv:
         operationName: subscribeToDiscussionTopic
         discussionTopicId: '9'
-      answer_id: 1
+      answer_id: 16b11cff5-1000-4624-8be8-9bb8aa2a8a64
     - method: PUT
       path: "/api/v1/courses/1/discussion_topics/9/subscribed"
       request_kv: {}

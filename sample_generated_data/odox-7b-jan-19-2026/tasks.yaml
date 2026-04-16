@@ -4132,7 +4132,7 @@
         discussionEntryId: '417'
         forcedReadState: true
         read: false
-  - :id: 86b1d359-affc-4d02-9960-01d88c3484e0
+  - :id: 86b1d359-affc-4d02-9960-01d88c3484e0dec3eac5-b6ee-456e-91c0-af947bbbb153
     :instance_text: 'Task: In the course "Climate Finance and Green Bond Markets 428"
       open the discussion titled "Market labelling and integrity in green bond markets"
       and manually mark the reply from "Sarah Studentson" as unread.'
@@ -11102,14 +11102,14 @@
         - Thank you for the feedback!
 - :id: fa9d33b1-09e0-43af-996a-74f9acbee197
   :type: Side-effect
-  :parameterized_text: 'Task: Resume the "[[Quiz]]" in the "[[Course]]" course that
+  :parameterized_text: 'Task: Resume the "[[Quiz]]" quiz in the "[[Course]]" course that
     you previously started but did not finish.'
   :parameters:
   - Course
   - Quiz
   :instances:
   - :id: 9245ff63-ca6f-481d-8248-d7135359eb47
-    :instance_text: 'Task: Resume the "Futures Thinking Warm Up" in the "Speculative
+    :instance_text: 'Task: Resume the "Futures Thinking Warm Up" quiz in the "Speculative
       Design for Public Futures 318" course that you previously started but did not
       finish.'
     :instance_username: harper.bellingham@publicfutures.edu
@@ -11122,7 +11122,7 @@
       path: "/courses/1/quizzes/12/take"
       request_kv: {}
   - :id: 3a6b838a-ebeb-4735-a61c-ddfe46db5743
-    :instance_text: 'Task: Resume the "Urban Agroecology Fundamentals" in the "Urban
+    :instance_text: 'Task: Resume the "Urban Agroecology Fundamentals" quiz in the "Urban
       Agroecology and Food Systems 341" course that you previously started but did
       not finish.'
     :instance_username: jordan.rivera@cityagro.edu
@@ -11135,7 +11135,7 @@
       path: "/courses/2/quizzes/24/take"
       request_kv: {}
   - :id: 7765c50c-5673-4a55-96c6-0000cbb701aa
-    :instance_text: 'Task: Resume the "Quantum Materials Fundamentals" in the "Quantum
+    :instance_text: 'Task: Resume the "Quantum Materials Fundamentals" quiz in the "Quantum
       Materials and Nanostructures 412" course that you previously started but did
       not finish.'
     :instance_username: maya.chen@nanolab.univ.edu
@@ -11148,7 +11148,7 @@
       path: "/courses/3/quizzes/36/take"
       request_kv: {}
   - :id: cdbe4579-564b-4dc5-b5b0-15bf742aa2a2
-    :instance_text: 'Task: Resume the "Field Sampling Techniques for Extreme Environments"
+    :instance_text: 'Task: Resume the "Field Sampling Techniques for Extreme Environments" quiz
       in the "Astrobiology Field Methods and Planetary Habitability 301" course that
       you previously started but did not finish.'
     :instance_username: lina.ortega@astroterra.edu
@@ -11161,7 +11161,7 @@
       path: "/courses/4/quizzes/48/take"
       request_kv: {}
   - :id: 612d1f23-d2f5-4cd2-b17d-b1e193906cb9
-    :instance_text: 'Task: Resume the "Neural Circuit Dynamics" in the "Computational
+    :instance_text: 'Task: Resume the "Neural Circuit Dynamics" quiz in the "Computational
       Neuroethology and Animal Behavior 477" course that you previously started but
       did not finish.'
     :instance_username: avery.langford@neuroethology.edu
@@ -11174,7 +11174,7 @@
       path: "/courses/5/quizzes/60/take"
       request_kv: {}
   - :id: caea37e6-e759-4729-84e1-bd7187e11eae
-    :instance_text: 'Task: Resume the "Robotic Systems for Collections Handling" in
+    :instance_text: 'Task: Resume the "Robotic Systems for Collections Handling" quiz in
       the "Museum Robotics and Artifact Conservation 347" course that you previously
       started but did not finish.'
     :instance_username: r.prescott@heritagemuseum.edu
@@ -11187,7 +11187,7 @@
       path: "/courses/6/quizzes/72/take"
       request_kv: {}
   - :id: adb7d427-bf23-43bb-9875-7fcba9069e55
-    :instance_text: 'Task: Resume the "Fundamentals of Cinematic Sound Design" in
+    :instance_text: 'Task: Resume the "Fundamentals of Cinematic Sound Design" quiz in
       the "Cinematic Sound Design for Interactive Storytelling 327" course that you
       previously started but did not finish.'
     :instance_username: lucas.santoro@cinematicsound.edu
@@ -11200,7 +11200,7 @@
       path: "/courses/7/quizzes/84/take"
       request_kv: {}
   - :id: e6584163-f569-4f6e-b25e-20d840143e88
-    :instance_text: 'Task: Resume the "Language and the Law" in the "Forensic Linguistics
+    :instance_text: 'Task: Resume the "Language and the Law" quiz in the "Forensic Linguistics
       and Legal Discourse 314" course that you previously started but did not finish.'
     :instance_username: noah.kendrick@forensiclangu.edu
     :instance_password: Rv9Pq2sXw8Zb
@@ -11212,7 +11212,7 @@
       path: "/courses/8/quizzes/96/take"
       request_kv: {}
   - :id: 687559d6-df17-4bd7-91f3-5325ea79ab03
-    :instance_text: 'Task: Resume the "Green Bond Market Basics" in the "Climate Finance
+    :instance_text: 'Task: Resume the "Green Bond Market Basics" quiz in the "Climate Finance
       and Green Bond Markets 428" course that you previously started but did not finish.'
     :instance_username: aisha.patel@greenbondslab.edu
     :instance_password: GrnB428!q9V
@@ -11224,7 +11224,7 @@
       path: "/courses/9/quizzes/108/take"
       request_kv: {}
   - :id: 52f5f36b-7633-44b1-8c44-7c817790c76e
-    :instance_text: 'Task: Resume the "Reconnaissance and Footprinting" in the "Ethical
+    :instance_text: 'Task: Resume the "Reconnaissance and Footprinting" quiz in the "Ethical
       Hacking and Civic Cybersecurity 304" course that you previously started but
       did not finish.'
     :instance_username: taylor.monroe@coastaltech.edu

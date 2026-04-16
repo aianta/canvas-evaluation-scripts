@@ -5,9 +5,14 @@ import sys
 import random
 import re
 import time
+import traceback
+from datetime import datetime
 from openai import OpenAI
 
+DATE_FORMAT= "%Y-%m-%d %H:%M:%S"
+
 class Prompter:
+
 
     DEFAULT_PROMPT_INSTRUCTIONS = """
     You are an agent responsible for producing realistic content for university courses in a yaml format. This includes social content produced by the interactions of students and instructors on a digital learning management system. Do not use the ':' character in your generated values, or remember to enclose string values in quotes if they contain ':' characters.
@@ -217,6 +222,10 @@ class Validator:
             errors = []
 
         if isinstance(reference, dict):
+
+            if not isinstance(sample, dict):
+                errors.append(f"Expected an object matching {yaml.dump(reference)} but instead got {type(sample)}:{sample}")
+                return len(errors) == 0, errors
             
             # Remove extra keys from generated output.
             # Break down sample dict into a list of key-value tuples.
@@ -241,6 +250,8 @@ class Validator:
                 if reference[reference_key] == 'instructor':
                     sample[reference_key] = 'instructor'
 
+
+
                 # If we're dealing with a 'user' field, the value needs to be one of the valid emails, 'main_user' or 'instructor'
                 if reference_key == 'user':
                     valid_values = self.prompter.get_valid_emails() + ['main_user', 'instructor']
@@ -251,6 +262,12 @@ class Validator:
                     if sample[reference_key] not in valid_values:
                         errors.append(f"Invalid 'user' field value: '{sample[reference_key]}', needs to be one of {valid_values}.")
                         continue
+
+                # Force due_at in the far future so the environment isn't likely to change randomly during testing. 
+                if reference_key == 'due_at':
+                    due_date = datetime.strptime(sample[reference_key], DATE_FORMAT)
+                    due_date = due_date.replace(year=2032)
+                    sample[reference_key] = due_date.strftime(DATE_FORMAT)
 
                 # Force the correct value for is_public
                 if reference_key == 'is_public':
@@ -306,7 +323,7 @@ class Validator:
 
 
                 if reference_key not in sample and 'question_' not in reference_key: # quizzes will have dynamic 'question_<number>' fields. It's fine if we don't have exact matches for those.
-                    errors.append(f"Failed to find {reference_key} in sample!\n{sample}")
+                    errors.append(f"Failed to find '{reference_key}' in sample!\n")
                     continue
                 
                 if 'question_' not in reference_key and sample[reference_key] == 'main_user' and "@" in reference[reference_key]:
@@ -408,6 +425,7 @@ def is_valid_file(parser, arg):
         return open(arg, 'r')
 
 def generate_section(llm, prompter, validator, index, prompt, generated_course, retries, errors=None, previous_output=None):
+    print(f"Length of prompt at start of generate_section(): {len(prompt)}")
     try:
 
         if '$emails$' in prompt[1]:
@@ -427,9 +445,10 @@ def generate_section(llm, prompter, validator, index, prompt, generated_course, 
 
         # Add in errors to prompt[1] if any were reported.
         if errors is not None:
+            print(f"length of prompt tuple before error-feedback mechanism: {len(prompt)}")
             patched_prompt_1 = f"{prompt[1]}\n"
 
-            if previous_output is not None:
+            if previous_output is not None and retries < 1:
                 patched_prompt_1 += f"In a previous attempt you've generated the following incorrect output:\n\n{previous_output}"
                 patched_prompt_1 += f"\n\nThe output above has the following errors:\n"
                 for e_index,error in enumerate(errors):
@@ -440,7 +459,13 @@ def generate_section(llm, prompter, validator, index, prompt, generated_course, 
                 for e_index,error in enumerate(errors):
                     patched_prompt_1 += f"[Error {e_index+1}] {error}\n"
 
-            prompt = (prompt[0], patched_prompt_1) + prompt[2:-1]
+            print(f"(prompt[0], patched_prompt_1): {(prompt[0], patched_prompt_1)}")
+            print(f"prompt[2:-1]: {prompt[2:-1]}")
+            print(f"(prompt[0], patched_prompt_1) + prompt[2:-1]: {(prompt[0], patched_prompt_1) + prompt[2:-1]}")
+
+            _prompt = (prompt[0], patched_prompt_1) + prompt[2:-1]
+            prompt = _prompt
+            print(f"Length of prompt tuple after error-feedback mechanism: {len(prompt)}")
 
         print(f"Prompt[{index}]: {prompt[1]}\n")
         generated_output = llm.execute_prompt(prompt)
@@ -513,7 +538,11 @@ def generate_section(llm, prompter, validator, index, prompt, generated_course, 
                 for e_index,error in enumerate(errors):
                     print(f"[Error {e_index+1}] {error}")
                 print(f"Out of retries!")
-        
+    except IndexError:
+        print(f"prompt size: {len(prompt)} prompt:\n{prompt}")
+        error_msg = traceback.format_exc()
+        print(error_msg)
+        sys.exit(1)    
 
     except yaml.scanner.ScannerError:
         if retries < 5:

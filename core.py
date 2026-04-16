@@ -227,6 +227,7 @@ class NetworkEvent:
                 request_data = json.loads(postData)
             elif content_type == 'application/x-www-form-urlencoded':
                 request_data = parse_qs(postData)
+                print(f"request_data: {request_data}")
             else:
                 raise RuntimeError(f"Unsupported request content-type: {content_type} for postData:\n{postData}")
 
@@ -558,8 +559,10 @@ class WebVoyagerNetworkLog:
         self.network_events = json.load(file)
         self.file.close()
 
+        print(f"# of raw network events: {len(self.network_events)}")
         # Now process the network_events into NetworkEvent objects
         self.network_events = [NetworkEvent.to_network_event(x) for x in self.network_events]
+        print(f"# of processed network events: {len(self.network_events)}")
 
         print(f"Loaded {len(self.network_events)} network events from {self.file.name} for task {self.task_instance}")
 
