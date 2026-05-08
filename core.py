@@ -229,7 +229,8 @@ class NetworkEvent:
                 request_data = parse_qs(postData)
                 print(f"request_data: {request_data}")
             else:
-                raise RuntimeError(f"Unsupported request content-type: {content_type} for postData:\n{postData}")
+                print(f"Unsupported {method} - {path} request content-type: {content_type} for postData:\n{postData}")
+                return None
 
 
             result = NetworkEvent(method, path, request_data)
@@ -403,7 +404,11 @@ class NetworkEvent:
                 continue
 
             elif key == request_key and value == "[[ANY]]":
-                return True
+                if isinstance(request_value, list) and (len(request_value) == 0 or len([x for x in request_value if x != ""]) == 0):
+                    # Empty arrays should not be considered valid values. Empty strings are not valid ANY values either.
+                    pass
+                else:
+                    return True
 
             elif key == request_key and value.startswith("[[_array_contains="):
                 if not isinstance(request_value, list):
@@ -425,7 +430,7 @@ class NetworkEvent:
                         target_element = int(target_element)
                     
                     # Verify that the specified element appears in the request_value array.
-                    if target_element in request_value:
+                    if target_element in request_value or len([x for x in request_value if str(target_element) in x]) > 0:
                         return True
                     else:
                         continue
@@ -562,6 +567,7 @@ class WebVoyagerNetworkLog:
         print(f"# of raw network events: {len(self.network_events)}")
         # Now process the network_events into NetworkEvent objects
         self.network_events = [NetworkEvent.to_network_event(x) for x in self.network_events]
+        self.network_events = [x for x in self.network_events if x is not None]
         print(f"# of processed network events: {len(self.network_events)}")
 
         print(f"Loaded {len(self.network_events)} network events from {self.file.name} for task {self.task_instance}")
