@@ -15,6 +15,9 @@ python evaluation_script.py -t tasks.json -o results.json --wv-network-logs /hom
 To Evaluate OdoBot results
 python evaluation_script.py -t tasks.json -o results.json --odobot-execution-events /home/aianta/shock_and_awe/odobot_results 
 
+To Evaluate Single OdoBot result
+python evaluation_script.py -t tasks.json --single-odobot-execution-events path/to/execution_events.json 
+
 
 To Evaluate Ground truth for sanity checking
 python evaluation_script.py -t tasks.json -o ground_truth.json --odobot-execution-events ./trajectories
@@ -46,7 +49,8 @@ parser.add_argument('--answer-timezone',
 parser.add_argument('-o', '--out',
                     dest="output_path",
                     help="the path to the evaluation report this script will produce.",
-                    required=True
+                    default="evaluation_result.json",
+                    required=False
 )
 
 # Need the user to specifiy the tasks.json file
@@ -73,6 +77,11 @@ parser.add_argument("--odobot-execution-events",
                     type=lambda x: is_valid_dir(parser, x)
 )
 
+parser.add_argument("--single-odobot-execution-events",
+                    dest="single_odobot_execution_events",
+                    help="Path to the .json file containing Odobot execution event logs for a single task instance."
+)
+
 args = parser.parse_args()
 
 # Initalize the Evaluator that perfoms the core evaluation logic
@@ -86,6 +95,11 @@ args.tasks_file.close()
 task_list = [Task(x) for x in task_list]
 
 evaluator.register_tasks(task_list)
+
+if args.single_odobot_execution_events:
+    event_log = OdoBotExecutionEventLog.to_execution_event_log(args.single_odobot_execution_events)
+    if event_log is not None:
+        evaluator.register_network_events(event_log.task_instance, event_log.network_events)
 
 if args.odobot_execution_events:
     print (f"Looking for Odobot execution event logs in: {args.odobot_execution_events}")
@@ -141,7 +155,11 @@ evaluator.status()
 results = evaluator.evaluate()
 
 print("===============RESULTS===============")
-#print(json.dumps(results, indent=4, default=str))
+print(json.dumps(results, indent=4, default=str))
 
-with open(args.output_path, 'w') as out_file:
-    json.dump(results, out_file, indent=4, default=str)
+if args.single_odobot_execution_events:
+    with open(event_log.task_instance + '-result.json', 'w') as out_file:
+        json.dump(results, out_file, indent=4, default=str)
+else:
+    with open(args.output_path, 'w') as out_file:
+        json.dump(results, out_file, indent=4, default=str)

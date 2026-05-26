@@ -4,3 +4,5 @@
 trajectories
 !tasks.json
 /tasks.json
+*.txt
+*.csv
