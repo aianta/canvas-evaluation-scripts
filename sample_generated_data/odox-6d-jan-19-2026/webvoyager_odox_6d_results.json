@@ -1,0 +1,1508 @@
+{
+    "correct": 11,
+    "incorrect": 35,
+    "%_correct": 23.91,
+    "details": [
+        {
+            "id": "4342f298-2545-43a9-a3e8-2f401b0a1613",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /api/v1/courses/1/discussion_topics?search_term=Guest%20lecture%20on%20extremophile%20research but the observed path was: /login/canvas"
+                    ],
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/courses/1/discussion_topics/read_all but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /api/v1/courses/1/discussion_topics?search_term=Guest%20lecture%20on%20extremophile%20research but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/courses/1/discussion_topics/read_all but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected method was GET but the observed method was: PUT",
+                        "The expected path was /api/v1/courses/1/discussion_topics?search_term=Guest%20lecture%20on%20extremophile%20research but the observed path was: /api/v1/courses/1/discussion_topics/read_all?only_announcements=true"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "06398575-b5da-4807-b5e0-f79792ee0a9e",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /api/v1/courses/1/users but the observed path was: /login/canvas"
+                    ],
+                    [
+                        "The expected path was /api/graphql but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /api/v1/courses/1/users but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateConversation'",
+                        "Could not find kv pair in request satisfying: 'body':'Hi, I have a question about the lab assignment. Can we discuss it?'",
+                        "Could not find kv pair in request satisfying: 'subject':'Hi!'",
+                        "Could not find kv pair in request satisfying: 'recipients':'['4']'",
+                        "{\"operationName\": \"GetCourseModules\", \"variables\": {\"courseId\": \"1\"}, \"query\": \"query GetCourseModules($courseId: ID!) {\\n  course(id: $courseId) {\\n    modulesConnection {\\n      nodes {\\n        id: _id\\n        moduleItems {\\n          content {\\n            ... on Assignment {\\n              name\\n              _id\\n              peerReviews {\\n                anonymousReviews\\n                __typename\\n              }\\n              assessmentRequestsForCurrentUser {\\n                id: _id\\n                anonymousId\\n                available\\n                createdAt\\n                workflowState\\n                user {\\n                  id: _id\\n                  name\\n                  __typename\\n                }\\n                anonymizedUser {\\n                  id: _id\\n                  name\\n                  __typename\\n                }\\n                __typename\\n              }\\n              __typename\\n            }\\n            __typename\\n          }\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\"}"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /api/v1/courses/1/users but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateConversation'",
+                        "Could not find kv pair in request satisfying: 'body':'Hi, I have a question about the lab assignment. Can we discuss it?'",
+                        "Could not find kv pair in request satisfying: 'subject':'Hi!'",
+                        "Could not find kv pair in request satisfying: 'recipients':'['4']'",
+                        "{\"operationName\": \"GetUserCourses\", \"variables\": {\"userID\": \"13\", \"horizonCourses\": false}, \"query\": \"query GetUserCourses($userID: ID!, $horizonCourses: Boolean) {\\n  legacyNode(_id: $userID, type: User) {\\n    ... on User {\\n      id\\n      email\\n      favoriteGroupsConnection {\\n        nodes {\\n          ...Group\\n          __typename\\n        }\\n        __typename\\n      }\\n      favoriteCoursesConnection {\\n        nodes {\\n          ...Course\\n          __typename\\n        }\\n        __typename\\n      }\\n      enrollments(horizonCourses: $horizonCourses) {\\n        ...Enrollment\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment Enrollment on Enrollment {\\n  type\\n  course {\\n    ...Course\\n    __typename\\n  }\\n  concluded\\n  __typename\\n}\\n\\nfragment Course on Course {\\n  _id\\n  courseNickname\\n  contextName: name\\n  assetString\\n  __typename\\n}\\n\\nfragment Group on Group {\\n  _id\\n  contextName: name\\n  assetString\\n  canMessage\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "3": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /api/v1/courses/1/users but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateConversation'",
+                        "Could not find kv pair in request satisfying: 'body':'Hi, I have a question about the lab assignment. Can we discuss it?'",
+                        "Could not find kv pair in request satisfying: 'subject':'Hi!'",
+                        "Could not find kv pair in request satisfying: 'recipients':'['4']'",
+                        "{\"operationName\": \"GetConversationsQuery\", \"variables\": {\"scope\": \"inbox\", \"showHorizonConversations\": false, \"userID\": \"13\", \"filter\": [null, null]}, \"query\": \"query GetConversationsQuery($userID: ID!, $filter: [String!], $scope: String = \\\"\\\", $afterConversation: String, $showHorizonConversations: Boolean = false) {\\n  legacyNode(_id: $userID, type: User) {\\n    ... on User {\\n      _id\\n      id\\n      conversationsConnection(\\n        scope: $scope\\n        filter: $filter\\n        first: 20\\n        after: $afterConversation\\n        showHorizonConversations: $showHorizonConversations\\n      ) {\\n        nodes {\\n          _id\\n          id\\n          label\\n          workflowState\\n          conversation {\\n            _id\\n            id\\n            subject\\n            isPrivate\\n            canReply\\n            conversationMessagesCount\\n            conversationParticipantsConnection(first: 10) {\\n              nodes {\\n                user {\\n                  shortName\\n                  __typename\\n                }\\n                __typename\\n              }\\n              __typename\\n            }\\n            conversationMessagesConnection(first: 1) {\\n              nodes {\\n                id\\n                body\\n                createdAt\\n                author {\\n                  id\\n                  _id\\n                  name\\n                  shortName\\n                  __typename\\n                }\\n                __typename\\n              }\\n              __typename\\n            }\\n            __typename\\n          }\\n          __typename\\n        }\\n        pageInfo {\\n          ...PageInfo\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment PageInfo on PageInfo {\\n  endCursor\\n  hasNextPage\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "4": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /api/v1/courses/1/users but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateConversation'",
+                        "Could not find kv pair in request satisfying: 'body':'Hi, I have a question about the lab assignment. Can we discuss it?'",
+                        "Could not find kv pair in request satisfying: 'subject':'Hi!'",
+                        "Could not find kv pair in request satisfying: 'recipients':'['4']'",
+                        "{\"operationName\": \"GetAddressBookRecipients\", \"variables\": {\"context\": \"course_1\", \"search\": \"\", \"userID\": \"13\", \"courseContextCode\": \"course_1\"}, \"query\": \"query GetAddressBookRecipients($userID: ID!, $context: String, $search: String, $afterUser: String, $afterContext: String, $courseContextCode: String!) {\\n  legacyNode(_id: $userID, type: User) {\\n    ... on User {\\n      id\\n      recipients(context: $context, search: $search) {\\n        sendMessagesAll\\n        contextsConnection(first: 20, after: $afterContext) {\\n          nodes {\\n            id\\n            name\\n            userCount\\n            __typename\\n          }\\n          pageInfo {\\n            ...PageInfo\\n            __typename\\n          }\\n          __typename\\n        }\\n        usersConnection(first: 20, after: $afterUser) {\\n          nodes {\\n            _id\\n            id\\n            name\\n            shortName\\n            pronouns\\n            commonCoursesConnection {\\n              nodes {\\n                _id\\n                id\\n                state\\n                type\\n                course {\\n                  name\\n                  id\\n                  _id\\n                  __typename\\n                }\\n                __typename\\n              }\\n              __typename\\n            }\\n            observerEnrollmentsConnection(contextCode: $courseContextCode) {\\n              nodes {\\n                associatedUser {\\n                  _id\\n                  name\\n                  __typename\\n                }\\n                __typename\\n              }\\n              __typename\\n            }\\n            __typename\\n          }\\n          pageInfo {\\n            ...PageInfo\\n            __typename\\n          }\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment PageInfo on PageInfo {\\n  endCursor\\n  hasNextPage\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "5": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /api/v1/courses/1/users but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateConversation'",
+                        "Could not find kv pair in request satisfying: 'body':'Hi, I have a question about the lab assignment. Can we discuss it?'",
+                        "Could not find kv pair in request satisfying: 'subject':'Hi!'",
+                        "Could not find kv pair in request satisfying: 'recipients':'['4']'",
+                        "{\"operationName\": \"GetAddressBookRecipients\", \"variables\": {\"context\": \"course_1\", \"search\": \"Sarah Studentson\", \"userID\": \"13\", \"courseContextCode\": \"course_1\"}, \"query\": \"query GetAddressBookRecipients($userID: ID!, $context: String, $search: String, $afterUser: String, $afterContext: String, $courseContextCode: String!) {\\n  legacyNode(_id: $userID, type: User) {\\n    ... on User {\\n      id\\n      recipients(context: $context, search: $search) {\\n        sendMessagesAll\\n        contextsConnection(first: 20, after: $afterContext) {\\n          nodes {\\n            id\\n            name\\n            userCount\\n            __typename\\n          }\\n          pageInfo {\\n            ...PageInfo\\n            __typename\\n          }\\n          __typename\\n        }\\n        usersConnection(first: 20, after: $afterUser) {\\n          nodes {\\n            _id\\n            id\\n            name\\n            shortName\\n            pronouns\\n            commonCoursesConnection {\\n              nodes {\\n                _id\\n                id\\n                state\\n                type\\n                course {\\n                  name\\n                  id\\n                  _id\\n                  __typename\\n                }\\n                __typename\\n              }\\n              __typename\\n            }\\n            observerEnrollmentsConnection(contextCode: $courseContextCode) {\\n              nodes {\\n                associatedUser {\\n                  _id\\n                  name\\n                  __typename\\n                }\\n                __typename\\n              }\\n              __typename\\n            }\\n            __typename\\n          }\\n          pageInfo {\\n            ...PageInfo\\n            __typename\\n          }\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment PageInfo on PageInfo {\\n  endCursor\\n  hasNextPage\\n  __typename\\n}\"}"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "6b11cff5-1000-4624-8be8-9bb8aa2a8a64",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /courses/1/quizzes/6/take but the observed path was: /login/canvas"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions/backup but the observed path was: /login/canvas"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /courses/1/quizzes/6/take but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions/backup but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions/backup but the observed path was: /courses/1/quizzes/6/take?user_id=13"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions but the observed path was: /courses/1/quizzes/6/take?user_id=13"
+                    ]
+                ],
+                "3": [
+                    [
+                        "The expected path was /courses/1/quizzes/6/take but the observed path was: /api/v1/courses/1/quizzes/6/submissions/5/events"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions/backup but the observed path was: /api/v1/courses/1/quizzes/6/submissions/5/events"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions but the observed path was: /api/v1/courses/1/quizzes/6/submissions/5/events"
+                    ]
+                ],
+                "4": [
+                    [
+                        "The expected path was /courses/1/quizzes/6/take but the observed path was: /courses/1/quizzes/6/submissions/backup?user_id=13"
+                    ],
+                    [
+                        "Could not find kv pair in request satisfying: 'question_21_marked':'['1']'",
+                        "{\"utf8\": [\"\\u2713\"], \"authenticity_token\": [\"T5/BwIqbzEu2Os5NyyTdcntzXvfoxRZpWwZQbu5weJR8zZal5fj5OocNlHi/QZM2EyFpp42hZSMNYxc2wUIyzg==\"], \"attempt\": [\"1\"], \"validation_token\": [\"9dd77c80c46644f8643144cb8ebbd498f11d080c6b88b57a382b2c76c20bc6a9\"], \"question_text\": [\"<p>Explain the difference between a main sequence star and a red giant in terms of core fusion processes and structure.</p>\"], \"question_19\": [\"Main sequence stars fuse hydrogen into helium in their cores, maintaining hydrostatic equilibrium with a relatively compact structure. Red giants have exhausted core hydrogen; the core contracts into an inert helium (later He\\u2011fusing) core while hydrogen fusion moves to a surrounding shell, causing the outer envelope to expand and cool, giving a much larger, lower\\u2011density star.\"], \"last_question_id\": [\"19\"], \"_method\": [\"PUT\"]}"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions but the observed path was: /courses/1/quizzes/6/submissions/backup?user_id=13"
+                    ]
+                ],
+                "5": [
+                    [
+                        "The expected path was /courses/1/quizzes/6/take but the observed path was: /courses/1/quizzes/6/submissions/backup?user_id=13"
+                    ],
+                    [
+                        "Could not find kv pair in request satisfying: 'question_21_marked':'['1']'",
+                        "{\"utf8\": [\"\\u2713\"], \"authenticity_token\": [\"sz1A6Wr8YMjmEprE4QoAl9M5kIeIEx4PkfDZm23R01SAbxeMBZ9VudclwPGVb07Tu2un1+13bUXHlZ7DQuOZDg==\"], \"attempt\": [\"1\"], \"validation_token\": [\"9dd77c80c46644f8643144cb8ebbd498f11d080c6b88b57a382b2c76c20bc6a9\"], \"question_text\": [\"<p>Explain the difference between a main sequence star and a red giant in terms of core fusion processes and structure.</p>\"], \"question_19\": [\"Main sequence stars fuse hydrogen into helium in their cores, maintaining hydrostatic equilibrium with a relatively compact structure. Red giants have exhausted core hydrogen; the core contracts into an inert helium (later He\\u2011fusing) core while hydrogen fusion moves to a surrounding shell, causing the outer envelope to expand and cool, giving a much larger, lower\\u2011density star.\"], \"last_question_id\": [\"19\"], \"_method\": [\"PUT\"]}"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions but the observed path was: /courses/1/quizzes/6/submissions/backup?user_id=13"
+                    ]
+                ],
+                "6": [
+                    [
+                        "The expected path was /courses/1/quizzes/6/take but the observed path was: /courses/1/quizzes/6/submissions/5/record_answer?next_question_path=%2Fcourses%2F1%2Fquizzes%2F6%2Ftake%2Fquestions%2F20&user_id=13"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions/backup but the observed path was: /courses/1/quizzes/6/submissions/5/record_answer?next_question_path=%2Fcourses%2F1%2Fquizzes%2F6%2Ftake%2Fquestions%2F20&user_id=13"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions but the observed path was: /courses/1/quizzes/6/submissions/5/record_answer?next_question_path=%2Fcourses%2F1%2Fquizzes%2F6%2Ftake%2Fquestions%2F20&user_id=13"
+                    ]
+                ],
+                "7": [
+                    [
+                        "The expected path was /courses/1/quizzes/6/take but the observed path was: /courses/1/quizzes/6/submissions/backup?user_id=13"
+                    ],
+                    [
+                        "Could not find kv pair in request satisfying: 'question_21_marked':'['1']'",
+                        "{\"utf8\": [\"\\u2713\"], \"authenticity_token\": [\"xZSyUVfAxaAajNc72yEr+qDrkeIPAhqXryRxt62Ifa32xuU0OKPw0Su7jQ6vRGW+yLmmsmpmad35QTbvgro39w==\"], \"attempt\": [\"1\"], \"validation_token\": [\"9dd77c80c46644f8643144cb8ebbd498f11d080c6b88b57a382b2c76c20bc6a9\"], \"question_text\": [\"<p>The location of a star's habitable zone remains constant over the entire lifetime of the star.</p>\"], \"last_question_id\": [\"20\"], \"_method\": [\"PUT\"]}"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions but the observed path was: /courses/1/quizzes/6/submissions/backup?user_id=13"
+                    ]
+                ],
+                "8": [
+                    [
+                        "The expected path was /courses/1/quizzes/6/take but the observed path was: /courses/1/quizzes/6/submissions/backup?user_id=13"
+                    ],
+                    [
+                        "Could not find kv pair in request satisfying: 'question_21_marked':'['1']'",
+                        "{\"utf8\": [\"\\u2713\"], \"authenticity_token\": [\"ny49k28r+wDmuHUDusPe+Lu8FuWkuGwOT/6IOeRTolWsfGr2AEjOcdePLzbOppC80+4htcHcH0QZm89hy2HoDw==\"], \"attempt\": [\"1\"], \"validation_token\": [\"9dd77c80c46644f8643144cb8ebbd498f11d080c6b88b57a382b2c76c20bc6a9\"], \"question_text\": [\"<p>The location of a star's habitable zone remains constant over the entire lifetime of the star.</p>\"], \"question_20\": [\"100\"], \"last_question_id\": [\"20\"], \"_method\": [\"PUT\"]}"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions but the observed path was: /courses/1/quizzes/6/submissions/backup?user_id=13"
+                    ]
+                ],
+                "9": [
+                    [
+                        "The expected path was /courses/1/quizzes/6/take but the observed path was: /courses/1/quizzes/6/submissions/backup?user_id=13"
+                    ],
+                    [
+                        "Could not find kv pair in request satisfying: 'question_21_marked':'['1']'",
+                        "{\"utf8\": [\"\\u2713\"], \"authenticity_token\": [\"y6wPRk7u6BWqVAkcpVHqOmLtrpgw9P6A6HQzXyrBntv4/lgjIY3dZJtjUynRNKR+Cr+ZyFWQjcq+EXQHBfPUgQ==\"], \"attempt\": [\"1\"], \"validation_token\": [\"9dd77c80c46644f8643144cb8ebbd498f11d080c6b88b57a382b2c76c20bc6a9\"], \"question_text\": [\"<p>The location of a star's habitable zone remains constant over the entire lifetime of the star.</p>\"], \"question_20\": [\"100\"], \"last_question_id\": [\"20\"], \"question_20_marked\": [\"1\"], \"_method\": [\"PUT\"]}"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/6/submissions but the observed path was: /courses/1/quizzes/6/submissions/backup?user_id=13"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "b20ddb95-965b-4f26-9996-52db0c2c4b99",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/10/pages/model-coordination-hub but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was PUT but the observed method was: OPTIONS",
+                        "The expected path was /api/v1/groups/10/pages/model-coordination-hub but the observed path was: /api/session"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "77c81bf7-cead-4e79-b780-598422ba8407",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /courses/1/groups but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /courses/1/groups but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "Could not find kv pair in request satisfying: 'invitees':'['2', '3']'",
+                        "{\"group\": {\"name\": \"Habitable Worlds Collective\", \"join_level\": \"invitation_only\"}, \"invitees\": []}"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "915349c4-bac8-4f78-843e-0879689353bc",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/7/discussion_topics/5 but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/7/discussion_topics/5 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/7/discussion_topics/5 but the observed path was: /api/graphql"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "36867a6b-1b4c-4481-b63f-8637739bee9d",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/v1/groups/12/discussion_topics but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /api/v1/groups/12/discussion_topics but the observed path was: /api/session"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /api/v1/groups/12/discussion_topics but the observed path was: /api/session"
+                    ]
+                ],
+                "3": [
+                    [
+                        "Could not find kv pair in request satisfying: 'message':'<p>Hey everyone are you free Sunday afternoon to meet online and review the habitable zone assignment and sample exam questions</p>'",
+                        "{\"is_announcement\": true, \"can_group\": false, \"course_published\": true, \"set_assignment\": false, \"unpublishable\": true, \"title\": \"Sunday review meetup\", \"message\": \"<p>Hey everyone are you free Sunday afternoon to meet online and review the habitable zone assignment and sample exam questions</p><p>\\u00a0</p>\", \"delayed_post_at\": null, \"lock_at\": null, \"last_reply_at\": null, \"posted_at\": null, \"discussion_type\": \"side_comment\", \"podcast_has_student_posts\": false, \"only_graders_can_rate\": false, \"todo_date\": null, \"anonymous_state\": null, \"summary\": \"Hey everyone are you free Sunday afternoon to meet online and review the habitable zone assignment and sample exam questions\\u00a0\", \"unread_count_tooltip\": {\"zero\": \"No unread replies.\", \"one\": \"1 unread reply.\", \"other\": \"%{count} unread replies.\"}, \"reply_count_tooltip\": {\"zero\": \"No replies.\", \"one\": \"1 reply.\", \"other\": \"%{count} replies.\"}, \"defaultDates\": {\"dueFor\": \"Everyone else\", \"dueAt\": null, \"unlockAt\": null, \"lockAt\": null, \"available\": true, \"pending\": null, \"open\": null, \"closed\": null}}"
+                    ]
+                ],
+                "4": [
+                    [
+                        "The expected path was /api/v1/groups/12/discussion_topics but the observed path was: /api/graphql"
+                    ]
+                ],
+                "5": [
+                    [
+                        "The expected path was /api/v1/groups/12/discussion_topics but the observed path was: /api/graphql"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "572cbfa9-0d4e-4eda-a8e4-fcbe9ba8f2cd",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /dashboard/ignore_stream_item/149 but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /dashboard/ignore_stream_item/149 but the observed path was: /api/v1/planner/overrides"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "5d15c413-5aad-40f1-bdc1-10fae911b6f8",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/graphql but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>I believe renewable energy is essential for our future.</p>'",
+                        "{\"operationName\": \"GetCourseModules\", \"variables\": {\"courseId\": \"1\"}, \"query\": \"query GetCourseModules($courseId: ID!) {\\n  course(id: $courseId) {\\n    modulesConnection {\\n      nodes {\\n        id: _id\\n        moduleItems {\\n          content {\\n            ... on Assignment {\\n              name\\n              _id\\n              peerReviews {\\n                anonymousReviews\\n                __typename\\n              }\\n              assessmentRequestsForCurrentUser {\\n                id: _id\\n                anonymousId\\n                available\\n                createdAt\\n                workflowState\\n                user {\\n                  id: _id\\n                  name\\n                  __typename\\n                }\\n                anonymizedUser {\\n                  id: _id\\n                  name\\n                  __typename\\n                }\\n                __typename\\n              }\\n              __typename\\n            }\\n            __typename\\n          }\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\"}"
+                    ]
+                ],
+                "2": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>I believe renewable energy is essential for our future.</p>'",
+                        "{\"operationName\": \"GetDiscussionQuery\", \"variables\": {\"discussionID\": \"19\", \"perPage\": 20, \"page\": \"MA==\", \"searchTerm\": \"\", \"rootEntries\": true, \"filter\": \"all\", \"unreadBefore\": \"\"}, \"query\": \"query GetDiscussionQuery($discussionID: ID!, $page: String, $perPage: Int!, $searchTerm: String, $rootEntries: Boolean, $userSearchId: String, $filter: DiscussionFilterType, $unreadBefore: String) {\\n  legacyNode(_id: $discussionID, type: Discussion) {\\n    ... on Discussion {\\n      ...Discussion\\n      anonymousAuthor {\\n        ...AnonymousUser\\n        __typename\\n      }\\n      discussionEntriesConnection(\\n        after: $page\\n        first: $perPage\\n        searchTerm: $searchTerm\\n        rootEntries: $rootEntries\\n        filter: $filter\\n        userSearchId: $userSearchId\\n        unreadBefore: $unreadBefore\\n      ) {\\n        nodes {\\n          ...DiscussionEntry\\n          anonymousAuthor {\\n            ...AnonymousUser\\n            __typename\\n          }\\n          __typename\\n        }\\n        pageInfo {\\n          ...PageInfo\\n          __typename\\n        }\\n        __typename\\n      }\\n      entriesTotalPages(\\n        perPage: $perPage\\n        rootEntries: $rootEntries\\n        filter: $filter\\n        searchTerm: $searchTerm\\n        unreadBefore: $unreadBefore\\n      )\\n      searchEntryCount(filter: $filter, searchTerm: $searchTerm)\\n      groupSet {\\n        ...GroupSet\\n        groups {\\n          ...Group\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment AnonymousUser on AnonymousUser {\\n  id\\n  avatarUrl\\n  shortName\\n  __typename\\n}\\n\\nfragment Discussion on Discussion {\\n  id\\n  _id\\n  title\\n  message\\n  createdAt\\n  updatedAt\\n  editedAt\\n  postedAt\\n  requireInitialPost\\n  initialPostRequiredForCurrentUser\\n  isSectionSpecific\\n  isAnnouncement\\n  discussionType\\n  anonymousState\\n  allowRating\\n  onlyGradersCanRate\\n  delayedPostAt\\n  subscribed\\n  published\\n  canUnpublish\\n  canReplyAnonymously\\n  lockAt\\n  availableForUser\\n  userCount\\n  replyToEntryRequiredCount\\n  contextType\\n  lockInformation\\n  subscriptionDisabledForUser\\n  sortOrderLocked\\n  expandedLocked\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  entryCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  assignment {\\n    ...Assignment\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionPermissions\\n    __typename\\n  }\\n  courseSections {\\n    ...Section\\n    __typename\\n  }\\n  childTopics {\\n    ...ChildTopic\\n    __typename\\n  }\\n  groupSet {\\n    ...GroupSet\\n    __typename\\n  }\\n  rootTopic {\\n    ...RootTopic\\n    __typename\\n  }\\n  participant {\\n    id\\n    sortOrder\\n    expanded\\n    summaryEnabled\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment Assignment on Assignment {\\n  id\\n  _id\\n  dueAt(applyOverrides: false)\\n  lockAt(applyOverrides: false)\\n  unlockAt(applyOverrides: false)\\n  onlyVisibleToOverrides\\n  pointsPossible\\n  restrictQuantitativeData(checkExtraPermissions: true)\\n  assignmentOverrides {\\n    nodes {\\n      ...AssignmentOverride\\n      __typename\\n    }\\n    __typename\\n  }\\n  checkpoints {\\n    ...Checkpoint\\n    __typename\\n  }\\n  mySubAssignmentSubmissionsConnection {\\n    nodes {\\n      ...Submission\\n      __typename\\n    }\\n    __typename\\n  }\\n  assessmentRequestsForCurrentUser {\\n    ...AssessmentRequest\\n    __typename\\n  }\\n  peerReviews {\\n    ...PeerReviews\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment AssignmentOverride on AssignmentOverride {\\n  id\\n  _id\\n  dueAt\\n  lockAt\\n  unlockAt\\n  title\\n  set {\\n    ... on AdhocStudents {\\n      ...AdhocStudents\\n      __typename\\n    }\\n    ... on Group {\\n      ...Group\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment AdhocStudents on AdhocStudents {\\n  students {\\n    shortName\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment Group on Group {\\n  id\\n  _id\\n  name\\n  userCount: membersCount\\n  __typename\\n}\\n\\nfragment Checkpoint on Checkpoint {\\n  name\\n  tag\\n  pointsPossible\\n  dueAt\\n  onlyVisibleToOverrides\\n  assignmentOverrides {\\n    nodes {\\n      ...AssignmentOverride\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment Submission on Submission {\\n  id\\n  _id\\n  submissionStatus\\n  subAssignmentTag\\n  cachedDueDate\\n  submittedAt\\n  __typename\\n}\\n\\nfragment AssessmentRequest on AssessmentRequest {\\n  _id\\n  createdAt\\n  updatedAt\\n  user {\\n    _id\\n    displayName: shortName\\n    __typename\\n  }\\n  workflowState\\n  __typename\\n}\\n\\nfragment PeerReviews on PeerReviews {\\n  dueAt\\n  __typename\\n}\\n\\nfragment DiscussionPermissions on DiscussionPermissions {\\n  attach\\n  create\\n  delete\\n  duplicate\\n  rate\\n  read\\n  readAsAdmin\\n  manageCourseContentAdd\\n  manageCourseContentEdit\\n  manageCourseContentDelete\\n  readReplies\\n  reply\\n  update\\n  speedGrader\\n  studentReporting\\n  peerReview\\n  showRubric\\n  addRubric\\n  openForComments\\n  closeForComments\\n  copyAndSendTo\\n  moderateForum\\n  manageAssignTo\\n  __typename\\n}\\n\\nfragment Section on Section {\\n  _id\\n  createdAt\\n  id\\n  name\\n  updatedAt\\n  userCount\\n  __typename\\n}\\n\\nfragment ChildTopic on Discussion {\\n  id\\n  _id\\n  contextName\\n  contextId\\n  entryCounts {\\n    unreadCount\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment GroupSet on GroupSet {\\n  id\\n  _id\\n  name\\n  currentGroup {\\n    ...Group\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment RootTopic on Discussion {\\n  id\\n  _id\\n  childTopics {\\n    ...ChildTopic\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\\n\\nfragment PageInfo on PageInfo {\\n  endCursor\\n  hasNextPage\\n  hasPreviousPage\\n  startCursor\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "3": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>I believe renewable energy is essential for our future.</p>'",
+                        "{\"query\": \"query GetDiscussionQuery($discussionID: ID!, $perPage: Int!, $discussionPageAmount: Int!, $userSearchId: String, $cursor: String) {\\n  legacyNode(_id: $discussionID, type: Discussion) {\\n    ... on Discussion {\\n      discussionEntriesConnection(\\n        userSearchId: $userSearchId\\n        first: $perPage\\n        after: $cursor\\n      ) {\\n        nodes {\\n          _id\\n          rootEntryId\\n          rootEntryPageNumber(perPage: $discussionPageAmount)\\n        }\\n        pageInfo {\\n          endCursor\\n          hasNextPage\\n          hasPreviousPage\\n          startCursor\\n        }\\n      }\\n    }\\n  }\\n}\", \"variables\": {\"discussionID\": \"19\", \"perPage\": 100, \"discussionPageAmount\": 20, \"userSearchId\": null, \"cursor\": null}, \"operationName\": \"GetDiscussionQuery\"}"
+                    ]
+                ],
+                "4": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>I believe renewable energy is essential for our future.</p>'",
+                        "{\"operationName\": \"GetDiscussionQuery\", \"variables\": {\"discussionID\": \"19\", \"perPage\": 20, \"page\": \"MA==\", \"searchTerm\": \"\", \"rootEntries\": true, \"filter\": \"all\", \"unreadBefore\": \"\"}, \"query\": \"query GetDiscussionQuery($discussionID: ID!, $page: String, $perPage: Int!, $searchTerm: String, $rootEntries: Boolean, $userSearchId: String, $filter: DiscussionFilterType, $unreadBefore: String) {\\n  legacyNode(_id: $discussionID, type: Discussion) {\\n    ... on Discussion {\\n      ...Discussion\\n      anonymousAuthor {\\n        ...AnonymousUser\\n        __typename\\n      }\\n      discussionEntriesConnection(\\n        after: $page\\n        first: $perPage\\n        searchTerm: $searchTerm\\n        rootEntries: $rootEntries\\n        filter: $filter\\n        userSearchId: $userSearchId\\n        unreadBefore: $unreadBefore\\n      ) {\\n        nodes {\\n          ...DiscussionEntry\\n          anonymousAuthor {\\n            ...AnonymousUser\\n            __typename\\n          }\\n          __typename\\n        }\\n        pageInfo {\\n          ...PageInfo\\n          __typename\\n        }\\n        __typename\\n      }\\n      entriesTotalPages(\\n        perPage: $perPage\\n        rootEntries: $rootEntries\\n        filter: $filter\\n        searchTerm: $searchTerm\\n        unreadBefore: $unreadBefore\\n      )\\n      searchEntryCount(filter: $filter, searchTerm: $searchTerm)\\n      groupSet {\\n        ...GroupSet\\n        groups {\\n          ...Group\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment AnonymousUser on AnonymousUser {\\n  id\\n  avatarUrl\\n  shortName\\n  __typename\\n}\\n\\nfragment Discussion on Discussion {\\n  id\\n  _id\\n  title\\n  message\\n  createdAt\\n  updatedAt\\n  editedAt\\n  postedAt\\n  requireInitialPost\\n  initialPostRequiredForCurrentUser\\n  isSectionSpecific\\n  isAnnouncement\\n  discussionType\\n  anonymousState\\n  allowRating\\n  onlyGradersCanRate\\n  delayedPostAt\\n  subscribed\\n  published\\n  canUnpublish\\n  canReplyAnonymously\\n  lockAt\\n  availableForUser\\n  userCount\\n  replyToEntryRequiredCount\\n  contextType\\n  lockInformation\\n  subscriptionDisabledForUser\\n  sortOrderLocked\\n  expandedLocked\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  entryCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  assignment {\\n    ...Assignment\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionPermissions\\n    __typename\\n  }\\n  courseSections {\\n    ...Section\\n    __typename\\n  }\\n  childTopics {\\n    ...ChildTopic\\n    __typename\\n  }\\n  groupSet {\\n    ...GroupSet\\n    __typename\\n  }\\n  rootTopic {\\n    ...RootTopic\\n    __typename\\n  }\\n  participant {\\n    id\\n    sortOrder\\n    expanded\\n    summaryEnabled\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment Assignment on Assignment {\\n  id\\n  _id\\n  dueAt(applyOverrides: false)\\n  lockAt(applyOverrides: false)\\n  unlockAt(applyOverrides: false)\\n  onlyVisibleToOverrides\\n  pointsPossible\\n  restrictQuantitativeData(checkExtraPermissions: true)\\n  assignmentOverrides {\\n    nodes {\\n      ...AssignmentOverride\\n      __typename\\n    }\\n    __typename\\n  }\\n  checkpoints {\\n    ...Checkpoint\\n    __typename\\n  }\\n  mySubAssignmentSubmissionsConnection {\\n    nodes {\\n      ...Submission\\n      __typename\\n    }\\n    __typename\\n  }\\n  assessmentRequestsForCurrentUser {\\n    ...AssessmentRequest\\n    __typename\\n  }\\n  peerReviews {\\n    ...PeerReviews\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment AssignmentOverride on AssignmentOverride {\\n  id\\n  _id\\n  dueAt\\n  lockAt\\n  unlockAt\\n  title\\n  set {\\n    ... on AdhocStudents {\\n      ...AdhocStudents\\n      __typename\\n    }\\n    ... on Group {\\n      ...Group\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment AdhocStudents on AdhocStudents {\\n  students {\\n    shortName\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment Group on Group {\\n  id\\n  _id\\n  name\\n  userCount: membersCount\\n  __typename\\n}\\n\\nfragment Checkpoint on Checkpoint {\\n  name\\n  tag\\n  pointsPossible\\n  dueAt\\n  onlyVisibleToOverrides\\n  assignmentOverrides {\\n    nodes {\\n      ...AssignmentOverride\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment Submission on Submission {\\n  id\\n  _id\\n  submissionStatus\\n  subAssignmentTag\\n  cachedDueDate\\n  submittedAt\\n  __typename\\n}\\n\\nfragment AssessmentRequest on AssessmentRequest {\\n  _id\\n  createdAt\\n  updatedAt\\n  user {\\n    _id\\n    displayName: shortName\\n    __typename\\n  }\\n  workflowState\\n  __typename\\n}\\n\\nfragment PeerReviews on PeerReviews {\\n  dueAt\\n  __typename\\n}\\n\\nfragment DiscussionPermissions on DiscussionPermissions {\\n  attach\\n  create\\n  delete\\n  duplicate\\n  rate\\n  read\\n  readAsAdmin\\n  manageCourseContentAdd\\n  manageCourseContentEdit\\n  manageCourseContentDelete\\n  readReplies\\n  reply\\n  update\\n  speedGrader\\n  studentReporting\\n  peerReview\\n  showRubric\\n  addRubric\\n  openForComments\\n  closeForComments\\n  copyAndSendTo\\n  moderateForum\\n  manageAssignTo\\n  __typename\\n}\\n\\nfragment Section on Section {\\n  _id\\n  createdAt\\n  id\\n  name\\n  updatedAt\\n  userCount\\n  __typename\\n}\\n\\nfragment ChildTopic on Discussion {\\n  id\\n  _id\\n  contextName\\n  contextId\\n  entryCounts {\\n    unreadCount\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment GroupSet on GroupSet {\\n  id\\n  _id\\n  name\\n  currentGroup {\\n    ...Group\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment RootTopic on Discussion {\\n  id\\n  _id\\n  childTopics {\\n    ...ChildTopic\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\\n\\nfragment PageInfo on PageInfo {\\n  endCursor\\n  hasNextPage\\n  hasPreviousPage\\n  startCursor\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "5": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>I believe renewable energy is essential for our future.</p>'",
+                        "{\"query\": \"query GetDiscussionQuery($discussionID: ID!, $perPage: Int!, $discussionPageAmount: Int!, $userSearchId: String, $cursor: String) {\\n  legacyNode(_id: $discussionID, type: Discussion) {\\n    ... on Discussion {\\n      discussionEntriesConnection(\\n        userSearchId: $userSearchId\\n        first: $perPage\\n        after: $cursor\\n      ) {\\n        nodes {\\n          _id\\n          rootEntryId\\n          rootEntryPageNumber(perPage: $discussionPageAmount)\\n        }\\n        pageInfo {\\n          endCursor\\n          hasNextPage\\n          hasPreviousPage\\n          startCursor\\n        }\\n      }\\n    }\\n  }\\n}\", \"variables\": {\"discussionID\": \"19\", \"perPage\": 100, \"discussionPageAmount\": 20, \"userSearchId\": null, \"cursor\": null}, \"operationName\": \"GetDiscussionQuery\"}"
+                    ]
+                ],
+                "6": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>I believe renewable energy is essential for our future.</p>'",
+                        "{\"operationName\": \"UpdateDiscussionEntriesReadState\", \"variables\": {\"discussionEntryIds\": [\"35\", \"34\"], \"read\": true}, \"query\": \"mutation UpdateDiscussionEntriesReadState($discussionEntryIds: [ID!]!, $read: Boolean!) {\\n  updateDiscussionEntriesReadState(\\n    input: {discussionEntryIds: $discussionEntryIds, read: $read}\\n  ) {\\n    discussionEntries {\\n      ...DiscussionEntry\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "7": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>I believe renewable energy is essential for our future.</p>'",
+                        "{\"operationName\": \"UpdateDiscussionEntriesReadState\", \"variables\": {\"discussionEntryIds\": [\"35\", \"34\"], \"read\": true}, \"query\": \"mutation UpdateDiscussionEntriesReadState($discussionEntryIds: [ID!]!, $read: Boolean!) {\\n  updateDiscussionEntriesReadState(\\n    input: {discussionEntryIds: $discussionEntryIds, read: $read}\\n  ) {\\n    discussionEntries {\\n      ...DiscussionEntry\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "8": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /api/graphql but the observed path was: /api/session"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "ba364032-ecc5-4fb5-8d55-49dba573fcb5",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /courses/1/quizzes/4/submissions but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /courses/1/quizzes/4/submissions but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected path was /courses/1/quizzes/4/submissions but the observed path was: /courses/1/quizzes/4/take?user_id=13"
+                    ]
+                ],
+                "3": [
+                    [
+                        "The expected path was /courses/1/quizzes/4/submissions but the observed path was: /api/v1/courses/1/quizzes/4/submissions/8/events"
+                    ]
+                ],
+                "4": [
+                    [
+                        "The expected path was /courses/1/quizzes/4/submissions but the observed path was: /courses/1/quizzes/4/submissions/backup?user_id=13"
+                    ]
+                ],
+                "5": [
+                    [
+                        "The expected path was /courses/1/quizzes/4/submissions but the observed path was: /courses/1/quizzes/4/submissions/backup?user_id=13"
+                    ]
+                ],
+                "6": [
+                    [
+                        "The expected path was /courses/1/quizzes/4/submissions but the observed path was: /api/v1/courses/1/quizzes/4/submissions/8/events"
+                    ]
+                ],
+                "7": [
+                    [
+                        "The expected path was /courses/1/quizzes/4/submissions but the observed path was: /courses/1/quizzes/4/submissions/backup?user_id=13"
+                    ]
+                ],
+                "8": [
+                    [
+                        "The expected path was /courses/1/quizzes/4/submissions but the observed path was: /courses/1/quizzes/4/submissions/backup?user_id=13"
+                    ]
+                ],
+                "9": [
+                    [
+                        "The expected path was /courses/1/quizzes/4/submissions but the observed path was: /courses/1/quizzes/4/submissions/backup?user_id=13"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "70e1f403-478c-45dd-a7b4-3dbe528283eb",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The observed path: /login/canvas did not match the expected path regex: /courses/1/quizzes/5/submissions/.+/record_answer\\?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F18"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/5/submissions but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The observed path: /api/graphql did not match the expected path regex: /courses/1/quizzes/5/submissions/.+/record_answer\\?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F18"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/5/submissions but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The observed path: /courses/1/quizzes/5/take?user_id=13 did not match the expected path regex: /courses/1/quizzes/5/submissions/.+/record_answer\\?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F18"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/5/submissions but the observed path was: /courses/1/quizzes/5/take?user_id=13"
+                    ]
+                ],
+                "3": [
+                    [
+                        "The observed path: /api/v1/courses/1/quizzes/5/submissions/7/events did not match the expected path regex: /courses/1/quizzes/5/submissions/.+/record_answer\\?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F18"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/5/submissions but the observed path was: /api/v1/courses/1/quizzes/5/submissions/7/events"
+                    ]
+                ],
+                "4": [
+                    [
+                        "The observed path: /courses/1/quizzes/5/submissions/backup?user_id=13 did not match the expected path regex: /courses/1/quizzes/5/submissions/.+/record_answer\\?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F18"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/5/submissions but the observed path was: /courses/1/quizzes/5/submissions/backup?user_id=13"
+                    ]
+                ],
+                "5": [
+                    [
+                        "The observed path: /courses/1/quizzes/5/submissions/backup?user_id=13 did not match the expected path regex: /courses/1/quizzes/5/submissions/.+/record_answer\\?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F18"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/5/submissions but the observed path was: /courses/1/quizzes/5/submissions/backup?user_id=13"
+                    ]
+                ],
+                "6": [
+                    [
+                        "The observed path: /courses/1/quizzes/5/submissions/7/record_answer?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F17&user_id=13 did not match the expected path regex: /courses/1/quizzes/5/submissions/.+/record_answer\\?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F18"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/5/submissions but the observed path was: /courses/1/quizzes/5/submissions/7/record_answer?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F17&user_id=13"
+                    ]
+                ],
+                "7": [
+                    [
+                        "The observed path: /courses/1/quizzes/5/submissions/backup?user_id=13 did not match the expected path regex: /courses/1/quizzes/5/submissions/.+/record_answer\\?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F18"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/5/submissions but the observed path was: /courses/1/quizzes/5/submissions/backup?user_id=13"
+                    ]
+                ],
+                "8": [
+                    [
+                        "The expected path was /courses/1/quizzes/5/submissions but the observed path was: /courses/1/quizzes/5/submissions/7/record_answer?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F18&user_id=13"
+                    ]
+                ],
+                "9": [
+                    [
+                        "The observed path: /courses/1/quizzes/5/submissions/backup?user_id=13 did not match the expected path regex: /courses/1/quizzes/5/submissions/.+/record_answer\\?next_question_path=%2Fcourses%2F1%2Fquizzes%2F5%2Ftake%2Fquestions%2F18"
+                    ],
+                    [
+                        "The expected path was /courses/1/quizzes/5/submissions but the observed path was: /courses/1/quizzes/5/submissions/backup?user_id=13"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "77d715fb-873a-469d-b061-f9881d811368",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /courses/1/modules/items/30/choose but the observed path was: /login/canvas"
+                    ],
+                    [
+                        "The expected path was /api/v1/courses/1/modules/4/items/30/select_mastery_path but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /courses/1/modules/items/30/choose but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "The expected path was /api/v1/courses/1/modules/4/items/30/select_mastery_path but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /courses/1/modules/items/30/choose but the observed path was: /courses/1/modules/4/collapse"
+                    ],
+                    [
+                        "The expected path was /api/v1/courses/1/modules/4/items/30/select_mastery_path but the observed path was: /courses/1/modules/4/collapse"
+                    ]
+                ],
+                "3": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /courses/1/modules/items/30/choose but the observed path was: /courses/1/modules/4/collapse"
+                    ],
+                    [
+                        "The expected path was /api/v1/courses/1/modules/4/items/30/select_mastery_path but the observed path was: /courses/1/modules/4/collapse"
+                    ]
+                ],
+                "4": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /courses/1/modules/items/30/choose but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "The expected path was /api/v1/courses/1/modules/4/items/30/select_mastery_path but the observed path was: /api/graphql"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "0f589bb7-ba0a-4bf3-9964-7a7a3bf7d251",
+            "correct": true
+        },
+        {
+            "id": "09804a0f-2a47-47d3-b479-c7c9c5d77f2f",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/graphql but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntryParticipant'",
+                        "Could not find kv pair in request satisfying: 'reportType':'inappropriate'",
+                        "{\"operationName\": \"GetCourseModules\", \"variables\": {\"courseId\": \"1\"}, \"query\": \"query GetCourseModules($courseId: ID!) {\\n  course(id: $courseId) {\\n    modulesConnection {\\n      nodes {\\n        id: _id\\n        moduleItems {\\n          content {\\n            ... on Assignment {\\n              name\\n              _id\\n              peerReviews {\\n                anonymousReviews\\n                __typename\\n              }\\n              assessmentRequestsForCurrentUser {\\n                id: _id\\n                anonymousId\\n                available\\n                createdAt\\n                workflowState\\n                user {\\n                  id: _id\\n                  name\\n                  __typename\\n                }\\n                anonymizedUser {\\n                  id: _id\\n                  name\\n                  __typename\\n                }\\n                __typename\\n              }\\n              __typename\\n            }\\n            __typename\\n          }\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\"}"
+                    ]
+                ],
+                "2": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntryParticipant'",
+                        "Could not find kv pair in request satisfying: 'reportType':'inappropriate'",
+                        "{\"operationName\": \"GetDiscussionQuery\", \"variables\": {\"discussionID\": \"10\", \"perPage\": 20, \"page\": \"MA==\", \"searchTerm\": \"\", \"rootEntries\": true, \"filter\": \"all\", \"unreadBefore\": \"\"}, \"query\": \"query GetDiscussionQuery($discussionID: ID!, $page: String, $perPage: Int!, $searchTerm: String, $rootEntries: Boolean, $userSearchId: String, $filter: DiscussionFilterType, $unreadBefore: String) {\\n  legacyNode(_id: $discussionID, type: Discussion) {\\n    ... on Discussion {\\n      ...Discussion\\n      anonymousAuthor {\\n        ...AnonymousUser\\n        __typename\\n      }\\n      discussionEntriesConnection(\\n        after: $page\\n        first: $perPage\\n        searchTerm: $searchTerm\\n        rootEntries: $rootEntries\\n        filter: $filter\\n        userSearchId: $userSearchId\\n        unreadBefore: $unreadBefore\\n      ) {\\n        nodes {\\n          ...DiscussionEntry\\n          anonymousAuthor {\\n            ...AnonymousUser\\n            __typename\\n          }\\n          __typename\\n        }\\n        pageInfo {\\n          ...PageInfo\\n          __typename\\n        }\\n        __typename\\n      }\\n      entriesTotalPages(\\n        perPage: $perPage\\n        rootEntries: $rootEntries\\n        filter: $filter\\n        searchTerm: $searchTerm\\n        unreadBefore: $unreadBefore\\n      )\\n      searchEntryCount(filter: $filter, searchTerm: $searchTerm)\\n      groupSet {\\n        ...GroupSet\\n        groups {\\n          ...Group\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment AnonymousUser on AnonymousUser {\\n  id\\n  avatarUrl\\n  shortName\\n  __typename\\n}\\n\\nfragment Discussion on Discussion {\\n  id\\n  _id\\n  title\\n  message\\n  createdAt\\n  updatedAt\\n  editedAt\\n  postedAt\\n  requireInitialPost\\n  initialPostRequiredForCurrentUser\\n  isSectionSpecific\\n  isAnnouncement\\n  discussionType\\n  anonymousState\\n  allowRating\\n  onlyGradersCanRate\\n  delayedPostAt\\n  subscribed\\n  published\\n  canUnpublish\\n  canReplyAnonymously\\n  lockAt\\n  availableForUser\\n  userCount\\n  replyToEntryRequiredCount\\n  contextType\\n  lockInformation\\n  subscriptionDisabledForUser\\n  sortOrderLocked\\n  expandedLocked\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  entryCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  assignment {\\n    ...Assignment\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionPermissions\\n    __typename\\n  }\\n  courseSections {\\n    ...Section\\n    __typename\\n  }\\n  childTopics {\\n    ...ChildTopic\\n    __typename\\n  }\\n  groupSet {\\n    ...GroupSet\\n    __typename\\n  }\\n  rootTopic {\\n    ...RootTopic\\n    __typename\\n  }\\n  participant {\\n    id\\n    sortOrder\\n    expanded\\n    summaryEnabled\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment Assignment on Assignment {\\n  id\\n  _id\\n  dueAt(applyOverrides: false)\\n  lockAt(applyOverrides: false)\\n  unlockAt(applyOverrides: false)\\n  onlyVisibleToOverrides\\n  pointsPossible\\n  restrictQuantitativeData(checkExtraPermissions: true)\\n  assignmentOverrides {\\n    nodes {\\n      ...AssignmentOverride\\n      __typename\\n    }\\n    __typename\\n  }\\n  checkpoints {\\n    ...Checkpoint\\n    __typename\\n  }\\n  mySubAssignmentSubmissionsConnection {\\n    nodes {\\n      ...Submission\\n      __typename\\n    }\\n    __typename\\n  }\\n  assessmentRequestsForCurrentUser {\\n    ...AssessmentRequest\\n    __typename\\n  }\\n  peerReviews {\\n    ...PeerReviews\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment AssignmentOverride on AssignmentOverride {\\n  id\\n  _id\\n  dueAt\\n  lockAt\\n  unlockAt\\n  title\\n  set {\\n    ... on AdhocStudents {\\n      ...AdhocStudents\\n      __typename\\n    }\\n    ... on Group {\\n      ...Group\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment AdhocStudents on AdhocStudents {\\n  students {\\n    shortName\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment Group on Group {\\n  id\\n  _id\\n  name\\n  userCount: membersCount\\n  __typename\\n}\\n\\nfragment Checkpoint on Checkpoint {\\n  name\\n  tag\\n  pointsPossible\\n  dueAt\\n  onlyVisibleToOverrides\\n  assignmentOverrides {\\n    nodes {\\n      ...AssignmentOverride\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment Submission on Submission {\\n  id\\n  _id\\n  submissionStatus\\n  subAssignmentTag\\n  cachedDueDate\\n  submittedAt\\n  __typename\\n}\\n\\nfragment AssessmentRequest on AssessmentRequest {\\n  _id\\n  createdAt\\n  updatedAt\\n  user {\\n    _id\\n    displayName: shortName\\n    __typename\\n  }\\n  workflowState\\n  __typename\\n}\\n\\nfragment PeerReviews on PeerReviews {\\n  dueAt\\n  __typename\\n}\\n\\nfragment DiscussionPermissions on DiscussionPermissions {\\n  attach\\n  create\\n  delete\\n  duplicate\\n  rate\\n  read\\n  readAsAdmin\\n  manageCourseContentAdd\\n  manageCourseContentEdit\\n  manageCourseContentDelete\\n  readReplies\\n  reply\\n  update\\n  speedGrader\\n  studentReporting\\n  peerReview\\n  showRubric\\n  addRubric\\n  openForComments\\n  closeForComments\\n  copyAndSendTo\\n  moderateForum\\n  manageAssignTo\\n  __typename\\n}\\n\\nfragment Section on Section {\\n  _id\\n  createdAt\\n  id\\n  name\\n  updatedAt\\n  userCount\\n  __typename\\n}\\n\\nfragment ChildTopic on Discussion {\\n  id\\n  _id\\n  contextName\\n  contextId\\n  entryCounts {\\n    unreadCount\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment GroupSet on GroupSet {\\n  id\\n  _id\\n  name\\n  currentGroup {\\n    ...Group\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment RootTopic on Discussion {\\n  id\\n  _id\\n  childTopics {\\n    ...ChildTopic\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\\n\\nfragment PageInfo on PageInfo {\\n  endCursor\\n  hasNextPage\\n  hasPreviousPage\\n  startCursor\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "3": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntryParticipant'",
+                        "Could not find kv pair in request satisfying: 'reportType':'inappropriate'",
+                        "{\"query\": \"query GetDiscussionQuery($discussionID: ID!, $perPage: Int!, $discussionPageAmount: Int!, $userSearchId: String, $cursor: String) {\\n  legacyNode(_id: $discussionID, type: Discussion) {\\n    ... on Discussion {\\n      discussionEntriesConnection(\\n        userSearchId: $userSearchId\\n        first: $perPage\\n        after: $cursor\\n      ) {\\n        nodes {\\n          _id\\n          rootEntryId\\n          rootEntryPageNumber(perPage: $discussionPageAmount)\\n        }\\n        pageInfo {\\n          endCursor\\n          hasNextPage\\n          hasPreviousPage\\n          startCursor\\n        }\\n      }\\n    }\\n  }\\n}\", \"variables\": {\"discussionID\": \"10\", \"perPage\": 100, \"discussionPageAmount\": 20, \"userSearchId\": null, \"cursor\": null}, \"operationName\": \"GetDiscussionQuery\"}"
+                    ]
+                ],
+                "4": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntryParticipant'",
+                        "Could not find kv pair in request satisfying: 'reportType':'inappropriate'",
+                        "{\"operationName\": \"UpdateDiscussionEntriesReadState\", \"variables\": {\"discussionEntryIds\": [\"8\"], \"read\": true}, \"query\": \"mutation UpdateDiscussionEntriesReadState($discussionEntryIds: [ID!]!, $read: Boolean!) {\\n  updateDiscussionEntriesReadState(\\n    input: {discussionEntryIds: $discussionEntryIds, read: $read}\\n  ) {\\n    discussionEntries {\\n      ...DiscussionEntry\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "5": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'UpdateDiscussionEntryParticipant'",
+                        "Could not find kv pair in request satisfying: 'reportType':'inappropriate'",
+                        "{\"operationName\": \"UpdateDiscussionEntriesReadState\", \"variables\": {\"discussionEntryIds\": [\"8\"], \"read\": true}, \"query\": \"mutation UpdateDiscussionEntriesReadState($discussionEntryIds: [ID!]!, $read: Boolean!) {\\n  updateDiscussionEntriesReadState(\\n    input: {discussionEntryIds: $discussionEntryIds, read: $read}\\n  ) {\\n    discussionEntries {\\n      ...DiscussionEntry\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\"}"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "dfe5c444-573a-4d09-aa9e-fd8d8594d6cf",
+            "correct": true
+        },
+        {
+            "id": "68ee936c-64ef-4980-98fa-cee0d43a8769",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/graphql but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'15'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>Thank you for the clarification!</p>'",
+                        "Could not find kv pair in request satisfying: 'quotedEntryId':'25'",
+                        "{\"operationName\": \"GetDiscussionQuery\", \"variables\": {\"discussionID\": \"15\", \"perPage\": 20, \"page\": \"MA==\", \"searchTerm\": \"\", \"rootEntries\": true, \"filter\": \"all\", \"unreadBefore\": \"\"}, \"query\": \"query GetDiscussionQuery($discussionID: ID!, $page: String, $perPage: Int!, $searchTerm: String, $rootEntries: Boolean, $userSearchId: String, $filter: DiscussionFilterType, $unreadBefore: String) {\\n  legacyNode(_id: $discussionID, type: Discussion) {\\n    ... on Discussion {\\n      ...Discussion\\n      anonymousAuthor {\\n        ...AnonymousUser\\n        __typename\\n      }\\n      discussionEntriesConnection(\\n        after: $page\\n        first: $perPage\\n        searchTerm: $searchTerm\\n        rootEntries: $rootEntries\\n        filter: $filter\\n        userSearchId: $userSearchId\\n        unreadBefore: $unreadBefore\\n      ) {\\n        nodes {\\n          ...DiscussionEntry\\n          anonymousAuthor {\\n            ...AnonymousUser\\n            __typename\\n          }\\n          __typename\\n        }\\n        pageInfo {\\n          ...PageInfo\\n          __typename\\n        }\\n        __typename\\n      }\\n      entriesTotalPages(\\n        perPage: $perPage\\n        rootEntries: $rootEntries\\n        filter: $filter\\n        searchTerm: $searchTerm\\n        unreadBefore: $unreadBefore\\n      )\\n      searchEntryCount(filter: $filter, searchTerm: $searchTerm)\\n      groupSet {\\n        ...GroupSet\\n        groups {\\n          ...Group\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment AnonymousUser on AnonymousUser {\\n  id\\n  avatarUrl\\n  shortName\\n  __typename\\n}\\n\\nfragment Discussion on Discussion {\\n  id\\n  _id\\n  title\\n  message\\n  createdAt\\n  updatedAt\\n  editedAt\\n  postedAt\\n  requireInitialPost\\n  initialPostRequiredForCurrentUser\\n  isSectionSpecific\\n  isAnnouncement\\n  discussionType\\n  anonymousState\\n  allowRating\\n  onlyGradersCanRate\\n  delayedPostAt\\n  subscribed\\n  published\\n  canUnpublish\\n  canReplyAnonymously\\n  lockAt\\n  availableForUser\\n  userCount\\n  replyToEntryRequiredCount\\n  contextType\\n  lockInformation\\n  subscriptionDisabledForUser\\n  sortOrderLocked\\n  expandedLocked\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  entryCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  assignment {\\n    ...Assignment\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionPermissions\\n    __typename\\n  }\\n  courseSections {\\n    ...Section\\n    __typename\\n  }\\n  childTopics {\\n    ...ChildTopic\\n    __typename\\n  }\\n  groupSet {\\n    ...GroupSet\\n    __typename\\n  }\\n  rootTopic {\\n    ...RootTopic\\n    __typename\\n  }\\n  participant {\\n    id\\n    sortOrder\\n    expanded\\n    summaryEnabled\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment Assignment on Assignment {\\n  id\\n  _id\\n  dueAt(applyOverrides: false)\\n  lockAt(applyOverrides: false)\\n  unlockAt(applyOverrides: false)\\n  onlyVisibleToOverrides\\n  pointsPossible\\n  restrictQuantitativeData(checkExtraPermissions: true)\\n  assignmentOverrides {\\n    nodes {\\n      ...AssignmentOverride\\n      __typename\\n    }\\n    __typename\\n  }\\n  checkpoints {\\n    ...Checkpoint\\n    __typename\\n  }\\n  mySubAssignmentSubmissionsConnection {\\n    nodes {\\n      ...Submission\\n      __typename\\n    }\\n    __typename\\n  }\\n  assessmentRequestsForCurrentUser {\\n    ...AssessmentRequest\\n    __typename\\n  }\\n  peerReviews {\\n    ...PeerReviews\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment AssignmentOverride on AssignmentOverride {\\n  id\\n  _id\\n  dueAt\\n  lockAt\\n  unlockAt\\n  title\\n  set {\\n    ... on AdhocStudents {\\n      ...AdhocStudents\\n      __typename\\n    }\\n    ... on Group {\\n      ...Group\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment AdhocStudents on AdhocStudents {\\n  students {\\n    shortName\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment Group on Group {\\n  id\\n  _id\\n  name\\n  userCount: membersCount\\n  __typename\\n}\\n\\nfragment Checkpoint on Checkpoint {\\n  name\\n  tag\\n  pointsPossible\\n  dueAt\\n  onlyVisibleToOverrides\\n  assignmentOverrides {\\n    nodes {\\n      ...AssignmentOverride\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment Submission on Submission {\\n  id\\n  _id\\n  submissionStatus\\n  subAssignmentTag\\n  cachedDueDate\\n  submittedAt\\n  __typename\\n}\\n\\nfragment AssessmentRequest on AssessmentRequest {\\n  _id\\n  createdAt\\n  updatedAt\\n  user {\\n    _id\\n    displayName: shortName\\n    __typename\\n  }\\n  workflowState\\n  __typename\\n}\\n\\nfragment PeerReviews on PeerReviews {\\n  dueAt\\n  __typename\\n}\\n\\nfragment DiscussionPermissions on DiscussionPermissions {\\n  attach\\n  create\\n  delete\\n  duplicate\\n  rate\\n  read\\n  readAsAdmin\\n  manageCourseContentAdd\\n  manageCourseContentEdit\\n  manageCourseContentDelete\\n  readReplies\\n  reply\\n  update\\n  speedGrader\\n  studentReporting\\n  peerReview\\n  showRubric\\n  addRubric\\n  openForComments\\n  closeForComments\\n  copyAndSendTo\\n  moderateForum\\n  manageAssignTo\\n  __typename\\n}\\n\\nfragment Section on Section {\\n  _id\\n  createdAt\\n  id\\n  name\\n  updatedAt\\n  userCount\\n  __typename\\n}\\n\\nfragment ChildTopic on Discussion {\\n  id\\n  _id\\n  contextName\\n  contextId\\n  entryCounts {\\n    unreadCount\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment GroupSet on GroupSet {\\n  id\\n  _id\\n  name\\n  currentGroup {\\n    ...Group\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment RootTopic on Discussion {\\n  id\\n  _id\\n  childTopics {\\n    ...ChildTopic\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\\n\\nfragment PageInfo on PageInfo {\\n  endCursor\\n  hasNextPage\\n  hasPreviousPage\\n  startCursor\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "2": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'15'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>Thank you for the clarification!</p>'",
+                        "Could not find kv pair in request satisfying: 'quotedEntryId':'25'",
+                        "{\"query\": \"query GetDiscussionQuery($discussionID: ID!, $perPage: Int!, $discussionPageAmount: Int!, $userSearchId: String, $cursor: String) {\\n  legacyNode(_id: $discussionID, type: Discussion) {\\n    ... on Discussion {\\n      discussionEntriesConnection(\\n        userSearchId: $userSearchId\\n        first: $perPage\\n        after: $cursor\\n      ) {\\n        nodes {\\n          _id\\n          rootEntryId\\n          rootEntryPageNumber(perPage: $discussionPageAmount)\\n        }\\n        pageInfo {\\n          endCursor\\n          hasNextPage\\n          hasPreviousPage\\n          startCursor\\n        }\\n      }\\n    }\\n  }\\n}\", \"variables\": {\"discussionID\": \"15\", \"perPage\": 100, \"discussionPageAmount\": 20, \"userSearchId\": null, \"cursor\": null}, \"operationName\": \"GetDiscussionQuery\"}"
+                    ]
+                ],
+                "3": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>Thank you for the clarification!</p>'",
+                        "Could not find kv pair in request satisfying: 'quotedEntryId':'25'",
+                        "{\"operationName\": \"UpdateDiscussionTopicParticipant\", \"variables\": {\"discussionTopicId\": \"15\", \"expanded\": true}, \"query\": \"mutation UpdateDiscussionTopicParticipant($discussionTopicId: ID!, $sortOrder: DiscussionSortOrderType, $expanded: Boolean, $summaryEnabled: Boolean) {\\n  updateDiscussionTopicParticipant(\\n    input: {discussionTopicId: $discussionTopicId, sortOrder: $sortOrder, expanded: $expanded, summaryEnabled: $summaryEnabled}\\n  ) {\\n    discussionTopic {\\n      id\\n      participant {\\n        id\\n        sortOrder\\n        expanded\\n        summaryEnabled\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\"}"
+                    ]
+                ],
+                "4": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'15'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>Thank you for the clarification!</p>'",
+                        "Could not find kv pair in request satisfying: 'quotedEntryId':'25'",
+                        "{\"operationName\": \"GetDiscussionEntryAllRootEntriesQuery\", \"variables\": {\"discussionEntryID\": \"24\"}, \"query\": \"query GetDiscussionEntryAllRootEntriesQuery($discussionEntryID: ID!) {\\n  legacyNode(_id: $discussionEntryID, type: DiscussionEntry) {\\n    ... on DiscussionEntry {\\n      id\\n      _id\\n      allRootEntries {\\n        ...DiscussionEntry\\n        anonymousAuthor {\\n          ...AnonymousUser\\n          __typename\\n        }\\n        __typename\\n      }\\n      subentriesCount\\n      rootEntryParticipantCounts {\\n        repliesCount\\n        unreadCount\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment AnonymousUser on AnonymousUser {\\n  id\\n  avatarUrl\\n  shortName\\n  __typename\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "5": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'15'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>Thank you for the clarification!</p>'",
+                        "Could not find kv pair in request satisfying: 'quotedEntryId':'25'",
+                        "{\"operationName\": \"GetDiscussionEntryAllRootEntriesQuery\", \"variables\": {\"discussionEntryID\": \"22\"}, \"query\": \"query GetDiscussionEntryAllRootEntriesQuery($discussionEntryID: ID!) {\\n  legacyNode(_id: $discussionEntryID, type: DiscussionEntry) {\\n    ... on DiscussionEntry {\\n      id\\n      _id\\n      allRootEntries {\\n        ...DiscussionEntry\\n        anonymousAuthor {\\n          ...AnonymousUser\\n          __typename\\n        }\\n        __typename\\n      }\\n      subentriesCount\\n      rootEntryParticipantCounts {\\n        repliesCount\\n        unreadCount\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment AnonymousUser on AnonymousUser {\\n  id\\n  avatarUrl\\n  shortName\\n  __typename\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "6": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'15'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>Thank you for the clarification!</p>'",
+                        "Could not find kv pair in request satisfying: 'quotedEntryId':'25'",
+                        "{\"operationName\": \"UpdateDiscussionEntriesReadState\", \"variables\": {\"discussionEntryIds\": [\"24\", \"25\", \"22\"], \"read\": true}, \"query\": \"mutation UpdateDiscussionEntriesReadState($discussionEntryIds: [ID!]!, $read: Boolean!) {\\n  updateDiscussionEntriesReadState(\\n    input: {discussionEntryIds: $discussionEntryIds, read: $read}\\n  ) {\\n    discussionEntries {\\n      ...DiscussionEntry\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "7": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'15'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>Thank you for the clarification!</p>'",
+                        "Could not find kv pair in request satisfying: 'quotedEntryId':'25'",
+                        "{\"operationName\": \"UpdateDiscussionEntriesReadState\", \"variables\": {\"discussionEntryIds\": [\"22\", \"24\"], \"read\": true}, \"query\": \"mutation UpdateDiscussionEntriesReadState($discussionEntryIds: [ID!]!, $read: Boolean!) {\\n  updateDiscussionEntriesReadState(\\n    input: {discussionEntryIds: $discussionEntryIds, read: $read}\\n  ) {\\n    discussionEntries {\\n      ...DiscussionEntry\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "8": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /api/graphql but the observed path was: /api/session"
+                    ]
+                ],
+                "9": [
+                    [
+                        "Could not find kv pair in request satisfying: 'message':'<p>Thank you for the clarification!</p>'",
+                        "Could not find kv pair in request satisfying: 'quotedEntryId':'25'",
+                        "{\"operationName\": \"CreateDiscussionEntry\", \"variables\": {\"discussionTopicId\": \"15\", \"parentEntryId\": \"25\", \"isAnonymousAuthor\": false, \"message\": \"<p>Thank you for the clarification!</p>\\n<p>&nbsp;</p>\", \"quotedEntryId\": null}, \"query\": \"mutation CreateDiscussionEntry($discussionTopicId: ID!, $message: String!, $parentEntryId: ID, $fileId: ID, $isAnonymousAuthor: Boolean, $quotedEntryId: ID) {\\n  createDiscussionEntry(\\n    input: {discussionTopicId: $discussionTopicId, message: $message, parentEntryId: $parentEntryId, fileId: $fileId, isAnonymousAuthor: $isAnonymousAuthor, quotedEntryId: $quotedEntryId}\\n  ) {\\n    discussionEntry {\\n      ...DiscussionEntry\\n      anonymousAuthor {\\n        ...AnonymousUser\\n        __typename\\n      }\\n      __typename\\n    }\\n    mySubAssignmentSubmissions {\\n      ...Submission\\n      __typename\\n    }\\n    errors {\\n      ...Error\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment AnonymousUser on AnonymousUser {\\n  id\\n  avatarUrl\\n  shortName\\n  __typename\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\\n\\nfragment Submission on Submission {\\n  id\\n  _id\\n  submissionStatus\\n  subAssignmentTag\\n  cachedDueDate\\n  submittedAt\\n  __typename\\n}\\n\\nfragment Error on ValidationError {\\n  attribute\\n  message\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "10": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'15'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>Thank you for the clarification!</p>'",
+                        "Could not find kv pair in request satisfying: 'quotedEntryId':'25'",
+                        "{\"operationName\": \"UpdateDiscussionEntriesReadState\", \"variables\": {\"discussionEntryIds\": [\"23\"], \"read\": true}, \"query\": \"mutation UpdateDiscussionEntriesReadState($discussionEntryIds: [ID!]!, $read: Boolean!) {\\n  updateDiscussionEntriesReadState(\\n    input: {discussionEntryIds: $discussionEntryIds, read: $read}\\n  ) {\\n    discussionEntries {\\n      ...DiscussionEntry\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\"}"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "372a4ec3-ce92-479b-ab78-7860b7b672d2",
+            "correct": true
+        },
+        {
+            "id": "b9e2f967-9a5e-48a9-84bc-5d6b97650306",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /courses/1/assignments/24/submissions/13 but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /courses/1/assignments/24/submissions/13 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "Could not find kv pair in request satisfying: 'submission[student_entered_score]':'['85']'",
+                        "{\"_method\": [\"PUT\"], \"authenticity_token\": [\"uG74j5YQ/xTXd0mUkUY+RHQltXX+L/5qkRtCUmwBYGrqF7e79SmTLbtYcfuoMXAFLGnCMZd7xgihfWkTJ0kFEA==\"]}"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "24b90712-0fc0-48f8-89a0-bba970c01de2",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The observed path: /login/canvas did not match the expected path regex: /courses/1/assignments/19/submissions/.+"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The observed path: /api/graphql did not match the expected path regex: /courses/1/assignments/19/submissions/.+"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The observed path: /api/graphql did not match the expected path regex: /courses/1/assignments/19/submissions/.+"
+                    ]
+                ],
+                "3": [
+                    [
+                        "The observed path: /api/graphql did not match the expected path regex: /courses/1/assignments/19/submissions/.+"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "8746edbf-0ceb-4670-9e1e-8ba458b6ba57",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /courses/1/quizzes/8/submissions but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /courses/1/quizzes/8/submissions but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected path was /courses/1/quizzes/8/submissions but the observed path was: /api/graphql"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "28456a41-c841-4656-9cc2-016cc457dfed",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/v1/groups/2 but the observed path was: /login/canvas"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "2a9374ca-5294-4df1-9b86-59e5b75bf41f",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /courses/1/quizzes/1/submissions/backup but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /courses/1/quizzes/1/submissions/backup but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected path was /courses/1/quizzes/1/submissions/backup but the observed path was: /courses/1/quizzes/1/take?user_id=13"
+                    ]
+                ],
+                "3": [
+                    [
+                        "The expected path was /courses/1/quizzes/1/submissions/backup but the observed path was: /api/v1/courses/1/quizzes/1/submissions/6/events"
+                    ]
+                ],
+                "4": [
+                    [
+                        "Could not find kv pair in request satisfying: 'question_3':'['photosynthesis']'",
+                        "{\"utf8\": [\"\\u2713\"], \"authenticity_token\": [\"sDsNJrsyj2yWEwtWq8yZfgtasKzxFHJmMDs/kqoYQa7fQk9wyQK8IcFaSAD4qdokaBv4xatzMRwIVV2h5kEG9g==\"], \"attempt\": [\"1\"], \"validation_token\": [\"7288a92707284fd29bf07503e5bcd6730c8327acb6e3835ba4b32b341e9d498b\"], \"question_text\": [\"<p>Liquid water is necessary for life as we know it.</p>\"], \"_method\": [\"PUT\"]}"
+                    ]
+                ],
+                "5": [
+                    [
+                        "The expected path was /courses/1/quizzes/1/submissions/backup but the observed path was: /api/v1/courses/1/quizzes/1/submissions/6/events"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "7bee37ab-e1aa-45f1-90e6-15486b273141",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /courses/1/assignments/26/submissions but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /courses/1/assignments/26/submissions but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /courses/1/assignments/26/submissions but the observed path was: /api/session"
+                    ]
+                ],
+                "3": [
+                    [
+                        "Could not find kv pair in request satisfying: 'submission[body]':'['<p>The most interesting concept I learned this week was cognitive dissonance.</p>']'",
+                        "{\"utf8\": [\"\\u2713\"], \"authenticity_token\": [\"TrVGfst/AlLVZ/dZ8sl/OO/FbxAe9NZVpVjqrGYK7AcU4HYXmAkxArcImDCLjxddgvc5fCyu5hPtG7vWX0iadg==\"], \"submission[submission_type]\": [\"online_text_entry\"], \"submission[body]\": [\"<p>The most interesting concept I learned this week was cognitive dissonance.</p>\\r\\n<p>&nbsp;</p>\"]}"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "3486aadf-f99f-41dc-8e8c-a7da95cf8237",
+            "correct": true
+        },
+        {
+            "id": "7b7b4613-f694-4be2-ad97-f6095466a5b1",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /courses/1/assignments/8/submissions/13 but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /courses/1/assignments/8/submissions/13 but the observed path was: /api/graphql"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "5ae65869-34a5-48ec-872a-d6f7450905d8",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/v1/groups/3/discussion_topics but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /api/v1/groups/3/discussion_topics but the observed path was: /api/session"
+                    ]
+                ],
+                "2": [
+                    [
+                        "Could not find kv pair in request satisfying: 'allow_rating':'1'",
+                        "Could not find kv pair in request satisfying: 'allow_todo_date':'1'",
+                        "Could not find kv pair in request satisfying: 'message':'<p>Share which lab or field activity from this semester you found most engaging and explain what made it effective for learning about life in extreme environments</p>'",
+                        "{\"is_announcement\": false, \"can_group\": true, \"course_published\": true, \"set_assignment\": false, \"publishable\": true, \"unpublishable\": true, \"discussion_type\": \"side_comment\", \"podcast_enabled\": false, \"podcast_has_student_posts\": false, \"require_initial_post\": false, \"subscribed\": false, \"user_can_see_posts\": true, \"subscription_hold\": null, \"title\": \"Favorite Field Activity\", \"message\": \"\", \"allow_rating\": \"0\", \"only_graders_can_rate\": false, \"last_reply_at\": null, \"posted_at\": null, \"delayed_post_at\": null, \"lock_at\": null, \"todo_date\": null, \"anonymous_state\": null, \"summary\": \"\", \"unread_count_tooltip\": {\"zero\": \"No unread replies.\", \"one\": \"1 unread reply.\", \"other\": \"%{count} unread replies.\"}, \"reply_count_tooltip\": {\"zero\": \"No replies.\", \"one\": \"1 reply.\", \"other\": \"%{count} replies.\"}, \"defaultDates\": {\"dueFor\": \"Everyone else\", \"dueAt\": null, \"unlockAt\": null, \"lockAt\": null, \"available\": true, \"pending\": null, \"open\": null, \"closed\": null}}"
+                    ]
+                ],
+                "3": [
+                    [
+                        "The expected path was /api/v1/groups/3/discussion_topics but the observed path was: /api/graphql"
+                    ]
+                ],
+                "4": [
+                    [
+                        "The expected path was /api/v1/groups/3/discussion_topics but the observed path was: /api/graphql"
+                    ]
+                ],
+                "5": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /api/v1/groups/3/discussion_topics but the observed path was: /api/session"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "53ee3ff6-388b-4a39-9b6a-39ac8384686d",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/v1/courses/1/modules/3/items/5/done but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /api/v1/courses/1/modules/3/items/5/done but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected path was /api/v1/courses/1/modules/3/items/5/done but the observed path was: /api/graphql"
+                    ]
+                ],
+                "3": [
+                    [
+                        "The expected path was /api/v1/courses/1/modules/3/items/5/done but the observed path was: /api/graphql"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "fef1e75c-31fb-45ab-984d-72f9dd874911",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/8/pages/spectra-discussion-and-data-sharing but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was PUT but the observed method was: OPTIONS",
+                        "The expected path was /api/v1/groups/8/pages/spectra-discussion-and-data-sharing but the observed path was: /api/session"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "e05e68fd-b81d-4ea6-a0d3-6eaaf43d1103",
+            "correct": true
+        },
+        {
+            "id": "7b6a632f-ad5b-41e3-b2c3-929cd2681233",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /courses/1/assignments/18/submissions/13 but the observed path was: /login/canvas"
+                    ],
+                    [
+                        "The expected path was /courses/1/assignments/18/submissions/13 but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /courses/1/assignments/18/submissions/13 but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "The expected path was /courses/1/assignments/18/submissions/13 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /courses/1/assignments/18/submissions/13 but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "The expected path was /courses/1/assignments/18/submissions/13 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "3": [
+                    [
+                        "The expected method was GET but the observed method was: POST",
+                        "The expected path was /courses/1/assignments/18/submissions/13 but the observed path was: /api/graphql"
+                    ],
+                    [
+                        "The expected path was /courses/1/assignments/18/submissions/13 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "4": [
+                    [
+                        "The expected method was GET but the observed method was: POST"
+                    ],
+                    [
+                        "Could not find kv pair in request satisfying: 'submission[comment]':'['Great analysis! I especially liked your use of recent data to support your points.']'",
+                        "{\"submission[assignment_id]\": [\"18\"], \"submission[group_comment]\": [\"0\"], \"submission[user_id]\": [\"13\"], \"submission[comment]\": [\"Great analysis! I especially liked your use of recent data to support your points.\\n\"], \"_method\": [\"PUT\"], \"authenticity_token\": [\"dP5oM9zM4+EzTmCWc+TOzSW3wWniPT6EMUBwModcpr5MvFhyqYHa2VE7Aa4evquhdt+yXNFqSP1QFypGwhLpiQ==\"]}"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "90ed7ed6-4a8b-4b97-9449-c4147b58f921",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/v1/courses/1/discussion_topics but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /api/v1/courses/1/discussion_topics but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /api/v1/courses/1/discussion_topics but the observed path was: /api/session"
+                    ]
+                ],
+                "3": [
+                    [
+                        "Could not find kv pair in request satisfying: 'message':'<p>Describe a way concepts from astrobiology have influenced how you think about environmental decisions or everyday choices outside class</p>'",
+                        "{\"is_announcement\": false, \"can_group\": true, \"course_published\": true, \"set_assignment\": false, \"publishable\": true, \"unpublishable\": true, \"discussion_type\": \"side_comment\", \"podcast_enabled\": false, \"podcast_has_student_posts\": false, \"require_initial_post\": \"0\", \"subscribed\": false, \"user_can_see_posts\": true, \"subscription_hold\": null, \"title\": \"Daily Relevance of Astrobiology\", \"message\": \"\", \"specific_sections\": \"all\", \"allow_rating\": \"0\", \"only_graders_can_rate\": false, \"delayed_post_at\": null, \"lock_at\": null, \"last_reply_at\": null, \"posted_at\": null, \"todo_date\": null, \"anonymous_state\": null, \"summary\": \"\", \"unread_count_tooltip\": {\"zero\": \"No unread replies.\", \"one\": \"1 unread reply.\", \"other\": \"%{count} unread replies.\"}, \"reply_count_tooltip\": {\"zero\": \"No replies.\", \"one\": \"1 reply.\", \"other\": \"%{count} replies.\"}, \"defaultDates\": {\"dueFor\": \"Everyone else\", \"dueAt\": null, \"unlockAt\": null, \"lockAt\": null, \"available\": true, \"pending\": null, \"open\": null, \"closed\": null}}"
+                    ]
+                ],
+                "4": [
+                    [
+                        "The expected path was /api/v1/courses/1/discussion_topics but the observed path was: /api/graphql"
+                    ]
+                ],
+                "5": [
+                    [
+                        "The expected path was /api/v1/courses/1/discussion_topics but the observed path was: /api/graphql"
+                    ]
+                ],
+                "6": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /api/v1/courses/1/discussion_topics but the observed path was: /api/session"
+                    ]
+                ],
+                "7": [
+                    [
+                        "The expected path was /api/v1/courses/1/discussion_topics but the observed path was: /api/graphql"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "6e90b09d-b06d-4b3b-af5f-245ae3726006",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /courses/1/assignments/34/submissions/13 but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /courses/1/assignments/34/submissions/13 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /courses/1/assignments/34/submissions/13 but the observed path was: /api/session"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "0305fe6d-0909-4f5f-b956-06739e42661a",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /courses/1/assignments/28/submissions/13 but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /courses/1/assignments/28/submissions/13 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /courses/1/assignments/28/submissions/13 but the observed path was: /api/session"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "b5af3d2e-1592-4115-bdcc-1a917725aeaa",
+            "correct": true
+        },
+        {
+            "id": "1f4e9ccd-8ec6-4b82-96e6-d8ca88eef745",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/users/13/settings but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/users/13/settings but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "Could not find kv pair in request satisfying: 'manual_mark_as_read':'True'",
+                        "{\"manual_mark_as_read\": false, \"collapse_global_nav\": false, \"collapse_course_nav\": false, \"hide_dashcard_color_overlays\": false, \"release_notes_badge_disabled\": false, \"comment_library_suggestions_enabled\": false, \"elementary_dashboard_disabled\": false, \"default_to_block_editor\": false}"
+                    ]
+                ],
+                "3": [
+                    [
+                        "Could not find kv pair in request satisfying: 'manual_mark_as_read':'True'",
+                        "{\"manual_mark_as_read\": false, \"collapse_global_nav\": false, \"collapse_course_nav\": false, \"hide_dashcard_color_overlays\": false, \"release_notes_badge_disabled\": false, \"comment_library_suggestions_enabled\": false, \"elementary_dashboard_disabled\": false, \"default_to_block_editor\": false}"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "078fa969-bc7d-4a18-82c3-53610bed2a1d",
+            "correct": true
+        },
+        {
+            "id": "103e5a04-99ce-4a42-ac07-fa8e6522efc0",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/v1/groups/13/external_feeds but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "Could not find kv pair in request satisfying: 'header_match':'AI'",
+                        "{\"url\": \"https://news.ycombinator.com/rss\", \"verbosity\": \"full\", \"header_match\": null}"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "b06b0c0d-30c7-400a-9eaa-7aed245ece58",
+            "correct": true
+        },
+        {
+            "id": "001de67a-26cd-4976-9022-4b8b8e40cc51",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/user_13?hexcode=4a76b2"
+                    ]
+                ],
+                "3": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_2?hexcode=cb3f77"
+                    ]
+                ],
+                "4": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_3?hexcode=1a7f93"
+                    ]
+                ],
+                "5": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_4?hexcode=927005"
+                    ]
+                ],
+                "6": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_5?hexcode=8366b4"
+                    ]
+                ],
+                "7": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_6?hexcode=2f826a"
+                    ]
+                ],
+                "8": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_7?hexcode=cb4740"
+                    ]
+                ],
+                "9": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_8?hexcode=2b7ba9"
+                    ]
+                ],
+                "10": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_9?hexcode=677d2b"
+                    ]
+                ],
+                "11": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_10?hexcode=b84c96"
+                    ]
+                ],
+                "12": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_11?hexcode=1d8185"
+                    ]
+                ],
+                "13": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_12?hexcode=ac6211"
+                    ]
+                ],
+                "14": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_13?hexcode=5d71b6"
+                    ]
+                ],
+                "15": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_16?hexcode=428155"
+                    ]
+                ],
+                "16": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_17?hexcode=cf3e62"
+                    ]
+                ],
+                "17": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_18?hexcode=1f7e9b"
+                    ]
+                ],
+                "18": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_1?hexcode=817614"
+                    ]
+                ],
+                "19": [
+                    [
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/v1/users/13/colors/group_19?hexcode=9a5dac"
+                    ]
+                ],
+                "20": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "21": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "22": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "23": [
+                    [
+                        "The expected method was PUT but the observed method was: OPTIONS",
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/session"
+                    ]
+                ],
+                "24": [
+                    [
+                        "Could not find kv pair in request satisfying: 'message':'<p>Our first group meeting will be held on Friday at 3 PM in the atrium.</p>'",
+                        "{\"id\": \"8\", \"title\": \"Our first group meeting will be held on Friday at 3 PM in the atrium.\", \"last_reply_at\": null, \"created_at\": \"2026-01-19T11:52:12-07:00\", \"delayed_post_at\": null, \"posted_at\": null, \"assignment_id\": null, \"root_topic_id\": null, \"position\": 1, \"podcast_has_student_posts\": false, \"discussion_type\": \"side_comment\", \"lock_at\": null, \"allow_rating\": true, \"only_graders_can_rate\": false, \"sort_by_rating\": false, \"is_section_specific\": false, \"anonymous_state\": null, \"summary_enabled\": false, \"user_name\": \"Riley Parker\", \"discussion_subentry_count\": 0, \"permissions\": {\"attach\": false, \"update\": true, \"reply\": true, \"delete\": true, \"manage_assign_to\": false}, \"require_initial_post\": null, \"user_can_see_posts\": true, \"podcast_url\": null, \"read_state\": \"read\", \"unread_count\": 0, \"subscribed\": false, \"attachments\": [], \"published\": true, \"can_unpublish\": false, \"locked\": false, \"can_lock\": true, \"comments_disabled\": false, \"author\": {\"id\": \"13\", \"anonymous_id\": \"d\", \"display_name\": \"Riley Parker\", \"avatar_image_url\": \"http://canvas.instructure.com/images/messages/avatar-50.png\", \"html_url\": \"http://localhost:8088/groups/17/users/13\", \"pronouns\": null}, \"html_url\": \"http://localhost:8088/groups/17/discussion_topics/8\", \"url\": \"http://localhost:8088/groups/17/discussion_topics/8\", \"pinned\": false, \"group_category_id\": null, \"can_group\": false, \"topic_children\": [], \"group_topic_children\": [], \"ungraded_discussion_overrides\": null, \"locked_for_user\": false, \"message\": \"<p>Hi all We will meet in the Earth Sciences building room 214 on Friday at 5pm to review exoplanet climate models and practice past quiz questions Please bring your laptop and notes</p>\", \"subscription_hold\": \"topic_is_announcement\", \"todo_date\": null, \"is_announcement\": true, \"sort_order\": \"desc\", \"sort_order_locked\": false, \"expanded\": false, \"expanded_locked\": false, \"has_threaded_replies\": false, \"course_published\": true, \"set_assignment\": false, \"unpublishable\": false, \"summary\": \"Hi all We will meet in the Earth Sciences building room 214 on Friday at 5pm to review exoplanet climate models and practice past quiz questions Please bring your laptop and notes\", \"unread_count_tooltip\": \"No unread replies.\", \"reply_count_tooltip\": \"No replies.\", \"defaultDates\": {\"dueFor\": \"Everyone else\", \"dueAt\": null, \"unlockAt\": null, \"lockAt\": null, \"available\": true, \"pending\": null, \"open\": null, \"closed\": null}, \"isRootTopic\": null}"
+                    ]
+                ],
+                "25": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/graphql"
+                    ]
+                ],
+                "26": [
+                    [
+                        "The expected method was PUT but the observed method was: POST",
+                        "The expected path was /api/v1/groups/17/discussion_topics/8 but the observed path was: /api/graphql"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "22d0c0f2-6d79-449a-839e-1cbc3d1c2e93",
+            "correct": true
+        },
+        {
+            "id": "1de1a4a8-b4c1-4c77-bc32-8480e1fe4e12",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/graphql but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'18'",
+                        "Could not find kv pair in request satisfying: 'message':'[[_includes='@Dr Javier Santiago']]'",
+                        "{\"operationName\": \"GetCourseModules\", \"variables\": {\"courseId\": \"1\"}, \"query\": \"query GetCourseModules($courseId: ID!) {\\n  course(id: $courseId) {\\n    modulesConnection {\\n      nodes {\\n        id: _id\\n        moduleItems {\\n          content {\\n            ... on Assignment {\\n              name\\n              _id\\n              peerReviews {\\n                anonymousReviews\\n                __typename\\n              }\\n              assessmentRequestsForCurrentUser {\\n                id: _id\\n                anonymousId\\n                available\\n                createdAt\\n                workflowState\\n                user {\\n                  id: _id\\n                  name\\n                  __typename\\n                }\\n                anonymizedUser {\\n                  id: _id\\n                  name\\n                  __typename\\n                }\\n                __typename\\n              }\\n              __typename\\n            }\\n            __typename\\n          }\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\"}"
+                    ]
+                ],
+                "2": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'18'",
+                        "Could not find kv pair in request satisfying: 'message':'[[_includes='@Dr Javier Santiago']]'",
+                        "{\"operationName\": \"GetDiscussionQuery\", \"variables\": {\"discussionID\": \"18\", \"perPage\": 20, \"page\": \"MA==\", \"searchTerm\": \"\", \"rootEntries\": true, \"filter\": \"all\", \"unreadBefore\": \"\"}, \"query\": \"query GetDiscussionQuery($discussionID: ID!, $page: String, $perPage: Int!, $searchTerm: String, $rootEntries: Boolean, $userSearchId: String, $filter: DiscussionFilterType, $unreadBefore: String) {\\n  legacyNode(_id: $discussionID, type: Discussion) {\\n    ... on Discussion {\\n      ...Discussion\\n      anonymousAuthor {\\n        ...AnonymousUser\\n        __typename\\n      }\\n      discussionEntriesConnection(\\n        after: $page\\n        first: $perPage\\n        searchTerm: $searchTerm\\n        rootEntries: $rootEntries\\n        filter: $filter\\n        userSearchId: $userSearchId\\n        unreadBefore: $unreadBefore\\n      ) {\\n        nodes {\\n          ...DiscussionEntry\\n          anonymousAuthor {\\n            ...AnonymousUser\\n            __typename\\n          }\\n          __typename\\n        }\\n        pageInfo {\\n          ...PageInfo\\n          __typename\\n        }\\n        __typename\\n      }\\n      entriesTotalPages(\\n        perPage: $perPage\\n        rootEntries: $rootEntries\\n        filter: $filter\\n        searchTerm: $searchTerm\\n        unreadBefore: $unreadBefore\\n      )\\n      searchEntryCount(filter: $filter, searchTerm: $searchTerm)\\n      groupSet {\\n        ...GroupSet\\n        groups {\\n          ...Group\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment AnonymousUser on AnonymousUser {\\n  id\\n  avatarUrl\\n  shortName\\n  __typename\\n}\\n\\nfragment Discussion on Discussion {\\n  id\\n  _id\\n  title\\n  message\\n  createdAt\\n  updatedAt\\n  editedAt\\n  postedAt\\n  requireInitialPost\\n  initialPostRequiredForCurrentUser\\n  isSectionSpecific\\n  isAnnouncement\\n  discussionType\\n  anonymousState\\n  allowRating\\n  onlyGradersCanRate\\n  delayedPostAt\\n  subscribed\\n  published\\n  canUnpublish\\n  canReplyAnonymously\\n  lockAt\\n  availableForUser\\n  userCount\\n  replyToEntryRequiredCount\\n  contextType\\n  lockInformation\\n  subscriptionDisabledForUser\\n  sortOrderLocked\\n  expandedLocked\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  entryCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  assignment {\\n    ...Assignment\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionPermissions\\n    __typename\\n  }\\n  courseSections {\\n    ...Section\\n    __typename\\n  }\\n  childTopics {\\n    ...ChildTopic\\n    __typename\\n  }\\n  groupSet {\\n    ...GroupSet\\n    __typename\\n  }\\n  rootTopic {\\n    ...RootTopic\\n    __typename\\n  }\\n  participant {\\n    id\\n    sortOrder\\n    expanded\\n    summaryEnabled\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment Assignment on Assignment {\\n  id\\n  _id\\n  dueAt(applyOverrides: false)\\n  lockAt(applyOverrides: false)\\n  unlockAt(applyOverrides: false)\\n  onlyVisibleToOverrides\\n  pointsPossible\\n  restrictQuantitativeData(checkExtraPermissions: true)\\n  assignmentOverrides {\\n    nodes {\\n      ...AssignmentOverride\\n      __typename\\n    }\\n    __typename\\n  }\\n  checkpoints {\\n    ...Checkpoint\\n    __typename\\n  }\\n  mySubAssignmentSubmissionsConnection {\\n    nodes {\\n      ...Submission\\n      __typename\\n    }\\n    __typename\\n  }\\n  assessmentRequestsForCurrentUser {\\n    ...AssessmentRequest\\n    __typename\\n  }\\n  peerReviews {\\n    ...PeerReviews\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment AssignmentOverride on AssignmentOverride {\\n  id\\n  _id\\n  dueAt\\n  lockAt\\n  unlockAt\\n  title\\n  set {\\n    ... on AdhocStudents {\\n      ...AdhocStudents\\n      __typename\\n    }\\n    ... on Group {\\n      ...Group\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment AdhocStudents on AdhocStudents {\\n  students {\\n    shortName\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment Group on Group {\\n  id\\n  _id\\n  name\\n  userCount: membersCount\\n  __typename\\n}\\n\\nfragment Checkpoint on Checkpoint {\\n  name\\n  tag\\n  pointsPossible\\n  dueAt\\n  onlyVisibleToOverrides\\n  assignmentOverrides {\\n    nodes {\\n      ...AssignmentOverride\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment Submission on Submission {\\n  id\\n  _id\\n  submissionStatus\\n  subAssignmentTag\\n  cachedDueDate\\n  submittedAt\\n  __typename\\n}\\n\\nfragment AssessmentRequest on AssessmentRequest {\\n  _id\\n  createdAt\\n  updatedAt\\n  user {\\n    _id\\n    displayName: shortName\\n    __typename\\n  }\\n  workflowState\\n  __typename\\n}\\n\\nfragment PeerReviews on PeerReviews {\\n  dueAt\\n  __typename\\n}\\n\\nfragment DiscussionPermissions on DiscussionPermissions {\\n  attach\\n  create\\n  delete\\n  duplicate\\n  rate\\n  read\\n  readAsAdmin\\n  manageCourseContentAdd\\n  manageCourseContentEdit\\n  manageCourseContentDelete\\n  readReplies\\n  reply\\n  update\\n  speedGrader\\n  studentReporting\\n  peerReview\\n  showRubric\\n  addRubric\\n  openForComments\\n  closeForComments\\n  copyAndSendTo\\n  moderateForum\\n  manageAssignTo\\n  __typename\\n}\\n\\nfragment Section on Section {\\n  _id\\n  createdAt\\n  id\\n  name\\n  updatedAt\\n  userCount\\n  __typename\\n}\\n\\nfragment ChildTopic on Discussion {\\n  id\\n  _id\\n  contextName\\n  contextId\\n  entryCounts {\\n    unreadCount\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment GroupSet on GroupSet {\\n  id\\n  _id\\n  name\\n  currentGroup {\\n    ...Group\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment RootTopic on Discussion {\\n  id\\n  _id\\n  childTopics {\\n    ...ChildTopic\\n    __typename\\n  }\\n  __typename\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\\n\\nfragment PageInfo on PageInfo {\\n  endCursor\\n  hasNextPage\\n  hasPreviousPage\\n  startCursor\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "3": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'18'",
+                        "Could not find kv pair in request satisfying: 'message':'[[_includes='@Dr Javier Santiago']]'",
+                        "{\"query\": \"query GetDiscussionQuery($discussionID: ID!, $perPage: Int!, $discussionPageAmount: Int!, $userSearchId: String, $cursor: String) {\\n  legacyNode(_id: $discussionID, type: Discussion) {\\n    ... on Discussion {\\n      discussionEntriesConnection(\\n        userSearchId: $userSearchId\\n        first: $perPage\\n        after: $cursor\\n      ) {\\n        nodes {\\n          _id\\n          rootEntryId\\n          rootEntryPageNumber(perPage: $discussionPageAmount)\\n        }\\n        pageInfo {\\n          endCursor\\n          hasNextPage\\n          hasPreviousPage\\n          startCursor\\n        }\\n      }\\n    }\\n  }\\n}\", \"variables\": {\"discussionID\": \"18\", \"perPage\": 100, \"discussionPageAmount\": 20, \"userSearchId\": null, \"cursor\": null}, \"operationName\": \"GetDiscussionQuery\"}"
+                    ]
+                ],
+                "4": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'18'",
+                        "Could not find kv pair in request satisfying: 'message':'[[_includes='@Dr Javier Santiago']]'",
+                        "{\"operationName\": \"UpdateDiscussionEntriesReadState\", \"variables\": {\"discussionEntryIds\": [\"32\", \"31\", \"30\"], \"read\": true}, \"query\": \"mutation UpdateDiscussionEntriesReadState($discussionEntryIds: [ID!]!, $read: Boolean!) {\\n  updateDiscussionEntriesReadState(\\n    input: {discussionEntryIds: $discussionEntryIds, read: $read}\\n  ) {\\n    discussionEntries {\\n      ...DiscussionEntry\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "5": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'discussionTopicId':'18'",
+                        "Could not find kv pair in request satisfying: 'message':'[[_includes='@Dr Javier Santiago']]'",
+                        "{\"operationName\": \"UpdateDiscussionEntriesReadState\", \"variables\": {\"discussionEntryIds\": [\"31\", \"32\", \"30\"], \"read\": true}, \"query\": \"mutation UpdateDiscussionEntriesReadState($discussionEntryIds: [ID!]!, $read: Boolean!) {\\n  updateDiscussionEntriesReadState(\\n    input: {discussionEntryIds: $discussionEntryIds, read: $read}\\n  ) {\\n    discussionEntries {\\n      ...DiscussionEntry\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\"}"
+                    ]
+                ],
+                "6": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /api/graphql but the observed path was: /api/session"
+                    ]
+                ],
+                "7": [
+                    [
+                        "Could not find kv pair in request satisfying: 'operationName':'CreateDiscussionEntry'",
+                        "Could not find kv pair in request satisfying: 'message':'[[_includes='@Dr Javier Santiago']]'",
+                        "{\"operationName\": \"GetMentionableUsers\", \"variables\": {\"discussionTopicId\": \"18\", \"searchTerm\": \"\"}, \"query\": \"query GetMentionableUsers($discussionTopicId: ID!, $searchTerm: String!) {\\n  legacyNode(_id: $discussionTopicId, type: Discussion) {\\n    ... on Discussion {\\n      id\\n      mentionableUsersConnection(searchTerm: $searchTerm) {\\n        nodes {\\n          id\\n          _id\\n          name\\n          shortName\\n          __typename\\n        }\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n}\"}"
+                    ]
+                ],
+                "8": [
+                    [
+                        "Could not find kv pair in request satisfying: 'message':'[[_includes='@Dr Javier Santiago']]'",
+                        "{\"operationName\": \"CreateDiscussionEntry\", \"variables\": {\"discussionTopicId\": \"18\", \"message\": \"<p>Great announcement, @<span>Dr Javier Santiago! Looking forward to this week.</span></p>\\n<p>&nbsp;</p>\", \"isAnonymousAuthor\": false}, \"query\": \"mutation CreateDiscussionEntry($discussionTopicId: ID!, $message: String!, $parentEntryId: ID, $fileId: ID, $isAnonymousAuthor: Boolean, $quotedEntryId: ID) {\\n  createDiscussionEntry(\\n    input: {discussionTopicId: $discussionTopicId, message: $message, parentEntryId: $parentEntryId, fileId: $fileId, isAnonymousAuthor: $isAnonymousAuthor, quotedEntryId: $quotedEntryId}\\n  ) {\\n    discussionEntry {\\n      ...DiscussionEntry\\n      anonymousAuthor {\\n        ...AnonymousUser\\n        __typename\\n      }\\n      __typename\\n    }\\n    mySubAssignmentSubmissions {\\n      ...Submission\\n      __typename\\n    }\\n    errors {\\n      ...Error\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment AnonymousUser on AnonymousUser {\\n  id\\n  avatarUrl\\n  shortName\\n  __typename\\n}\\n\\nfragment DiscussionEntry on DiscussionEntry {\\n  id\\n  _id\\n  createdAt\\n  updatedAt\\n  editedAt\\n  deleted\\n  message\\n  ratingCount\\n  ratingSum\\n  subentriesCount\\n  editor {\\n    ...User\\n    __typename\\n  }\\n  author {\\n    ...User\\n    __typename\\n  }\\n  attachment {\\n    ...Attachment\\n    __typename\\n  }\\n  entryParticipant {\\n    rating\\n    read\\n    forcedReadState\\n    reportType\\n    __typename\\n  }\\n  rootEntryParticipantCounts {\\n    unreadCount\\n    repliesCount\\n    __typename\\n  }\\n  lastReply {\\n    createdAt\\n    __typename\\n  }\\n  permissions {\\n    ...DiscussionEntryPermissions\\n    __typename\\n  }\\n  rootEntryId\\n  parentId\\n  quotedEntry {\\n    _id\\n    createdAt\\n    message\\n    author {\\n      shortName\\n      id\\n      __typename\\n    }\\n    anonymousAuthor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    editor {\\n      shortName\\n      id\\n      __typename\\n    }\\n    deleted\\n    __typename\\n  }\\n  discussionEntryVersions {\\n    ...DiscussionEntryVersion\\n    __typename\\n  }\\n  reportTypeCounts {\\n    inappropriateCount\\n    offensiveCount\\n    otherCount\\n    total\\n    __typename\\n  }\\n  depth\\n  __typename\\n}\\n\\nfragment User on User {\\n  id\\n  _id\\n  avatarUrl\\n  displayName: shortName\\n  htmlUrl\\n  courseRoles\\n  pronouns\\n  __typename\\n}\\n\\nfragment Attachment on File {\\n  id\\n  _id\\n  displayName\\n  url\\n  __typename\\n}\\n\\nfragment DiscussionEntryPermissions on DiscussionEntryPermissions {\\n  attach\\n  create\\n  delete\\n  rate\\n  read\\n  reply\\n  update\\n  viewRating\\n  __typename\\n}\\n\\nfragment DiscussionEntryVersion on DiscussionEntryVersion {\\n  _id\\n  id\\n  version\\n  message\\n  updatedAt\\n  createdAt\\n  __typename\\n}\\n\\nfragment Submission on Submission {\\n  id\\n  _id\\n  submissionStatus\\n  subAssignmentTag\\n  cachedDueDate\\n  submittedAt\\n  __typename\\n}\\n\\nfragment Error on ValidationError {\\n  attribute\\n  message\\n  __typename\\n}\"}"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "6995e04b-7bd2-4602-91c0-4a2d6df0ce24",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /courses/1/quizzes/12/take but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected path was /courses/1/quizzes/12/take but the observed path was: /api/graphql"
+                    ]
+                ],
+                "2": [
+                    [
+                        "The expected path was /courses/1/quizzes/12/take but the observed path was: /api/graphql"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "d4b06fdd-41b7-4a88-ba61-36b6e84b53b7",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/v1/groups/5/pages but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was POST but the observed method was: OPTIONS",
+                        "The expected path was /api/v1/groups/5/pages but the observed path was: /api/session"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "d3d04dd1-c1cd-4cae-a222-6a1cccb3b57c",
+            "correct": false,
+            "mismatch_report": {
+                "0": [
+                    [
+                        "The expected path was /api/v1/groups/4 but the observed path was: /login/canvas"
+                    ]
+                ],
+                "1": [
+                    [
+                        "The expected method was POST but the observed method was: PUT"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "739d29a8-09e3-4f9a-aa48-b93440370330",
+            "correct": true
+        },
+        {
+            "id": "fc6e5fec-553d-4cac-bb82-e9efa0510818",
+            "correct": true
+        }
+    ]
+}
