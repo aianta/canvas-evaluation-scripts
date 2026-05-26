@@ -16,7 +16,7 @@ To Evaluate OdoBot results
 python evaluation_script.py -t tasks.json -o results.json --odobot-execution-events /home/aianta/shock_and_awe/odobot_results 
 
 To Evaluate Single OdoBot result
-python evaluation_script.py -t tasks.json --single-odobot-execution-events path/to/execution_events.json 
+python evaluation_script.py -t tasks.json --single-odobot-execution-events path/to/execution_events.json --single-odobot-task-query-construction path/to/task_query_construction.json
 
 
 To Evaluate Ground truth for sanity checking
@@ -82,6 +82,11 @@ parser.add_argument("--single-odobot-execution-events",
                     help="Path to the .json file containing Odobot execution event logs for a single task instance."
 )
 
+parser.add_argument("--single-odobot-task-query-construction",
+                    dest="single_odobot_task_query_construction",
+                    help="Path to the .json file containing the task query construction result for a single task instance"
+)
+
 args = parser.parse_args()
 
 # Initalize the Evaluator that perfoms the core evaluation logic
@@ -100,6 +105,11 @@ if args.single_odobot_execution_events:
     event_log = OdoBotExecutionEventLog.to_execution_event_log(args.single_odobot_execution_events)
     if event_log is not None:
         evaluator.register_network_events(event_log.task_instance, event_log.network_events)
+    if args.single_odobot_task_query_construction:
+        with open(args.single_odobot_task_query_construction, 'r') as tqc_file:
+            task_query_construction_result = json.load(tqc_file)
+            task_instance_id = next(x for x in Task.ALL_TASK_INSTANCES if x in args.single_odobot_execution_events)
+            evaluator.register_odobot_target(task_instance_id, task_query_construction_result['targets'][0])
 
 if args.odobot_execution_events:
     print (f"Looking for Odobot execution event logs in: {args.odobot_execution_events}")
