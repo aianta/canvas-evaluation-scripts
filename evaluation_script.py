@@ -106,7 +106,7 @@ if args.single_odobot_execution_events:
     if event_log is not None:
         evaluator.register_network_events(event_log.task_instance, event_log.network_events)
     if args.single_odobot_task_query_construction:
-        with open(args.single_odobot_task_query_construction, 'r') as tqc_file:
+        with open(args.single_odobot_task_query_construction, 'r', encoding="utf-8", errors="ignore") as tqc_file:
             task_query_construction_result = json.load(tqc_file)
             task_instance_id = next(x for x in Task.ALL_TASK_INSTANCES if x in args.single_odobot_execution_events)
             evaluator.register_odobot_target(task_instance_id, task_query_construction_result['targets'][0])

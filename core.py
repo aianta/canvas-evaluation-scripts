@@ -524,7 +524,7 @@ class OdoBotExecutionEventLog:
     def to_execution_event_log(path):
         for instance_id in Task.ALL_TASK_INSTANCES:
             if instance_id in path:
-                return OdoBotExecutionEventLog(open(path, 'r'), instance_id)
+                return OdoBotExecutionEventLog(open(path, 'r', encoding="utf-8", errors="ignore"), instance_id)
 
     def __init__(self, file, instance_id):
         self.task_instance = instance_id
