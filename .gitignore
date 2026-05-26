@@ -1,6 +1,6 @@
 **/__pycache__/
-*.json
-*.jsonl
+/*.json
+/*.jsonl
 trajectories
 !tasks.json
 /tasks.json
