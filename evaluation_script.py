@@ -16,7 +16,7 @@ To Evaluate OdoBot results
 python evaluation_script.py -t tasks.json -o results.json --odobot-execution-events /home/aianta/shock_and_awe/odobot_results 
 
 To Evaluate Single OdoBot result
-python evaluation_script.py -t tasks.json --single-odobot-execution-events path/to/execution_events.json --single-odobot-task-query-construction path/to/task_query_construction.json
+python evaluation_script.py -t tasks.json -o result.json --single-odobot-execution-events path/to/execution_events.json --single-odobot-task-query-construction path/to/task_query_construction.json
 
 
 To Evaluate Ground truth for sanity checking
@@ -167,9 +167,5 @@ results = evaluator.evaluate()
 print("===============RESULTS===============")
 print(json.dumps(results, indent=4, default=str))
 
-if args.single_odobot_execution_events:
-    with open(event_log.task_instance + '-result.json', 'w') as out_file:
-        json.dump(results, out_file, indent=4, default=str)
-else:
-    with open(args.output_path, 'w') as out_file:
-        json.dump(results, out_file, indent=4, default=str)
+with open(args.output_path, 'w') as out_file:
+    json.dump(results, out_file, indent=4, default=str)
