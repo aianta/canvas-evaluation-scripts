@@ -147,7 +147,7 @@ class WebVoyagerOutput:
 
         # Sanity check that the last entry in the messages log is a response from the LLM. IE: the role type of the message is 'assistant'.
         if self.messages[-1]["role"] != 'assistant':
-            print(f"Invalid interact_messages.json for task instance: {self.task_instance}, last entry should specify 'assistant' as the role, but instead was '{self.messages[-1]["role"]}'")
+            print(f"Invalid interact_messages.json for task instance: {self.task_instance}, last entry should specify 'assistant' as the role, but instead was '{self.messages[-1]['role']}'")
 
         self.output = self.messages[-1]["content"]
         self.file.close()
