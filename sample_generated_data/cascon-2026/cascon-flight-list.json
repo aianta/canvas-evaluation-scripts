@@ -1,0 +1,1566 @@
+[
+    {
+        "id": "7fa894c8-a2bb-45fb-9684-a6895ab47459",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "20:53:18"
+            }
+        },
+        "name": "1-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T20:53:18.808785Z",
+        "created_by": 1
+    },
+    {
+        "id": "ecf39b7a-3894-4eb4-a078-1b2e1d55d8bc",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "20:55:03"
+            }
+        },
+        "name": "2-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T20:55:03.496593Z",
+        "created_by": 1
+    },
+    {
+        "id": "a787f4de-8ac4-4bac-8534-83c370714e6e",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "20:56:24"
+            }
+        },
+        "name": "3-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T20:56:24.360113Z",
+        "created_by": 1
+    },
+    {
+        "id": "a9d9569d-35a2-46d8-9658-f9bf40b2cd72",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "20:57:39"
+            }
+        },
+        "name": "4-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T20:57:39.143484Z",
+        "created_by": 1
+    },
+    {
+        "id": "954a28e6-be9b-4f07-b8ad-22810681eff8",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:00:48"
+            }
+        },
+        "name": "5-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:00:48.190466Z",
+        "created_by": 1
+    },
+    {
+        "id": "474d11dd-f99b-43dd-be2a-d624368bab98",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:01:40"
+            }
+        },
+        "name": "6-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:01:40.883064Z",
+        "created_by": 1
+    },
+    {
+        "id": "edbc793b-61e7-4274-8649-51f02f5ecfc7",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:03:11"
+            }
+        },
+        "name": "7-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:03:11.416859Z",
+        "created_by": 1
+    },
+    {
+        "id": "1a683a42-427c-48f0-8c10-05281cf99495",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:04:32"
+            }
+        },
+        "name": "8-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:04:32.958275Z",
+        "created_by": 1
+    },
+    {
+        "id": "a51e4e72-e84f-42d1-9525-056cc5f1cb77",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:05:41"
+            }
+        },
+        "name": "9-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:05:41.872483Z",
+        "created_by": 1
+    },
+    {
+        "id": "8c29e052-2925-4d25-bdd3-6c1107c8577a",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:06:55"
+            }
+        },
+        "name": "10-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:06:55.098949Z",
+        "created_by": 1
+    },
+    {
+        "id": "49149705-9199-4c0c-b72a-33972c3b484e",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:08:09"
+            }
+        },
+        "name": "11-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:08:09.806796Z",
+        "created_by": 1
+    },
+    {
+        "id": "1f585479-a3f5-4b3c-8d91-26ef2680f692",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:11:27"
+            }
+        },
+        "name": "12-task-2",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:11:27.285360Z",
+        "created_by": 1
+    },
+    {
+        "id": "45a7dbb3-9570-4dd4-889f-7e8f8c127813",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:13:33"
+            }
+        },
+        "name": "13-task",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:13:33.457423Z",
+        "created_by": 1
+    },
+    {
+        "id": "5bc36a7c-b391-4a79-a084-49c6c665def4",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:16:53"
+            }
+        },
+        "name": "_15",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:16:53.160913Z",
+        "created_by": 1
+    },
+    {
+        "id": "f8c58a85-0842-43ea-b9e2-e4de379f57a1",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:18:03"
+            }
+        },
+        "name": "-16",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:18:03.218073Z",
+        "created_by": 1
+    },
+    {
+        "id": "95aac1a3-2b97-4bfe-ba96-fb33652fab9c",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:19:35"
+            }
+        },
+        "name": "-17",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:19:35.236384Z",
+        "created_by": 1
+    },
+    {
+        "id": "58004770-b71c-44ed-a636-39b218ec168e",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:21:07"
+            }
+        },
+        "name": "-18",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:21:07.056078Z",
+        "created_by": 1
+    },
+    {
+        "id": "c0b749e3-268b-4ca5-b6ac-b98c18511487",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:22:43"
+            }
+        },
+        "name": "-19",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:22:43.514165Z",
+        "created_by": 1
+    },
+    {
+        "id": "367e4ffc-841c-4d4e-b1d7-9dca96aaebf9",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:24:00"
+            }
+        },
+        "name": "-20",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:24:00.221973Z",
+        "created_by": 1
+    },
+    {
+        "id": "a6aa9079-fe6a-4e50-ab65-a7bb09793e6b",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:25:37"
+            }
+        },
+        "name": "-21",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:25:37.408862Z",
+        "created_by": 1
+    },
+    {
+        "id": "c10aee5a-a454-4f38-86ad-ec3dfd427eb3",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:27:21"
+            }
+        },
+        "name": "-22",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:27:21.044359Z",
+        "created_by": 1
+    },
+    {
+        "id": "bfdfb92f-8457-407d-827e-c4a0bb90e1ef",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:30:14"
+            }
+        },
+        "name": "-23",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:30:14.093975Z",
+        "created_by": 1
+    },
+    {
+        "id": "03dcd0f7-daa8-4cf0-ad14-d73fb7de937c",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:31:36"
+            }
+        },
+        "name": "-24",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:31:36.926502Z",
+        "created_by": 1
+    },
+    {
+        "id": "12c3c093-e70c-419e-b07a-f089afbce40d",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:33:32"
+            }
+        },
+        "name": "-25",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:33:32.099759Z",
+        "created_by": 1
+    },
+    {
+        "id": "72a57b50-0158-4c31-803b-be08704b7d07",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:34:39"
+            }
+        },
+        "name": "-26",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:34:39.521297Z",
+        "created_by": 1
+    },
+    {
+        "id": "4689bc69-a25e-4971-a903-722be4e06f22",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:36:14"
+            }
+        },
+        "name": "-27",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:36:14.128432Z",
+        "created_by": 1
+    },
+    {
+        "id": "ee6679b9-b614-49ba-bfe1-c747bcc248ef",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:37:37"
+            }
+        },
+        "name": "-28",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:37:37.788709Z",
+        "created_by": 1
+    },
+    {
+        "id": "615f4c34-f421-4acb-8879-5ea285626dae",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:39:17"
+            }
+        },
+        "name": "-29",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:39:17.694440Z",
+        "created_by": 1
+    },
+    {
+        "id": "796678e8-2fa1-4149-8449-9f252af7b389",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:40:53"
+            }
+        },
+        "name": "-30",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:40:53.022814Z",
+        "created_by": 1
+    },
+    {
+        "id": "96123e35-5655-43bc-9370-72505193eb19",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:42:09"
+            }
+        },
+        "name": "-31",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:42:09.791628Z",
+        "created_by": 1
+    },
+    {
+        "id": "edaea78e-3625-43d0-99ea-e5980401e029",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:43:38"
+            }
+        },
+        "name": "-32",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:43:38.834783Z",
+        "created_by": 1
+    },
+    {
+        "id": "07adbb0f-aa29-41f0-b6eb-1fbc842da1dd",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:45:19"
+            }
+        },
+        "name": "-33",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:45:19.520547Z",
+        "created_by": 1
+    },
+    {
+        "id": "8419c8ea-ae60-47da-a48f-e08c9a48c6ec",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:46:51"
+            }
+        },
+        "name": "-34",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:46:51.827159Z",
+        "created_by": 1
+    },
+    {
+        "id": "3b1a176f-9f88-4d71-948d-0ab75279e7d6",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:48:03"
+            }
+        },
+        "name": "-35",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:48:03.503154Z",
+        "created_by": 1
+    },
+    {
+        "id": "c6750915-2745-4bd8-a408-db8fecf5f4b2",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:49:30"
+            }
+        },
+        "name": "-36",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:49:30.195893Z",
+        "created_by": 1
+    },
+    {
+        "id": "6fade4f2-fdc9-4078-aebf-85d3edfa0f98",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:51:25"
+            }
+        },
+        "name": "-37",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:51:25.217324Z",
+        "created_by": 1
+    },
+    {
+        "id": "ed98d67e-70f9-47d7-91d0-3e920035d261",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:52:42"
+            }
+        },
+        "name": "-38",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:52:42.643614Z",
+        "created_by": 1
+    },
+    {
+        "id": "85409a14-6dc2-4d55-966e-87d3688ea5e7",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:54:35"
+            }
+        },
+        "name": "-39",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:54:35.166544Z",
+        "created_by": 1
+    },
+    {
+        "id": "5fc3ff4b-ea78-41e2-a321-8994636b82d4",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:55:54"
+            }
+        },
+        "name": "-40",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:55:54.479492Z",
+        "created_by": 1
+    },
+    {
+        "id": "6a5cb866-4a12-4f1c-a742-6242c22fe03a",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:56:55"
+            }
+        },
+        "name": "-41",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:56:55.498793Z",
+        "created_by": 1
+    },
+    {
+        "id": "2b34cfcf-e4ee-41bd-9dec-ac23e6d875bd",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "21:58:21"
+            }
+        },
+        "name": "-42",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T21:58:21.450554Z",
+        "created_by": 1
+    },
+    {
+        "id": "3d6a6c9c-a7cb-43f3-bf04-d6384678a937",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "22:00:14"
+            }
+        },
+        "name": "-43",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T22:00:14.245266Z",
+        "created_by": 1
+    },
+    {
+        "id": "323994c6-408d-4a3a-b985-b895aa57dad4",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "22:01:32"
+            }
+        },
+        "name": "-44",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T22:01:32.424635Z",
+        "created_by": 1
+    },
+    {
+        "id": "3e0d3b24-4d50-42a1-bd1f-941a17ec8853",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "22:02:41"
+            }
+        },
+        "name": "-45",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T22:02:41.864960Z",
+        "created_by": 1
+    },
+    {
+        "id": "dfec5fb4-d902-4cf5-bfbb-ab055e2906ea",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "22:03:48"
+            }
+        },
+        "name": "-46",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T22:03:48.540478Z",
+        "created_by": 1
+    },
+    {
+        "id": "e39f803a-630f-4d19-bc65-eea9ab7e11fb",
+        "sessions": 1,
+        "application": {
+            "id": "c53ff072-b027-42db-ab28-8f85372ceb59",
+            "flights": 48,
+            "creation_timestamp_split": {
+                "date": {
+                    "friendly": "16 June 2026",
+                    "locale": "06/16/26"
+                },
+                "time": {
+                    "locale": "20:50:42"
+                }
+            },
+            "name": "cascon-2026-2",
+            "creation_timestamp": "2026-06-16T20:50:42.609994Z",
+            "created_by": 1
+        },
+        "creation_timestamp_split": {
+            "date": {
+                "friendly": "16 June 2026",
+                "locale": "06/16/26"
+            },
+            "time": {
+                "locale": "22:09:11"
+            }
+        },
+        "name": "-14-2",
+        "is_active": true,
+        "fqdn": "localhost:8088",
+        "creation_timestamp": "2026-06-16T22:09:11.084755Z",
+        "created_by": 1
+    }
+]

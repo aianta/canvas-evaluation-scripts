@@ -1,0 +1,370 @@
+[
+  {
+    "odoBotNL": {
+      "id": "cd7d2a0c-e406-4a9e-9c62-4cb9d0abeee0",
+      "_evalId": "1|OdoBotNL|cd7d2a0c-e406-4a9e-9c62-4cb9d0abeee0",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: lina.ortega@astroterra.edu and password: V9r8!mQ2pLz to login to Canvas.\nTask: In the course 'Astrobiology Field Methods and Planetary Habitability 301' switch from your current group 'Module Europa' to the group 'Radiative Analysis Team' within the 'Student Groups' group set."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "4dc1026e-0ed0-43be-aa34-cf3abc5c5878",
+      "_evalId": "3|OdoBotNL|4dc1026e-0ed0-43be-aa34-cf3abc5c5878",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: noah.kendrick@forensiclangu.edu and password: Rv9Pq2sXw8Zb to login to Canvas.\nTask: View the feedback left by your instructor for the assignment 'Forensic Pragmatics of Threatening Emails' in the course 'Forensic Linguistics and Legal Discourse 314', and add a comment saying 'Thank you for the feedback!' using the Feedback sidebar."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "2dcf0451-23c2-4fc2-a6ce-35f2045ab94f",
+      "_evalId": "5|OdoBotNL|2dcf0451-23c2-4fc2-a6ce-35f2045ab94f",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: avery.langford@neuroethology.edu and password: 9bV4rTqL2#Xz to login to Canvas.\nTask: Create a new student group named \"Synapse Squad\" in the course \"Computational Neuroethology and Animal Behavior 477\", set the group membership to \"Membership by invitation only\", and invite students named \"Maya Chen\" and \"Lina Ortega\" to join the group."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "23b65c4d-9e7d-45a1-9814-21fef35afc60",
+      "_evalId": "6|OdoBotNL|23b65c4d-9e7d-45a1-9814-21fef35afc60",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: r.prescott@heritagemuseum.edu and password: G7vYk9rQ!2bM to login to Canvas.\nTask: In your group \"Preservation Circle\" for the course Museum Robotics and Artifact Conservation 347, create a new announcement with the title \"Friday scanner calibration and handling protocols\" and the following content: \"Hi everyone are you free this Friday after class to calibrate the structured light scanner and go over handling protocols for the conservation assignment\" then publish it."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "29792715-b483-49d7-a6e4-f7a46a1ddeed",
+      "_evalId": "7|OdoBotNL|29792715-b483-49d7-a6e4-f7a46a1ddeed",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: taylor.monroe@coastaltech.edu and password: Zr8!mQ2v9LpR to login to Canvas.\nTask: Subscribe to the \"Ethical dilemmas in penetration testing\" discussion in the \"Ethical Hacking and Civic Cybersecurity 304\" course so that you receive notifications when new comments are posted."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "206f9cb7-505e-4a6a-bc93-1c8822de5dd0",
+      "_evalId": "8|OdoBotNL|206f9cb7-505e-4a6a-bc93-1c8822de5dd0",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: lucas.santoro@cinematicsound.edu and password: N8vQ2rM6bXz to login to Canvas.\nTask: Take the \"Sound Tools Workflows and Middleware Integration\" quiz in the \"Cinematic Sound Design for Interactive Storytelling 327\" course, answer all questions, flag question 3 for review, and submit the quiz when finished."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "f9228f7a-28eb-4b9d-88f5-6b5aff380579",
+      "_evalId": "9|OdoBotNL|f9228f7a-28eb-4b9d-88f5-6b5aff380579",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: taylor.monroe@coastaltech.edu and password: Zr8!mQ2v9LpR to login to Canvas.\nTask: In the course \"Ethical Hacking and Civic Cybersecurity 304\" open the quiz titled \"Community Cybersecurity and Civic Defense\" and answer Question 3, which is a short answer question, by typing \"phishing\" into the provided text box."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "6f1c94f5-5b71-48f1-a4c3-b4dd939fdade",
+      "_evalId": "10|OdoBotNL|6f1c94f5-5b71-48f1-a4c3-b4dd939fdade",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: taylor.monroe@coastaltech.edu and password: Zr8!mQ2v9LpR to login to Canvas.\nTask:  In your group (Team Sentinel) for the course \"Ethical Hacking and Civic Cybersecurity 304\" close your own discussion titled \"Project focus suggestions\" for comments."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "f056c89a-accf-4b10-a672-03345d9788b0",
+      "_evalId": "12|OdoBotNL|f056c89a-accf-4b10-a672-03345d9788b0",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: lucas.santoro@cinematicsound.edu and password: N8vQ2rM6bXz to login to Canvas.\nTask: In the course \"Cinematic Sound Design for Interactive Storytelling 327\" use the People page to search for the user named \"Riley Prescott\" view their profile details, and send them a message with the text: \"Hi, I have a question about the lab assignment. Can we discuss it?\" and the subject line \"Hi!\"."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "3e46557a-d0a7-4e80-8842-d5b08b274166",
+      "_evalId": "17|OdoBotNL|3e46557a-d0a7-4e80-8842-d5b08b274166",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: avery.langford@neuroethology.edu and password: 9bV4rTqL2#Xz to login to Canvas.\nTask: In your \"Ensemble Sensory Ecology\" group, create a new discussion titled \"Lab and Field Highlight\" write \"Share a recent field or lab session from Computational Neuroethology and Animal Behavior 477 that taught you the most about animal sensory processing and explain why it was memorable\" allow group members to like the discussion, and add it to other group members' to-do lists."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "45520852-05c9-465c-9111-bb51cbf47d3d",
+      "_evalId": "18|OdoBotNL|45520852-05c9-465c-9111-bb51cbf47d3d",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: maya.chen@nanolab.univ.edu and password: 9vT#K2qPz4Lm to login to Canvas.\nTask: Reply to the main discussion in the \"Low Temperature Transport Measurement Report\" discussion in the \"Quantum Materials and Nanostructures 412\" course with the following text: \"I believe that local communities can play a significant role in addressing climate change by implementing sustainable practices.\""
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "921bb629-7214-4e3a-b6f7-30679d6c949f",
+      "_evalId": "23|OdoBotNL|921bb629-7214-4e3a-b6f7-30679d6c949f",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: harper.bellingham@publicfutures.edu and password: Gt9rXv2Qz8L! to login to Canvas.\nTask: In the course \"Speculative Design for Public Futures 318\" open the discussion titled \"Ethics of speculative prototypes\" and manually mark the reply from \"Sarah Studentson\" as unread."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "de5cbc34-ea8f-4e4d-8fe0-2ffe4fb320e0",
+      "_evalId": "24|OdoBotNL|de5cbc34-ea8f-4e4d-8fe0-2ffe4fb320e0",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: lucas.santoro@cinematicsound.edu and password: N8vQ2rM6bXz to login to Canvas.\nTask: In the course \"Cinematic Sound Design for Interactive Storytelling 327\" reply to the announcement titled \"There will be no studio session this Friday\" by posting the message \"Great announcement, @Celia Moreno! Looking forward to this week.\" and mention the user Celia Moreno in your reply."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "e3d06674-16ee-43ff-8742-a559b8061f57",
+      "_evalId": "25|OdoBotNL|e3d06674-16ee-43ff-8742-a559b8061f57",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: r.prescott@heritagemuseum.edu and password: G7vYk9rQ!2bM to login to Canvas.\nTask: Submit a peer review comment for the discussion \"Wearable Robots for Curator Support\" in the course \"Museum Robotics and Artifact Conservation 347\" by reviewing Monica Studentson's reply and entering the following comment in the comment sidebar: \"Great analysis! I especially liked your use of recent data to support your points.\" Then, click the Save button to complete the peer review."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "99174ae3-a3a1-4e8d-8211-0c3bbff50a39",
+      "_evalId": "26|OdoBotNL|99174ae3-a3a1-4e8d-8211-0c3bbff50a39",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: noah.kendrick@forensiclangu.edu and password: Rv9Pq2sXw8Zb to login to Canvas.\nTask: Take the quiz titled \"Legal Registers and Variation\" in the course \"Forensic Linguistics and Legal Discourse 314\" answering each question as it appears on the screen, and use the Next button to advance to the next question after answering. Do not leave any question blank."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "84725b0b-f557-40f0-bc31-20683670bc34",
+      "_evalId": "27|OdoBotNL|84725b0b-f557-40f0-bc31-20683670bc34",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: r.prescott@heritagemuseum.edu and password: G7vYk9rQ!2bM to login to Canvas.\nTask: Delete the page titled \"Unit project hub\" from the \"Conservation Unit 2\" group in your Museum Robotics and Artifact Conservation 347 course in Canvas."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "e54b43ff-da89-456d-86ea-6b0037ae4cdd",
+      "_evalId": "28|OdoBotNL|e54b43ff-da89-456d-86ea-6b0037ae4cdd",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: aisha.patel@greenbondslab.edu and password: GrnB428!q9V to login to Canvas.\nTask: Delete the announcement titled \"Green Bond Case Review\" from the \"Sustainable Finance Group\" group in the Climate Finance and Green Bond Markets 428 course on Canvas."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "a909cda5-d445-4852-a17c-d7477b65f4fc",
+      "_evalId": "29|OdoBotNL|a909cda5-d445-4852-a17c-d7477b65f4fc",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: avery.langford@neuroethology.edu and password: 9bV4rTqL2#Xz to login to Canvas.\nTask: In the course \"Computational Neuroethology and Animal Behavior 477\" create a new course discussion titled \"Improving Computational Models\" In the discussion content, enter the following text: \"Describe a computational model you read about that explains animal foraging or navigation and suggest one concrete change to improve its biological realism\" Save the discussion."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "14878606-382d-43c8-bd77-edf49f7bbadf",
+      "_evalId": "30|OdoBotNL|14878606-382d-43c8-bd77-edf49f7bbadf",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: avery.langford@neuroethology.edu and password: 9bV4rTqL2#Xz to login to Canvas.\nTask: In the \"Team Ethogram Explorers\" group create a new group page titled \"Project proposals and team sign up\". In the page content, enter the following text: \"Hey everyone, I created this space to collect brief project proposals and to coordinate teams Ideas could include automated pose estimation for rodents unsupervised ethogram discovery or sensory guided navigation\" Set the page so that anyone can edit it, and check the box to notify users that this content has changed. Save the page."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "1fa967f3-916b-4243-b052-8cad1045b3a6",
+      "_evalId": "31|OdoBotNL|1fa967f3-916b-4243-b052-8cad1045b3a6",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: lucas.santoro@cinematicsound.edu and password: N8vQ2rM6bXz to login to Canvas.\nTask: Add a text comment with an emoji to your submission for the assignment \"Spatialization Techniques for Virtual Worlds\" in the course \"Cinematic Sound Design for Interactive Storytelling 327\" saying \"Great feedback received!\"."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "22558289-38a1-4fb0-b796-e9978518a012",
+      "_evalId": "33|OdoBotNL|22558289-38a1-4fb0-b796-e9978518a012",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: noah.kendrick@forensiclangu.edu and password: Rv9Pq2sXw8Zb to login to Canvas.\nTask: In the course \"Forensic Linguistics and Legal Discourse 314\" go to the Modules section and find the module called \"Module 1 Forensic Linguistics and Legal Discourse 314\". Under that module mark the content page titled \"Forensic Linguistics Casework and Courtroom Discourse\" as done."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "8c1d6313-9b08-4ae1-b143-c4b4bbad7c94",
+      "_evalId": "35|OdoBotNL|8c1d6313-9b08-4ae1-b143-c4b4bbad7c94",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: jordan.rivera@cityagro.edu and password: yR7!pQ2sXk9 to login to Canvas.\nTask: As the student group leader of \"Sustainable Streets\" in the \"Urban Agroecology and Food Systems 341\" course, change your group's name to \"Rooftop Harvest Collective\"."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "7f9537cf-0521-4a93-8151-001c961e81f3",
+      "_evalId": "36|OdoBotNL|7f9537cf-0521-4a93-8151-001c961e81f3",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: jordan.rivera@cityagro.edu and password: yR7!pQ2sXk9 to login to Canvas.\nTask: As the student group leader of \"Biocultural Brigade\" in the \"Urban Agroecology and Food Systems 341\" course, remove the member named \"Sarah Studentson\" from the group. Submit your changes."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "c25ca32a-a5aa-4cf2-8c10-8deaf4548ab6",
+      "_evalId": "38|OdoBotNL|c25ca32a-a5aa-4cf2-8c10-8deaf4548ab6",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: lina.ortega@astroterra.edu and password: V9r8!mQ2pLz to login to Canvas.\nTask: Complete a peer review for the assignment \"Synthesis of Field Data for Planetary Habitability Evaluation\" in the course \"Astrobiology Field Methods and Planetary Habitability 301\" by leaving the following comment in the comment sidebar: \"Great job but consider adding more sources to support your arguments.\" Submit your assessment to finish the peer review."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "1ad7d297-dc66-42b6-bac4-d72a207918d5",
+      "_evalId": "39|OdoBotNL|1ad7d297-dc66-42b6-bac4-d72a207918d5",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: avery.langford@neuroethology.edu and password: 9bV4rTqL2#Xz to login to Canvas.\nTask: In the course \"Computational Neuroethology and Animal Behavior 477\" open the discussion titled \"Motor control and decision making across species\" locate the reply by student \"Sarah Studentson\" and click the Like icon to like this reply."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "16dc51e3-e9f3-4b46-87e0-49cf1510331d",
+      "_evalId": "41|OdoBotNL|16dc51e3-e9f3-4b46-87e0-49cf1510331d",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: lina.ortega@astroterra.edu and password: V9r8!mQ2pLz to login to Canvas.\nTask: Reply to the announcement titled \"Guest Speaker Seminar on Extremophiles\" in the \"Astrobiology Field Methods and Planetary Habitability 301\" course with the message: \"Thank you for the information! Looking forward to this semester.\""
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "55984054-859e-4b31-9075-bb17a8c8af34",
+      "_evalId": "43|OdoBotNL|55984054-859e-4b31-9075-bb17a8c8af34",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: r.prescott@heritagemuseum.edu and password: G7vYk9rQ!2bM to login to Canvas.\nTask: In the course \"Museum Robotics and Artifact Conservation 347\" report a reply in the discussion titled \"Ethical considerations in robotic handling of cultural objects\" as inappropriate. Select \"inappropriate\" as the reason for reporting and submit your report."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "70ead089-07a1-4854-a1e4-369e896ccb70",
+      "_evalId": "44|OdoBotNL|70ead089-07a1-4854-a1e4-369e896ccb70",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: jordan.rivera@cityagro.edu and password: yR7!pQ2sXk9 to login to Canvas.\nTask: In your Urban Agroecology and Food Systems 341 course, edit your reply in the \"Indigenous Foodways and Urban Practices\" discussion by changing the text to \"I believe renewable energy is essential for our future.\" and save your changes."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "e8df73e5-ba26-4d1e-8ff7-15fd6919f2fa",
+      "_evalId": "45|OdoBotNL|e8df73e5-ba26-4d1e-8ff7-15fd6919f2fa",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: lucas.santoro@cinematicsound.edu and password: N8vQ2rM6bXz to login to Canvas.\nTask: In the \"Field Recording Trip This Saturday Morning\" announcement for the \"Cinematic Sound Design for Interactive Storytelling 327\" find the reply by Celia Moreno that says: \"We will organize a sign up for carpooling in the portal Please indicate if you can drive and how many seats you have so we can coordinate\" and use the Quote Reply feature to respond to them with the text \"Thank you for the clarification!\"."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "b001effc-6e8a-4a3d-bef7-a5a2b4bd77d6",
+      "_evalId": "46|OdoBotNL|b001effc-6e8a-4a3d-bef7-a5a2b4bd77d6",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: noah.kendrick@forensiclangu.edu and password: Rv9Pq2sXw8Zb to login to Canvas.\nTask:  Add the external RSS feed \"https://news.ycombinator.com/rss\" to the \"Language Evidence Unit\" group announcements in Canvas, set it to display only posts with the phrase \"AI\" in the title, and choose the \"Full article\" option for content display."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "6d96b1f4-f33c-40bb-a49b-94222fab1647",
+      "_evalId": "48|OdoBotNL|6d96b1f4-f33c-40bb-a49b-94222fab1647",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: harper.bellingham@publicfutures.edu and password: Gt9rXv2Qz8L! to login to Canvas.\nTask: In the course \"Speculative Design for Public Futures 318\" use the What-If Grades feature to enter a hypothetical score of 85 for the assignment \"Speculative Service Blueprint\" and view how this affects your total grade."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "cb6d03f1-c9af-45f2-9141-e1adc5ee8288",
+      "_evalId": "49|OdoBotNL|cb6d03f1-c9af-45f2-9141-e1adc5ee8288",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: lucas.santoro@cinematicsound.edu and password: N8vQ2rM6bXz to login to Canvas.\nTask: In the \"Layering League\" group, edit the page titled \"Layering Exercises & Feedback\" by changing its title to \"Final Layering Exercises & Feedback\" and adding the following text to the top of the page: \"This is the finalized version of our group research outline for submission.\" Save your changes."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "34e0c17a-9b37-4a49-8c1e-3cfdf81b7cbb",
+      "_evalId": "52|OdoBotNL|34e0c17a-9b37-4a49-8c1e-3cfdf81b7cbb",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: taylor.monroe@coastaltech.edu and password: Zr8!mQ2v9LpR to login to Canvas.\nTask: Submit the URL \"https://www.exampleproject.com\" as your assignment submission for the assignment titled \"Cloud Security Configuration Review\" in the course \"Ethical Hacking and Civic Cybersecurity 304\" on Canvas."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "c4c98a29-f77f-431b-9dc4-9557be89d0c7",
+      "_evalId": "53|OdoBotNL|c4c98a29-f77f-431b-9dc4-9557be89d0c7",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: r.prescott@heritagemuseum.edu and password: G7vYk9rQ!2bM to login to Canvas.\nTask: In the course \"Museum Robotics and Artifact Conservation 347\" use the search field in the Announcements Index Page to find the announcement titled \"Museum Visit Itinerary and Transportation Info\". Then, mark all announcements as read using the \"Mark All as Read\" button."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "aa41b6d0-29a7-4a06-9625-3d0b9525c9dd",
+      "_evalId": "54|OdoBotNL|aa41b6d0-29a7-4a06-9625-3d0b9525c9dd",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: lina.ortega@astroterra.edu and password: V9r8!mQ2pLz to login to Canvas.\nTask: Submit a text entry for the Field Sampling Protocols for Extreme Environments assignment in the course \"Astrobiology Field Methods and Planetary Habitability 301\" by entering the text \"The most interesting concept I learned this week was cognitive dissonance.\""
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "ec2aa7ba-177b-4548-90d9-566d9fd84adc",
+      "_evalId": "56|OdoBotNL|ec2aa7ba-177b-4548-90d9-566d9fd84adc",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: r.prescott@heritagemuseum.edu and password: G7vYk9rQ!2bM to login to Canvas.\nTask: Edit the announcement titled \"Friday Lab Run\" in the group Curator Crew in the Museum Robotics and Artifact Conservation 347 course by changing the content to \"Our first group meeting will be held on Friday at 3 PM in the atrium.\" Then, click the Save button to save your changes."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "23012941-fe9b-4aa3-9d8b-92795ec79643",
+      "_evalId": "57|OdoBotNL|23012941-fe9b-4aa3-9d8b-92795ec79643",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: noah.kendrick@forensiclangu.edu and password: Rv9Pq2sXw8Zb to login to Canvas.\nTask:  \nEmbed a YouTube video into the \"Project hub\" page in the \"Pragmatics Patrol\" group, using the following embedding snippet:\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/m5a4phGJsRY?si=sCq1ix4e4OtMdHUg\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\n\nthen save the changes."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "a78d38a5-4f94-423f-a984-42443b97eec8",
+      "_evalId": "58|OdoBotNL|a78d38a5-4f94-423f-a984-42443b97eec8",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: r.prescott@heritagemuseum.edu and password: G7vYk9rQ!2bM to login to Canvas.\nTask: Leave the group \"Artifact Lab Beta\" in the course \"Museum Robotics and Artifact Conservation 347\" using the People page in Canvas."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "cdc8d708-78b0-4328-ad3f-c3f0d09f97df",
+      "_evalId": "59|OdoBotNL|cdc8d708-78b0-4328-ad3f-c3f0d09f97df",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: noah.kendrick@forensiclangu.edu and password: Rv9Pq2sXw8Zb to login to Canvas.\nTask: In your \"Forensic Linguistics and Legal Discourse 314\" course, change your discussion settings so that you must manually mark discussion replies as read."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "2941db87-a64c-4710-aeb9-0006a7e04f51",
+      "_evalId": "60|OdoBotNL|2941db87-a64c-4710-aeb9-0006a7e04f51",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: aisha.patel@greenbondslab.edu and password: GrnB428!q9V to login to Canvas.\nTask: In the course \"Climate Finance and Green Bond Markets 428\" view all available groups, and join the self sign-up group named \"Resilience Partners\""
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "b652777c-f714-4b74-8979-4383c6ddea26",
+      "_evalId": "61|OdoBotNL|b652777c-f714-4b74-8979-4383c6ddea26",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: harper.bellingham@publicfutures.edu and password: Gt9rXv2Qz8L! to login to Canvas.\nTask: Take the \"Technology and Policy Intersections\" quiz in the \"Speculative Design for Public Futures 318\" course, answer all questions, and submit the quiz."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "4913209a-2b56-48ed-b275-2712186727b6",
+      "_evalId": "62|OdoBotNL|4913209a-2b56-48ed-b275-2712186727b6",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: harper.bellingham@publicfutures.edu and password: Gt9rXv2Qz8L! to login to Canvas.\nTask: In the course \"Speculative Design for Public Futures 318\" find the announcement titled \"Public Futures 318 Project Brief Release\" in your Course Activity Stream and remove this notification from your activity stream."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "38cc06f6-3b5b-4cdc-93c9-44b13cffc45d",
+      "_evalId": "64|OdoBotNL|38cc06f6-3b5b-4cdc-93c9-44b13cffc45d",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: taylor.monroe@coastaltech.edu and password: Zr8!mQ2v9LpR to login to Canvas.\nTask: View your instructor's comments on the \"Exploitation Techniques Overview\" quiz in the \"Ethical Hacking and Civic Cybersecurity 304\" course and add a comment saying \"Thank you for the feedback!\" to your quiz submission."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "fec9ab7e-a063-450f-adc1-f3a0b90a46b0",
+      "_evalId": "65|OdoBotNL|fec9ab7e-a063-450f-adc1-f3a0b90a46b0",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: lina.ortega@astroterra.edu and password: V9r8!mQ2pLz to login to Canvas.\nTask: Resume the \"Field Sampling Techniques for Extreme Environments\" quiz in the \"Astrobiology Field Methods and Planetary Habitability 301\" course that you previously started but did not finish."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "6afba099-8296-45a0-be66-4c00f59072ed",
+      "_evalId": "66|OdoBotNL|6afba099-8296-45a0-be66-4c00f59072ed",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: r.prescott@heritagemuseum.edu and password: G7vYk9rQ!2bM to login to Canvas.\nTask: Submit the \"Imaging and 3D Scanning of Artifacts\" survey in the \"Museum Robotics and Artifact Conservation 347\" course by answering all questions and submitting your responses."
+    }
+  },
+  {
+    "odoBotNL": {
+      "id": "a61434b1-4bfe-481d-bdb0-ed604f3a64de",
+      "_evalId": "70|OdoBotNL|a61434b1-4bfe-481d-bdb0-ed604f3a64de",
+      "userLocation": "http://localhost:8088/login/canvas",
+      "task": "Use the username: taylor.monroe@coastaltech.edu and password: Zr8!mQ2v9LpR to login to Canvas.\nTask: In the \"Ethical Hacking and Civic Cybersecurity 304\" course, navigate to the \"Special Module A\" module, click the \"Choose Assignment Group\" link, and select the assignment titled \"Security Policy Design Assignment\" by clicking the Select button."
+    }
+  }
+]
