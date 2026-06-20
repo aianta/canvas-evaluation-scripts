@@ -132,7 +132,7 @@ if args.wv_network_logs:
     print (f"Looking for WebVoyager Network Logs in: {args.wv_network_logs}")
     with os.scandir(args.wv_network_logs) as _dir:
         for entry in _dir:
-            if entry.name.endswith('.json' and 'token' not in entry.name): # If it is a json file, try and parse it as a WebVoyagerNetworkLog
+            if entry.name.endswith('.json') and 'token' not in entry.name: # If it is a json file, try and parse it as a WebVoyagerNetworkLog
                 network_log = WebVoyagerNetworkLog.to_network_log(entry.path)
                 if network_log is not None:
                     evaluator.register_network_events(network_log.task_instance, network_log.network_events)
